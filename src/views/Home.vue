@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Eres la mejor polola del mundo <3"/>
+    <HelloWorld msg="Esto es una prueba"/>
   </div>
 </template>
 
