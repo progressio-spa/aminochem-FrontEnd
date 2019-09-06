@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Esto es una prueba"/>
+    <HelloWorld msg="Esto es una prueba para slack"/>
   </div>
 </template>
 
