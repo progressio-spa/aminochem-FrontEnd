@@ -34,7 +34,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a class="button is-primary">
+                        <a class="button is-success">
                             <strong>Ingresa</strong>
                         </a>
                     </div>
@@ -43,3 +43,9 @@
         </div>
     </nav>
 </template>
+
+<style scoped>
+.navbar-menu {
+    background-color: lightgray;
+}
+</style>
