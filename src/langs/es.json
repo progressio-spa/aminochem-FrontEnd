@@ -1,0 +1,45 @@
+{
+    "Navbar": {
+        "home": "Inicio",
+        "aboutUs": "Quiénes somos",
+        "products": "Productos y Servicios",
+        "network": "Red de Distribución",
+        "technical": "Sección Técnica",
+        "contact": "Contacto"
+    },
+    "Home": {
+        "MainText": "Ayudamos en la producción de tu negocio",
+        "products": "Nuestros productos",
+        "card1": "Fertilizantes bioestimulantes",
+        "card2": "Enmiendas Orgánicas",
+        "card3": "Bioestimulantes de raíces"
+    },
+    "AboutUs": {
+        "title": "Quienes Somos",
+        "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dolor felis, placerat.",
+        "paragraph1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet ex urna, semper auctor ex lobortis ut. Sed tincidunt ipsum ut mauris viverra viverra. Pellentesque consequat varius pulvinar. Fusce porta nibh vitae nulla aliquam, et bibendum mi facilisis. Curabitur vitae viverra ex, nec viverra metus.",
+        "paragraph2": "Fusce sollicitudin purus quam, eu vestibulum leo dapibus ac. Nulla sed felis rhoncus, faucibus nibh ornare, viverra arcu. Fusce eget dui risus. Curabitur sit amet ante at dolor vulputate dapibus. Pellentesque cursus neque elit. Sed quis ipsum elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec in tincidunt lacus. Cras vitae convallis velit. Suspendisse porttitor suscipit odio. Nunc lacinia vehicula sem, a tincidunt leo mattis quis",
+        "team": "Nuestro Equipo",
+        "history": "Historia",
+        "card1": "",
+        "card2": "",
+        "card3": ""
+    },
+    "Network": {
+        "title": "Red de Distribución",
+        "option1": "Chile",
+        "option2": "Exterior"
+    },
+    "Contact": {
+        "title": "Contacto",
+        "office": "Oficina",
+        "name": "Nombre",
+        "phone": "Teléfono",
+        "matter": "Asunto",
+        "message": "Mensaje",
+        "send": "Enviar",
+        "fullname": "Nombre Completo",
+        "typeMessage": "Escribe tu mensaje aquí",
+        "typeEmail": "Ingrese Correo Electrónico"
+    }
+}
