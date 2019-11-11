@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import { plugin } from 'vue-function-api';
 import App from './App.vue';
 import router from './router';
 import store from './store';
@@ -8,6 +9,8 @@ import VueI18n from 'vue-i18n';
 import { languages, defaultLocale } from './langs/index.js';
 
 Vue.use(VueI18n);
+
+Vue.use(plugin);
 
 const messages = Object.assign(languages);
 

@@ -42,10 +42,21 @@
             <div class="container">
                 <h1 class="subtitle is-3">{{ $t('AboutUs.team') }}</h1>
                 <br />
-                <div class="content">
-                    <p>{{ $t('AboutUs.paragraph1') }}</p>
-                    <br />
-                    <p>{{ $t('AboutUs.paragraph2') }}</p>
+                <div class="columns map-container">
+                  <div class="is-6 agents-list">
+                    <div
+                      v-for="agent in countriesToShow"
+                      :key="agent.phone">
+                      <h1>{{ agent.name }}</h1>
+                      <h1>{{ agent.position }}</h1>
+                      <h1>{{ agent.email }}</h1>
+                      <h1>{{ agent.phone }}</h1>
+                      <br>
+                    </div>
+                  </div>
+                  <div class="is-6">
+                    <div class="teamSouthAmericanMap"></div>
+                  </div>
                 </div>
                 <br />
             </div>
@@ -71,6 +82,17 @@
 </template>
 
 <script>
+// Amcharts imports
+import * as am4core from '@amcharts/amcharts4/core';
+import * as am4maps from '@amcharts/amcharts4/maps';
+import am4geodata_worldHigh from '@amcharts/amcharts4-geodata/worldHigh';
+
+// vue-function-api
+import { onMounted, value, computed } from 'vue-function-api';
+
+// Agents import
+import agentsList from '../constants/agents';
+
 // @ is an alias to /src
 import Navbar from '@/components/Navbar.vue';
 
@@ -78,6 +100,47 @@ export default {
   name: 'home',
   components: {
     Navbar,
+  },
+  setup() {
+    const countryManagers = agentsList;
+    const hoveredCountry = value('');
+    const createSouthAmericanMap = () => {
+      // Create Instance
+      const southAmericanMap = am4core.create('teamSouthAmericanMap', am4maps.MapChart);
+      // Charge World Map
+      southAmericanMap.geodata = am4geodata_worldHigh;
+      // Set Projection
+      southAmericanMap.projection = new am4maps.projections.Miller();
+      // Create Serie
+      const worldSeries = southAmericanMap.series.push(new am4maps.MapPolygonSeries());
+      // Add South American Countries to Map, excluding anyone else
+      worldSeries.include = ['AR', 'BO', 'BR', 'CL', 'CO', 'EC', 'PY', 'PE', 'UY', 'VE'];
+      // Disabling Zoom
+      southAmericanMap.maxZoomLevel = 1;
+      worldSeries.useGeodata = true;
+      // Configure series
+      const polygonTemplate = worldSeries.mapPolygons.template;
+      polygonTemplate.tooltipText = '{name}';
+      // Create hover state and set orange fill color
+      const hover = polygonTemplate.states.create('hover');
+      hover.properties.fill = am4core.color('#E7763D');
+      // Creating Event Listener for hover action in map
+      worldSeries.mapPolygons.template.events.on('over', (ev) => {
+        hoveredCountry.value = ev.target.dataItem.dataContext.id;
+      }, this);
+      worldSeries.mapPolygons.template.events.on('out', (ev) => {
+        hoveredCountry.value = '';
+      }, this);
+    };
+    onMounted(() => {
+      createSouthAmericanMap();
+    });
+    const countriesToShow = computed(() => (
+      countryManagers.filter(countryManager => countryManager.country === hoveredCountry.value)
+    ));
+    return {
+      countriesToShow,
+    };
   },
 };
 </script>
@@ -97,5 +160,21 @@ export default {
     object-position: center center;
     width: 100%;
     height: 100%;
+}
+
+.map-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.agents-list {
+  width: 30vw;
+}
+
+.teamSouthAmericanMap {
+  width: 60vw;
+  height: 100vh;
 }
 </style>
