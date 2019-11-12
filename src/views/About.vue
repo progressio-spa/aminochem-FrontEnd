@@ -89,7 +89,7 @@ import am4geodata_worldHigh from '@amcharts/amcharts4-geodata/worldHigh';
 import { onMounted, value, computed } from 'vue-function-api';
 
 // Agents import
-import agentsList from '../constants/agents';
+import { agentsList } from '../constants/agents';
 
 // @ is an alias to /src
 import Navbar from '@/components/Navbar.vue';
@@ -114,7 +114,7 @@ export default {
       // Add South American Countries to Map, excluding anyone else
       worldSeries.include = ['AR', 'BO', 'BR', 'CL', 'CO', 'EC', 'PY', 'PE', 'UY', 'VE'];
       // Disabling Zoom
-      southAmericanMap.maxZoomLevel = 1;
+      southAmericanMap.chartContainer.wheelable = false;
       worldSeries.useGeodata = true;
       // Configure series
       const polygonTemplate = worldSeries.mapPolygons.template;
@@ -132,7 +132,7 @@ export default {
       );
       worldSeries.mapPolygons.template.events.on(
         'out',
-        (ev) => {
+        () => {
           hoveredCountry.value = '';
         },
         this,

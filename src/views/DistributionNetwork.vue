@@ -33,10 +33,21 @@
         </section>
         <section class="hero is-light is-fullheight">
             <div class="hero-body">
-                <div class="container">
-                    <h1 class="title">
-                        Vista interactiva mapas :)
-                    </h1>
+                <div class="container map-container">
+                  <div class="is-6 agents-list">
+                    <div
+                      v-for="agent in agentsToShow"
+                      :key="agent.phone">
+                      <h1>{{ agent.name }}</h1>
+                      <h1>{{ agent.position }}</h1>
+                      <h1>{{ agent.email }}</h1>
+                      <h1>{{ agent.phone }}</h1>
+                      <br>
+                    </div>
+                  </div>
+                  <div class="is-6">
+                    <div class="distributionMap"></div>
+                  </div>
                 </div>
             </div>
         </section>
@@ -45,6 +56,17 @@
 </template>
 
 <script>
+// Amcharts imports
+import * as am4core from '@amcharts/amcharts4/core';
+import * as am4maps from '@amcharts/amcharts4/maps';
+import am4geodata_chileHigh from '@amcharts/amcharts4-geodata/chileHigh';
+
+// vue-function-api imports
+import { onMounted, value, computed } from 'vue-function-api';
+
+// Import RegionAgents
+import { regionAgentsList } from '../constants/agents';
+
 // @ is an alias to /src
 import Navbar from '@/components/Navbar.vue';
 
@@ -52,6 +74,45 @@ export default {
   name: 'home',
   components: {
     Navbar,
+  },
+  setup() {
+    const regionManagers = regionAgentsList;
+    const hoveredRegion = value('');
+    const CreateDistributionMap = () => {
+      // Create Instance
+      const chileanMap = am4core.create('distributionMap', am4maps.MapChart);
+      // Charge World Map
+      chileanMap.geodata = am4geodata_chileHigh;
+      // Set Projection
+      chileanMap.projection = new am4maps.projections.Miller();
+      // Create Serie
+      const chileanSeries = chileanMap.series.push(new am4maps.MapPolygonSeries());
+      // Disabling Zoom
+      chileanMap.chartContainer.wheelable = false;
+      chileanSeries.useGeodata = true;
+      // Configure series
+      const polygonTemplate = chileanSeries.mapPolygons.template;
+      polygonTemplate.tooltipText = '{name}';
+      // Create hover state and set orange fill color
+      const hover = polygonTemplate.states.create('hover');
+      hover.properties.fill = am4core.color('#E7763D');
+      // Creating Event Listener for hover action in map
+      chileanSeries.mapPolygons.template.events.on('over', (ev) => {
+        hoveredRegion.value = ev.target.dataItem.dataContext.id;
+      }, this);
+      chileanSeries.mapPolygons.template.events.on('out', () => {
+        hoveredRegion.value = '';
+      }, this);
+    };
+    const agentsToShow = computed(() => (
+      regionManagers.filter(regionManager => regionManager.region === hoveredRegion.value)
+    ));
+    onMounted(() => {
+      CreateDistributionMap();
+    });
+    return {
+      agentsToShow,
+    };
   },
 };
 </script>
@@ -87,5 +148,20 @@ export default {
 
 #main-title {
     display: flex;
+}
+.map-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.agents-list {
+  width: 50vw;
+}
+
+.distributionMap {
+  width: 60vw;
+  height: 100vh;
 }
 </style>

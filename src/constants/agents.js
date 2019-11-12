@@ -1,4 +1,4 @@
-const agentsList = [{
+export const agentsList = [{
   name: 'Jorge Schell',
   position: 'Country Manager Mercosur',
   email: 'jschell@aminochem.cl',
@@ -35,4 +35,39 @@ const agentsList = [{
 },
 ];
 
-export default agentsList;
+export const regionAgentsList = [{
+  name: 'Jorge Schell',
+  position: 'Region Manager Chile',
+  email: 'jschell@aminochem.cl',
+  phone: '+54 9 11 51609347',
+  region: '',
+},
+{
+  name: 'Rodrigo Días',
+  position: 'Region Manager Chile',
+  email: 'rdiaz@aminochem.cl',
+  phone: '+11 9 87 654321',
+  region: 'CL-RM',
+},
+{
+  name: 'Esteban Paredes',
+  position: 'Region Manager Chile',
+  email: 'eparedes@aminochem.cl',
+  phone: '+67 6 819283912',
+  region: 'CL-TA',
+},
+{
+  name: 'Vicente Ortiz',
+  position: 'Region Manager Chile',
+  email: 'vortiz@aminochem.cl',
+  phone: '+56 9 87654321',
+  region: 'CL-RM',
+},
+{
+  name: 'Sebastian Salazar',
+  position: 'Region Manager Chile',
+  email: 'ssalazar@aminochem.cl',
+  phone: '+10 9 1234568',
+  region: 'CL-BI',
+},
+];
