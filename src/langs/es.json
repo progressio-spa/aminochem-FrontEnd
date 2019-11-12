@@ -25,6 +25,10 @@
         "card2": "",
         "card3": ""
     },
+    "TechnicalSection": {
+        "title": "Sección Técnica",
+        "more": "Ver más"
+    },
     "Network": {
         "title": "Red de Distribución",
         "option1": "Chile",
