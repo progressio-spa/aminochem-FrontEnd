@@ -9,7 +9,7 @@
             />
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title">
+                    <h1 class="title is-1" id="main-title">
                         {{ $t('Contact.title') }}
                     </h1>
                 </div>
@@ -55,5 +55,9 @@ export default {
     object-position: center center;
     width: 100%;
     height: 100%;
+}
+
+#main-title {
+    display: flex;
 }
 </style>

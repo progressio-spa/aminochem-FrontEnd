@@ -9,7 +9,7 @@
             />
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title">
+                    <h1 class="title is-1" id="main-title">
                         {{ $t('TechnicalSection.title') }}
                     </h1>
                 </div>
@@ -56,6 +56,10 @@ export default {
 .main-content {
     background-color: lightgray;
     height: 5rem;
+    display: flex;
+}
+
+#main-title {
     display: flex;
 }
 </style>

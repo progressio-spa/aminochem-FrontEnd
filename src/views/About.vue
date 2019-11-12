@@ -5,7 +5,7 @@
             <img alt="Grass" class="hero-background is-transparent" src="@/assets/Home/Home.png" />
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title">
+                    <h1 class="title is-1" id="main-title">
                         {{ $t('AboutUs.title') }}
                     </h1>
                 </div>
@@ -43,20 +43,18 @@
                 <h1 class="subtitle is-3">{{ $t('AboutUs.team') }}</h1>
                 <br />
                 <div class="columns map-container">
-                  <div class="is-6 agents-list">
-                    <div
-                      v-for="agent in countriesToShow"
-                      :key="agent.phone">
-                      <h1>{{ agent.name }}</h1>
-                      <h1>{{ agent.position }}</h1>
-                      <h1>{{ agent.email }}</h1>
-                      <h1>{{ agent.phone }}</h1>
-                      <br>
+                    <div class="is-6 agents-list">
+                        <div v-for="agent in countriesToShow" :key="agent.phone">
+                            <h1>{{ agent.name }}</h1>
+                            <h1>{{ agent.position }}</h1>
+                            <h1>{{ agent.email }}</h1>
+                            <h1>{{ agent.phone }}</h1>
+                            <br />
+                        </div>
                     </div>
-                  </div>
-                  <div class="is-6">
-                    <div class="teamSouthAmericanMap"></div>
-                  </div>
+                    <div class="is-6">
+                        <div class="teamSouthAmericanMap"></div>
+                    </div>
                 </div>
                 <br />
             </div>
@@ -125,18 +123,26 @@ export default {
       const hover = polygonTemplate.states.create('hover');
       hover.properties.fill = am4core.color('#E7763D');
       // Creating Event Listener for hover action in map
-      worldSeries.mapPolygons.template.events.on('over', (ev) => {
-        hoveredCountry.value = ev.target.dataItem.dataContext.id;
-      }, this);
-      worldSeries.mapPolygons.template.events.on('out', (ev) => {
-        hoveredCountry.value = '';
-      }, this);
+      worldSeries.mapPolygons.template.events.on(
+        'over',
+        (ev) => {
+          hoveredCountry.value = ev.target.dataItem.dataContext.id;
+        },
+        this,
+      );
+      worldSeries.mapPolygons.template.events.on(
+        'out',
+        (ev) => {
+          hoveredCountry.value = '';
+        },
+        this,
+      );
     };
     onMounted(() => {
       createSouthAmericanMap();
     });
-    const countriesToShow = computed(() => (
-      countryManagers.filter(countryManager => countryManager.country === hoveredCountry.value)
+    const countriesToShow = computed(() => countryManagers.filter(
+      countryManager => countryManager.country === hoveredCountry.value,
     ));
     return {
       countriesToShow,
@@ -162,19 +168,23 @@ export default {
     height: 100%;
 }
 
-.map-container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+#main-title {
+    display: flex;
+}
+
+.map-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 .agents-list {
-  width: 30vw;
+    width: 30vw;
 }
 
 .teamSouthAmericanMap {
-  width: 60vw;
-  height: 100vh;
+    width: 60vw;
+    height: 100vh;
 }
 </style>
