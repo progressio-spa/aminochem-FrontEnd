@@ -14,27 +14,52 @@
                 </div>
                 <div id="navbarMenuHeroC" class="navbar-menu">
                     <div class="navbar-end">
-                        <a class="navbar-item">
+                        <a
+                            :class="[
+                                currentPage.localeCompare('/') == 0 ? activeClass : '',
+                                'navbar-item',
+                            ]"
+                        >
                             <router-link to="/">
                                 {{ $t('Navbar.home') }}
                             </router-link>
                         </a>
-                        <a class="navbar-item">
+                        <a
+                            :class="[
+                                currentPage.localeCompare('/') == 0 ? activeClass : '',
+                                'navbar-item',
+                            ]"
+                        >
                             <router-link to="/about">
                                 {{ $t('Navbar.aboutUs') }}
                             </router-link>
                         </a>
-                        <a class="navbar-item">
+                        <a
+                            :class="[
+                                currentPage.localeCompare('/') == 0 ? activeClass : '',
+                                'navbar-item',
+                            ]"
+                        >
                             <router-link to="/products">
                                 {{ $t('Navbar.products') }}
                             </router-link>
                         </a>
-                        <a class="navbar-item">
+                        <a
+                            :class="[
+                                currentPage.localeCompare('/') == 0 ? activeClass : '',
+                                'navbar-item',
+                            ]"
+                        >
                             <router-link to="/distributionNetwork">
                                 {{ $t('Navbar.network') }}
                             </router-link>
                         </a>
-                        <a class="navbar-item">
+                        <a
+                            :class="[
+                                currentPage.localeCompare('/') == 0 ? activeClass : '',
+                                'navbar-item',
+                            ]"
+                        >
                             <router-link to="/technicalSection">
                                 {{ $t('Navbar.technical') }}
                             </router-link>
@@ -53,6 +78,23 @@
     </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      activeClass: 'active',
+      variablePrueba: 'test',
+    };
+  },
+  computed: {
+    currentPage() {
+      console.log(this.$route.path);
+      return this.$route.path;
+    },
+  },
+};
+</script>
+
 <style scoped>
 .navbar-item img {
     max-height: 7rem;
@@ -66,6 +108,14 @@ a:hover {
 }
 
 .button a {
+    color: #585858;
+}
+
+.active a {
+    color: white;
+}
+
+.active a:hover {
     color: #585858;
 }
 </style>
