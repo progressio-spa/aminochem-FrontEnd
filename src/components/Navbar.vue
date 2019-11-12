@@ -1,10 +1,12 @@
 <template>
     <div class="hero-head">
-        <header class="navbar">
+        <header class="navbar is-transparent ">
             <div class="container">
                 <div class="navbar-brand">
                     <a class="navbar-item">
-                        <img src="@/assets/logo-aminochem.png" alt="Aminochem" />
+                        <router-link to="/">
+                            <img src="@/assets/logo-aminochem.png" alt="Aminochem" />
+                        </router-link>
                     </a>
                     <span class="navbar-burger burger" data-target="navbarMenuHeroC">
                         <span></span>
@@ -34,15 +36,19 @@
                                 {{ $t('Navbar.aboutUs') }}
                             </router-link>
                         </a>
-                        <a
-                            :class="[
-                                currentPage.localeCompare('/') == 0 ? activeClass : '',
-                                'navbar-item',
-                            ]"
-                        >
-                            <router-link to="/products">
+                        <a class="navbar-item has-dropdown is-hoverable" id="drop">
+                            <a class="navbar-link is-arrowless">
                                 {{ $t('Navbar.products') }}
-                            </router-link>
+                            </a>
+
+                            <div class="navbar-dropdown is-boxed">
+                                <a class="navbar-item" id="drop-item">
+                                    {{ $t('Navbar.dropdown1') }}
+                                </a>
+                                <a class="navbar-item" id="drop-item">
+                                    {{ $t('Navbar.dropdown2') }}
+                                </a>
+                            </div>
                         </a>
                         <a
                             :class="[
@@ -88,7 +94,6 @@ export default {
   },
   computed: {
     currentPage() {
-      console.log(this.$route.path);
       return this.$route.path;
     },
   },
@@ -100,15 +105,13 @@ export default {
     max-height: 7rem;
 }
 
-a {
+a,
+.button a,
+#drop #drop-item {
     color: #585858;
 }
 a:hover {
-    color: #fff;
-}
-
-.button a {
-    color: #585858;
+    color: #e96711;
 }
 
 .active a {
@@ -116,6 +119,11 @@ a:hover {
 }
 
 .active a:hover {
-    color: #585858;
+    color: rgb(0, 129, 0);
+}
+
+.hero.is-success .navbar-item,
+.hero.is-success .navbar-link {
+    color: rgba(255, 255, 255, 1);
 }
 </style>
