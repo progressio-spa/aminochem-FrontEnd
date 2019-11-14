@@ -26,9 +26,9 @@
         "card1-title": "Mauris fermentum at est in interdum",
         "card2-title": "Mauris fermentum at est in interdum",
         "card3-title": "Mauris fermentum at est in interdum",
-        "card1-content": "Pellentesque scelerisque eleifend nisi non vulputate.",
-        "card2-content": "Pellentesque scelerisque eleifend nisi non vulputate. Donec orci diam, mollis sit amet vehicula at, semper mattis risus. Praesent aliquam mi sed lacinia interdum. Mauris volutpat orci ante, quis pharetra erat vestibulum placerat. Nullam pharetra sit amet risus id aliquam.",
-        "card3-content": "Pellentesque scelerisque eleifend nisi non vulputate. Donec orci diam, mollis sit amet vehicula at, semper mattis risus. Praesent aliquam mi sed lacinia interdum. Mauris volutpat orci ante, quis pharetra erat vestibulum placerat. Nullam pharetra sit amet risus id aliquam."
+        "card1-content": "Pellentesque scelerisque eleifend nisi non vulputate. Donec orci diam, mollis sit amet vehicula at, semper mattis risus.",
+        "card2-content": "Pellentesque scelerisque eleifend nisi non vulputate. Donec orci diam, mollis sit amet vehicula at, semper mattis risus. Praesent aliquam mi sed lacinia interdum. Mauris volutpat orci ante, quis pharetra erat vestibulum placerat. Nullam pharetra sit amet risus id aliquam. Pellentesque et augue nec tortor commodo iaculis id eu justo.",
+        "card3-content": "Pellentesque scelerisque eleifend nisi non vulputate. Donec orci diam, mollis sit amet vehicula at, semper mattis risus. Praesent aliquam mi sed lacinia interdum. Mauris volutpat orci ante, quis pharetra erat vestibulum placerat. Nullam pharetra sit amet risus id aliquam. Pellentesque et augue nec tortor commodo iaculis id eu justo."
     },
     "TechnicalSection": {
         "title": "Sección Técnica",
@@ -49,6 +49,8 @@
         "send": "Enviar",
         "fullname": "Nombre Completo",
         "typeMessage": "Escribe tu mensaje aquí",
-        "typeEmail": "Ingrese Correo Electrónico"
+        "typeEmail": "Ingrese Correo Electrónico",
+        "contactUs": "Contáctanos",
+        "writeUs": "Escribenos un mensaje"
     }
 }
