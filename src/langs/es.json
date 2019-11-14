@@ -23,9 +23,12 @@
         "paragraph2": "Fusce sollicitudin purus quam, eu vestibulum leo dapibus ac. Nulla sed felis rhoncus, faucibus nibh ornare, viverra arcu. Fusce eget dui risus. Curabitur sit amet ante at dolor vulputate dapibus. Pellentesque cursus neque elit. Sed quis ipsum elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec in tincidunt lacus. Cras vitae convallis velit. Suspendisse porttitor suscipit odio. Nunc lacinia vehicula sem, a tincidunt leo mattis quis",
         "team": "Nuestro Equipo",
         "history": "Historia",
-        "card1": "",
-        "card2": "",
-        "card3": ""
+        "card1-title": "Mauris fermentum at est in interdum",
+        "card2-title": "Mauris fermentum at est in interdum",
+        "card3-title": "Mauris fermentum at est in interdum",
+        "card1-content": "Pellentesque scelerisque eleifend nisi non vulputate.",
+        "card2-content": "Pellentesque scelerisque eleifend nisi non vulputate. Donec orci diam, mollis sit amet vehicula at, semper mattis risus. Praesent aliquam mi sed lacinia interdum. Mauris volutpat orci ante, quis pharetra erat vestibulum placerat. Nullam pharetra sit amet risus id aliquam.",
+        "card3-content": "Pellentesque scelerisque eleifend nisi non vulputate. Donec orci diam, mollis sit amet vehicula at, semper mattis risus. Praesent aliquam mi sed lacinia interdum. Mauris volutpat orci ante, quis pharetra erat vestibulum placerat. Nullam pharetra sit amet risus id aliquam."
     },
     "TechnicalSection": {
         "title": "Sección Técnica",
