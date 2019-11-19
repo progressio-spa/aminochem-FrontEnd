@@ -46,8 +46,7 @@
                     <div class="is-6 agents-list">
                         <div
                           v-for="agent in countriesToShow"
-                          :key="agent.phone"
-                          class="agent-element">
+                          :key="agent.phone">
                             <h1>{{ agent.name }}</h1>
                             <h1>{{ agent.position }}</h1>
                             <h1>{{ agent.email }}</h1>

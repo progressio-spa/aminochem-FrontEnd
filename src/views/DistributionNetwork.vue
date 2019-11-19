@@ -19,12 +19,12 @@
             <div class="container">
                 <div class="columns">
                     <div class="column">
-                        <h1 class="subtitle is-4 has-text-grey-darker">
+                        <h1 class="subtitle is-4 has-text-grey-darker" @click="zoneClicked('CL')">
                             {{ $t('Network.option1') }}
                         </h1>
                     </div>
                     <div class="column">
-                        <h1 class="subtitle is-4 has-text-grey-darker">
+                        <h1 class="subtitle is-4 has-text-grey-darker" @click="zoneClicked('WR')">
                             {{ $t('Network.option2') }}
                         </h1>
                     </div>
@@ -60,12 +60,13 @@
 import * as am4core from '@amcharts/amcharts4/core';
 import * as am4maps from '@amcharts/amcharts4/maps';
 import am4geodata_chileHigh from '@amcharts/amcharts4-geodata/chileHigh';
+import am4geodata_worldHigh from '@amcharts/amcharts4-geodata/worldHigh';
 
 // vue-function-api imports
 import { onMounted, value, computed } from 'vue-function-api';
 
 // Import RegionAgents
-import { regionAgentsList } from '../constants/agents';
+import { regionAgentsList, agentsList } from '../constants/agents';
 
 // @ is an alias to /src
 import Navbar from '@/components/Navbar.vue';
@@ -78,7 +79,9 @@ export default {
   setup() {
     const regionManagers = regionAgentsList;
     const hoveredRegion = value('');
-    const CreateDistributionMap = () => {
+    const hoveredCountry = value('');
+    // Chilean Map Method
+    const CreateChileanDistributionMap = () => {
       // Create Instance
       const chileanMap = am4core.create('distributionMap', am4maps.MapChart);
       // Charge World Map
@@ -104,14 +107,58 @@ export default {
         hoveredRegion.value = '';
       }, this);
     };
+    // SouthAmerican Map Method
+    const createSouthAmericanDistributionMap = () => {
+      // Create Instance
+      const southAmericanMap = am4core.create('distributionMap', am4maps.MapChart);
+      // Charge World Map
+      southAmericanMap.geodata = am4geodata_worldHigh;
+      // Set Projection
+      southAmericanMap.projection = new am4maps.projections.Miller();
+      // Create Serie
+      const worldSeries = southAmericanMap.series.push(new am4maps.MapPolygonSeries());
+      // Add South American Countries to Map, excluding anyone else
+      worldSeries.include = ['AR', 'BO', 'BR', 'CL', 'CO', 'EC', 'PY', 'PE', 'UY', 'VE'];
+      // Disabling Zoom
+      southAmericanMap.chartContainer.wheelable = false;
+      worldSeries.useGeodata = true;
+      // Configure series
+      const polygonTemplate = worldSeries.mapPolygons.template;
+      polygonTemplate.tooltipText = '{name}';
+      // Create hover state and set orange fill color
+      const hover = polygonTemplate.states.create('hover');
+      hover.properties.fill = am4core.color('#E7763D');
+      // Creating Event Listener for hover action in map
+      worldSeries.mapPolygons.template.events.on(
+        'over',
+        (ev) => {
+          hoveredCountry.value = ev.target.dataItem.dataContext.id;
+        }, this,
+      );
+      worldSeries.mapPolygons.template.events.on(
+        'out',
+        () => {
+          hoveredCountry.value = '';
+        }, this,
+      );
+    };
+    // Zone Clicked Method
+    const zoneClicked = (zone) => {
+      if (zone === 'CL') {
+        CreateChileanDistributionMap();
+      } else {
+        createSouthAmericanDistributionMap();
+      }
+    };
     const agentsToShow = computed(() => (
       regionManagers.filter(regionManager => regionManager.region === hoveredRegion.value)
     ));
     onMounted(() => {
-      CreateDistributionMap();
+      CreateChileanDistributionMap();
     });
     return {
       agentsToShow,
+      zoneClicked,
     };
   },
 };
@@ -130,8 +177,9 @@ export default {
     height: 100%;
 }
 .subtitle {
-    text-decoration: underline;
-    text-decoration-color: orange;
+  text-decoration: underline;
+  text-decoration-color: orange;
+  cursor: pointer;
 }
 
 .main-content {
@@ -158,6 +206,10 @@ export default {
 
 .agents-list {
   width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .distributionMap {
