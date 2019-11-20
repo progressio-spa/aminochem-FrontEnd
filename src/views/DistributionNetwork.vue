@@ -118,7 +118,14 @@ export default {
       // Create Serie
       const worldSeries = southAmericanMap.series.push(new am4maps.MapPolygonSeries());
       // Add South American Countries to Map, excluding anyone else
-      worldSeries.include = ['AR', 'BO', 'BR', 'CL', 'CO', 'EC', 'PY', 'PE', 'UY', 'VE'];
+      worldSeries.include = [
+        'AR', 'BO', 'BR', 'CL',
+        'CO', 'EC', 'PY', 'PE',
+        'UY', 'VE', 'BS', 'BZ',
+        'CR', 'CU', 'DO', 'GT',
+        'HN', 'HT', 'JM', 'MX',
+        'NI', 'PA', 'PR', 'SV',
+      ];
       // Disabling Zoom
       southAmericanMap.chartContainer.wheelable = false;
       worldSeries.useGeodata = true;
