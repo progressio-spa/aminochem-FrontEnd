@@ -52,5 +52,11 @@
         "typeEmail": "Ingrese Correo Electrónico",
         "contactUs": "Contáctanos",
         "writeUs": "Escribenos un mensaje"
+    },
+    "Login": {
+        "loginNav": "Ingresa",
+        "remember": "Recuerdame",
+        "button": "Ingresar",
+        "login": "Iniciar Sesión"
     }
 }
