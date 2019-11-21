@@ -35,7 +35,9 @@
                             </div>
                         </a>
                         <a class="button is-success">
-                            <strong>Ingresa</strong>
+                            <router-link to="/login">
+                                {{ $t('Login.loginNav') }}
+                            </router-link>
                         </a>
                     </div>
                 </div>
@@ -47,5 +49,8 @@
 <style scoped>
 .navbar-menu {
     background-color: lightgray;
+}
+.button a {
+    color: white;
 }
 </style>
