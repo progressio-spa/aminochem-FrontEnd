@@ -32,11 +32,7 @@
                                 <br />
                                 <div class="field">
                                     <div class="control">
-                                        <input
-                                            class="input"
-                                            type="text"
-                                            placeholder="Nombre de usuario"
-                                        />
+                                        <input class="input" type="text" placeholder="Email" />
                                     </div>
                                 </div>
                                 <br />
