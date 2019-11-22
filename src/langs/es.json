@@ -57,6 +57,21 @@
         "loginNav": "Ingresa",
         "remember": "Recuerdame",
         "button": "Ingresar",
-        "login": "Iniciar Sesión"
+        "login": "Iniciar Sesión",
+        "notAccount": "¿Aún no tienes cuenta?",
+        "register": "Registrarse",
+        "forgotPass": "Olvidé mi contraseña"
+    },
+    "Register": {
+        "register": "Registro",
+        "info": "Completa los siguientes datos",
+        "button": "Registro",
+        "accountReady": "¿Ya tienes una cuenta?",
+        "terms": "He leído y acepto los términos y condiciones de uso."
+    },
+    "Forgot": {
+        "title": "¿Olvidaste tu contraseña?",
+        "subtitle": "Ingresa tu correo electrónico y te enviaremos las instrucciones para reestablecer el acceso a tu cuenta",
+        "button": "Solicitar instrucciones"
     }
 }
