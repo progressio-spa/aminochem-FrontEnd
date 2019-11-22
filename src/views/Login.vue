@@ -11,7 +11,7 @@
                     <div class="column" id="right">
                         <div class="card">
                             <div class="card-content">
-                                <div class="subtitle">
+                                <div class="title is-4">
                                     {{ $t('Login.login') }}
                                 </div>
                                 <br />
@@ -45,14 +45,20 @@
                                 <div class="field">
                                     <div class="control">
                                         <div class="links">
-                                            <p>¿Aún no tienes cuenta? Registrarse</p>
+                                            {{ $t('Login.notAccount') }}
+                                            <p>&nbsp;</p>
+                                            <router-link to="/register">
+                                                {{ $t('Login.register') }}
+                                            </router-link>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="field">
                                     <div class="control">
                                         <div class="links">
-                                            <p>Olvidé mi contraseña</p>
+                                            <router-link to="/forgot">
+                                                {{ $t('Login.forgotPass') }}
+                                            </router-link>
                                         </div>
                                     </div>
                                 </div>
