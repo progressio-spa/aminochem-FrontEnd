@@ -5,6 +5,8 @@ import About from './views/About.vue'
 import Contact from './views/Contact.vue'
 import DistributionNetwork from './views/DistributionNetwork.vue'
 import Login from './views/Login.vue'
+import Register from './views/Register.vue'
+import Forgot from './views/Forgot.vue'
 import Products from './views/Products.vue'
 import TechnicalSection from './views/TechnicalSection.vue'
 
@@ -36,6 +38,16 @@ export default new Router({
             path: '/login',
             name: 'login',
             component: Login,
+        },
+        {
+            path: '/register',
+            name: 'register',
+            component: Register,
+        },
+        {
+            path: '/forgot',
+            name: 'forgot',
+            component: Forgot,
         },
         {
             path: '/products',
