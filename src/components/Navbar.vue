@@ -44,7 +44,20 @@
                             <div class="navbar-dropdown is-boxed">
                                 <a class="navbar-item" id="drop-item">
                                     {{ $t('Navbar.dropdown1') }}
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    <i class="fas fa-angle-down"></i>
                                 </a>
+                                <a class="navbar-item" id="drop-item-item">
+                                    {{ $t('Navbar.dropdown11') }}
+                                </a>
+                                <a class="navbar-item" id="drop-item-item">
+                                    {{ $t('Navbar.dropdown12') }}
+                                </a>
+                                <a class="navbar-item" id="drop-item-item">
+                                    {{ $t('Navbar.dropdown13') }}
+                                </a>
+                                <hr class="navbar-divider" />
                                 <a class="navbar-item" id="drop-item">
                                     {{ $t('Navbar.dropdown2') }}
                                 </a>
@@ -86,18 +99,18 @@
 
 <script>
 export default {
-  data() {
-    return {
-      activeClass: 'active',
-      variablePrueba: 'test',
-    };
-  },
-  computed: {
-    currentPage() {
-      return this.$route.path;
+    data() {
+        return {
+            activeClass: 'active',
+            variablePrueba: 'test',
+        }
     },
-  },
-};
+    computed: {
+        currentPage() {
+            return this.$route.path
+        },
+    },
+}
 </script>
 
 <style scoped>
@@ -107,9 +120,13 @@ export default {
 
 a,
 .button a,
-#drop #drop-item {
+#drop-item-item {
     color: #585858;
 }
+#drop-item {
+    color: #e96711;
+}
+
 a:hover {
     color: #e96711;
 }
