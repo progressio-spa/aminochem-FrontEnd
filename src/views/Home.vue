@@ -20,10 +20,7 @@
                         <div class="card">
                             <div class="card-image">
                                 <figure class="image is-4by3">
-                                    <img
-                                        src="https://bulma.io/images/placeholders/1280x960.png"
-                                        alt="Placeholder image"
-                                    />
+                                    <img src="@/assets/Home/hoja.jpg" alt="leave" />
                                 </figure>
                             </div>
                             <div class="card-content">
@@ -46,10 +43,7 @@
                         <div class="card">
                             <div class="card-image">
                                 <figure class="image is-4by3">
-                                    <img
-                                        src="https://bulma.io/images/placeholders/1280x960.png"
-                                        alt="Placeholder image"
-                                    />
+                                    <img src="@/assets/Home/tierra.jpg" alt="earth" />
                                 </figure>
                             </div>
                             <div class="card-content">
@@ -72,10 +66,7 @@
                         <div class="card">
                             <div class="card-image">
                                 <figure class="image is-4by3">
-                                    <img
-                                        src="https://bulma.io/images/placeholders/1280x960.png"
-                                        alt="Placeholder image"
-                                    />
+                                    <img src="@/assets/Home/raiz.png" alt="seeder" />
                                 </figure>
                             </div>
                             <div class="card-content">
@@ -107,14 +98,14 @@
 
 <script>
 // @ is an alias to /src
-import Navbar from '@/components/Navbar.vue';
+import Navbar from '@/components/Navbar.vue'
 
 export default {
-  name: 'home',
-  components: {
-    Navbar,
-  },
-};
+    name: 'home',
+    components: {
+        Navbar,
+    },
+}
 </script>
 
 <style scoped>
