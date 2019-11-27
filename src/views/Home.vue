@@ -5,21 +5,21 @@
                 <div class="item-1">
                     <img
                         alt="Grass"
-                        class="hero-background is-transparent"
+                        class="hero-background-home is-transparent"
                         src="@/assets/Home/Home.png"
                     />
                 </div>
                 <div class="item-2">
                     <img
                         alt="Grass"
-                        class="hero-background is-transparent"
+                        class="hero-background-home is-transparent"
                         src="@/assets/Home/berries.jpg"
                     />
                 </div>
                 <div class="item-3">
                     <img
                         alt="Grass"
-                        class="hero-background is-transparent"
+                        class="hero-background-home is-transparent"
                         src="@/assets/Home/cherry.jpg"
                     />
                 </div>
@@ -157,10 +157,16 @@ export default {
     overflow: hidden;
 }
 .hero-background {
+    position: absolute;
     object-fit: cover;
     object-position: center center;
     width: 100%;
     height: 100%;
+}
+
+.hero-background-home {
+    position: relative;
+    width: 100%;
 }
 
 #main .hero-body {
