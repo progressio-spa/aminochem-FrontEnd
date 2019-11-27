@@ -8,13 +8,23 @@
                             <img src="@/assets/logo-aminochem.png" alt="Aminochem" />
                         </router-link>
                     </a>
-                    <span class="navbar-burger burger" data-target="navbarMenuHeroC">
+                    <span
+                        class="navbar-burger burger"
+                        data-target="navbarMenuHeroC "
+                        @click="showNavbarBurger"
+                    >
                         <span></span>
                         <span></span>
                         <span></span>
                     </span>
                 </div>
-                <div id="navbarMenuHeroC" class="navbar-menu">
+                <div
+                    id="navbarMenuHeroC"
+                    v-bind:class="{
+                        'navbar-menu': true,
+                        'is-active': showNavbarMobile,
+                    }"
+                >
                     <div class="navbar-end">
                         <a
                             :class="[
@@ -103,11 +113,17 @@ export default {
         return {
             activeClass: 'active',
             variablePrueba: 'test',
+            showNavbarMobile: false,
         }
     },
     computed: {
         currentPage() {
             return this.$route.path
+        },
+    },
+    methods: {
+        showNavbarBurger() {
+            this.showNavbarMobile = !this.showNavbarMobile
         },
     },
 }
