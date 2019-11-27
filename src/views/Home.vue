@@ -1,7 +1,29 @@
 <template>
     <div class="home">
-        <section class="hero is-success is-fullheight has-background" id="main">
-            <img alt="Grass" class="hero-background is-transparent" src="@/assets/Home/Home.png" />
+        <section class="hero is-success is-fullheight has-carousel" id="main">
+            <div id="carousel-demo" class="hero-carousel">
+                <div class="item-1">
+                    <img
+                        alt="Grass"
+                        class="hero-background is-transparent"
+                        src="@/assets/Home/Home.png"
+                    />
+                </div>
+                <div class="item-2">
+                    <img
+                        alt="Grass"
+                        class="hero-background is-transparent"
+                        src="@/assets/Home/berries.jpg"
+                    />
+                </div>
+                <div class="item-3">
+                    <img
+                        alt="Grass"
+                        class="hero-background is-transparent"
+                        src="@/assets/Home/cherry.jpg"
+                    />
+                </div>
+            </div>
             <Navbar></Navbar>
             <div class="hero-body">
                 <div class="container has-text-left">
@@ -99,11 +121,23 @@
 <script>
 // @ is an alias to /src
 import Navbar from '@/components/Navbar.vue'
+import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min.js'
 
 export default {
     name: 'home',
     components: {
         Navbar,
+        bulmaCarousel,
+    },
+    mounted() {
+        bulmaCarousel.attach('#carousel-demo', {
+            slidesToScroll: 1,
+            slidesToShow: 1,
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 10000,
+            pagination: false,
+        })
     },
 }
 </script>
@@ -115,12 +149,14 @@ export default {
     align-items: center;
 }
 
+.hero.is-success {
+    color: #23d160;
+}
 .hero.has-background {
     position: relative;
     overflow: hidden;
 }
 .hero-background {
-    position: absolute;
     object-fit: cover;
     object-position: center center;
     width: 100%;
