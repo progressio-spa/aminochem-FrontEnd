@@ -1,16 +1,21 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import Vue from 'vue'
+import Vuex from 'vuex'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
 export default new Vuex.Store({
-  state: {
-
-  },
-  mutations: {
-
-  },
-  actions: {
-
-  },
-});
+    state: {
+        componentView: 'Products',
+    },
+    mutations: {
+        toggle() {
+            if (this.componentView === 'Products') {
+                this.componentView = 'ProductView'
+            } else {
+                this.componentView = 'Products'
+            }
+            console.log(this.componentView)
+        },
+    },
+    actions: {},
+})
