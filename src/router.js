@@ -7,7 +7,10 @@ import DistributionNetwork from './views/DistributionNetwork.vue'
 import Login from './views/Login.vue'
 import Register from './views/Register.vue'
 import Forgot from './views/Forgot.vue'
-import Products from './views/Products.vue'
+import Fertilizers from './views/products/Fertilizers.vue'
+import Amendments from './views/products/Amendments.vue'
+import Insecticide from './views/products/Insecticide.vue'
+import RootBiostimulant from './views/products/RootBiostimulant.vue'
 import TechnicalSection from './views/TechnicalSection.vue'
 
 Vue.use(Router)
@@ -50,9 +53,24 @@ export default new Router({
             component: Forgot,
         },
         {
-            path: '/products',
-            name: 'products',
-            component: Products,
+            path: '/products/fertilizers',
+            name: 'fertilizers',
+            component: Fertilizers,
+        },
+        {
+            path: '/products/amendments',
+            name: 'amendments',
+            component: Amendments,
+        },
+        {
+            path: '/products/insecticide',
+            name: 'insecticide',
+            component: Insecticide,
+        },
+        {
+            path: '/products/rootBiostimulant',
+            name: 'rootBiostimulant',
+            component: RootBiostimulant,
         },
         {
             path: '/technicalSection',
