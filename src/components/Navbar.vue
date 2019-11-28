@@ -59,17 +59,25 @@
                                     <i class="fas fa-angle-down"></i>
                                 </a>
                                 <a class="navbar-item" id="drop-item-item">
-                                    {{ $t('Navbar.dropdown11') }}
+                                    <router-link to="/products/fertilizers">
+                                        {{ $t('Navbar.dropdown11') }}
+                                    </router-link>
                                 </a>
                                 <a class="navbar-item" id="drop-item-item">
-                                    {{ $t('Navbar.dropdown12') }}
+                                    <router-link to="/products/amendments">
+                                        {{ $t('Navbar.dropdown12') }}
+                                    </router-link>
                                 </a>
                                 <a class="navbar-item" id="drop-item-item">
-                                    {{ $t('Navbar.dropdown13') }}
+                                    <router-link to="/products/rootBiostimulant">
+                                        {{ $t('Navbar.dropdown13') }}
+                                    </router-link>
                                 </a>
                                 <hr class="navbar-divider" />
                                 <a class="navbar-item" id="drop-item">
-                                    {{ $t('Navbar.dropdown2') }}
+                                    <router-link to="/products/insecticide">
+                                        {{ $t('Navbar.dropdown2') }}
+                                    </router-link>
                                 </a>
                             </div>
                         </a>
