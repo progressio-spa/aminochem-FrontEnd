@@ -15,158 +15,9 @@
                 </div>
             </div>
         </section>
-        <section class="hero is-white is-fullheight">
-            <div class="hero-body">
-                <div class="container">
-                    <div class="columns is-desktop">
-                        <div class="column is-one-third">
-                            <div class="card">
-                                <div class="card-image">
-                                    <figure class="image is-4by3">
-                                        <img
-                                            src="https://bulma.io/images/placeholders/480x480.png"
-                                            alt="Placeholder image"
-                                        />
-                                    </figure>
-                                </div>
-                                <div class="card-header">
-                                    <div class="card-header-title is-centered">
-                                        <div class="title is-4">
-                                            {{ products[0].name }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br />
-                        </div>
-                        <div class="column is-one-third">
-                            <div class="card">
-                                <div class="card-image">
-                                    <figure class="image is-4by3">
-                                        <img
-                                            src="https://bulma.io/images/placeholders/480x480.png"
-                                            alt="Placeholder image"
-                                        />
-                                    </figure>
-                                </div>
-                                <div class="card-header">
-                                    <div class="card-header-title is-4 is-centered">
-                                        <div class="title is-4">
-                                            {{ products[1].name }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br />
-                        </div>
-                        <div class="column is-one-third">
-                            <div class="card">
-                                <div class="card-image">
-                                    <figure class="image is-4by3">
-                                        <img
-                                            src="https://bulma.io/images/placeholders/480x480.png"
-                                            alt="Placeholder image"
-                                        />
-                                    </figure>
-                                </div>
-                                <div class="card-header">
-                                    <div class="card-header-title is-centered">
-                                        <div class="title is-4">
-                                            {{ products[2].name }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br />
-                        </div>
-                    </div>
-                    <div class="columns is-desktop">
-                        <div class="column is-one-third">
-                            <div class="card">
-                                <div class="card-image">
-                                    <figure class="image is-4by3">
-                                        <img
-                                            src="https://bulma.io/images/placeholders/480x480.png"
-                                            alt="Placeholder image"
-                                        />
-                                    </figure>
-                                </div>
-                                <div class="card-header">
-                                    <div class="card-header-title is-centered">
-                                        <div class="title is-4">
-                                            {{ products[3].name }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br />
-                        </div>
-                        <div class="column is-one-third">
-                            <div class="card">
-                                <div class="card-image">
-                                    <figure class="image is-4by3">
-                                        <img
-                                            src="https://bulma.io/images/placeholders/480x480.png"
-                                            alt="Placeholder image"
-                                        />
-                                    </figure>
-                                </div>
-                                <div class="card-header">
-                                    <div class="card-header-title is-centered">
-                                        <div class="title is-4">
-                                            {{ products[4].name }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br />
-                        </div>
-                        <div class="column is-one-third">
-                            <div class="card">
-                                <div class="card-image">
-                                    <figure class="image is-4by3">
-                                        <img
-                                            src="https://bulma.io/images/placeholders/480x480.png"
-                                            alt="Placeholder image"
-                                        />
-                                    </figure>
-                                </div>
-                                <div class="card-header">
-                                    <div class="card-header-title is-centered">
-                                        <div class="title is-4">
-                                            {{ products[5].name }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br />
-                        </div>
-                    </div>
-                    <div class="columns is-desktop">
-                        <div class="column is-one-third is-offset-one-third">
-                            <div class="card">
-                                <div class="card-image">
-                                    <figure class="image is-4by3">
-                                        <img
-                                            src="https://bulma.io/images/placeholders/480x480.png"
-                                            alt="Placeholder image"
-                                        />
-                                    </figure>
-                                </div>
-                                <div class="card-header">
-                                    <div class="card-header-title is-centered">
-                                        <div class="title is-4">
-                                            {{ products[6].name }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <keep-alive>
+            <component v-bind:is="component" />
+        </keep-alive>
         <br /><br />
     </div>
 </template>
@@ -174,22 +25,20 @@
 <script>
 // @ is an alias to /src
 import Navbar from '@/components/Navbar.vue'
-
+import ProductView from '@/components/ProductView.vue'
+import Products from '@/components/Products.vue'
 // vue-function-api imports
-import { onMounted, value, computed } from 'vue-function-api'
-
-// Import Fertilizer products
-import { fertilizers } from '../../constants/products'
 
 export default {
     name: 'home',
     components: {
         Navbar,
+        ProductView,
+        Products,
     },
-    setup() {
-        const products = fertilizers
+    data() {
         return {
-            products,
+            component: 'Products',
         }
     },
 }
