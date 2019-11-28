@@ -5,7 +5,7 @@
         "products": "Productos y Servicios",
         "dropdown1": "Nutrición Vegetal",
         "dropdown11": "Fertilizantes bioestimulantes",
-        "dropdown12": "Esnmiendas orgánicas",
+        "dropdown12": "Enmiendas orgánicas",
         "dropdown13": "Bioestimulantes de raíces",
         "dropdown2": "Insecticida Coadyuvante",
         "network": "Red de Distribución",
@@ -41,6 +41,45 @@
         "title": "Red de Distribución",
         "option1": "Chile",
         "option2": "Exterior"
+    },
+
+    "Products": {
+        "fertilizers": {
+            "title": "Fertilizantes bioestimulantes"
+        },
+        "amendments": {
+            "title": "Enmiendas orgánicas",
+            "mame": "Bioamino-L",
+            "description1": "Es una enmienda  Organica Liquida pars activar  suelos, con alto contenido de materia organica de origen no húmico, acidos fúlvicos, polipéptidos de muy alta calidad biológica, macronutrientes (Nitrógeno, Fósforo, Potasio, Calcio, Magnesio) y micronuirienies (Zinc, Manganeso, Hierro).",
+            "description2": "Proporciona una mejora sustancial de las propiedades fisico-químicas del suelo.",
+            "description3": "Estimula  la formación do una capa superficial orgánica en el suelo, debido al aporte de materia orgánica activa.",
+            "description4": "Favorece la villa orgánica y los micro organismos del suelo.",
+            "description5": "Aumenta la aireación, la capacidad de intercambio cationico (CIC), y la retención de humedad en los suelos.",
+            "description6": "Mejora el crecimiento del sistema radical de las plantas.",
+            "description7": "Incrementa la tasa de mineralización do nitrógeno del suelo.",
+            "description8": "Reemplaza aplicaciones de güanos compostados o frescos."
+        },
+        "rootBiostimulant": {
+            "title": "Bioestimulantes de raíces",
+            "name": "Aminoroot",
+            "description1": "Bioestimulante de raíces a base de aminoácidos libres, estractos vegetales, ácidos fúlvicos y materia orgánica activa, destinado a promover y fortalecer el crecimiento radical en todo tipo de frutales, hortalizas y cultivos.",
+            "description2": "Estimula el crecimiento de raíces induciendo un sistema radical abundante y vigoroso.",
+            "description3": "Mejora la vitalidad de las plantas provocando una mejor captación y absorción de nutrientes y agua.",
+            "description4": "Induce formaciónn de plantas más sanas, resistentes y vigorosas.",
+            "description5": "Provoca un rápido crecimiento al establecimiento."
+        },
+        "insecticide": {
+            "title": "Insecticida y coadyuvante",
+            "name": "SalmonOil",
+            "description1": "Es un insecticida natural, formado a partir de mezclas de diferentes tipos de aceites de salmón, funciona por contacto. Al ser aplicado sobre las plantas e insectos, genera una película la que tapa las vias respiratorias de las plagas provocando su muerte por asfixia.",
+            "description2": "También puede ser utilizado como adherente o coadyuvante para mejorar la eficiencia de otros productos fitosanitarios como fungicidas, insecticidas y herbicidas."
+        },
+        "buttons": {
+            "label": "Etiqueta",
+            "datasheet": "Ficha técnica",
+            "safetysheet": "Hoja de seguridad",
+            "brochure": "Brochure"
+        }
     },
     "Contact": {
         "title": "Contacto",
