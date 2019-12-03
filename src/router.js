@@ -74,6 +74,16 @@ export default new Router({
                 {
                     path: 'fertilizers',
                     component: Fertilizers,
+                    children: [
+                        {
+                            path: 'ProductsFertilizer',
+                            component: ProductsFertilizer,
+                        },
+                        {
+                            path: 'ProductView',
+                            component: ProductView,
+                        },
+                    ],
                 },
             ],
         },
