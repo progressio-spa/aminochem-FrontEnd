@@ -7,8 +7,9 @@ import DistributionNetwork from './views/DistributionNetwork.vue'
 import Login from './views/Login.vue'
 import Register from './views/Register.vue'
 import Forgot from './views/Forgot.vue'
+import Products from './views/products/Products.vue'
 import Fertilizers from './views/products/Fertilizers.vue'
-import Products from './components/Products.vue'
+import ProductsFertilizer from './components/Products.vue'
 import ProductView from './components/ProductView.vue'
 import Amendments from './views/products/Amendments.vue'
 import Insecticide from './views/products/Insecticide.vue'
@@ -55,15 +56,8 @@ export default new Router({
             component: Forgot,
         },
         {
-            path: '/products/fertilizers',
-            components: {
-                default: Fertilizers,
-                a: Products,
-                b: ProductView.vue,
-            },
-        },
-        {
             path: '/products',
+            component: Products,
             children: [
                 {
                     path: 'amendments',
@@ -76,6 +70,10 @@ export default new Router({
                 {
                     path: 'rootBiostimulant',
                     component: RootBiostimulant,
+                },
+                {
+                    path: 'fertilizers',
+                    component: Fertilizers,
                 },
             ],
         },
