@@ -8,6 +8,8 @@ import Login from './views/Login.vue'
 import Register from './views/Register.vue'
 import Forgot from './views/Forgot.vue'
 import Fertilizers from './views/products/Fertilizers.vue'
+import Products from './components/Products.vue'
+import ProductView from './components/ProductView.vue'
 import Amendments from './views/products/Amendments.vue'
 import Insecticide from './views/products/Insecticide.vue'
 import RootBiostimulant from './views/products/RootBiostimulant.vue'
@@ -54,23 +56,28 @@ export default new Router({
         },
         {
             path: '/products/fertilizers',
-            name: 'fertilizers',
-            component: Fertilizers,
+            components: {
+                default: Fertilizers,
+                a: Products,
+                b: ProductView.vue,
+            },
         },
         {
-            path: '/products/amendments',
-            name: 'amendments',
-            component: Amendments,
-        },
-        {
-            path: '/products/insecticide',
-            name: 'insecticide',
-            component: Insecticide,
-        },
-        {
-            path: '/products/rootBiostimulant',
-            name: 'rootBiostimulant',
-            component: RootBiostimulant,
+            path: '/products',
+            children: [
+                {
+                    path: 'amendments',
+                    component: Amendments,
+                },
+                {
+                    path: 'insecticide',
+                    component: Insecticide,
+                },
+                {
+                    path: 'rootBiostimulant',
+                    component: RootBiostimulant,
+                },
+            ],
         },
         {
             path: '/technicalSection',
