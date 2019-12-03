@@ -15,12 +15,7 @@
                 </div>
             </div>
         </section>
-        <!-- <keep-alive>
-            <component v-bind:is="component" />
-        </keep-alive> -->
-        <router-view class="view one"></router-view>
-        <router-view name="a" />
-        <router-view name="b" />
+        <router-view></router-view>
         <br /><br />
     </div>
 </template>
