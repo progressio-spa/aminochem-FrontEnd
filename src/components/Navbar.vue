@@ -117,24 +117,24 @@
 
 <script>
 export default {
-    data() {
-        return {
-            activeClass: 'active',
-            variablePrueba: 'test',
-            showNavbarMobile: false,
-        }
+  data() {
+    return {
+      activeClass: 'active',
+      variablePrueba: 'test',
+      showNavbarMobile: false,
+    };
+  },
+  computed: {
+    currentPage() {
+      return this.$route.path;
     },
-    computed: {
-        currentPage() {
-            return this.$route.path
-        },
+  },
+  methods: {
+    showNavbarBurger() {
+      this.showNavbarMobile = !this.showNavbarMobile;
     },
-    methods: {
-        showNavbarBurger() {
-            this.showNavbarMobile = !this.showNavbarMobile
-        },
-    },
-}
+  },
+};
 </script>
 
 <style scoped>

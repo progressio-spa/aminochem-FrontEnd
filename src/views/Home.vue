@@ -120,26 +120,26 @@
 
 <script>
 // @ is an alias to /src
-import Navbar from '@/components/Navbar.vue'
-import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min.js'
+import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min.js';
+import Navbar from '@/components/Navbar.vue';
 
 export default {
-    name: 'home',
-    components: {
-        Navbar,
-        bulmaCarousel,
-    },
-    mounted() {
-        bulmaCarousel.attach('#carousel-demo', {
-            slidesToScroll: 1,
-            slidesToShow: 1,
-            infinite: true,
-            autoplay: true,
-            autoplaySpeed: 10000,
-            pagination: false,
-        })
-    },
-}
+  name: 'home',
+  components: {
+    Navbar,
+    bulmaCarousel,
+  },
+  mounted() {
+    bulmaCarousel.attach('#carousel-demo', {
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 10000,
+      pagination: false,
+    });
+  },
+};
 </script>
 
 <style scoped>

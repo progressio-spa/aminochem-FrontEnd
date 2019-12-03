@@ -109,26 +109,26 @@
 
 <script>
 // @ is an alias to /src
-import Navbar from '@/components/Navbar.vue'
+import { onMounted, value, computed } from 'vue-function-api';
+import Navbar from '@/components/Navbar.vue';
 
 // vue-function-api imports
-import { onMounted, value, computed } from 'vue-function-api'
 
 // Import Fertilizer products
-import { amendments } from '../../constants/products'
+import { amendments } from '../../constants/products';
 
 export default {
-    name: 'home',
-    components: {
-        Navbar,
-    },
-    setup() {
-        const products = amendments
-        return {
-            products,
-        }
-    },
-}
+  name: 'home',
+  components: {
+    Navbar,
+  },
+  setup() {
+    const products = amendments;
+    return {
+      products,
+    };
+  },
+};
 </script>
 
 <style scoped>

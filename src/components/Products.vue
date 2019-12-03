@@ -162,8 +162,8 @@
 // vue-function-api imports
 
 // Import Fertilizer products
-import { fertilizers } from '@/constants/products'
 import { mapState, mapMutations } from 'vuex'
+import { fertilizers } from '@/constants/products'
 
 export default {
     name: 'home',

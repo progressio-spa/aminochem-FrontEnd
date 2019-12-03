@@ -11,8 +11,6 @@
                 <div class="container">
                     <h1 class="title" id="main-title">
                         {{ $t('Products.fertilizers.title') }}
-                        {{ componentView }}
-                        {{ component }}
                     </h1>
                 </div>
             </div>
@@ -29,12 +27,12 @@
 
 <script>
 // @ is an alias to /src
+import { mapState, mapMutations } from 'vuex'
 import Navbar from '@/components/Navbar.vue'
 import ProductView from '@/components/ProductView.vue'
 import Products from '@/components/Products.vue'
 
 // in full builds helpers are exposed as Vuex.mapState
-import { mapState, mapMutations } from 'vuex'
 
 export default {
     name: 'home',
