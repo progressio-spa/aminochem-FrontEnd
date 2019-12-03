@@ -71,7 +71,7 @@
         "insecticide": {
             "title": "Insecticida y coadyuvante",
             "name": "SalmonOil",
-            "description1": "Es un insecticida natural, formado a partir de mezclas de diferentes tipos de aceites de salmón, funciona por contacto. Al ser aplicado sobre las plantas e insectos, genera una película la que tapa las vias respiratorias de las plagas provocando su muerte por asfixia.",
+            "description": "Es un insecticida natural, formado a partir de mezclas de diferentes tipos de aceites de salmón, funciona por contacto. Al ser aplicado sobre las plantas e insectos, genera una película la que tapa las vias respiratorias de las plagas provocando su muerte por asfixia.",
             "description2": "También puede ser utilizado como adherente o coadyuvante para mejorar la eficiencia de otros productos fitosanitarios como fungicidas, insecticidas y herbicidas."
         },
         "buttons": {
