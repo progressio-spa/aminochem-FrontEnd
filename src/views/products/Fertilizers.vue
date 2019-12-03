@@ -11,13 +11,18 @@
                 <div class="container">
                     <h1 class="title" id="main-title">
                         {{ $t('Products.fertilizers.title') }}
+                        {{ componentView }}
+                        {{ component }}
                     </h1>
                 </div>
             </div>
         </section>
-        <keep-alive>
+        <!-- <keep-alive>
             <component v-bind:is="component" />
-        </keep-alive>
+        </keep-alive> -->
+        <router-view class="view one"></router-view>
+        <router-view name="a" />
+        <router-view name="b" />
         <br /><br />
     </div>
 </template>
@@ -27,7 +32,9 @@
 import Navbar from '@/components/Navbar.vue'
 import ProductView from '@/components/ProductView.vue'
 import Products from '@/components/Products.vue'
-// vue-function-api imports
+
+// in full builds helpers are exposed as Vuex.mapState
+import { mapState, mapMutations } from 'vuex'
 
 export default {
     name: 'home',
@@ -40,6 +47,12 @@ export default {
         return {
             component: 'Products',
         }
+    },
+    computed: {
+        ...mapState(['componentView']),
+    },
+    methods: {
+        ...mapMutations(['toggle']),
     },
 }
 </script>
