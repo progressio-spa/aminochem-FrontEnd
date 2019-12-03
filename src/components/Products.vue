@@ -17,7 +17,7 @@
                                 <div class="card-header">
                                     <div class="card-header-title is-centered">
                                         <div class="title is-4">
-                                            <button @click="$store.commit('toggle')">
+                                            <button>
                                                 {{ products[0].name }}
                                             </button>
                                         </div>
@@ -163,6 +163,7 @@
 
 // Import Fertilizer products
 import { fertilizers } from '@/constants/products'
+import { mapState, mapMutations } from 'vuex'
 
 export default {
     name: 'home',
@@ -172,6 +173,12 @@ export default {
         return {
             products,
         }
+    },
+    computed: {
+        ...mapState(['componentView']),
+    },
+    methods: {
+        ...mapMutations(['toggle']),
     },
 }
 </script>
