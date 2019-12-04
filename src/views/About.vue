@@ -44,9 +44,7 @@
                 <br />
                 <div class="columns map-container">
                     <div class="is-6 agents-list">
-                        <div
-                          v-for="agent in countriesToShow"
-                          :key="agent.phone">
+                        <div v-for="agent in countriesToShow" :key="agent.phone">
                             <h1>{{ agent.name }}</h1>
                             <h1>{{ agent.position }}</h1>
                             <h1>{{ agent.email }}</h1>
@@ -62,7 +60,7 @@
             </div>
         </section>
         <br /><br />
-        <section class="hero is-info is-large has-background">
+        <section class="hero is-light is-large has-background">
             <img
                 alt="Grass"
                 class="hero-background is-transparent"
@@ -76,62 +74,109 @@
                 </div>
             </div>
             <div class="hero-body">
-                <div class="scrolling-wrapper">
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image is-4by3">
-                                <img
-                                    src="https://bulma.io/images/placeholders/1280x960.png"
-                                    alt="Placeholder image"
-                                />
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <div class="subtitle is-4">
-                                {{ $t('AboutUs.card1-title') }}
+                <div id="carousel-demo" class="carousel">
+                    <div class="item-1">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img
+                                        src="https://bulma.io/images/placeholders/1280x960.png"
+                                        alt="Placeholder image"
+                                    />
+                                </figure>
                             </div>
-                            <div class="content">
-                                {{ $t('AboutUs.card2-content') }}
-                                <br />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image is-4by3">
-                                <img
-                                    src="https://bulma.io/images/placeholders/1280x960.png"
-                                    alt="Placeholder image"
-                                />
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <div class="subtitle is-4">
-                                {{ $t('AboutUs.card2-title') }}
-                            </div>
-                            <div class="content">
-                                {{ $t('AboutUs.card2-content') }}
-                                <br />
+                            <div class="card-content">
+                                <div class="subtitle is-4">
+                                    {{ $t('AboutUs.card1-title') }}
+                                </div>
+                                <div class="content">
+                                    {{ $t('AboutUs.card2-content') }}
+                                    <br />
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image is-4by3">
-                                <img
-                                    src="https://bulma.io/images/placeholders/1280x960.png"
-                                    alt="Placeholder image"
-                                />
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <div class="subtitle is-4">
-                                {{ $t('AboutUs.card3-title') }}
+                    <div class="item-2">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img
+                                        src="https://bulma.io/images/placeholders/1280x960.png"
+                                        alt="Placeholder image"
+                                    />
+                                </figure>
                             </div>
-                            <div class="content">
-                                {{ $t('AboutUs.card3-content') }}
-                                <br />
+                            <div class="card-content">
+                                <div class="subtitle is-4">
+                                    {{ $t('AboutUs.card2-title') }}
+                                </div>
+                                <div class="content">
+                                    {{ $t('AboutUs.card2-content') }}
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-3">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img
+                                        src="https://bulma.io/images/placeholders/1280x960.png"
+                                        alt="Placeholder image"
+                                    />
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="subtitle is-4">
+                                    {{ $t('AboutUs.card3-title') }}
+                                </div>
+                                <div class="content">
+                                    {{ $t('AboutUs.card3-content') }}
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-4">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img
+                                        src="https://bulma.io/images/placeholders/1280x960.png"
+                                        alt="Placeholder image"
+                                    />
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="subtitle is-4">
+                                    {{ $t('AboutUs.card3-title') }}
+                                </div>
+                                <div class="content">
+                                    {{ $t('AboutUs.card3-content') }}
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-5">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img
+                                        src="https://bulma.io/images/placeholders/1280x960.png"
+                                        alt="Placeholder image"
+                                    />
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="subtitle is-4">
+                                    {{ $t('AboutUs.card3-title') }}
+                                </div>
+                                <div class="content">
+                                    {{ $t('AboutUs.card3-content') }}
+                                    <br />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -144,72 +189,90 @@
 
 <script>
 // Amcharts imports
-import * as am4core from '@amcharts/amcharts4/core';
-import * as am4maps from '@amcharts/amcharts4/maps';
-import am4geodata_worldHigh from '@amcharts/amcharts4-geodata/worldHigh';
+import * as am4core from '@amcharts/amcharts4/core'
+import * as am4maps from '@amcharts/amcharts4/maps'
+import am4geodata_worldHigh from '@amcharts/amcharts4-geodata/worldHigh'
 
 // vue-function-api
-import { onMounted, value, computed } from 'vue-function-api';
+import { onMounted, value, computed } from 'vue-function-api'
 
 // Agents import
-import { agentsList } from '../constants/agents';
+import { agentsList } from '../constants/agents'
 
 // @ is an alias to /src
-import Navbar from '@/components/Navbar.vue';
+import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min.js'
+import Navbar from '@/components/Navbar.vue'
 
 export default {
-  name: 'home',
-  components: {
-    Navbar,
-  },
-  setup() {
-    const countryManagers = agentsList;
-    const hoveredCountry = value('');
-    const createSouthAmericanMap = () => {
-      // Create Instance
-      const southAmericanMap = am4core.create('teamSouthAmericanMap', am4maps.MapChart);
-      // Charge World Map
-      southAmericanMap.geodata = am4geodata_worldHigh;
-      // Set Projection
-      southAmericanMap.projection = new am4maps.projections.Miller();
-      // Create Serie
-      const worldSeries = southAmericanMap.series.push(new am4maps.MapPolygonSeries());
-      // Add South American Countries to Map, excluding anyone else
-      worldSeries.include = ['AR', 'BO', 'BR', 'CL', 'CO', 'EC', 'PY', 'PE', 'UY', 'VE'];
-      // Disabling Zoom
-      southAmericanMap.chartContainer.wheelable = false;
-      worldSeries.useGeodata = true;
-      // Configure series
-      const polygonTemplate = worldSeries.mapPolygons.template;
-      polygonTemplate.tooltipText = '{name}';
-      // Create hover state and set orange fill color
-      const hover = polygonTemplate.states.create('hover');
-      hover.properties.fill = am4core.color('#E7763D');
-      // Creating Event Listener for hover action in map
-      worldSeries.mapPolygons.template.events.on(
-        'over',
-        (ev) => {
-          hoveredCountry.value = ev.target.dataItem.dataContext.id;
-        }, this,
-      );
-      worldSeries.mapPolygons.template.events.on(
-        'out',
-        () => {
-          hoveredCountry.value = '';
-        }, this,
-      );
-    };
-    onMounted(() => {
-      createSouthAmericanMap();
-    });
-    const countriesToShow = computed(() => countryManagers.filter(
-      countryManager => countryManager.country === hoveredCountry.value,
-    ));
-    return {
-      countriesToShow,
-    };
-  },
-};
+    name: 'home',
+    components: {
+        Navbar,
+        bulmaCarousel,
+    },
+    mounted() {
+        bulmaCarousel.attach('#carousel-demo', {
+            slidesToScroll: 1,
+            slidesToShow: 3,
+            infinite: true,
+            pagination: false,
+            breakpoints: [
+                { changePoint: 768, slidesToShow: 1, slidesToScroll: 1 },
+                { changePoint: 1025, slidesToShow: 1, slidesToScroll: 1 },
+            ],
+        })
+    },
+    setup() {
+        const countryManagers = agentsList
+        const hoveredCountry = value('')
+        const createSouthAmericanMap = () => {
+            // Create Instance
+            const southAmericanMap = am4core.create('teamSouthAmericanMap', am4maps.MapChart)
+            // Charge World Map
+            southAmericanMap.geodata = am4geodata_worldHigh
+            // Set Projection
+            southAmericanMap.projection = new am4maps.projections.Miller()
+            // Create Serie
+            const worldSeries = southAmericanMap.series.push(new am4maps.MapPolygonSeries())
+            // Add South American Countries to Map, excluding anyone else
+            worldSeries.include = ['AR', 'BO', 'BR', 'CL', 'CO', 'EC', 'PY', 'PE', 'UY', 'VE']
+            // Disabling Zoom
+            southAmericanMap.chartContainer.wheelable = false
+            worldSeries.useGeodata = true
+            // Configure series
+            const polygonTemplate = worldSeries.mapPolygons.template
+            polygonTemplate.tooltipText = '{name}'
+            // Create hover state and set orange fill color
+            const hover = polygonTemplate.states.create('hover')
+            hover.properties.fill = am4core.color('#E7763D')
+            // Creating Event Listener for hover action in map
+            worldSeries.mapPolygons.template.events.on(
+                'over',
+                ev => {
+                    hoveredCountry.value = ev.target.dataItem.dataContext.id
+                },
+                this
+            )
+            worldSeries.mapPolygons.template.events.on(
+                'out',
+                () => {
+                    hoveredCountry.value = ''
+                },
+                this
+            )
+        }
+        onMounted(() => {
+            createSouthAmericanMap()
+        })
+        const countriesToShow = computed(() =>
+            countryManagers.filter(
+                countryManager => countryManager.country === hoveredCountry.value
+            )
+        )
+        return {
+            countriesToShow,
+        }
+    },
+}
 </script>
 
 <style scoped>
@@ -233,19 +296,8 @@ export default {
     display: flex;
 }
 
-.scrolling-wrapper {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-}
-.scrolling-wrapper::-webkit-scrollbar {
-    display: none;
-}
-
-.scrolling-wrapper > .card {
-    display: inline-block;
-    margin: 0px 2%;
+.hero.is-light .title {
+    color: white;
 }
 
 .card > .card-content > .media > .media-content > .subtitle {
@@ -267,8 +319,9 @@ export default {
 }
 
 .card {
-    width: 40%;
+    width: 90%;
     height: auto;
+    display: inline-block;
 }
 
 .map-container {
@@ -279,15 +332,18 @@ export default {
 }
 
 .agents-list {
-  width: 30vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    width: 30vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .teamSouthAmericanMap {
     width: 60vw;
     height: 100vh;
+}
+.slick-slide:focus {
+    outline: none;
 }
 </style>
