@@ -1,12 +1,29 @@
 <template>
     <div class="productView">
+        <Navbar></Navbar>
+        <section class="hero is-primary is-medium has-background">
+            <img
+                alt="Grass"
+                class="hero-background is-transparent"
+                src="@/assets/Products/hoja.jpg"
+            />
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title" id="main-title">
+                        {{ $t('Products.fertilizers.title') }}
+                    </h1>
+                </div>
+            </div>
+        </section>
         <section class="hero is-white is-fullheight">
             <div class="hero-body">
                 <div class="container">
                     <div class="columns">
                         <div class="column is-half">
                             <div class="content">
-                                <div class="title"></div>
+                                <div class="title">
+                                    {{ product.name }}
+                                </div>
                                 <p align="left">
                                     {{ $t('Products.amendments.description1') }}
                                 </p>
@@ -91,10 +108,38 @@
 </template>
 
 <script>
+// Import Fertilizer products
+import { mapState, mapMutations } from 'vuex'
+import { fertilizers } from '@/constants/products'
+import Navbar from '@/components/Navbar.vue'
+
 export default {
-  name: 'home',
-  components: {},
-};
+    name: 'home',
+    components: {
+        Navbar,
+    },
+    setup() {
+        const products = fertilizers
+        return {
+            products,
+        }
+    },
+    data() {
+        return {
+            product: {},
+        }
+    },
+    beforeMount() {
+        this.getProduct()
+    },
+    methods: {
+        getProduct() {
+            let code = this.$route.params.code
+            this.product = fertilizers[code]
+            console.log(this.product)
+        },
+    },
+}
 </script>
 
 <style scoped>

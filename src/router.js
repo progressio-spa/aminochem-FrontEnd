@@ -72,18 +72,13 @@ export default new Router({
                     component: RootBiostimulant,
                 },
                 {
-                    path: 'fertilizers',
+                    path: 'fertilizers/',
                     component: Fertilizers,
-                    children: [
-                        {
-                            path: 'ProductsFertilizer',
-                            component: ProductsFertilizer,
-                        },
-                        {
-                            path: 'ProductView',
-                            component: ProductView,
-                        },
-                    ],
+                },
+                {
+                    path: 'fertilizers/:name',
+                    name: 'fertilizers-show',
+                    component: ProductView,
                 },
             ],
         },
