@@ -25,7 +25,7 @@
                                     {{ product.name }}
                                 </div>
                                 <p align="left">
-                                    {{ $t('Products.amendments.description1') }}
+                                    {{ product.description }}
                                 </p>
                                 <p align="left">
                                     {{ $t('Products.amendments.description2') }}
@@ -38,15 +38,6 @@
                                 </p>
                                 <p align="left">
                                     {{ $t('Products.amendments.description5') }}
-                                </p>
-                                <p align="left">
-                                    {{ $t('Products.amendments.description6') }}
-                                </p>
-                                <p align="left">
-                                    {{ $t('Products.amendments.description7') }}
-                                </p>
-                                <p align="left">
-                                    {{ $t('Products.amendments.description8') }}
                                 </p>
                             </div>
                         </div>
@@ -134,8 +125,8 @@ export default {
     },
     methods: {
         getProduct() {
-            let code = this.$route.params.code
-            this.product = fertilizers[code]
+            let name = this.$route.params.name
+            this.product = fertilizers[name]
             console.log(this.product)
         },
     },
