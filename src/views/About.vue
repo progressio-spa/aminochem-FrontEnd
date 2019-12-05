@@ -86,11 +86,8 @@
                                 </figure>
                             </div>
                             <div class="card-content">
-                                <div class="subtitle is-4">
-                                    {{ $t('AboutUs.card1-title') }}
-                                </div>
                                 <div class="content">
-                                    {{ $t('AboutUs.card2-content') }}
+                                    {{ $t('AboutUs.card1-content') }}
                                     <br />
                                 </div>
                             </div>
@@ -107,9 +104,6 @@
                                 </figure>
                             </div>
                             <div class="card-content">
-                                <div class="subtitle is-4">
-                                    {{ $t('AboutUs.card2-title') }}
-                                </div>
                                 <div class="content">
                                     {{ $t('AboutUs.card2-content') }}
                                     <br />
@@ -128,9 +122,6 @@
                                 </figure>
                             </div>
                             <div class="card-content">
-                                <div class="subtitle is-4">
-                                    {{ $t('AboutUs.card3-title') }}
-                                </div>
                                 <div class="content">
                                     {{ $t('AboutUs.card3-content') }}
                                     <br />
@@ -149,32 +140,8 @@
                                 </figure>
                             </div>
                             <div class="card-content">
-                                <div class="subtitle is-4">
-                                    {{ $t('AboutUs.card3-title') }}
-                                </div>
                                 <div class="content">
-                                    {{ $t('AboutUs.card3-content') }}
-                                    <br />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-5">
-                        <div class="card">
-                            <div class="card-image">
-                                <figure class="image is-4by3">
-                                    <img
-                                        src="https://bulma.io/images/placeholders/1280x960.png"
-                                        alt="Placeholder image"
-                                    />
-                                </figure>
-                            </div>
-                            <div class="card-content">
-                                <div class="subtitle is-4">
-                                    {{ $t('AboutUs.card3-title') }}
-                                </div>
-                                <div class="content">
-                                    {{ $t('AboutUs.card3-content') }}
+                                    {{ $t('AboutUs.card4-content') }}
                                     <br />
                                 </div>
                             </div>
@@ -215,9 +182,10 @@ export default {
             slidesToShow: 3,
             infinite: true,
             pagination: false,
+            initialSlide: 3,
             breakpoints: [
-                { changePoint: 768, slidesToShow: 1, slidesToScroll: 1 },
-                { changePoint: 1025, slidesToShow: 1, slidesToScroll: 1 },
+                { changePoint: 768, slidesToShow: 1, slidesToScroll: 1, initialSlide: 0 },
+                { changePoint: 1025, slidesToShow: 1, slidesToScroll: 1, initialSlide: 0 },
             ],
         })
     },
