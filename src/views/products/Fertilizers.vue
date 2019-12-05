@@ -18,8 +18,12 @@
         <section class="hero is-white is-fullheight">
             <div class="hero-body">
                 <div class="container">
-                    <div class="columns is-desktop">
-                        <div class="column is-one-third">
+                    <div class="columns is-multiline is-desktop">
+                        <div
+                            class="column is-one-third"
+                            v-for="(product, index) in products"
+                            :key="index"
+                        >
                             <div class="card">
                                 <div class="card-image">
                                     <figure class="image is-4by3">
@@ -35,140 +39,15 @@
                                             <router-link
                                                 :to="{
                                                     name: 'fertilizers-show',
-                                                    params: { name: 'aminoterra' },
+                                                    params: { name: index },
                                                 }"
                                             >
-                                                {{ products[0].name }}
+                                                {{ product.name }}
                                             </router-link>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <br />
-                        </div>
-                        <div class="column is-one-third">
-                            <div class="card">
-                                <div class="card-image">
-                                    <figure class="image is-4by3">
-                                        <img
-                                            src="https://bulma.io/images/placeholders/480x480.png"
-                                            alt="Placeholder image"
-                                        />
-                                    </figure>
-                                </div>
-                                <div class="card-header">
-                                    <div class="card-header-title is-4 is-centered">
-                                        <div class="title is-4">
-                                            {{ products[1].name }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br />
-                        </div>
-                        <div class="column is-one-third">
-                            <div class="card">
-                                <div class="card-image">
-                                    <figure class="image is-4by3">
-                                        <img
-                                            src="https://bulma.io/images/placeholders/480x480.png"
-                                            alt="Placeholder image"
-                                        />
-                                    </figure>
-                                </div>
-                                <div class="card-header">
-                                    <div class="card-header-title is-centered">
-                                        <div class="title is-4">
-                                            {{ products[2].name }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br />
-                        </div>
-                    </div>
-                    <div class="columns is-desktop">
-                        <div class="column is-one-third">
-                            <div class="card">
-                                <div class="card-image">
-                                    <figure class="image is-4by3">
-                                        <img
-                                            src="https://bulma.io/images/placeholders/480x480.png"
-                                            alt="Placeholder image"
-                                        />
-                                    </figure>
-                                </div>
-                                <div class="card-header">
-                                    <div class="card-header-title is-centered">
-                                        <div class="title is-4">
-                                            {{ products[3].name }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br />
-                        </div>
-                        <div class="column is-one-third">
-                            <div class="card">
-                                <div class="card-image">
-                                    <figure class="image is-4by3">
-                                        <img
-                                            src="https://bulma.io/images/placeholders/480x480.png"
-                                            alt="Placeholder image"
-                                        />
-                                    </figure>
-                                </div>
-                                <div class="card-header">
-                                    <div class="card-header-title is-centered">
-                                        <div class="title is-4">
-                                            {{ products[4].name }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br />
-                        </div>
-                        <div class="column is-one-third">
-                            <div class="card">
-                                <div class="card-image">
-                                    <figure class="image is-4by3">
-                                        <img
-                                            src="https://bulma.io/images/placeholders/480x480.png"
-                                            alt="Placeholder image"
-                                        />
-                                    </figure>
-                                </div>
-                                <div class="card-header">
-                                    <div class="card-header-title is-centered">
-                                        <div class="title is-4">
-                                            {{ products[5].name }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br />
-                        </div>
-                    </div>
-                    <div class="columns is-desktop">
-                        <div class="column is-one-third is-offset-one-third">
-                            <div class="card">
-                                <div class="card-image">
-                                    <figure class="image is-4by3">
-                                        <img
-                                            src="https://bulma.io/images/placeholders/480x480.png"
-                                            alt="Placeholder image"
-                                        />
-                                    </figure>
-                                </div>
-                                <div class="card-header">
-                                    <div class="card-header-title is-centered">
-                                        <div class="title is-4">
-                                            {{ products[6].name }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br />
                         </div>
                     </div>
                 </div>
@@ -201,7 +80,12 @@ export default {
         }
     },
     data() {
-        return {}
+        return {
+            products: fertilizers,
+        }
+    },
+    mounted() {
+        console.log(this.products)
     },
 }
 </script>
@@ -229,6 +113,10 @@ export default {
 }
 
 .hero.is-white .title {
+    color: white;
+}
+
+a {
     color: white;
 }
 
