@@ -122,7 +122,6 @@
 // @ is an alias to /src
 import Navbar from '@/components/Navbar.vue';
 import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min';
-import getAccessToken from '@/api/requests/authorization';
 
 export default {
   name: 'home',
@@ -130,7 +129,6 @@ export default {
     Navbar,
   },
   mounted() {
-    getAccessToken();
     bulmaCarousel.attach('#carousel-demo', {
       slidesToScroll: 1,
       slidesToShow: 1,
