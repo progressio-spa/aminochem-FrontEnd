@@ -6,6 +6,7 @@ export const fertilizers = {
     },
     'aminoterra-green': {
         name: 'Aminoterra Green',
+        description: '',
     },
     'aminoterra-plus': {
         name: 'Aminoterra Pus Zinc',
