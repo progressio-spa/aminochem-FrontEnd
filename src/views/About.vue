@@ -2,7 +2,11 @@
     <div class="about">
         <Navbar></Navbar>
         <section class="hero is-primary is-medium has-background">
-            <img alt="Grass" class="hero-background is-transparent" src="@/assets/Home/Home.png" />
+            <img
+                alt="Grass"
+                class="hero-background is-transparent"
+                src="@/assets/Home/cherry3.png"
+            />
             <div class="hero-body">
                 <div class="container">
                     <h1 class="title is-1" id="main-title">
