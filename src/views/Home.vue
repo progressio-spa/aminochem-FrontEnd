@@ -6,27 +6,27 @@
                     <img
                         alt="Grass"
                         class="hero-background-home is-transparent"
-                        src="@/assets/Home/Home.png"
+                        src="@/assets/Home/cherry3.png"
                     />
                 </div>
                 <div class="item-2">
                     <img
                         alt="Grass"
                         class="hero-background-home is-transparent"
-                        src="@/assets/Home/berries.jpg"
+                        src="@/assets/Home/berries2.png"
                     />
                 </div>
                 <div class="item-3">
                     <img
                         alt="Grass"
                         class="hero-background-home is-transparent"
-                        src="@/assets/Home/cherry.jpg"
+                        src="@/assets/Home/Home.png"
                     />
                 </div>
             </div>
             <Navbar></Navbar>
             <div class="hero-body">
-                <div class="container has-text-left">
+                <div class="container has-text-left" id="mainText">
                     <h1 class="title">
                         {{ $t('Home.MainText') }}
                     </h1>
@@ -112,7 +112,7 @@
         </section>
 
         <section class="hero is-large has-background">
-            <img alt="Bee" class="hero-background is-transparent" src="@/assets/Home/Footer.jpg" />
+            <img alt="Bee" class="hero-background is-transparent" src="@/assets/Home/Footer.png" />
             <div class="hero-body"></div>
         </section>
     </div>
@@ -120,27 +120,27 @@
 
 <script>
 // @ is an alias to /src
-import Navbar from '@/components/Navbar.vue';
-import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min';
-import getAccessToken from '@/api/requests/authorization';
+import Navbar from '@/components/Navbar.vue'
+import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min'
+import getAccessToken from '@/api/requests/authorization'
 
 export default {
-  name: 'home',
-  components: {
-    Navbar,
-  },
-  mounted() {
-    getAccessToken();
-    bulmaCarousel.attach('#carousel-demo', {
-      slidesToScroll: 1,
-      slidesToShow: 1,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 10000,
-      pagination: false,
-    });
-  },
-};
+    name: 'home',
+    components: {
+        Navbar,
+    },
+    mounted() {
+        getAccessToken()
+        bulmaCarousel.attach('#carousel-demo', {
+            slidesToScroll: 1,
+            slidesToShow: 1,
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 10000,
+            pagination: false,
+        })
+    },
+}
 </script>
 
 <style scoped>
@@ -182,5 +182,26 @@ export default {
 }
 .title {
     color: #585858;
+}
+
+#mainText {
+    position: absolute;
+    left: 10%;
+    max-width: 49%;
+}
+@media (max-width: 767px) {
+    #mainText {
+        left: 10%;
+        max-width: 80%;
+    }
+    .hero-body > .container > .title {
+        font-size: 3.5rem;
+    }
+}
+@media (max-width: 1020px) {
+    #mainText {
+        left: 10%;
+        max-width: 80%;
+    }
 }
 </style>
