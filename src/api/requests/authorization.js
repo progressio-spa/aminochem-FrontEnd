@@ -1,21 +1,13 @@
 import request from '../index';
 
-function getAccessToken() {
+function getAccessToken(data) {
   return request({
-    url: 'http://localhost:8080/oauth/token',
+    url: 'http://157.245.134.21:8081/login',
     method: 'post',
-    params: {
-      grant_type: 'password',
-      username: 'admin@correo.com',
-      password: 'admin_password',
-    },
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
+      'Content-Type': 'application/json; charset=UTF-8',
     },
-    auth: {
-      username: 'my-trusted-client',
-      password: 'secret',
-    },
+    data,
   });
 }
 

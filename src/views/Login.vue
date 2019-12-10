@@ -18,6 +18,7 @@
                                 <div class="field">
                                     <div class="control">
                                         <input
+                                            v-model="email"
                                             class="input"
                                             type="text"
                                             placeholder="Correo Electronico"
@@ -28,8 +29,9 @@
                                 <div class="field">
                                     <div class="control">
                                         <input
+                                            v-model="pass"
                                             class="input"
-                                            type="email"
+                                            type="password"
                                             placeholder="Contraseña"
                                         />
                                     </div>
@@ -37,7 +39,7 @@
                                 <br />
                                 <div class="field">
                                     <p class="control">
-                                        <a class="button is-primary is-fullwidth">
+                                        <a class="button is-primary is-fullwidth" @click="doLogin">
                                             {{ $t('Login.button') }}
                                         </a>
                                     </p>
@@ -70,6 +72,38 @@
         </div>
     </section>
 </template>
+
+<script>
+
+import { value } from 'vue-function-api';
+import getAccessToken from '@/api/requests/authorization';
+
+export default {
+  setup() {
+    const email = value('');
+    const pass = value('');
+    const doLogin = () => {
+      const data = {
+        email: email.value,
+        password: pass.value,
+      };
+      Promise.resolve(getAccessToken(data))
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    };
+    return {
+      email,
+      pass,
+      doLogin,
+    };
+  },
+};
+
+</script>
 
 <style scoped>
 .hero {
