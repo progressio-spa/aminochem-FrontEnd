@@ -28,16 +28,13 @@
                                     {{ product.description }}
                                 </p>
                                 <p align="left">
-                                    {{ $t('Products.amendments.description2') }}
+                                    {{ product.subdescription1 }}
                                 </p>
                                 <p align="left">
-                                    {{ $t('Products.amendments.description3') }}
+                                    {{ product.subdescription2 }}
                                 </p>
                                 <p align="left">
-                                    {{ $t('Products.amendments.description4') }}
-                                </p>
-                                <p align="left">
-                                    {{ $t('Products.amendments.description5') }}
+                                    {{ product.subdescription3 }}
                                 </p>
                             </div>
                         </div>
