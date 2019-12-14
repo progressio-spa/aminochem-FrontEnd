@@ -4,7 +4,7 @@
         "aboutUs": "Quiénes somos",
         "products": "Productos",
         "dropdown1": "Nutrición Vegetal",
-        "dropdown11": "Fertilizantes bioestimulantes",
+        "dropdown11": "Fertilizantes foliares",
         "dropdown12": "Enmiendas orgánicas",
         "dropdown13": "Bioestimulantes de raíces",
         "dropdown2": "Insecticida Coadyuvante",
@@ -47,7 +47,7 @@
 
     "Products": {
         "fertilizers": {
-            "title": "Fertilizantes bioestimulantes"
+            "title": "Fertilizantes foliares"
         },
         "amendments": {
             "title": "Enmiendas orgánicas",
