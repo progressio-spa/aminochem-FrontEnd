@@ -20,27 +20,40 @@
                                 <br />
                                 <div class="field">
                                     <div class="control">
-                                        <input class="input" type="text" placeholder="Nombre" />
-                                    </div>
-                                </div>
-                                <br />
-                                <div class="field">
-                                    <div class="control">
-                                        <input class="input" type="text" placeholder="Apellido" />
-                                    </div>
-                                </div>
-                                <br />
-                                <div class="field">
-                                    <div class="control">
-                                        <input class="input" type="text" placeholder="Email" />
+                                        <input
+                                          v-model="firstName"
+                                          class="input"
+                                          type="text"
+                                          placeholder="Nombre"/>
                                     </div>
                                 </div>
                                 <br />
                                 <div class="field">
                                     <div class="control">
                                         <input
+                                        v-model="lastName"
+                                        class="input"
+                                        type="text"
+                                        placeholder="Apellido" />
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="field">
+                                    <div class="control">
+                                        <input
+                                          v-model="email"
+                                          class="input"
+                                          type="text"
+                                          placeholder="Email" />
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="field">
+                                    <div class="control">
+                                        <input
+                                            v-model="password"
                                             class="input"
-                                            type="email"
+                                            type="password"
                                             placeholder="Contraseña"
                                         />
                                     </div>
@@ -49,8 +62,9 @@
                                 <div class="field">
                                     <div class="control">
                                         <input
+                                            v-model="passwordRepetead"
                                             class="input"
-                                            type="email"
+                                            type="password"
                                             placeholder="Confirmar contraseña"
                                         />
                                     </div>
@@ -59,7 +73,7 @@
                                 <div class="field">
                                     <div class="control">
                                         <label class="checkbox">
-                                            <input type="checkbox" />
+                                            <input v-model="termsAcceptance" type="checkbox" />
                                             {{ $t('Register.terms') }}
                                         </label>
                                     </div>
@@ -67,7 +81,7 @@
                                 <br />
                                 <div class="field">
                                     <p class="control">
-                                        <a class="button is-primary is-fullwidth">
+                                        <a class="button is-primary is-fullwidth" @click="doRegister">
                                             {{ $t('Register.button') }}
                                         </a>
                                     </p>
@@ -91,6 +105,60 @@
         </div>
     </section>
 </template>
+
+<script>
+
+import { value, computed } from 'vue-function-api';
+
+export default {
+  setup(props, { root }) {
+    const firstName = value('');
+    const lastName = value('');
+    const email = value('');
+    const password = value('');
+    const passwordRepetead = value('');
+    const termsAcceptance = value(false);
+    const computeds = {
+      firstNameOk: computed(() => firstName.value.length > 0),
+      lastNameOk: computed(() => lastName.value.length > 0),
+      emailOk: computed(() => {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email.value).toLowerCase()) && email.value !== '';
+      }),
+      passwordOk: computed(() => password.value.length >= 6),
+      passwordRepeteadOk: computed(() => passwordRepetead.value === password.value),
+      allIsOk: computed(() => computeds.firstNameOk.value && computeds.lastNameOk.value
+        && computeds.emailOk.value && computeds.passwordOk.value
+        && computeds.passwordRepeteadOk.value && termsAcceptance.value),
+    };
+    const doRegister = () => {
+      if (computeds.allIsOk.value) {
+        const token = root.$store.getters.getAccessToken;
+        const data = {
+          name: firstName.value,
+          lastname: lastName.value,
+          token,
+          username: email.value,
+          usernameConfirmation: email.value,
+          password: password.value,
+          passwordConfirmation: passwordRepetead.value,
+        };
+        root.$store.dispatch('createUser', data);
+      }
+    };
+    return {
+      firstName,
+      lastName,
+      email,
+      password,
+      passwordRepetead,
+      termsAcceptance,
+      doRegister,
+    };
+  },
+};
+
+</script>
 
 <style scoped>
 .hero {

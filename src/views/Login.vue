@@ -76,10 +76,9 @@
 <script>
 
 import { value } from 'vue-function-api';
-import getAccessToken from '@/api/requests/authorization';
 
 export default {
-  setup() {
+  setup(props, { root }) {
     const email = value('');
     const pass = value('');
     const doLogin = () => {
@@ -87,13 +86,7 @@ export default {
         email: email.value,
         password: pass.value,
       };
-      Promise.resolve(getAccessToken(data))
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
+      root.$store.dispatch('authentication', data);
     };
     return {
       email,

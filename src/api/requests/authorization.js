@@ -1,6 +1,6 @@
 import request from '../index';
 
-function getAccessToken(data) {
+export function getAccessToken(data) {
   return request({
     url: 'http://157.245.134.21:8081/login',
     method: 'post',
@@ -11,4 +11,13 @@ function getAccessToken(data) {
   });
 }
 
-export default getAccessToken;
+export function registerUser(data) {
+  return request({
+    url: 'http://157.245.134.21:8081/register',
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
+    data,
+  });
+}

@@ -1,21 +1,39 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import {
+  getAccessToken,
+  registerUser,
+} from '@/api/requests/authorization';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    componentView: 'Products',
+    accessToken: '',
   },
   mutations: {
-    toggle() {
-      if (this.componentView === 'Products') {
-        this.componentView = 'ProductView';
-      } else {
-        this.componentView = 'Products';
-      }
-      console.log(this.componentView);
+    SET_ACCESS_TOKEN: (state, value) => {
+      state.accessToken = value;
     },
   },
-  actions: {},
+  actions: {
+    async authentication({ commit }, params) {
+      try {
+        const response = await getAccessToken(params);
+        commit('SET_ACCESS_TOKEN', response.data);
+      } catch (e) {
+        throw e;
+      }
+    },
+    async createUser({ commit }, params) {
+      try {
+        await registerUser(params);
+      } catch (e) {
+        throw e;
+      }
+    },
+  },
+  getters: {
+    getAccessToken: state => state.accessToken,
+  },
 });
