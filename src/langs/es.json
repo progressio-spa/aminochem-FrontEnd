@@ -16,8 +16,11 @@
         "MainText": "Ayudamos en la producción de tu negocio",
         "products": "Nuestros productos",
         "card1": "Fertilizantes bioestimulantes",
+        "description1": "La mejor combinación de Aminoácidos para el manejo del stress y la optimización de diversas funciones en la planta.",
         "card2": "Enmiendas Orgánicas",
-        "card3": "Bioestimulantes de raíces"
+        "description2": "Materia Orgánica liquida que reactiva la vida del suelo, optimizando el uso de los recursos y maximizando el potencial productivo.",
+        "card3": "Aceite natural de uso agrícola",
+        "description3": "Insecticida, Coadyuvante y bioestimulante orgánico de gran desempeño y amigable con el medio ambiente. "
     },
     "AboutUs": {
         "title": "Quienes Somos",

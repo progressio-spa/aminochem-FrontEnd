@@ -53,8 +53,7 @@
                                 </div>
 
                                 <div class="content">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Phasellus nec iaculis mauris.
+                                    {{ $t('Home.description1') }}
 
                                     <br />
                                 </div>
@@ -76,8 +75,7 @@
                                 </div>
 
                                 <div class="content">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Phasellus nec iaculis mauris.
+                                    {{ $t('Home.description2') }}
 
                                     <br />
                                 </div>
@@ -99,8 +97,7 @@
                                 </div>
 
                                 <div class="content">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Phasellus nec iaculis mauris.
+                                    {{ $t('Home.description3') }}
 
                                     <br />
                                 </div>

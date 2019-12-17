@@ -84,7 +84,7 @@
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                     <img
-                                        src="https://bulma.io/images/placeholders/1280x960.png"
+                                        src="@/assets/AboutUs/carousel1.png"
                                         alt="Placeholder image"
                                     />
                                 </figure>
@@ -102,7 +102,7 @@
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                     <img
-                                        src="https://bulma.io/images/placeholders/1280x960.png"
+                                        src="@/assets/AboutUs/carousel2.png"
                                         alt="Placeholder image"
                                     />
                                 </figure>
@@ -120,7 +120,7 @@
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                     <img
-                                        src="https://bulma.io/images/placeholders/1280x960.png"
+                                        src="@/assets/AboutUs/carousel4.png"
                                         alt="Placeholder image"
                                     />
                                 </figure>
@@ -138,7 +138,7 @@
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                     <img
-                                        src="https://bulma.io/images/placeholders/1280x960.png"
+                                        src="@/assets/AboutUs/carousel3.png"
                                         alt="Placeholder image"
                                     />
                                 </figure>
