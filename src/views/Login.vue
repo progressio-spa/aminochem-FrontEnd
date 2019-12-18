@@ -86,7 +86,15 @@ export default {
         email: email.value,
         password: pass.value,
       };
-      root.$store.dispatch('authentication', data);
+      root.$store.dispatch('authentication', data)
+        .then((response) => {
+          if (response) {
+            root.$router.push('/');
+          }
+        })
+        .catch((e) => {
+          console.log(e);
+        });
     };
     return {
       email,

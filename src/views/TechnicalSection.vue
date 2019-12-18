@@ -29,6 +29,9 @@
 </template>
 
 <script>
+
+import { onCreated } from 'vue-function-api';
+
 // @ is an alias to /src
 import Navbar from '@/components/Navbar.vue';
 
@@ -37,6 +40,13 @@ export default {
   components: {
     Navbar,
   },
+  setup(props, { root }) {
+    onCreated(() => {
+      if (root.$store.getters.getAccessToken.length === 0) {
+        root.$router.push('/login');
+      }
+    });
+  }
 };
 </script>
 

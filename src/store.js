@@ -21,6 +21,7 @@ export default new Vuex.Store({
       try {
         const response = await getAccessToken(params);
         commit('SET_ACCESS_TOKEN', response.data);
+        return true;
       } catch (e) {
         throw e;
       }

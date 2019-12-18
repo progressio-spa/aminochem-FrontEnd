@@ -15,7 +15,7 @@ import Insecticide from './views/products/Insecticide.vue';
 import RootBiostimulant from './views/products/RootBiostimulant.vue';
 import TechnicalSection from './views/TechnicalSection.vue';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
     routes: [

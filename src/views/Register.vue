@@ -143,7 +143,13 @@ export default {
           password: password.value,
           passwordConfirmation: passwordRepetead.value,
         };
-        root.$store.dispatch('createUser', data);
+        root.$store.dispatch('createUser', data)
+          .then(() => {
+            root.$router.push('/login');
+          })
+          .catch((e) => {
+            console.log(e);
+          });
       }
     };
     return {
