@@ -37,7 +37,7 @@
                   <div class="is-6 agents-list">
                     <div
                       v-for="agent in agentsToShow"
-                      :key="agent.phone">
+                      :key="agent.name">
                       <h1>{{ agent.name }}</h1>
                       <h1>{{ agent.position }}</h1>
                       <h1>{{ agent.email }}</h1>
@@ -101,6 +101,7 @@ export default {
       hover.properties.fill = am4core.color('#E7763D');
       // Creating Event Listener for hover action in map
       chileanSeries.mapPolygons.template.events.on('over', (ev) => {
+        console.log(ev.target.dataItem.dataContext.id);
         hoveredRegion.value = ev.target.dataItem.dataContext.id;
       }, this);
       chileanSeries.mapPolygons.template.events.on('out', () => {
