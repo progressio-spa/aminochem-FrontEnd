@@ -59,7 +59,7 @@
 // Amcharts imports
 import * as am4core from '@amcharts/amcharts4/core';
 import * as am4maps from '@amcharts/amcharts4/maps';
-import am4geodata_chileHigh from '@amcharts/amcharts4-geodata/chileHigh';
+import am4geodata_chileHigh from '@/constants/ChileanMap';
 import am4geodata_worldHigh from '@amcharts/amcharts4-geodata/worldHigh';
 
 // vue-function-api imports

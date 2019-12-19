@@ -14,8 +14,12 @@
                                 </div>
                                 <div class="dropdown-menu" id="dropdown-menu" role="menu">
                                     <div class="dropdown-content">
-                                        <a href="#" class="dropdown-item">Español</a>
-                                        <a href="#" class="dropdown-item">Inglés</a>
+                                        <a class="dropdown-item language-text"
+                                        v-for="language in languages"
+                                        :key="language.code"
+                                        @click="changeLanguage(language.code)">
+                                          {{ language.name }}
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -32,11 +36,41 @@
     </nav>
 </template>
 
+<script>
+
+export default {
+  setup(props, { root }) {
+    const languages = [
+      {
+        code: 'es',
+        name: 'Español',
+      },
+      {
+        code: 'en',
+        name: 'Inglés',
+      },
+    ];
+    const changeLanguage = (language) => {
+      root.$i18n.locale = language;
+    };
+    return {
+      languages,
+      changeLanguage,
+    };
+  },
+};
+
+</script>
+
 <style scoped>
 .navbar-menu {
     background-color: lightgray;
 }
 .button a {
     color: white;
+}
+.language-text {
+    color: black !important;
+    font-family: 'Roboto', sans-serif;
 }
 </style>

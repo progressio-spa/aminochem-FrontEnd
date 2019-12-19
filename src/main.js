@@ -8,6 +8,23 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import 'bulma-carousel/dist/css/bulma-carousel.min.css';
 import VueI18n from 'vue-i18n';
 import { languages, defaultLocale } from './langs/index.js';
+import VueProgressBar from 'vue-progressbar'
+
+const options = {
+  color: 'orange',
+  failedColor: '#874b4b',
+  thickness: '5px',
+  transition: {
+    speed: '0.2s',
+    opacity: '0.6s',
+    termination: 300,
+  },
+  autoRevert: true,
+  location: 'top',
+  inverse: false,
+};
+
+Vue.use(VueProgressBar, options);
 
 Vue.use(VueI18n);
 

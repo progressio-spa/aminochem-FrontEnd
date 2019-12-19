@@ -37,6 +37,14 @@
                                     </div>
                                 </div>
                                 <br />
+                                <div class="field" v-if="showErrorMessage">
+                                    <div class="control" style="text-align: center;">
+                                        <h4 class="negativeMessage">
+                                            Usuario y/o password incorrectos :(
+                                        </h4>
+                                    </div>
+                                </div>
+                                <br v-if="showErrorMessage"/>
                                 <div class="field">
                                     <p class="control">
                                         <a class="button is-primary is-fullwidth" @click="doLogin">
@@ -75,31 +83,43 @@
 
 <script>
 
-import { value } from 'vue-function-api';
+import { value, watch } from 'vue-function-api';
 
 export default {
   setup(props, { root }) {
     const email = value('');
     const pass = value('');
+    const showErrorMessage = value('');
     const doLogin = () => {
+      root.$Progress.start();
       const data = {
         email: email.value,
         password: pass.value,
       };
+      root.$Progress.increase(20);
       root.$store.dispatch('authentication', data)
         .then((response) => {
           if (response) {
+            root.$Progress.finish();
             root.$router.push('/');
           }
         })
-        .catch((e) => {
-          console.log(e);
+        .catch(() => {
+          root.$Progress.fail();
+          showErrorMessage.value = true;
         });
     };
+    watch(
+      () => email.value || pass.value,
+      () => {
+        showErrorMessage.value = false;
+      },
+    );
     return {
       email,
       pass,
       doLogin,
+      showErrorMessage,
     };
   },
 };
@@ -137,5 +157,12 @@ export default {
         left: 0;
         width: 100%;
     }
+}
+
+.negativeMessage {
+    color: red;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
 }
 </style>

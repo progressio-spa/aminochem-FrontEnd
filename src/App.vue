@@ -4,6 +4,7 @@
             <!-- <router-link to="/">Home</router-link>|
             <router-link to="/about">About</router-link>-->
         </div>
+        <vue-progress-bar></vue-progress-bar>
         <Header></Header>
         <router-view />
         <Footer></Footer>
