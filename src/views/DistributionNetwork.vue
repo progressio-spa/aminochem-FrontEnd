@@ -109,7 +109,6 @@ export default {
       hover.properties.fill = am4core.color('#E7763D');
       // Creating Event Listener for hover action in map
       chileanSeries.mapPolygons.template.events.on('over', (ev) => {
-        console.log(ev.target.dataItem.dataContext.id);
         hoveredRegion.value = ev.target.dataItem.dataContext.id;
       }, this);
       chileanSeries.mapPolygons.template.events.on('out', () => {
