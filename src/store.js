@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 import {
   getAccessToken,
   registerUser,
+  forgotPassword,
 } from '@/api/requests/authorization';
 
 Vue.use(Vuex);
@@ -29,6 +30,13 @@ export default new Vuex.Store({
     async createUser({ commit }, params) {
       try {
         await registerUser(params);
+      } catch (e) {
+        throw e;
+      }
+    },
+    async sendForgotPassword({ commit }, params) {
+      try {
+        await forgotPassword(params);
       } catch (e) {
         throw e;
       }

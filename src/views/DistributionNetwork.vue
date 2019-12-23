@@ -3,9 +3,16 @@
         <Navbar></Navbar>
         <section class="hero is-primary is-medium has-background">
             <img
+                v-if="selectedNetwork === 'CL'"
                 alt="Grass"
                 class="hero-background is-transparent"
                 src="@/assets/Network/Chile.jpg"
+            />
+            <img
+                v-else
+                alt="Grass"
+                class="hero-background is-transparent"
+                src="@/assets/Network/Exterior.jpg"
             />
             <div class="hero-body">
                 <div class="container">
@@ -77,6 +84,7 @@ export default {
     Navbar,
   },
   setup() {
+    const selectedNetwork = value('CL');
     const regionManagers = regionAgentsList;
     const hoveredRegion = value('');
     const hoveredCountry = value('');
@@ -152,6 +160,7 @@ export default {
     };
     // Zone Clicked Method
     const zoneClicked = (zone) => {
+      selectedNetwork.value = zone;
       if (zone === 'CL') {
         CreateChileanDistributionMap();
       } else {
@@ -167,6 +176,7 @@ export default {
     return {
       agentsToShow,
       zoneClicked,
+      selectedNetwork,
     };
   },
 };

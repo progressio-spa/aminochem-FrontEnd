@@ -14,6 +14,7 @@
                             <div class="field">
                                 <div class="control">
                                     <input
+                                        v-model="email"
                                         class="input"
                                         type="text"
                                         placeholder="Ingresa tu email"
@@ -22,7 +23,7 @@
                             </div>
                             <div class="field">
                                 <div class="control">
-                                    <button class="button is-danger">
+                                    <button class="button is-danger" @click="sendForgot">
                                         {{ $t('Forgot.button') }}
                                     </button>
                                 </div>
@@ -34,6 +35,27 @@
         </div>
     </section>
 </template>
+
+<script>
+
+import { value } from 'vue-function-api';
+
+export default {
+    setup(props, { root }) {
+        const email = value('');
+        const sendForgot = () => {
+            root.$store.dispatch('sendForgotPassword', {
+                username: email.value,
+            });
+        }
+        return {
+            email,
+            sendForgot
+        };
+    },
+};
+
+</script>
 
 <style scoped>
 .hero {

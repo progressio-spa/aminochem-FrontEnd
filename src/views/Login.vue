@@ -101,7 +101,7 @@ export default {
         .then((response) => {
           if (response) {
             root.$Progress.finish();
-            root.$router.push('/');
+            root.$router.push('/technicalSection');
           }
         })
         .catch(() => {
