@@ -4,9 +4,7 @@
             <div class="column is-half">
                 <div class="color">
                     <div class="main-info">
-                        <div class="title is-4">
-                            {{ $t('Contact.contactUs') }}
-                        </div>
+                        <div class="title is-4">{{ $t('Contact.contactUs') }}</div>
                         <br />
                         <div class="columns">
                             <div class="column">
@@ -16,14 +14,14 @@
                             </div>
                             <div class="column is-10">
                                 <p>
-                                    Edificio BHBC Av. Bello Horizonte 869 <br />
-                                    oficina 304 - Rancagua
+                                    Edificio BHBC Av. Bello Horizonte 869
+                                    <br />oficina 304 - Rancagua
                                 </p>
                             </div>
                         </div>
 
                         <div class="columns">
-                            <div class="column ">
+                            <div class="column">
                                 <span class="icon is-medium has-text-white">
                                     <i class="fas fa-envelope fa-2x"></i>
                                 </span>
@@ -48,9 +46,7 @@
             <div class="column is-half">
                 <div class="main-form">
                     <div class="form-container">
-                        <div class="subtitle">
-                            {{ $t('Contact.writeUs') }}
-                        </div>
+                        <div class="subtitle">{{ $t('Contact.writeUs') }}</div>
                         <div class="field">
                             <div class="control">
                                 <input
@@ -85,18 +81,13 @@
                         <br />
                         <div class="field">
                             <div class="control">
-                                <textarea
-                                    class="textarea"
-                                    :placeholder="$t('Contact.typeMessage')"
-                                ></textarea>
+                                <textarea class="textarea" :placeholder="$t('Contact.typeMessage')"></textarea>
                             </div>
                         </div>
                         <br />
                         <div class="field is-grouped">
                             <div class="control">
-                                <button class="button is-link is-rounded">
-                                    {{ $t('Contact.send') }}
-                                </button>
+                                <button class="button is-link is-rounded">{{ $t('Contact.send') }}</button>
                             </div>
                         </div>
                     </div>
@@ -122,7 +113,11 @@
     height: 50%;
     margin-top: 3%;
     background: rgb(252, 74, 26);
-    background: linear-gradient(45deg, rgba(252, 74, 26, 1) 0%, rgba(247, 183, 51, 1) 100%);
+    background: linear-gradient(
+        45deg,
+        rgba(252, 74, 26, 1) 0%,
+        rgba(247, 183, 51, 1) 100%
+    );
     left: 15%;
     z-index: 2;
     -webkit-box-shadow: 0px 0px 18px 1px rgba(46, 74, 117, 0.24);
@@ -158,7 +153,11 @@
 
 .field > .control > .button {
     background: rgb(252, 74, 26);
-    background: linear-gradient(45deg, rgba(252, 74, 26, 1) 0%, rgba(247, 183, 51, 1) 100%);
+    background: linear-gradient(
+        45deg,
+        rgba(252, 74, 26, 1) 0%,
+        rgba(247, 183, 51, 1) 100%
+    );
 }
 
 .main-info {
@@ -236,6 +235,17 @@
     .form-container {
         padding-top: 1vh;
         padding-left: 9vw;
+    }
+}
+
+@media (max-height: 1000px) {
+    .main-form {
+        width: 50%;
+        height: 75%;
+    }
+    .color {
+        width: 30%;
+        height: 60%;
     }
 }
 </style>
