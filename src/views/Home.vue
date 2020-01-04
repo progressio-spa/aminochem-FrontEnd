@@ -25,11 +25,10 @@
                 </div>
             </div>
             <Navbar></Navbar>
+            <div class="divider"></div>
             <div class="hero-body">
                 <div class="container has-text-left" id="mainText">
-                    <h1 class="title">
-                        {{ $t('Home.MainText') }}
-                    </h1>
+                    <h1 class="title">{{ $t('Home.MainText') }}</h1>
                 </div>
             </div>
         </section>
@@ -54,7 +53,6 @@
 
                                 <div class="content">
                                     {{ $t('Home.description1') }}
-
                                     <br />
                                 </div>
                             </div>
@@ -76,7 +74,6 @@
 
                                 <div class="content">
                                     {{ $t('Home.description2') }}
-
                                     <br />
                                 </div>
                             </div>
@@ -98,7 +95,6 @@
 
                                 <div class="content">
                                     {{ $t('Home.description3') }}
-
                                     <br />
                                 </div>
                             </div>
@@ -117,8 +113,8 @@
 
 <script>
 // @ is an alias to /src
-import Navbar from '@/components/Navbar.vue';
-import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min';
+import Navbar from '@/components/Navbar.vue'
+import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min'
 
 export default {
     name: 'home',
@@ -184,6 +180,17 @@ export default {
     left: 10%;
     max-width: 49%;
 }
+
+.divider {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid white;
+    margin: 0 3%;
+    padding: 0;
+    z-index: 2;
+}
+
 @media (max-width: 767px) {
     #mainText {
         left: 10%;
