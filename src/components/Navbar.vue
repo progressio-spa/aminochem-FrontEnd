@@ -1,6 +1,6 @@
 <template>
     <div class="hero-head">
-        <header class="navbar is-transparent ">
+        <header class="navbar is-transparent">
             <div class="container">
                 <div class="navbar-brand">
                     <a class="navbar-item">
@@ -32,9 +32,7 @@
                                 'navbar-item',
                             ]"
                         >
-                            <router-link to="/">
-                                {{ $t('Navbar.home') }}
-                            </router-link>
+                            <router-link to="/">{{ $t('Navbar.home') }}</router-link>
                         </a>
                         <a
                             :class="[
@@ -42,36 +40,32 @@
                                 'navbar-item',
                             ]"
                         >
-                            <router-link to="/about">
-                                {{ $t('Navbar.aboutUs') }}
-                            </router-link>
+                            <router-link to="/about">{{ $t('Navbar.aboutUs') }}</router-link>
                         </a>
                         <a class="navbar-item has-dropdown is-hoverable" id="drop">
-                            <a class="navbar-link is-arrowless">
-                                {{ $t('Navbar.products') }}
-                            </a>
+                            <a class="navbar-link is-arrowless">{{ $t('Navbar.products') }}</a>
 
                             <div class="navbar-dropdown is-boxed">
                                 <a class="navbar-item" id="drop-item">
-                                    <router-link to="/products/fertilizers">
-                                        {{ $t('Navbar.dropdown11') }}
-                                    </router-link>
+                                    <router-link
+                                        to="/products/fertilizers"
+                                    >{{ $t('Navbar.dropdown11') }}</router-link>
                                 </a>
                                 <a class="navbar-item" id="drop-item">
-                                    <router-link to="/products/amendments">
-                                        {{ $t('Navbar.dropdown12') }}
-                                    </router-link>
+                                    <router-link
+                                        to="/products/amendments"
+                                    >{{ $t('Navbar.dropdown12') }}</router-link>
                                 </a>
                                 <a class="navbar-item" id="drop-item">
-                                    <router-link to="/products/rootBiostimulant">
-                                        {{ $t('Navbar.dropdown13') }}
-                                    </router-link>
+                                    <router-link
+                                        to="/products/rootBiostimulant"
+                                    >{{ $t('Navbar.dropdown13') }}</router-link>
                                 </a>
                                 <!-- <a class="navbar-item" id="drop-item">
                                     <router-link to="/products/insecticide">
                                         {{ $t('Navbar.dropdown2') }}
                                     </router-link>
-                                </a> -->
+                                </a>-->
                             </div>
                         </a>
                         <a
@@ -80,9 +74,7 @@
                                 'navbar-item',
                             ]"
                         >
-                            <router-link to="/distributionNetwork">
-                                {{ $t('Navbar.network') }}
-                            </router-link>
+                            <router-link to="/distributionNetwork">{{ $t('Navbar.network') }}</router-link>
                         </a>
                         <a
                             :class="[
@@ -90,15 +82,11 @@
                                 'navbar-item',
                             ]"
                         >
-                            <router-link to="/technicalSection">
-                                {{ $t('Navbar.technical') }}
-                            </router-link>
+                            <router-link to="/technicalSection">{{ $t('Navbar.technical') }}</router-link>
                         </a>
                         <span class="navbar-item">
                             <a class="button is-success is-inverted">
-                                <router-link to="/contact">
-                                    {{ $t('Navbar.contact') }}
-                                </router-link>
+                                <router-link to="/contact">{{ $t('Navbar.contact') }}</router-link>
                             </a>
                         </span>
                     </div>
