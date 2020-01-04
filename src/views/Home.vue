@@ -178,7 +178,7 @@ export default {
 #mainText {
     position: absolute;
     left: 10%;
-    max-width: 49%;
+    max-width: 30%;
 }
 
 .divider {
