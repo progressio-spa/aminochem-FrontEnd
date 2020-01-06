@@ -41,9 +41,20 @@
         <section class="hero is-light is-fullheight">
             <div class="hero-body">
                 <div class="container map-container">
-                  <div class="is-6 agents-list">
+                  <div class="is-6 agents-list" v-if="selectedNetwork === 'CL'">
                     <div
                       v-for="agent in agentsToShow"
+                      :key="agent.name">
+                      <h1>{{ agent.name }}</h1>
+                      <h1>{{ agent.position }}</h1>
+                      <h1>{{ agent.email }}</h1>
+                      <h1>{{ agent.phone }}</h1>
+                      <br>
+                    </div>
+                  </div>
+                  <div class="is-6 agents-list" v-else>
+                    <div
+                      v-for="agent in globalAgentsToShow"
                       :key="agent.name">
                       <h1>{{ agent.name }}</h1>
                       <h1>{{ agent.position }}</h1>
@@ -86,6 +97,7 @@ export default {
   setup() {
     const selectedNetwork = value('CL');
     const regionManagers = regionAgentsList;
+    const globalManagers = agentsList;
     const hoveredRegion = value('');
     const hoveredCountry = value('');
     // Chilean Map Method
@@ -169,6 +181,9 @@ export default {
     const agentsToShow = computed(() => (
       regionManagers.filter(regionManager => regionManager.region === hoveredRegion.value)
     ));
+    const globalAgentsToShow = computed(() => (
+      globalManagers.filter(globalManager => globalManager.country === hoveredCountry.value)
+    ));
     onMounted(() => {
       CreateChileanDistributionMap();
     });
@@ -176,6 +191,7 @@ export default {
       agentsToShow,
       zoneClicked,
       selectedNetwork,
+      globalAgentsToShow,
     };
   },
 };
