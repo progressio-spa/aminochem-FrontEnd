@@ -53,6 +53,7 @@
                                     class="input"
                                     type="text"
                                     :placeholder="$t('Contact.fullname')"
+                                    v-model="fullName"
                                 />
                             </div>
                         </div>
@@ -64,6 +65,7 @@
                                     type="email"
                                     :placeholder="$t('Contact.typeEmail')"
                                     value
+                                    v-model="email"
                                 />
                             </div>
                         </div>
@@ -75,19 +77,24 @@
                                     type="phoneNumber"
                                     :placeholder="$t('Contact.matter')"
                                     value
+                                    v-model="subject"
                                 />
                             </div>
                         </div>
                         <br />
                         <div class="field">
                             <div class="control">
-                                <textarea class="textarea" :placeholder="$t('Contact.typeMessage')"></textarea>
+                                <textarea class="textarea"
+                                    :placeholder="$t('Contact.typeMessage')"
+                                    v-model="message"></textarea>
                             </div>
                         </div>
                         <br />
                         <div class="field is-grouped">
                             <div class="control">
-                                <button class="button is-link is-rounded">{{ $t('Contact.send') }}</button>
+                                <button class="button is-link is-rounded"
+                                  :disabled="!allIsOk"
+                                  @click="sendContact">{{ $t('Contact.send') }}</button>
                             </div>
                         </div>
                     </div>
@@ -96,6 +103,44 @@
         </div>
     </div>
 </template>
+
+<script>
+
+import { value, computed } from 'vue-function-api';
+
+import contact from '@/api/requests/contact';
+
+export default {
+  setup() {
+    const fullName = value('');
+    const email = value('');
+    const subject = value('');
+    const message = value('');
+    const allIsOk = computed(() => fullName.value.length > 0
+      && email.value.length > 0
+      && subject.value.length > 0
+      && message.value.length > 0);
+    const sendContact = async () => {
+      const data = {
+        fullName: fullName.value,
+        contactEmail: email.value,
+        contactNumber: subject.value,
+        message: message.value,
+      };
+      await contact(data);
+    };
+    return {
+      fullName,
+      email,
+      subject,
+      message,
+      sendContact,
+      allIsOk,
+    };
+  },
+};
+
+</script>
 
 <style scoped>
 .contact {

@@ -5,6 +5,7 @@ import {
   registerUser,
   forgotPassword,
 } from '@/api/requests/authorization';
+import contact from '@/api/requests/contact';
 
 Vue.use(Vuex);
 
@@ -37,6 +38,13 @@ export default new Vuex.Store({
     async sendForgotPassword({ commit }, params) {
       try {
         await forgotPassword(params);
+      } catch (e) {
+        throw e;
+      }
+    },
+    async sendContactEmail({ commit }, params) {
+      try {
+        await contact(params);
       } catch (e) {
         throw e;
       }
