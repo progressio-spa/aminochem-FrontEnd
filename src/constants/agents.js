@@ -27,6 +27,13 @@ export const agentsList = [
     phone: '+54 9 11 51690347',
     country: 'AR',
   },
+  {
+    name: 'Click para más información',
+    position: '',
+    email: '',
+    phone: '',
+    country: 'CL',
+  },
 ];
 
 export const regionAgentsList = [

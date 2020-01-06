@@ -155,10 +155,16 @@
             </div>
         </section>
         <br /><br />
+        <ChileanMapModal
+            :modalIsActive="showChileanModal"
+            :closeModal="closeChileanModal"/>
     </div>
 </template>
 
 <script>
+
+import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min';
+
 // Amcharts imports
 import * as am4core from '@amcharts/amcharts4/core';
 import * as am4maps from '@amcharts/amcharts4/maps';
@@ -171,13 +177,14 @@ import { onMounted, value, computed } from 'vue-function-api';
 import { agentsList } from '../constants/agents';
 
 // @ is an alias to /src
-import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min';
 import Navbar from '@/components/Navbar.vue';
+import ChileanMapModal from '@/components/ChileanMapModal.vue';
 
 export default {
   name: 'home',
   components: {
     Navbar,
+    ChileanMapModal,
   },
   setup() {
     const countryManagers = agentsList;
@@ -190,6 +197,11 @@ export default {
       }
     });
     const hoveredCountry = value('');
+    const showChileanModal = value(false);
+    const closeChileanModal = () => {
+      console.log('entro');
+      showChileanModal.value = false;
+    };
     const createSouthAmericanMap = () => {
       // Create Instance
       const southAmericanMap = am4core.create('teamSouthAmericanMap', am4maps.MapChart);
@@ -222,6 +234,15 @@ export default {
         },
         this,
       );
+      polygonTemplate.events.on(
+        'hit',
+        (ev) => {
+          if (ev.target.dataItem.dataContext.id === 'CL') {
+            showChileanModal.value = true;
+          }
+        },
+        this,
+      );
       worldSeries.mapPolygons.template.events.on(
         'out',
         () => {
@@ -248,6 +269,8 @@ export default {
       .filter(countryManager => countryManager.country === hoveredCountry.value));
     return {
       countriesToShow,
+      closeChileanModal,
+      showChileanModal,
     };
   },
 };
