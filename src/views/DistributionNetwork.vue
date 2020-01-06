@@ -56,11 +56,19 @@
                     <div
                       v-for="agent in globalAgentsToShow"
                       :key="agent.name">
-                      <h1>{{ agent.name }}</h1>
-                      <h1>{{ agent.position }}</h1>
-                      <h1>{{ agent.email }}</h1>
-                      <h1>{{ agent.phone }}</h1>
-                      <br>
+                      <div v-if="agent.country === 'AR'">
+                        <p>{{ agent.name }}</p>
+                        <h3>{{ agent.position }}</h3>
+                        <p>{{ agent.email }}</p>
+                        <h3>{{ agent.phone }}</h3>
+                      </div>
+                      <div v-else>
+                        <h1>{{ agent.name }}</h1>
+                        <h1>{{ agent.position }}</h1>
+                        <h1>{{ agent.email }}</h1>
+                        <h1>{{ agent.phone }}</h1>
+                        <br>
+                      </div>
                     </div>
                   </div>
                   <div class="is-6">
