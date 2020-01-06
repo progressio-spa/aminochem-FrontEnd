@@ -36,6 +36,100 @@ export const agentsList = [
   },
 ];
 
+export const chileanManagers = [
+  {
+    name: 'Rolando Silva H',
+    position: 'Agente Zonal',
+    email: 'rsilva@aminochem.cl',
+    phone: '+56 9 94427692',
+    region: 'CL-AP',
+  },
+  {
+    name: 'Rolando Silva H',
+    position: 'Agente Zonal',
+    email: 'rsilva@aminochem.cl',
+    phone: '+56 9 94427692',
+    region: 'CL-AT',
+  },
+  {
+    name: 'Rolando Silva H',
+    position: 'Agente Zonal',
+    email: 'rsilva@aminochem.cl',
+    phone: '+56 9 94427692',
+    region: 'CL-CO',
+  },
+  {
+    name: 'Lucas Ferrada',
+    position: 'Agente Zonal',
+    email: 'lferrada@aminochem.cl',
+    phone: '+56 9 74302711',
+    region: 'CL-VS',
+  },
+  {
+    name: 'Lucas Ferrada',
+    position: 'Agente Zonal',
+    email: 'lferrada@aminochem.cl',
+    phone: '+56 9 74302711',
+    region: 'CL-RM',
+  },
+  {
+    name: 'José Luis Ansoleaga',
+    position: 'Gerente General',
+    email: 'jansoleaga@aminochem.cl',
+    phone: '+56 72 2955351',
+    region: 'CL-LI',
+  },
+  {
+    name: 'José Luis Ansoleaga',
+    position: 'Gerente General',
+    email: 'jansoleaga@aminochem.cl',
+    phone: '+56 72 2955351',
+    region: 'CL-ML',
+  },
+  {
+    name: 'Juan Pablo Vergara',
+    position: 'Agente Zonal',
+    email: 'jvergara@aminochem.cl',
+    phone: '+56 9 68310700',
+    region: 'CL-LI',
+  },
+  {
+    name: 'Juan Pablo Vergara',
+    position: 'Agente Zonal',
+    email: 'jvergara@aminochem.cl',
+    phone: '+56 9 68310700',
+    region: 'CL-ML',
+  },
+  {
+    name: 'Manuel Contreras',
+    position: 'Asistente Técnico Comercial',
+    email: 'mcontreras@aminochem.cl',
+    phone: '+56 9 42633293',
+    region: 'CL-BI',
+  },
+  {
+    name: 'Carlos Baier',
+    position: 'Agente Zonal Sur',
+    email: 'cbaier@aminochem.cl',
+    phone: '+56 9 96379251',
+    region: 'CL-AR',
+  },
+  {
+    name: 'Carlos Baier',
+    position: 'Agente Zonal Sur',
+    email: 'cbaier@aminochem.cl',
+    phone: '+56 9 96379251',
+    region: 'CL-LR',
+  },
+  {
+    name: 'Carlos Baier',
+    position: 'Agente Zonal Sur',
+    email: 'cbaier@aminochem.cl',
+    phone: '+56 9 96379251',
+    region: 'CL-LL',
+  },
+];
+
 export const regionAgentsList = [
   {
     name: 'Agropiamonte S.A. (www.agropiemonte.cl/)',

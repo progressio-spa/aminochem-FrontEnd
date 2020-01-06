@@ -38,7 +38,7 @@ import * as am4core from '@amcharts/amcharts4/core';
 import * as am4maps from '@amcharts/amcharts4/maps';
 import am4geodata_chileHigh from '@/constants/ChileanMap';
 
-import { regionAgentsList } from '../constants/agents';
+import { chileanManagers } from '../constants/agents';
 
 export default {
   props: {
@@ -53,7 +53,7 @@ export default {
   },
   setup() {
     const hoveredRegion = value('');
-    const regionManagers = regionAgentsList;
+    const regionManagers = chileanManagers;
     const CreateChileanDistributionMap = () => {
       // Create Instance
       const chileanMap = am4core.create('distributionMap', am4maps.MapChart);
@@ -77,7 +77,7 @@ export default {
         hoveredRegion.value = ev.target.dataItem.dataContext.id;
       }, this);
       chileanSeries.mapPolygons.template.events.on('out', () => {
-        hoveredRegion.value = '';
+        hoveredRegion.value = 'CL-AP';
       }, this);
     };
     const agentsToShow = computed(() => (
