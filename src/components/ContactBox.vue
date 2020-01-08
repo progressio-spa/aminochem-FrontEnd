@@ -84,17 +84,21 @@
                         <br />
                         <div class="field">
                             <div class="control">
-                                <textarea class="textarea"
+                                <textarea
+                                    class="textarea"
                                     :placeholder="$t('Contact.typeMessage')"
-                                    v-model="message"></textarea>
+                                    v-model="message"
+                                ></textarea>
                             </div>
                         </div>
                         <br />
                         <div class="field is-grouped">
                             <div class="control">
-                                <button class="button is-link is-rounded"
-                                  :disabled="!allIsOk"
-                                  @click="sendContact">{{ $t('Contact.send') }}</button>
+                                <button
+                                    class="button is-link is-rounded"
+                                    :disabled="!allIsOk"
+                                    @click="sendContact"
+                                >{{ $t('Contact.send') }}</button>
                             </div>
                         </div>
                     </div>
@@ -105,41 +109,42 @@
 </template>
 
 <script>
+import { value, computed } from 'vue-function-api'
 
-import { value, computed } from 'vue-function-api';
-
-import contact from '@/api/requests/contact';
+import contact from '@/api/requests/contact'
 
 export default {
-  setup() {
-    const fullName = value('');
-    const email = value('');
-    const subject = value('');
-    const message = value('');
-    const allIsOk = computed(() => fullName.value.length > 0
-      && email.value.length > 0
-      && subject.value.length > 0
-      && message.value.length > 0);
-    const sendContact = async () => {
-      const data = {
-        fullName: fullName.value,
-        contactEmail: email.value,
-        contactNumber: subject.value,
-        message: message.value,
-      };
-      await contact(data);
-    };
-    return {
-      fullName,
-      email,
-      subject,
-      message,
-      sendContact,
-      allIsOk,
-    };
-  },
-};
-
+    setup() {
+        const fullName = value('')
+        const email = value('')
+        const subject = value('')
+        const message = value('')
+        const allIsOk = computed(
+            () =>
+                fullName.value.length > 0 &&
+                email.value.length > 0 &&
+                subject.value.length > 0 &&
+                message.value.length > 0
+        )
+        const sendContact = async () => {
+            const data = {
+                fullName: fullName.value,
+                contactEmail: email.value,
+                contactNumber: subject.value,
+                message: message.value,
+            }
+            await contact(data)
+        }
+        return {
+            fullName,
+            email,
+            subject,
+            message,
+            sendContact,
+            allIsOk,
+        }
+    },
+}
 </script>
 
 <style scoped>
@@ -283,7 +288,7 @@ export default {
     }
 }
 
-@media (max-height: 1000px) {
+@media (max-height: 850px) {
     .main-form {
         width: 50%;
         height: 75%;
