@@ -9,9 +9,7 @@
             />
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title" id="main-title">
-                        {{ $t('Products.rootBiostimulant.title') }}
-                    </h1>
+                    <h1 class="title" id="main-title">{{ $t('Products.rootBiostimulant.title') }}</h1>
                 </div>
             </div>
         </section>
@@ -21,25 +19,51 @@
                     <div class="columns">
                         <div class="column is-half">
                             <div class="content">
-                                <div class="title">
-                                    {{ products[0].name }}
-                                </div>
-                                <p align="left">
-                                    {{ $t('Products.rootBiostimulant.description1') }}
-                                </p>
-                                <p align="left">
-                                    {{ $t('Products.rootBiostimulant.description2') }}
-                                </p>
-                                <p align="left">
-                                    {{ $t('Products.rootBiostimulant.description3') }}
-                                </p>
-                                <p align="left">
-                                    {{ $t('Products.rootBiostimulant.description4') }}
-                                </p>
-                                <p align="left">
-                                    {{ $t('Products.rootBiostimulant.description5') }}
-                                </p>
+                                <div class="title">{{ products[0].name }}</div>
+                                <p align="left">{{ $t('Products.rootBiostimulant.description1') }}</p>
+                                <p align="left">{{ $t('Products.rootBiostimulant.description2') }}</p>
+                                <p align="left">{{ $t('Products.rootBiostimulant.description3') }}</p>
+                                <p align="left">{{ $t('Products.rootBiostimulant.description4') }}</p>
+                                <p align="left">{{ $t('Products.rootBiostimulant.description5') }}</p>
                             </div>
+                            <br />
+                            <br />
+                            <nav class="breadcrumb has-bullet-separator" aria-label="breadcrumbs">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon">
+                                                <i class="fas fa-tag"></i>
+                                            </span>
+                                            <span>{{ $t('Products.buttons.label') }}</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon">
+                                                <i class="fas fa-file-alt"></i>
+                                            </span>
+                                            <span>{{ $t('Products.buttons.datasheet') }}</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon">
+                                                <i class="fas fa-exclamation-triangle"></i>
+                                            </span>
+                                            <span>{{ $t('Products.buttons.safetysheet') }}</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon">
+                                                <i class="fas fa-info-circle"></i>
+                                            </span>
+                                            <span>{{ $t('Products.buttons.brochure') }}</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                         <div class="column is-half">
                             <figure class="image is-5by4">
@@ -47,79 +71,34 @@
                             </figure>
                         </div>
                     </div>
-                    <br />
-                    <br />
-                    <nav class="level is-desktop">
-                        <div class="level-item">
-                            <button class="button is-medium">
-                                <span class="icon">
-                                    <i class="fas fa-tag"></i>
-                                </span>
-                                <span>
-                                    {{ $t('Products.buttons.label') }}
-                                </span>
-                            </button>
-                        </div>
-                        <div class="level-item">
-                            <button class="button is-medium">
-                                <span class="icon">
-                                    <i class="fas fa-file-alt"></i>
-                                </span>
-                                <span>
-                                    {{ $t('Products.buttons.datasheet') }}
-                                </span>
-                            </button>
-                        </div>
-                        <div class="level-item">
-                            <button class="button is-medium">
-                                <span class="icon">
-                                    <i class="fas fa-exclamation-triangle"></i>
-                                </span>
-                                <span>
-                                    {{ $t('Products.buttons.safetysheet') }}
-                                </span>
-                            </button>
-                        </div>
-                        <div class="level-item">
-                            <button class="button is-medium">
-                                <span class="icon">
-                                    <i class="fas fa-info-circle"></i>
-                                </span>
-                                <span>
-                                    {{ $t('Products.buttons.brochure') }}
-                                </span>
-                            </button>
-                        </div>
-                    </nav>
                 </div>
             </div>
         </section>
-        <br /><br />
     </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import { onMounted, value, computed } from 'vue-function-api';
-import Navbar from '@/components/Navbar.vue';
+import { onMounted, value, computed } from 'vue-function-api'
+import Navbar from '@/components/Navbar.vue'
 
 // vue-function-api imports
 
 // Import Fertilizer products
-import { rootBiostimulant } from '../../constants/products';
+import { rootBiostimulant } from '../../constants/products'
 
 export default {
-  name: 'home',
-  components: {
-    Navbar,
-  },
-  setup() {
-    const products = rootBiostimulant;
-    return {
-      products,
-    };
-  },
-};
+    name: 'home',
+    components: {
+        Navbar,
+    },
+    setup() {
+        const products = rootBiostimulant
+        return {
+            products,
+        }
+    },
+}
 </script>
 
 <style scoped>

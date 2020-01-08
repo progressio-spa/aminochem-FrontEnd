@@ -9,9 +9,7 @@
             />
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title" id="main-title">
-                        {{ $t('Products.insecticide.title') }}
-                    </h1>
+                    <h1 class="title" id="main-title">{{ $t('Products.insecticide.title') }}</h1>
                 </div>
             </div>
         </section>
@@ -21,15 +19,9 @@
                     <div class="columns">
                         <div class="column is-half">
                             <div class="content">
-                                <div class="title">
-                                    {{ products[0].name }}
-                                </div>
-                                <p align="left">
-                                    {{ $t('Products.insecticide.description1') }}
-                                </p>
-                                <p align="left">
-                                    {{ $t('Products.insecticide.description2') }}
-                                </p>
+                                <div class="title">{{ products[0].name }}</div>
+                                <p align="left">{{ $t('Products.insecticide.description1') }}</p>
+                                <p align="left">{{ $t('Products.insecticide.description2') }}</p>
                             </div>
                         </div>
                         <div class="column is-half">
@@ -46,9 +38,7 @@
                                 <span class="icon">
                                     <i class="fas fa-tag"></i>
                                 </span>
-                                <span>
-                                    {{ $t('Products.buttons.label') }}
-                                </span>
+                                <span>{{ $t('Products.buttons.label') }}</span>
                             </button>
                         </div>
                         <div class="level-item">
@@ -56,9 +46,7 @@
                                 <span class="icon">
                                     <i class="fas fa-file-alt"></i>
                                 </span>
-                                <span>
-                                    {{ $t('Products.buttons.datasheet') }}
-                                </span>
+                                <span>{{ $t('Products.buttons.datasheet') }}</span>
                             </button>
                         </div>
                         <div class="level-item">
@@ -66,9 +54,7 @@
                                 <span class="icon">
                                     <i class="fas fa-exclamation-triangle"></i>
                                 </span>
-                                <span>
-                                    {{ $t('Products.buttons.safetysheet') }}
-                                </span>
+                                <span>{{ $t('Products.buttons.safetysheet') }}</span>
                             </button>
                         </div>
                         <div class="level-item">
@@ -76,41 +62,40 @@
                                 <span class="icon">
                                     <i class="fas fa-info-circle"></i>
                                 </span>
-                                <span>
-                                    {{ $t('Products.buttons.brochure') }}
-                                </span>
+                                <span>{{ $t('Products.buttons.brochure') }}</span>
                             </button>
                         </div>
                     </nav>
                 </div>
             </div>
         </section>
-        <br /><br />
+        <br />
+        <br />
     </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import { onMounted, value, computed } from 'vue-function-api';
-import Navbar from '@/components/Navbar.vue';
+import { onMounted, value, computed } from 'vue-function-api'
+import Navbar from '@/components/Navbar.vue'
 
 // vue-function-api imports
 
 // Import Fertilizer products
-import { insecticide } from '../../constants/products';
+import { insecticide } from '../../constants/products'
 
 export default {
-  name: 'home',
-  components: {
-    Navbar,
-  },
-  setup() {
-    const products = insecticide;
-    return {
-      products,
-    };
-  },
-};
+    name: 'home',
+    components: {
+        Navbar,
+    },
+    setup() {
+        const products = insecticide
+        return {
+            products,
+        }
+    },
+}
 </script>
 
 <style scoped>

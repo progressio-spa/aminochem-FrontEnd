@@ -9,9 +9,7 @@
             />
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title" id="main-title">
-                        {{ $t('Products.fertilizers.title') }}
-                    </h1>
+                    <h1 class="title" id="main-title">{{ $t('Products.fertilizers.title') }}</h1>
                 </div>
             </div>
         </section>
@@ -21,22 +19,50 @@
                     <div class="columns">
                         <div class="column is-half">
                             <div class="content">
-                                <div class="title">
-                                    {{ product.name }}
-                                </div>
-                                <p align="left">
-                                    {{ product.description }}
-                                </p>
-                                <p align="left">
-                                    {{ product.subdescription1 }}
-                                </p>
-                                <p align="left">
-                                    {{ product.subdescription2 }}
-                                </p>
-                                <p align="left">
-                                    {{ product.subdescription3 }}
-                                </p>
+                                <div class="title">{{ product.name }}</div>
+                                <p align="left">{{ product.description }}</p>
+                                <p align="left">{{ product.subdescription1 }}</p>
+                                <p align="left">{{ product.subdescription2 }}</p>
+                                <p align="left">{{ product.subdescription3 }}</p>
                             </div>
+                            <br />
+                            <br />
+                            <nav class="breadcrumb has-bullet-separator" aria-label="breadcrumbs">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon">
+                                                <i class="fas fa-tag"></i>
+                                            </span>
+                                            <span>{{ $t('Products.buttons.label') }}</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon">
+                                                <i class="fas fa-file-alt"></i>
+                                            </span>
+                                            <span>{{ $t('Products.buttons.datasheet') }}</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon">
+                                                <i class="fas fa-exclamation-triangle"></i>
+                                            </span>
+                                            <span>{{ $t('Products.buttons.safetysheet') }}</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon">
+                                                <i class="fas fa-info-circle"></i>
+                                            </span>
+                                            <span>{{ $t('Products.buttons.brochure') }}</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
                         </div>
                         <div class="column is-half">
                             <figure class="image is-5by4">
@@ -44,17 +70,14 @@
                             </figure>
                         </div>
                     </div>
-                    <br />
-                    <br />
-                    <nav class="level is-desktop">
+
+                    <!-- <nav class="level is-desktop">
                         <div class="level-item">
                             <button class="button is-medium">
                                 <span class="icon">
                                     <i class="fas fa-tag"></i>
                                 </span>
-                                <span>
-                                    {{ $t('Products.buttons.label') }}
-                                </span>
+                                <span>{{ $t('Products.buttons.label') }}</span>
                             </button>
                         </div>
                         <div class="level-item">
@@ -62,9 +85,7 @@
                                 <span class="icon">
                                     <i class="fas fa-file-alt"></i>
                                 </span>
-                                <span>
-                                    {{ $t('Products.buttons.datasheet') }}
-                                </span>
+                                <span>{{ $t('Products.buttons.datasheet') }}</span>
                             </button>
                         </div>
                         <div class="level-item">
@@ -72,9 +93,7 @@
                                 <span class="icon">
                                     <i class="fas fa-exclamation-triangle"></i>
                                 </span>
-                                <span>
-                                    {{ $t('Products.buttons.safetysheet') }}
-                                </span>
+                                <span>{{ $t('Products.buttons.safetysheet') }}</span>
                             </button>
                         </div>
                         <div class="level-item">
@@ -82,16 +101,13 @@
                                 <span class="icon">
                                     <i class="fas fa-info-circle"></i>
                                 </span>
-                                <span>
-                                    {{ $t('Products.buttons.brochure') }}
-                                </span>
+                                <span>{{ $t('Products.buttons.brochure') }}</span>
                             </button>
                         </div>
-                    </nav>
+                    </nav>-->
                 </div>
             </div>
         </section>
-        <br /><br />
     </div>
 </template>
 
