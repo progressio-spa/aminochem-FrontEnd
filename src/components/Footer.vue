@@ -2,7 +2,7 @@
     <div class="footerMain">
         <footer class="footer">
             <div class="content">
-                <div class="columns is-desktop is-vcentered ">
+                <div class="columns is-desktop is-vcentered">
                     <div class="column">
                         <div class="footer-item">
                             <router-link to="/">
@@ -10,39 +10,37 @@
                             </router-link>
                         </div>
                     </div>
+
                     <div class="column">
                         <a class="item">
-                            <router-link to="/about">
-                                {{ $t('Navbar.aboutUs') }}
-                            </router-link>
+                            <router-link to="/about">{{ $t('Navbar.aboutUs') }}</router-link>
                         </a>
                     </div>
                     <div class="column">
                         <a class="item">
-                            <router-link to="/products">
-                                {{ $t('Navbar.products') }}
-                            </router-link>
+                            <router-link to="/products">{{ $t('Navbar.products') }}</router-link>
                         </a>
                     </div>
                     <div class="column">
                         <a class="item">
-                            <router-link to="/distributionNetwork">
-                                {{ $t('Navbar.network') }}
-                            </router-link>
+                            <router-link to="/distributionNetwork">{{ $t('Navbar.network') }}</router-link>
                         </a>
                     </div>
                     <div class="column">
                         <a class="item">
-                            <router-link to="/technicalSection">
-                                {{ $t('Navbar.technical') }}
-                            </router-link>
+                            <router-link to="/technicalSection">{{ $t('Navbar.technical') }}</router-link>
                         </a>
                     </div>
                     <div class="column">
                         <div class="item">
-                            <router-link to="/contact">
-                                {{ $t('Navbar.contact') }}
-                            </router-link>
+                            <router-link to="/contact">{{ $t('Navbar.contact') }}</router-link>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="footer-item">
+                            <a href="http://fiordoaustral.com/">
+                                <img src="@/assets/logoFiordo.png" alt="Fiordo" />
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -52,14 +50,10 @@
             <div class="hero-footer">
                 <div class="last-content">
                     <div class="paragraph">
-                        <p>
-                            Edificio BHBC Av. Bello Horizonte 869 / Of 304 - Rancagua
-                        </p>
+                        <p>Edificio BHBC Av. Bello Horizonte 869 / Of 304 - Rancagua</p>
                     </div>
                     <div class="watermark">
-                        <p>
-                            ©copyright 2019
-                        </p>
+                        <p>©copyright 2019</p>
                     </div>
                 </div>
             </div>
