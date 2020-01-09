@@ -183,6 +183,66 @@ export const agentsList = [
   },
 ];
 
+export const regionManagers = [
+  {
+    name: 'Lenin Guerrero Ch.',
+    position: 'Zonal Técnico Comercial Norte',
+    email: 'Ingeniero Agrónomo',
+    phone: '',
+    country: 'PE',
+  },
+  {
+    name: 'José Luis Assereto A',
+    position: 'Zonal Técnico Comercial Ica',
+    email: 'Ingeniero Agrónomo',
+    phone: '',
+    country: 'PE',
+  },
+  {
+    name: 'Rolando Silva',
+    position: 'Country Manager Perú Bolivia',
+    email: '',
+    phone: '',
+    country: 'PE',
+  },
+  {
+    name: 'Rolando Silva',
+    position: 'Country Manager Perú Bolivia',
+    email: '',
+    phone: '',
+    country: 'BO',
+  },
+  {
+    name: 'Emiliano Castilla',
+    position: 'Asistente Técnico Comercial',
+    email: 'ingeniero Agrónomo',
+    phone: '',
+    country: 'AR',
+  },
+
+  {
+    name: 'Jorge Schell',
+    position: 'Country Manager Mercosur',
+    email: '',
+    phone: '',
+    country: 'AR',
+  },
+  {
+    name: 'Jorge Schell',
+    position: 'Country Manager Mercosur',
+    email: '',
+    phone: '',
+    country: 'UY',
+  },
+  {
+    name: 'Click para más información',
+    position: '',
+    email: '',
+    phone: '',
+    country: 'CL',
+  },
+];
+
 export const chileanManagers = [
   {
     name: 'Rolando Silva H',

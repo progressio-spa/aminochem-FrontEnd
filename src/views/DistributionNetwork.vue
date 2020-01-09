@@ -142,20 +142,13 @@ export default {
       // Charge World Map
       southAmericanMap.geodata = am4geodata_worldHigh;
       // Set Projection
-      southAmericanMap.projection = new am4maps.projections.Miller();
+      southAmericanMap.projection = new am4maps.projections.Orthographic();
+      southAmericanMap.panBehavior = 'rotateLongLat';
+      southAmericanMap.deltaLatitude = -20;
+      southAmericanMap.padding(20, 20, 20, 20);
+      southAmericanMap.fill = am4core.color('#000000');
       // Create Serie
       const worldSeries = southAmericanMap.series.push(new am4maps.MapPolygonSeries());
-      // Add South American Countries to Map, excluding anyone else
-      worldSeries.include = [
-        'AR', 'BO', 'BR', 'CL',
-        'CO', 'EC', 'PY', 'PE',
-        'UY', 'VE', 'BS', 'BZ',
-        'CR', 'CU', 'DO', 'GT',
-        'HN', 'HT', 'JM', 'MX',
-        'NI', 'PA', 'PR', 'SV',
-      ];
-      // Disabling Zoom
-      southAmericanMap.chartContainer.wheelable = false;
       worldSeries.useGeodata = true;
       // Configure series
       const polygonTemplate = worldSeries.mapPolygons.template;

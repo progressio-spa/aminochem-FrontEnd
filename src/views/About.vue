@@ -174,7 +174,7 @@ import am4geodata_worldHigh from '@amcharts/amcharts4-geodata/worldHigh';
 import { onMounted, value, computed } from 'vue-function-api';
 
 // Agents import
-import { agentsList } from '../constants/agents';
+import { regionManagers } from '../constants/agents';
 
 // @ is an alias to /src
 import Navbar from '@/components/Navbar.vue';
@@ -187,7 +187,7 @@ export default {
     ChileanMapModal,
   },
   setup() {
-    const countryManagers = agentsList;
+    const countryManagers = regionManagers;
     // duplicate countries variable to delete countries that had country managers
     const excludedCountries = ['AR', 'BO', 'BR', 'CL', 'CO', 'EC', 'PY', 'PE', 'UY', 'VE'];
     countryManagers.forEach((countryManager) => {
@@ -199,7 +199,6 @@ export default {
     const hoveredCountry = value('');
     const showChileanModal = value(false);
     const closeChileanModal = () => {
-      console.log('entro');
       showChileanModal.value = false;
     };
     const createSouthAmericanMap = () => {
