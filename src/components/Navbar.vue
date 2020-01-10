@@ -123,7 +123,7 @@ export default {
 .navbar {
     position: fixed;
     top: 0;
-    background-color: #a2c038; /*Este es lo que hay que modificar BASTI*/
+    background-color: white; /*Este es lo que hay que modificar BASTI*/
     width: 100vw;
 }
 
