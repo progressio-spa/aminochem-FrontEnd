@@ -4,7 +4,16 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a class="button">
+                        <a class="language-icon"
+                        @click="changeLanguage(es)">
+                            <div class="flag flag-es"></div>
+                        </a>
+                        <a class="language-icon"
+                        @click="changeLanguage(en)">
+                            <div class="flag flag-us"></div>
+                        </a>
+
+                        <!-- <a class="button">
                             <div class="dropdown is-hoverable is-right">
                                 <div class="dropdown-trigger">
                                     <span>Idioma</span>
@@ -34,7 +43,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        </a> -->
                         <a class="button is-success">
                             <router-link to="/login">{{ $t('Login.loginNav') }}</router-link>
                         </a>
@@ -76,11 +85,10 @@ export default {
 .button a {
     color: white;
 }
-.language-text {
-    color: black !important;
-    font-family: 'Roboto', sans-serif;
+.language-icon {
+    margin-right:1vw;
+    margin-bottom:5px;
 }
-
 /*!
  * Generated with CSS Flag Sprite generator (https://www.flag-sprites.com/) -
  */
