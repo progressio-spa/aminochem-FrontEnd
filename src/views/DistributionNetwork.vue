@@ -147,9 +147,13 @@ export default {
       southAmericanMap.deltaLatitude = -20;
       southAmericanMap.padding(20, 20, 20, 20);
       southAmericanMap.fill = am4core.color('#000000');
+      southAmericanMap.mouseWheelBehavior = 'none';
       // Create Serie
       const worldSeries = southAmericanMap.series.push(new am4maps.MapPolygonSeries());
       worldSeries.useGeodata = true;
+      globalManagers.forEach((manager) => {
+        worldSeries.getPolygonById(manager.country).fill = am4core.color('#b6b6b6');
+      });
       // Configure series
       const polygonTemplate = worldSeries.mapPolygons.template;
       polygonTemplate.tooltipText = '{name}';

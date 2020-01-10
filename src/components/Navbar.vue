@@ -1,6 +1,6 @@
 <template>
     <div class="hero-head">
-        <header class="navbar is-transparent">
+        <header class="navbar is-green">
             <div class="container">
                 <div class="navbar-brand">
                     <a class="navbar-item">
@@ -119,6 +119,13 @@ export default {
 </script>
 
 <style scoped>
+
+.navbar {
+    position: fixed;
+    top: 0;
+    background-color: #a2c038; /*Este es lo que hay que modificar BASTI*/
+    width: 100vw;
+}
 
 .hero-head{
     background: white;
