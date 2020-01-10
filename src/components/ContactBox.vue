@@ -288,7 +288,7 @@ export default {
     }
 }
 
-@media (max-height: 850px) {
+@media (max-height: 850px) and (min-width: 767px) {
     .main-form {
         width: 50%;
         height: 75%;
