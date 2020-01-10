@@ -1,6 +1,8 @@
 <template>
     <div class="hero-head">
-        <header class="navbar is-green">
+        <header
+          class="navbar is-green"
+          :class="{scrolled: scrollPosition > 52}">
             <div class="container">
                 <div class="navbar-brand">
                     <a class="navbar-item">
@@ -98,66 +100,78 @@
 
 <script>
 export default {
-    data() {
-        return {
-            activeClass: 'active',
-            variablePrueba: 'test',
-            showNavbarMobile: false,
-        }
+  data() {
+    return {
+      activeClass: 'active',
+      variablePrueba: 'test',
+      showNavbarMobile: false,
+      scrollPosition: 0,
+    };
+  },
+  mounted() {
+    window.addEventListener('scroll', this.updateScroll);
+  },
+  computed: {
+    currentPage() {
+      return this.$route.path;
     },
-    computed: {
-        currentPage() {
-            return this.$route.path
-        },
+  },
+  methods: {
+    showNavbarBurger() {
+      this.showNavbarMobile = !this.showNavbarMobile;
     },
-    methods: {
-        showNavbarBurger() {
-            this.showNavbarMobile = !this.showNavbarMobile
-        },
+    updateScroll() {
+      this.scrollPosition = window.scrollY;
     },
-}
+  },
+};
 </script>
 
 <style scoped>
 
 .navbar {
-    position: fixed;
-    top: 0;
-    background-color: white; /*Este es lo que hay que modificar BASTI*/
-    width: 100vw;
+  position: fixed;
+  top: 52px;
+  background-color: white !important;
+  width: 100vw;
+}
+
+.scrolled {
+  top: 0;
 }
 
 .hero-head{
-    background: white;
+  background: white;
 }
 
 .navbar-item img {
-    max-height: 7rem;
+  max-height: 6rem;
+  color: black !important;
 }
 
 a,
 .button a,
 #drop-item-item {
-    color: #585858;
+  color: #585858;
 }
 #drop-item {
-    color: #e96711;
+  color: #e96711;
 }
 
 a:hover {
-    color: #e96711;
+  color: #e96711;
 }
 
 .active a {
-    color: white;
+  color: black;
 }
 
 .active a:hover {
-    color: rgb(0, 129, 0);
+  color: rgb(0, 129, 0);
 }
 
 .hero.is-success .navbar-item,
 .hero.is-success .navbar-link {
-    color: rgba(255, 255, 255, 1);
+  color: black;
 }
 </style>
