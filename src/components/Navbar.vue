@@ -119,6 +119,11 @@ export default {
 </script>
 
 <style scoped>
+
+.hero-head{
+    background: white;
+}
+
 .navbar-item img {
     max-height: 7rem;
 }
