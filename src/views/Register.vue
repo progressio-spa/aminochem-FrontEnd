@@ -1,5 +1,6 @@
 <template>
     <section class="hero is-fullheight">
+        <Navbar></Navbar>
         <div class="hero-body">
             <div class="container">
                 <div class="columns is-desktop is-vcentered">
@@ -106,6 +107,7 @@
 
 <script>
 import { value, computed } from 'vue-function-api'
+import Navbar from '@/components/Navbar.vue'
 
 export default {
     setup(props, { root }) {
@@ -170,6 +172,9 @@ export default {
             termsAcceptance,
             doRegister,
         }
+    },
+    components:{
+        Navbar,
     },
 }
 </script>
