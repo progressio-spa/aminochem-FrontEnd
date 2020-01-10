@@ -6,21 +6,21 @@
                     <img
                         alt="Grass"
                         class="hero-background-home is-transparent"
-                        src="@/assets/Home/cherry3.png"
+                        src="@/assets/Home/prueba-01.png"
                     />
                 </div>
                 <div class="item-2">
                     <img
                         alt="Grass"
                         class="hero-background-home is-transparent"
-                        src="@/assets/Home/berries2.png"
+                        src="@/assets/Home/prueba-02.png"
                     />
                 </div>
                 <div class="item-3">
                     <img
                         alt="Grass"
                         class="hero-background-home is-transparent"
-                        src="@/assets/Home/Home.png"
+                        src="@/assets/Home/prueba-03.png"
                     />
                 </div>
             </div>
@@ -28,7 +28,7 @@
             <div class="divider"></div>
             <div class="hero-body">
                 <div class="container has-text-left" id="mainText">
-                    <h1 class="title">{{ $t('Home.MainText') }}</h1>
+                    <!-- <h1 class="title">{{ $t('Home.MainText') }}</h1> -->
                 </div>
             </div>
         </section>
