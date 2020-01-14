@@ -62,7 +62,7 @@
                         <div class="card">
                             <div class="card-image">
                                 <figure class="image is-4by3">
-                                    <img src="@/assets/Home/tierra.jpg" alt="earth" />
+                                    <img src="@/assets/Home/raices.jpg" alt="earth" />
                                 </figure>
                             </div>
                             <div class="card-content">
@@ -83,7 +83,7 @@
                         <div class="card">
                             <div class="card-image">
                                 <figure class="image is-4by3">
-                                    <img src="@/assets/Home/raiz.png" alt="seeder" />
+                                    <img src="@/assets/Home/gotas.jpg" alt="seeder" />
                                 </figure>
                             </div>
                             <div class="card-content">

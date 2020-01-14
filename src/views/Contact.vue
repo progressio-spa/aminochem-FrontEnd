@@ -5,7 +5,7 @@
             <img
                 alt="Grass"
                 class="hero-background is-transparent"
-                src="@/assets/Contact/tierra.jpg"
+                src="@/assets/Contact/slider.jpg"
             />
             <div class="hero-body">
                 <div class="container">

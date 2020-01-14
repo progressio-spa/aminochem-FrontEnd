@@ -5,7 +5,7 @@
             <img
                 alt="Grass"
                 class="hero-background is-transparent"
-                src="@/assets/Home/cherry3.png"
+                src="@/assets/Home/people.jpg"
             />
             <div class="hero-body">
                 <div class="container">
@@ -30,14 +30,14 @@
                 <div class="columns">
                     <div class="column">
                         <figure class="image is-square">
-                            <img src="https://bulma.io/images/placeholders/480x480.png" />
+                            <img src="@/assets/Home/raices2.jpg" />
                         </figure>
                     </div>
-                    <div class="column">
+<!--                     <div class="column">
                         <figure class="image is-square">
                             <img src="https://bulma.io/images/placeholders/480x480.png" />
                         </figure>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
@@ -84,7 +84,7 @@
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                     <img
-                                        src="@/assets/AboutUs/carousel1.png"
+                                        src="@/assets/AboutUs/1994story.jpg"
                                         alt="Placeholder image"
                                     />
                                 </figure>
@@ -102,7 +102,7 @@
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                     <img
-                                        src="@/assets/AboutUs/carousel2.png"
+                                        src="@/assets/AboutUs/experiments.jpg"
                                         alt="Placeholder image"
                                     />
                                 </figure>
@@ -138,7 +138,7 @@
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                     <img
-                                        src="@/assets/AboutUs/carousel3.png"
+                                        src="@/assets/AboutUs/developments.jpg"
                                         alt="Placeholder image"
                                     />
                                 </figure>
