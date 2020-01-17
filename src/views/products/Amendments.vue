@@ -32,7 +32,7 @@
                         </div>
                         <div class="column is-half">
                             <figure class="image is-5by4">
-                                <img src="https://bulma.io/images/placeholders/600x480.png" />
+                                <img :src="url" />
                             </figure>
                         </div>
                     </div>
@@ -98,8 +98,10 @@ export default {
     },
     setup() {
         const products = amendments
+        const url = '/static/product-logo/Variantes-productosColor-06.png'
         return {
             products,
+            url,
         }
     },
 }
@@ -149,6 +151,10 @@ p {
 
 .tabs i {
     color: rgb(252, 74, 26);
+}
+
+.image {
+    bottom: 10vh;
 }
 
 @media (max-width: 767px) {

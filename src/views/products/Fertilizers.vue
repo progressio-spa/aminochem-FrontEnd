@@ -9,9 +9,7 @@
             />
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title" id="main-title">
-                        {{ $t('Products.fertilizers.title') }}
-                    </h1>
+                    <h1 class="title" id="main-title">{{ $t('Products.fertilizers.title') }}</h1>
                 </div>
             </div>
         </section>
@@ -27,10 +25,7 @@
                             <div class="card">
                                 <div class="card-image">
                                     <figure class="image is-4by3">
-                                        <img
-                                            src="https://bulma.io/images/placeholders/480x480.png"
-                                            alt="Placeholder image"
-                                        />
+                                        <img :src="product.imageURL" />
                                     </figure>
                                 </div>
                                 <div class="card-header">
@@ -41,9 +36,7 @@
                                                     name: 'fertilizers-show',
                                                     params: { name: index },
                                                 }"
-                                            >
-                                                {{ product.name }}
-                                            </router-link>
+                                            >{{ product.name }}</router-link>
                                         </div>
                                     </div>
                                 </div>
@@ -63,8 +56,6 @@ import ProductView from '@/components/ProductView.vue'
 import Products from '@/components/Products.vue'
 
 import { fertilizers } from '@/constants/products'
-
-// in full builds helpers are exposed as Vuex.mapState
 
 export default {
     name: 'home',

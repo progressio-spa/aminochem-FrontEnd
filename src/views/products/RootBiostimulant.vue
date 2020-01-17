@@ -29,7 +29,7 @@
                         </div>
                         <div class="column is-half">
                             <figure class="image is-5by4">
-                                <img src="https://bulma.io/images/placeholders/600x480.png" />
+                                <img :src="url" />
                             </figure>
                         </div>
                     </div>
@@ -95,8 +95,10 @@ export default {
     },
     setup() {
         const products = rootBiostimulant
+        const url = '/static/product-logo/Variantes-productosColor-04.png'
         return {
             products,
+            url,
         }
     },
 }
@@ -141,6 +143,11 @@ p {
 .tabs i {
     color: rgb(252, 74, 26);
 }
+
+.image {
+    bottom: 15vh;
+}
+
 .button {
     background-color: #ff715b;
     color: white;
