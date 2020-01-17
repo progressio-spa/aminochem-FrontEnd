@@ -45,7 +45,7 @@
                         <a class="navbar-item has-dropdown is-hoverable" id="drop">
                             <a class="navbar-link is-arrowless">{{ $t('Navbar.products') }}</a>
 
-                            <div class="navbar-dropdown is-boxed">
+                            <div class="navbar-dropdown is-boxed" style="top: 11vh">
                                 <a class="navbar-item" id="drop-item">
                                     <router-link
                                         to="/products/fertilizers"
