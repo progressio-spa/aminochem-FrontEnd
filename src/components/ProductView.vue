@@ -80,8 +80,9 @@
 <script>
 // Import Fertilizer products
 import { mapState, mapMutations } from 'vuex'
-import { fertilizers } from '@/constants/products'
 import Navbar from '@/components/Navbar.vue'
+
+import { fertilizers } from '@/constants/products'
 
 export default {
     name: 'home',
@@ -156,6 +157,10 @@ p {
 
 .tabs i {
     color: rgb(252, 74, 26);
+}
+
+.image {
+    bottom: 15vh;
 }
 
 @media (max-width: 767px) {
