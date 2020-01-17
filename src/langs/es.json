@@ -6,7 +6,7 @@
         "dropdown1": "Nutrición Vegetal",
         "dropdown11": "Fertilizantes foliares",
         "dropdown12": "Enmiendas orgánicas",
-        "dropdown13": "Bioestimulantes de raíces",
+        "dropdown13": "Aceite natural de uso agrícola",
         "dropdown2": "Insecticida Coadyuvante",
         "network": "Red de Distribución",
         "technical": "Sección Técnica",
@@ -65,7 +65,7 @@
             "description8": "Reemplaza aplicaciones de güanos compostados o frescos."
         },
         "rootBiostimulant": {
-            "title": "Bioestimulantes de raíces",
+            "title": "Aceite natural de uso agrícola",
             "name": "Aminoroot",
             "description1": "Bioestimulante de raíces a base de aminoácidos libres, estractos vegetales, ácidos fúlvicos y materia orgánica activa, destinado a promover y fortalecer el crecimiento radical en todo tipo de frutales, hortalizas y cultivos.",
             "description2": "Estimula el crecimiento de raíces induciendo un sistema radical abundante y vigoroso.",
