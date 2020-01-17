@@ -1,8 +1,6 @@
 <template>
     <div class="hero-head">
-        <header
-          class="navbar is-green"
-          :class="{scrolled: scrollPosition > 52}">
+        <header class="navbar is-green" :class="{scrolled: scrollPosition > 52}">
             <div class="container">
                 <div class="navbar-brand">
                     <a class="navbar-item">
@@ -100,78 +98,85 @@
 
 <script>
 export default {
-  data() {
-    return {
-      activeClass: 'active',
-      variablePrueba: 'test',
-      showNavbarMobile: false,
-      scrollPosition: 0,
-    };
-  },
-  mounted() {
-    window.addEventListener('scroll', this.updateScroll);
-  },
-  computed: {
-    currentPage() {
-      return this.$route.path;
+    data() {
+        return {
+            activeClass: 'active',
+            variablePrueba: 'test',
+            showNavbarMobile: false,
+            scrollPosition: 0,
+        }
     },
-  },
-  methods: {
-    showNavbarBurger() {
-      this.showNavbarMobile = !this.showNavbarMobile;
+    mounted() {
+        window.addEventListener('scroll', this.updateScroll)
     },
-    updateScroll() {
-      this.scrollPosition = window.scrollY;
+    computed: {
+        currentPage() {
+            return this.$route.path
+        },
     },
-  },
-};
+    methods: {
+        showNavbarBurger() {
+            this.showNavbarMobile = !this.showNavbarMobile
+        },
+        updateScroll() {
+            this.scrollPosition = window.scrollY
+        },
+    },
+}
 </script>
 
 <style scoped>
-
 .navbar {
-  position: fixed;
-  top: 52px;
-  background-color: white !important;
-  width: 100vw;
+    position: fixed;
+    top: 52px;
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    width: 100vw;
 }
 
 .scrolled {
-  top: 0;
+    top: 0;
 }
 
-.hero-head{
-  background: white;
+.hero-head {
+    background: white;
 }
 
 .navbar-item img {
-  max-height: 6rem;
-  color: black !important;
+    max-height: 6rem;
+    color: black !important;
 }
 
 a,
 .button a,
 #drop-item-item {
-  color: #585858;
+    color: #585858;
 }
 #drop-item {
-  color: #e96711;
+    color: #e96711;
 }
 
 a:hover {
-  color: #e96711;
+    color: #e96711;
 }
 
 .active a {
-  color: black;
+    color: black;
 }
 
 .active a:hover {
-  color: rgb(0, 129, 0);
+    color: rgb(0, 129, 0);
 }
 
 .hero.is-success .navbar-item,
 .hero.is-success .navbar-link {
-  color: black;
+    color: black;
+}
+
+.hero.is-success a.navbar-item:hover,
+.hero.is-success a.navbar-item.is-active,
+.hero.is-success .navbar-link:hover,
+.hero.is-success .navbar-link.is-active {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgb(0, 129, 0);
 }
 </style>
