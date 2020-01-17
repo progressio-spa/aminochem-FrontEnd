@@ -25,7 +25,7 @@
                             <div class="card">
                                 <div class="card-image">
                                     <figure class="image is-4by3">
-                                        <img :src="product.imageURL" />
+                                        <img :src="product.imgURL" />
                                     </figure>
                                 </div>
                                 <div class="card-header">
@@ -66,8 +66,10 @@ export default {
     },
     setup() {
         const products = fertilizers
+        const url = '/static/product-logo/Variantes-productosColor-03.png'
         return {
             products,
+            url,
         }
     },
     data() {
