@@ -30,42 +30,6 @@
                             </figure>
                         </div>
                     </div>
-
-                    <br />
-                    <nav class="level is-desktop">
-                        <div class="level-item">
-                            <button class="button is-medium">
-                                <span class="icon">
-                                    <i class="fas fa-tag"></i>
-                                </span>
-                                <span>{{ $t('Products.buttons.label') }}</span>
-                            </button>
-                        </div>
-                        <div class="level-item">
-                            <button class="button is-medium">
-                                <span class="icon">
-                                    <i class="fas fa-file-alt"></i>
-                                </span>
-                                <span>{{ $t('Products.buttons.datasheet') }}</span>
-                            </button>
-                        </div>
-                        <div class="level-item">
-                            <button class="button is-medium">
-                                <span class="icon">
-                                    <i class="fas fa-exclamation-triangle"></i>
-                                </span>
-                                <span>{{ $t('Products.buttons.safetysheet') }}</span>
-                            </button>
-                        </div>
-                        <div class="level-item">
-                            <button class="button is-medium">
-                                <span class="icon">
-                                    <i class="fas fa-info-circle"></i>
-                                </span>
-                                <span>{{ $t('Products.buttons.brochure') }}</span>
-                            </button>
-                        </div>
-                    </nav>
                 </div>
             </div>
         </section>

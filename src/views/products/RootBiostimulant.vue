@@ -26,50 +26,51 @@
                                 <p align="left">{{ $t('Products.rootBiostimulant.description4') }}</p>
                                 <p align="left">{{ $t('Products.rootBiostimulant.description5') }}</p>
                             </div>
-                            <br />
-                            <br />
-                            <nav class="breadcrumb has-bullet-separator" aria-label="breadcrumbs">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <span class="icon">
-                                                <i class="fas fa-tag"></i>
-                                            </span>
-                                            <span>{{ $t('Products.buttons.label') }}</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="icon">
-                                                <i class="fas fa-file-alt"></i>
-                                            </span>
-                                            <span>{{ $t('Products.buttons.datasheet') }}</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="icon">
-                                                <i class="fas fa-exclamation-triangle"></i>
-                                            </span>
-                                            <span>{{ $t('Products.buttons.safetysheet') }}</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="icon">
-                                                <i class="fas fa-info-circle"></i>
-                                            </span>
-                                            <span>{{ $t('Products.buttons.brochure') }}</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
                         </div>
                         <div class="column is-half">
                             <figure class="image is-5by4">
                                 <img src="https://bulma.io/images/placeholders/600x480.png" />
                             </figure>
                         </div>
+                    </div>
+                    <br />
+                    <div
+                        class="tabs is-toggle is-medium is-fullwidth is-centered is-toggle-rounded"
+                    >
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <span class="icon">
+                                        <i class="fas fa-tag"></i>
+                                    </span>
+                                    <span>{{ $t('Products.buttons.label') }}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon">
+                                        <i class="fas fa-file-alt"></i>
+                                    </span>
+                                    <span>{{ $t('Products.buttons.datasheet') }}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </span>
+                                    <span>{{ $t('Products.buttons.safetysheet') }}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon">
+                                        <i class="fas fa-info-circle"></i>
+                                    </span>
+                                    <span>{{ $t('Products.buttons.brochure') }}</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -133,6 +134,13 @@ p {
     size: 2.5rem;
 }
 
+.tabs span {
+    color: #2b2b2b;
+}
+
+.tabs i {
+    color: rgb(252, 74, 26);
+}
 .button {
     background-color: #ff715b;
     color: white;
