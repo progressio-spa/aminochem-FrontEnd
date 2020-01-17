@@ -25,7 +25,6 @@
                 </div>
             </div>
             <Navbar></Navbar>
-            <div class="divider"></div>
             <div class="hero-body">
                 <div class="container has-text-left" id="mainText">
                     <!-- <h1 class="title">{{ $t('Home.MainText') }}</h1> -->
@@ -104,9 +103,12 @@
             </div>
         </section>
 
-        <section class="hero is-large has-background">
-            <img alt="Bee" class="hero-background is-transparent" src="@/assets/Home/Footer.png" />
-            <div class="hero-body"></div>
+        <section class="hero is-medium is-light">
+            <div class="hero-body">
+                <video width="1000" controls>
+                    <source src="@/assets/Home/Video1.mp4" type="video/mp4" />
+                </video>
+            </div>
         </section>
     </div>
 </template>
