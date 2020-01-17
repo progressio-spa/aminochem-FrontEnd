@@ -28,82 +28,49 @@
                         </div>
                         <div class="column is-half">
                             <figure class="image is-5by4">
-                                <img src="https://bulma.io/images/placeholders/600x480.png" />
+                                <img :src="product.imgURL" />
                             </figure>
                         </div>
                     </div>
-                    <br>
-                    <div class="tabs is-toggle is-medium is-fullwidth is-centered is-toggle-rounded">
-                      <ul>
-                          <li>
-                              <a href="#">
-                                  <span class="icon">
-                                      <i class="fas fa-tag"></i>
-                                  </span>
-                                  <span>{{ $t('Products.buttons.label') }}</span>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="#">
-                                  <span class="icon">
-                                      <i class="fas fa-file-alt"></i>
-                                  </span>
-                                  <span>{{ $t('Products.buttons.datasheet') }}</span>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="#">
-                                  <span class="icon">
-                                      <i class="fas fa-exclamation-triangle"></i>
-                                  </span>
-                                  <span>{{ $t('Products.buttons.safetysheet') }}</span>
-                              </a>
-                          </li>
-                          <li>
-                              <a href="#">
-                                  <span class="icon">
-                                      <i class="fas fa-info-circle"></i>
-                                  </span>
-                                  <span>{{ $t('Products.buttons.brochure') }}</span>
-                              </a>
-                          </li>
-                      </ul>
+                    <br />
+                    <div
+                        class="tabs is-toggle is-medium is-fullwidth is-centered is-toggle-rounded"
+                    >
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <span class="icon">
+                                        <i class="fas fa-tag"></i>
+                                    </span>
+                                    <span>{{ $t('Products.buttons.label') }}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon">
+                                        <i class="fas fa-file-alt"></i>
+                                    </span>
+                                    <span>{{ $t('Products.buttons.datasheet') }}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </span>
+                                    <span>{{ $t('Products.buttons.safetysheet') }}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon">
+                                        <i class="fas fa-info-circle"></i>
+                                    </span>
+                                    <span>{{ $t('Products.buttons.brochure') }}</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-
-                    <!-- <nav class="level is-desktop">
-                        <div class="level-item">
-                            <button class="button is-medium">
-                                <span class="icon">
-                                    <i class="fas fa-tag"></i>
-                                </span>
-                                <span>{{ $t('Products.buttons.label') }}</span>
-                            </button>
-                        </div>
-                        <div class="level-item">
-                            <button class="button is-medium">
-                                <span class="icon">
-                                    <i class="fas fa-file-alt"></i>
-                                </span>
-                                <span>{{ $t('Products.buttons.datasheet') }}</span>
-                            </button>
-                        </div>
-                        <div class="level-item">
-                            <button class="button is-medium">
-                                <span class="icon">
-                                    <i class="fas fa-exclamation-triangle"></i>
-                                </span>
-                                <span>{{ $t('Products.buttons.safetysheet') }}</span>
-                            </button>
-                        </div>
-                        <div class="level-item">
-                            <button class="button is-medium">
-                                <span class="icon">
-                                    <i class="fas fa-info-circle"></i>
-                                </span>
-                                <span>{{ $t('Products.buttons.brochure') }}</span>
-                            </button>
-                        </div>
-                    </nav>-->
                 </div>
             </div>
         </section>
@@ -183,11 +150,11 @@ p {
     padding: 0 3vw 0 3vw;
 }
 
-.tabs span{
+.tabs span {
     color: #2b2b2b;
 }
 
-.tabs i{
+.tabs i {
     color: rgb(252, 74, 26);
 }
 
