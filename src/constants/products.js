@@ -8,6 +8,7 @@ export const fertilizers = {
         subdescription2:
             'Fortalece y recupera las plantas sometidas a situaciones de estrés (disminuyendo pérdidas de potencial productivo).',
         subdescription3: 'Induce formación de plantas más sanas, resistentes y vigorosas.',
+        imgURL: '../assets/Products/Products-icon/Variantes-productosColor-01.png',
     },
     'aminoterra-green': {
         name: 'Aminoterra Green',
@@ -18,6 +19,7 @@ export const fertilizers = {
         subdescription2:
             'Fortalece y recupera las plantas sometidas a situaciones de estrés (disminuyendo pérdidas de potencial productivo).',
         subdescription3: 'Induce formación de plantas más sanas, resistentes y vigorosas.',
+        imgURL: '../assets/Products/Products-icon/Variantes-productosColor-01.png',
     },
     'aminoterra-plus': {
         name: 'Aminoterra Plus Zinc',
@@ -28,6 +30,7 @@ export const fertilizers = {
         subdescription2:
             'Fortalece y recupera las plantas sometidas a situaciones de estrés (disminuyendo pérdidas de potencial productivo).',
         subdescription3: 'Induce formación de plantas más sanas, resistentes y vigorosas.',
+        imgURL: '../assets/Products/Products-icon/Variantes-productosColor-01.png',
     },
     'aminoterra-plus-zinc': {
         name: 'Aminoterra Plus Zinc (Argentina)',
@@ -38,6 +41,7 @@ export const fertilizers = {
         subdescription2:
             'Fortalece y recupera las plantas sometidas a situaciones de estrés (disminuyendo pérdidas de potencial productivo).',
         subdescription3: 'Induce formación de plantas más sanas, resistentes y vigorosas.',
+        imgURL: '@/assets/Products/Products-icon/Variantes-productosColor-01.png',
     },
     'bioamino-L': {
         name: 'Bioamino-L Active Praderas',
@@ -47,6 +51,7 @@ export const fertilizers = {
         subdescription2: 'Mejora el nivel proteico de forraje y la palatabilidad del forraje.',
         subdescription3:
             'Proporciona una nutrición directa con aminoácidos (aporte de nitrógeno metabolizado con un gran ahorro energético para las plantas).',
+        imgURL: '../assets/Products/Products-icon/Variantes-productosColor-01.png',
     },
 
     Aminosoil: {
@@ -58,6 +63,7 @@ export const fertilizers = {
         subdescription2:
             'AMINOSOIL PREMIUM, es un producto nacional de alta calidad para la fertilización moderna de los cultivos, ha sido testeado en distintas especies vegetales y muestra una respuesta sobresaliente en el establecimiento y recuperación de las mismas.',
         subdescription3: '',
+        imgURL: '../assets/Products/Products-icon/Variantes-productosColor-01.png',
     },
     'Bioil-S': {
         name: 'Bioil-S (Enhance)',
@@ -68,6 +74,7 @@ export const fertilizers = {
         subdescription2:
             'Producto de su origen, Bioil-S (Enhance) también posee un interesante contenido de micronutrientes lo que contribuye a una nutrición exitosa en todo tipo de cultivos, hortalizas y frutales.',
         subdescription3: '',
+        imgURL: '../assets/Products/Products-icon/Variantes-productosColor-01.png',
     },
 }
 
