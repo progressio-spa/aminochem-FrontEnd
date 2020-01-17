@@ -179,4 +179,22 @@ a:hover {
     background-color: rgba(255, 255, 255, 0.5);
     color: rgb(0, 129, 0);
 }
+
+a.navbar-item:focus,
+a.navbar-item:focus-within,
+a.navbar-item:hover,
+a.navbar-item.is-active,
+.navbar-link:focus,
+.navbar-link:focus-within,
+.navbar-link:hover,
+.navbar-link.is-active {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #e96711;
+}
+
+.navbar-item.has-dropdown:focus .navbar-link,
+.navbar-item.has-dropdown:hover .navbar-link,
+.navbar-item.has-dropdown.is-active .navbar-link {
+    background-color: rgba(255, 255, 255, 0.3);
+}
 </style>
