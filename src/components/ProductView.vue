@@ -32,7 +32,6 @@
                             </figure>
                         </div>
                     </div>
-                    <br />
                     <div
                         class="tabs is-toggle is-medium is-fullwidth is-centered is-toggle-rounded"
                     >
