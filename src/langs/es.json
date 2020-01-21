@@ -9,7 +9,7 @@
         "dropdown13": "Aceite natural de uso agrícola",
         "dropdown2": "Insecticida Coadyuvante",
         "network": "Red de Distribución",
-        "technical": "Sección Técnica",
+        "technical": "Información Técnica",
         "contact": "Contacto"
     },
     "Home": {
@@ -39,7 +39,7 @@
         "card4-content": "Comienza el desarrollo de nuevas alternativas utilizando la misma materia prima. Así se logra crear y consolidar un área de negocios dedicada a dar soluciones innovadoras y eficientes al sector agrícola."
     },
     "TechnicalSection": {
-        "title": "Sección Técnica",
+        "title": "Información Técnica",
         "more": "Ver más"
     },
     "Network": {
