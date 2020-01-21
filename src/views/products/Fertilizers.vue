@@ -101,6 +101,11 @@ export default {
     font-size: 3rem;
 }
 
+.card{
+    max-width: 80%;
+    margin: auto;
+}
+
 .card-header {
     background-color: gray;
 }
