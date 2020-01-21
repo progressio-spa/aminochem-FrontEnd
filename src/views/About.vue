@@ -2,16 +2,10 @@
     <div class="about">
         <Navbar></Navbar>
         <section class="hero is-primary is-medium has-background">
-            <img
-                alt="Grass"
-                class="hero-background is-transparent"
-                src="@/assets/Home/people.jpg"
-            />
+            <img alt="Grass" class="hero-background is-transparent" src="@/assets/Home/people.jpg" />
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title is-1" id="main-title">
-                        {{ $t('AboutUs.title') }}
-                    </h1>
+                    <h1 class="title is-1" id="main-title">{{ $t('AboutUs.title') }}</h1>
                 </div>
             </div>
         </section>
@@ -33,15 +27,16 @@
                             <img src="@/assets/Home/raices2.jpg" />
                         </figure>
                     </div>
-<!--                     <div class="column">
+                    <!--                     <div class="column">
                         <figure class="image is-square">
                             <img src="https://bulma.io/images/placeholders/480x480.png" />
                         </figure>
-                    </div> -->
+                    </div>-->
                 </div>
             </div>
         </section>
-        <br /><br />
+        <br />
+        <br />
         <section class="team">
             <div class="container">
                 <h1 class="subtitle is-3">{{ $t('AboutUs.team') }}</h1>
@@ -63,7 +58,8 @@
                 <br />
             </div>
         </section>
-        <br /><br />
+        <br />
+        <br />
         <section class="hero is-light is-large has-background">
             <img
                 alt="Grass"
@@ -72,9 +68,7 @@
             />
             <div class="hero-head">
                 <div class="container">
-                    <h1 class="title">
-                        {{ $t('AboutUs.history') }}
-                    </h1>
+                    <h1 class="title">{{ $t('AboutUs.history') }}</h1>
                 </div>
             </div>
             <div class="hero-body">
@@ -154,125 +148,170 @@
                 </div>
             </div>
         </section>
-        <br /><br />
-        <ChileanMapModal
-            :modalIsActive="showChileanModal"
-            :closeModal="closeChileanModal"/>
+        <br />
+        <br />
+        <ChileanMapModal :modalIsActive="showChileanModal" :closeModal="closeChileanModal" />
     </div>
 </template>
 
 <script>
-
-import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min';
+import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min'
 
 // Amcharts imports
-import * as am4core from '@amcharts/amcharts4/core';
-import * as am4maps from '@amcharts/amcharts4/maps';
-import am4geodata_worldHigh from '@amcharts/amcharts4-geodata/worldHigh';
+import * as am4core from '@amcharts/amcharts4/core'
+import * as am4maps from '@amcharts/amcharts4/maps'
+import am4geodata_worldHigh from '@amcharts/amcharts4-geodata/worldHigh'
 
 // vue-function-api
-import { onMounted, value, computed } from 'vue-function-api';
+import { onMounted, value, computed } from 'vue-function-api'
 
 // Agents import
-import { regionManagers } from '../constants/agents';
+import { regionManagers } from '../constants/agents'
 
 // @ is an alias to /src
-import Navbar from '@/components/Navbar.vue';
-import ChileanMapModal from '@/components/ChileanMapModal.vue';
+import Navbar from '@/components/Navbar.vue'
+import ChileanMapModal from '@/components/ChileanMapModal.vue'
 
 export default {
-  name: 'home',
-  components: {
-    Navbar,
-    ChileanMapModal,
-  },
-  setup() {
-    const countryManagers = regionManagers;
-    // duplicate countries variable to delete countries that had country managers
-    const excludedCountries = ['AR', 'BO', 'BR', 'CL', 'CO', 'EC', 'PY', 'PE', 'UY', 'VE'];
-    countryManagers.forEach((countryManager) => {
-      const countryIndex = excludedCountries.indexOf(countryManager.country);
-      if (countryIndex !== -1) {
-        excludedCountries.splice(countryIndex, 1);
-      }
-    });
-    const hoveredCountry = value('');
-    const showChileanModal = value(false);
-    const closeChileanModal = () => {
-      showChileanModal.value = false;
-    };
-    const createSouthAmericanMap = () => {
-      // Create Instance
-      const southAmericanMap = am4core.create('teamSouthAmericanMap', am4maps.MapChart);
-      // Charge World Map
-      southAmericanMap.geodata = am4geodata_worldHigh;
-      // Set Projection
-      southAmericanMap.projection = new am4maps.projections.Miller();
-      // Create Serie
-      const worldSeries = southAmericanMap.series.push(new am4maps.MapPolygonSeries());
-      // Add South American Countries to Map, excluding anyone else
-      worldSeries.include = ['AR', 'BO', 'BR', 'CL', 'CO', 'EC', 'PY', 'PE', 'UY', 'VE'];
-      // Disabling Zoom
-      southAmericanMap.chartContainer.wheelable = false;
-      worldSeries.useGeodata = true;
-      // Configure series
-      const polygonTemplate = worldSeries.mapPolygons.template;
-      polygonTemplate.tooltipText = '{name}';
-      // Create hover state and set orange fill color
-      const hover = polygonTemplate.states.create('hover');
-      hover.properties.fill = am4core.color('#E7763D');
-      // Creating Event Listener for hover action in map
-      polygonTemplate.events.on(
-        'over',
-        (ev) => {
-          if (!excludedCountries.includes(ev.target.dataItem.dataContext.id)) {
-            hoveredCountry.value = ev.target.dataItem.dataContext.id;
-          } else {
-            ev.target.isHover = false;
-          }
-        },
-        this,
-      );
-      polygonTemplate.events.on(
-        'hit',
-        (ev) => {
-          if (ev.target.dataItem.dataContext.id === 'CL') {
-            showChileanModal.value = true;
-          }
-        },
-        this,
-      );
-      worldSeries.mapPolygons.template.events.on(
-        'out',
-        () => {
-          hoveredCountry.value = '';
-        },
-        this,
-      );
-    };
-    onMounted(() => {
-      bulmaCarousel.attach('#carousel-demo', {
-        slidesToScroll: 1,
-        slidesToShow: 3,
-        infinite: true,
-        pagination: false,
-        initialSlide: 3,
-        breakpoints: [
-          { changePoint: 768, slidesToShow: 1, slidesToScroll: 1, initialSlide: 0 },
-          { changePoint: 1025, slidesToShow: 1, slidesToScroll: 1, initialSlide: 0 },
-        ],
-      });
-      createSouthAmericanMap();
-    });
-    const countriesToShow = computed(() => countryManagers
-      .filter(countryManager => countryManager.country === hoveredCountry.value));
-    return {
-      countriesToShow,
-      closeChileanModal,
-      showChileanModal,
-    };
-  },
-};
+    name: 'home',
+    components: {
+        Navbar,
+        ChileanMapModal,
+    },
+    setup() {
+        const countryManagers = regionManagers
+        // duplicate countries variable to delete countries that had country managers
+        const excludedCountries = [
+            'AR',
+            'BO',
+            'BR',
+            'CL',
+            'CO',
+            'EC',
+            'PY',
+            'PE',
+            'UY',
+            'VE',
+        ]
+        countryManagers.forEach(countryManager => {
+            const countryIndex = excludedCountries.indexOf(
+                countryManager.country
+            )
+            if (countryIndex !== -1) {
+                excludedCountries.splice(countryIndex, 1)
+            }
+        })
+        const hoveredCountry = value('')
+        const showChileanModal = value(false)
+        const closeChileanModal = () => {
+            showChileanModal.value = false
+        }
+        const createSouthAmericanMap = () => {
+            // Create Instance
+            const southAmericanMap = am4core.create(
+                'teamSouthAmericanMap',
+                am4maps.MapChart
+            )
+            // Charge World Map
+            southAmericanMap.geodata = am4geodata_worldHigh
+            // Set Projection
+            southAmericanMap.projection = new am4maps.projections.Miller()
+            // Create Serie
+            const worldSeries = southAmericanMap.series.push(
+                new am4maps.MapPolygonSeries()
+            )
+            // Add South American Countries to Map, excluding anyone else
+            worldSeries.include = [
+                'AR',
+                'BO',
+                'BR',
+                'CL',
+                'CO',
+                'EC',
+                'PY',
+                'PE',
+                'UY',
+                'VE',
+            ]
+            // Disabling Zoom
+            southAmericanMap.chartContainer.wheelable = false
+            worldSeries.useGeodata = true
+            // Configure series
+            const polygonTemplate = worldSeries.mapPolygons.template
+            polygonTemplate.tooltipText = '{name}'
+            // Create hover state and set orange fill color
+            const hover = polygonTemplate.states.create('hover')
+            hover.properties.fill = am4core.color('#E7763D')
+            // Creating Event Listener for hover action in map
+            polygonTemplate.events.on(
+                'over',
+                ev => {
+                    if (
+                        !excludedCountries.includes(
+                            ev.target.dataItem.dataContext.id
+                        )
+                    ) {
+                        hoveredCountry.value = ev.target.dataItem.dataContext.id
+                    } else {
+                        ev.target.isHover = false
+                    }
+                },
+                this
+            )
+            polygonTemplate.events.on(
+                'hit',
+                ev => {
+                    if (ev.target.dataItem.dataContext.id === 'CL') {
+                        showChileanModal.value = true
+                    }
+                },
+                this
+            )
+            worldSeries.mapPolygons.template.events.on(
+                'out',
+                () => {
+                    hoveredCountry.value = ''
+                },
+                this
+            )
+        }
+        onMounted(() => {
+            bulmaCarousel.attach('#carousel-demo', {
+                slidesToScroll: 1,
+                slidesToShow: 3,
+                infinite: true,
+                pagination: false,
+                initialSlide: 3,
+                breakpoints: [
+                    {
+                        changePoint: 768,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        initialSlide: 0,
+                    },
+                    {
+                        changePoint: 1025,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        initialSlide: 0,
+                    },
+                ],
+            })
+            createSouthAmericanMap()
+        })
+        const countriesToShow = computed(() =>
+            countryManagers.filter(
+                countryManager =>
+                    countryManager.country === hoveredCountry.value
+            )
+        )
+        return {
+            countriesToShow,
+            closeChileanModal,
+            showChileanModal,
+        }
+    },
+}
 </script>
 
 <style scoped>
@@ -298,6 +337,10 @@ export default {
 
 .hero.is-light .title {
     color: white;
+}
+
+.card-content {
+    min-height: 12rem;
 }
 
 .card > .card-content > .media > .media-content > .subtitle {
