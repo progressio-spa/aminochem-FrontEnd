@@ -43,16 +43,6 @@ export const fertilizers = {
         subdescription3: 'Induce formación de plantas más sanas, resistentes y vigorosas.',
         imgURL: '../static/product-logo/Variantes-productosColor-03.png',
     },
-    'bioamino-L': {
-        name: 'Bioamino-L Active Praderas',
-        description:
-            'Es un activador metabólico y desestresante de plantas sometidas a situaciones de estrés (Disminuyendo pérdidas de potencial productivo).',
-        subdescription1: 'Aumenta la tasa de crecimiento y el contenido de materia seca',
-        subdescription2: 'Mejora el nivel proteico de forraje y la palatabilidad del forraje.',
-        subdescription3:
-            'Proporciona una nutrición directa con aminoácidos (aporte de nitrógeno metabolizado con un gran ahorro energético para las plantas).',
-        imgURL: '../static/product-logo/Variantes-productosColor-06.png',
-    },
 
     Aminosoil: {
         name: 'Aminosoil Premium Polvo',
