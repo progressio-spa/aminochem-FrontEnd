@@ -105,7 +105,7 @@
 
         <section class="hero is-medium is-light">
             <div class="hero-body">
-                <video width="1000" controls>
+                <video width="1200" autoplay controls>
                     <source src="@/assets/Home/Video1.mp4" type="video/mp4" />
                 </video>
             </div>
