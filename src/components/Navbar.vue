@@ -164,7 +164,7 @@ a:hover {
 }
 
 .active a:hover {
-    color: rgb(0, 129, 0);
+    color: #e96711;
 }
 
 .hero.is-success .navbar-item,
@@ -177,7 +177,7 @@ a:hover {
 .hero.is-success .navbar-link:hover,
 .hero.is-success .navbar-link.is-active {
     background-color: rgba(255, 255, 255, 0.5);
-    color: rgb(0, 129, 0);
+    color: #e96711;
 }
 
 a.navbar-item:focus,
