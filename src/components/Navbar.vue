@@ -146,38 +146,19 @@ export default {
     color: black !important;
 }
 
-a,
-.button a,
-#drop-item-item {
-    color: #585858;
-}
-#drop-item {
-    color: #e96711;
-}
-
-a:hover {
-    color: #e96711;
-}
-
-.active a {
-    color: black;
-}
-
+#drop-item,
+a:hover,
 .active a:hover {
     color: #e96711;
 }
 
+a,
+.button a,
+#drop-item-item,
+.active a,
 .hero.is-success .navbar-item,
 .hero.is-success .navbar-link {
-    color: black;
-}
-
-.hero.is-success a.navbar-item:hover,
-.hero.is-success a.navbar-item.is-active,
-.hero.is-success .navbar-link:hover,
-.hero.is-success .navbar-link.is-active {
-    background-color: rgba(255, 255, 255, 0.5);
-    color: #e96711;
+    color: #585858;
 }
 
 a.navbar-item:focus,
@@ -187,8 +168,12 @@ a.navbar-item.is-active,
 .navbar-link:focus,
 .navbar-link:focus-within,
 .navbar-link:hover,
-.navbar-link.is-active {
-    background-color: rgba(255, 255, 255, 0.3);
+.navbar-link.is-active,
+.hero.is-success a.navbar-item:hover,
+.hero.is-success a.navbar-item.is-active,
+.hero.is-success .navbar-link:hover,
+.hero.is-success .navbar-link.is-active {
+    background-color: rgba(255, 255, 255, 0.5);
     color: #e96711;
 }
 
