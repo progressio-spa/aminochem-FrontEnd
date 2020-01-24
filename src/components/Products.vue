@@ -3,7 +3,8 @@
         <section class="hero is-white is-fullheight">
             <p>no ta funcionando esto</p>
         </section>
-        <br /><br />
+        <br />
+        <br />
     </div>
 </template>
 
@@ -33,34 +34,4 @@ export default {
 </script>
 
 <style scoped>
-.hero.has-background {
-    position: relative;
-    overflow: hidden;
-}
-.hero-background {
-    position: absolute;
-    object-fit: cover;
-    object-position: center center;
-    width: 100%;
-    height: 100%;
-}
-
-#main-title {
-    display: flex;
-    font-size: 3rem;
-}
-
-.card-header {
-    background-color: gray;
-}
-
-.hero.is-white .title {
-    color: white;
-}
-
-@media (max-width: 767px) {
-    #main-title {
-        font-size: 2rem;
-    }
-}
 </style>
