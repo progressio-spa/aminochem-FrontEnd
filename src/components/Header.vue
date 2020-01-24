@@ -4,47 +4,13 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a class="language-icon"
-                        @click="changeLanguage(es)">
+                        <a class="language-icon" @click="changeLanguage(es)">
                             <div class="flag flag-es"></div>
                         </a>
-                        <a class="language-icon"
-                        @click="changeLanguage(en)">
+                        <a class="language-icon" @click="changeLanguage(en)">
                             <div class="flag flag-us"></div>
                         </a>
-
-                        <!-- <a class="button">
-                            <div class="dropdown is-hoverable is-right">
-                                <div class="dropdown-trigger">
-                                    <span>Idioma</span>
-                                    <span class="icon is-small">
-                                        <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                    </span>
-                                </div>
-                                <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                                    <div class="dropdown-content">
-                                        <a
-                                            class="dropdown-item language-text"
-                                            v-for="language in languages"
-                                            :key="language.code"
-                                            @click="changeLanguage(language.code)"
-                                        >
-                                            <div v-if="language.code =='es'">
-                                                <div class="flag flag-es"></div>
-                                                &nbsp;
-                                                {{ language.name }}
-                                            </div>
-                                            <div v-else>
-                                                <div class="flag flag-us"></div>
-                                                &nbsp;
-                                                {{ language.name }}
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </a> -->
-                        <a class="button is-success">
+                        <a class="button is-success is-outlined">
                             <router-link to="/login">{{ $t('Login.loginNav') }}</router-link>
                         </a>
                     </div>
@@ -80,14 +46,14 @@ export default {
 
 <style scoped>
 .navbar-menu {
-    background-color: lightgray;
+    background-color: white;
 }
 .button a {
-    color: white;
+    color: green;
 }
 .language-icon {
-    margin-right:1vw;
-    margin-bottom:5px;
+    margin-right: 1vw;
+    margin-bottom: 5px;
 }
 /*!
  * Generated with CSS Flag Sprite generator (https://www.flag-sprites.com/) -
