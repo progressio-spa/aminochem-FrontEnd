@@ -40,7 +40,11 @@
     },
     "TechnicalSection": {
         "title": "Información Técnica",
-        "more": "Ver más"
+        "more": "Ver más",
+        "tab-1": "I+D",
+        "tab-2": "Publicaciones",
+        "tab-3": "Actividades",
+        "tab-4": "Noticias"
     },
     "Network": {
         "title": "Red de Distribución",
