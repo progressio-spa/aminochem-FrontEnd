@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 <template>
     <div class="home">
         <section class="hero is-success is-fullheight has-carousel" id="main">
@@ -115,25 +116,25 @@
 
 <script>
 // @ is an alias to /src
-import Navbar from '@/components/Navbar.vue'
-import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min'
+import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min';
+import Navbar from '@/components/Navbar.vue';
 
 export default {
-    name: 'home',
-    components: {
-        Navbar,
-    },
-    mounted() {
-        bulmaCarousel.attach('#carousel-demo', {
-            slidesToScroll: 1,
-            slidesToShow: 1,
-            infinite: true,
-            autoplay: true,
-            autoplaySpeed: 10000,
-            pagination: false,
-        })
-    },
-}
+  name: 'home',
+  components: {
+    Navbar,
+  },
+  mounted() {
+    bulmaCarousel.attach('#carousel-demo', {
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 10000,
+      pagination: false,
+    });
+  },
+};
 </script>
 
 <style scoped>
@@ -141,6 +142,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .hero.is-success {
@@ -175,6 +177,10 @@ export default {
 }
 .title {
     color: #585858;
+    /*align-items: center;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #mainText {
