@@ -101,8 +101,8 @@ export default {
     font-size: 3rem;
 }
 
-.card{
-    max-width: 80%;
+.card {
+    max-width: 70%;
     margin: auto;
 }
 
