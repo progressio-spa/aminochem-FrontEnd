@@ -47,7 +47,11 @@
                             <div class="card-content">
                                 <div class="media">
                                     <div class="media-content">
-                                        <p class="title is-4">{{ $t('Home.card1') }}</p>
+                                        <p class="title is-4">
+                                            <router-link
+                                                to="/products/fertilizers"
+                                            >{{ $t('Home.card1') }}</router-link>
+                                        </p>
                                     </div>
                                 </div>
 
@@ -68,7 +72,11 @@
                             <div class="card-content">
                                 <div class="media">
                                     <div class="media-content">
-                                        <p class="title is-4">{{ $t('Home.card2') }}</p>
+                                        <p class="title is-4">
+                                            <router-link
+                                                to="/products/amendments"
+                                            >{{ $t('Home.card2') }}</router-link>
+                                        </p>
                                     </div>
                                 </div>
 
@@ -89,7 +97,11 @@
                             <div class="card-content">
                                 <div class="media">
                                     <div class="media-content">
-                                        <p class="title is-4">{{ $t('Home.card3') }}</p>
+                                        <p class="title is-4">
+                                            <router-link
+                                                to="/products/rootBiostimulant"
+                                            >{{ $t('Home.card3') }}</router-link>
+                                        </p>
                                     </div>
                                 </div>
 
@@ -197,6 +209,12 @@ export default {
     margin: 0 3%;
     padding: 0;
     z-index: 2;
+}
+
+a {
+    color: #585858;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 @media (max-width: 767px) {
