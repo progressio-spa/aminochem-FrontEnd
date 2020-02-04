@@ -5,7 +5,7 @@
             <img
                 alt="Grass"
                 class="hero-background is-transparent"
-                src="@/assets/AboutUs/Salmon.jpg"
+                src="@/assets/AboutUs/cerezas.jpg"
             />
             <div class="hero-body">
                 <div class="container">
