@@ -47,7 +47,7 @@
                       :key="agent.name">
                       <h1>{{ agent.name }}</h1>
                       <h1>{{ agent.position }}</h1>
-                      <h1>{{ agent.email }}</h1>
+                      <h1 class="link" @click="openUrl(agent.email)">{{ agent.email }}</h1>
                       <h1>{{ agent.phone }}</h1>
                       <br>
                     </div>
@@ -131,9 +131,6 @@ export default {
       chileanSeries.mapPolygons.template.events.on('over', (ev) => {
         hoveredRegion.value = ev.target.dataItem.dataContext.id;
       }, this);
-      chileanSeries.mapPolygons.template.events.on('out', () => {
-        hoveredRegion.value = '';
-      }, this);
     };
     // SouthAmerican Map Method
     const createSouthAmericanDistributionMap = () => {
@@ -183,6 +180,9 @@ export default {
         createSouthAmericanDistributionMap();
       }
     };
+    const openUrl = (url) => {
+      window.open(url, '_blank');
+    };
     const agentsToShow = computed(() => (
       regionManagers.filter(regionManager => regionManager.region === hoveredRegion.value)
     ));
@@ -197,6 +197,7 @@ export default {
       zoneClicked,
       selectedNetwork,
       globalAgentsToShow,
+      openUrl,
     };
   },
 };
@@ -254,4 +255,10 @@ export default {
   width: 60vw;
   height: 100vh;
 }
+
+.link:hover {
+  color: orange;
+  cursor: pointer;
+}
+
 </style>
