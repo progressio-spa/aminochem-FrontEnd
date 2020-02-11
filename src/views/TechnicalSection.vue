@@ -48,6 +48,14 @@
                             <span>{{ $t('TechnicalSection.tab-4') }}</span>
                         </a>
                     </li>
+                    <li class="tab" @click="openTab(event,'test5')">
+                        <a>
+                            <span class="icon is-small">
+                                <i class="fas fa-pen" aria-hidden="true"></i>
+                            </span>
+                            <span>{{ $t('TechnicalSection.tab-5') }}</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </section>
@@ -107,6 +115,12 @@
                 </div>
             </div>
         </section>
+        <section class="content-tab hero is-light is-fullheight" id="test5" style="display:none">
+            <div class="hero-head">
+                <div class="title">{{ $t('TechnicalSection.tab-5') }}</div>
+            </div>
+            <Dashboard />
+        </section>
     </div>
 </template>
 
@@ -116,12 +130,14 @@ import { onCreated } from 'vue-function-api'
 // @ is an alias to /src
 import Navbar from '@/components/Navbar.vue'
 import BlogCard from '@/components/BlogCard.vue'
+import Dashboard from '@/components/Dashboard.vue'
 
 export default {
     name: 'home',
     components: {
         Navbar,
         BlogCard,
+        Dashboard,
     },
     setup(props, { root }) {
         onCreated(() => {
