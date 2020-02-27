@@ -98,31 +98,31 @@
 
 <script>
 export default {
-  data() {
-    return {
-      activeClass: 'active',
-      variablePrueba: 'test',
-      showNavbarMobile: false,
-      scrollPosition: 0,
-    };
-  },
-  mounted() {
-    window.addEventListener('scroll', this.updateScroll);
-  },
-  computed: {
-    currentPage() {
-      return this.$route.path;
+    data() {
+        return {
+            activeClass: 'active',
+            variablePrueba: 'test',
+            showNavbarMobile: false,
+            scrollPosition: 0,
+        }
     },
-  },
-  methods: {
-    showNavbarBurger() {
-      this.showNavbarMobile = !this.showNavbarMobile;
+    mounted() {
+        window.addEventListener('scroll', this.updateScroll)
     },
-    updateScroll() {
-      this.scrollPosition = window.scrollY;
+    computed: {
+        currentPage() {
+            return this.$route.path
+        },
     },
-  },
-};
+    methods: {
+        showNavbarBurger() {
+            this.showNavbarMobile = !this.showNavbarMobile
+        },
+        updateScroll() {
+            this.scrollPosition = window.scrollY
+        },
+    },
+}
 </script>
 
 <style scoped>
@@ -151,7 +151,7 @@ a:hover,
 .active a:hover {
     /* color: rgb(0, 129, 0); ESTE ES EL ORIGINAL */
     /* color: rgb(3, 63, 3); */
-    color: black!important;
+    color: #e96711 !important;
 }
 
 a,
@@ -160,7 +160,7 @@ a,
 .active a,
 .hero.is-success .navbar-item,
 .hero.is-success .navbar-link {
-    color: black!important;
+    color: #3d3d3d !important;
 }
 
 .hero.is-success a.navbar-item:hover,
@@ -170,7 +170,7 @@ a,
     background-color: rgba(255, 255, 255, 0.5);
     /* color: rgb(0, 129, 0); ESTE ES EL ORIGINAL*/
     /* color: rgb(3, 63, 3); */
-    color: black!important;
+    color: #3d3d3d !important;
 }
 
 a.navbar-item:focus,
