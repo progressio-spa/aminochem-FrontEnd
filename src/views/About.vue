@@ -21,12 +21,28 @@
                     <p>{{ $t('AboutUs.paragraph2') }}</p>
                 </div>
                 <br />
-                <div class="columns">
+                <div class="columns images is-desktop">
                     <div class="column">
                         <figure class="image is-square">
-                            <img src="@/assets/Home/raices2.jpg" />
+                            <img src="@/assets/AboutUs/a1.jpg" />
                         </figure>
                     </div>
+                    <div class="column">
+                        <figure class="image is-square">
+                            <img src="@/assets/AboutUs/a2.jpg" />
+                        </figure>
+                    </div>
+                    <div class="column">
+                        <figure class="image is-square">
+                            <img src="@/assets/AboutUs/a3.jpg" />
+                        </figure>
+                    </div>
+                    <div class="column">
+                        <figure class="image is-square">
+                            <img src="@/assets/AboutUs/a4.jpg" />
+                        </figure>
+                    </div>
+
                     <!--                     <div class="column">
                         <figure class="image is-square">
                             <img src="https://bulma.io/images/placeholders/480x480.png" />
@@ -374,6 +390,10 @@ export default {
     height: 100vh;
 }
 
+.images img {
+    object-fit: cover;
+}
+
 .agents-list {
     width: 30vw;
     height: 100vh;
@@ -386,7 +406,15 @@ export default {
     width: 60vw;
     height: 100vh;
 }
-.slick-slide:focus {
-    outline: none;
+.slick-slide,
+.slick-slide * {
+    outline: none !important;
+}
+
+@media screen and (max-width: 480px) {
+    .images img {
+        max-width: 50%;
+        max-height: 50%;
+    }
 }
 </style>
