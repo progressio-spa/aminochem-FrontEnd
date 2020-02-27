@@ -37,7 +37,7 @@
                     >
                         <ul>
                             <li>
-                                <a href="#">
+                                <a @click="showLabel">
                                     <span class="icon">
                                         <i class="fas fa-tag"></i>
                                     </span>
@@ -107,6 +107,18 @@ export default {
             let name = this.$route.params.name
             this.product = fertilizers[name]
             console.log(this.product)
+        },
+        showLabel() {
+            var pdf = this.product.label
+            window.open('data:application/pdf;base64' + encodeURI(pdf))
+        },
+        showSpecs() {
+            var pdf = this.product.specs
+            window.open('data:application/pdf,' + encodeURI(pdf))
+        },
+        showSecurity() {
+            var pdf = this.product.security
+            window.open('data:application/pdf,' + encodeURI(pdf))
         },
     },
 }
