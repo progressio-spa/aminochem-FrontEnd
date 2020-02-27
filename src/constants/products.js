@@ -9,6 +9,9 @@ export const fertilizers = {
             'Fortalece y recupera las plantas sometidas a situaciones de estrés (disminuyendo pérdidas de potencial productivo).',
         subdescription3: 'Induce formación de plantas más sanas, resistentes y vigorosas.',
         imgURL: '../static/product-logo/Variantes-productosColor-08.png',
+        label: 'src/assets/Downloads/Aminoterra/label.pdf',
+        specs: '',
+        security: '',
     },
     'aminoterra-green': {
         name: 'Aminoterra Green',
@@ -20,6 +23,9 @@ export const fertilizers = {
             'Fortalece y recupera las plantas sometidas a situaciones de estrés (disminuyendo pérdidas de potencial productivo).',
         subdescription3: 'Induce formación de plantas más sanas, resistentes y vigorosas.',
         imgURL: '../static/product-logo/Variantes-productosColor-10.png',
+        label: '',
+        specs: '',
+        security: '',
     },
     'aminoterra-plus': {
         name: 'Aminoterra Plus Zinc',
@@ -31,6 +37,9 @@ export const fertilizers = {
             'Fortalece y recupera las plantas sometidas a situaciones de estrés (disminuyendo pérdidas de potencial productivo).',
         subdescription3: 'Induce formación de plantas más sanas, resistentes y vigorosas.',
         imgURL: '../static/product-logo/Variantes-productosColor-03.png',
+        label: '',
+        specs: '',
+        security: '',
     },
     'aminoterra-plus-zinc': {
         name: 'Aminoterra Plus Zinc (Argentina)',
@@ -42,6 +51,9 @@ export const fertilizers = {
             'Fortalece y recupera las plantas sometidas a situaciones de estrés (disminuyendo pérdidas de potencial productivo).',
         subdescription3: 'Induce formación de plantas más sanas, resistentes y vigorosas.',
         imgURL: '../static/product-logo/Variantes-productosColor-03.png',
+        label: '',
+        specs: '',
+        security: '',
     },
 
     Aminosoil: {
@@ -54,6 +66,9 @@ export const fertilizers = {
             'AMINOSOIL PREMIUM, es un producto nacional de alta calidad para la fertilización moderna de los cultivos, ha sido testeado en distintas especies vegetales y muestra una respuesta sobresaliente en el establecimiento y recuperación de las mismas.',
         subdescription3: '',
         imgURL: '../static/product-logo/Variantes-productosColor-05.png',
+        label: '',
+        specs: '',
+        security: '',
     },
     'Bioil-S': {
         name: 'Bioil-S (Enhance)',
@@ -65,6 +80,9 @@ export const fertilizers = {
             'Producto de su origen, Bioil-S (Enhance) también posee un interesante contenido de micronutrientes lo que contribuye a una nutrición exitosa en todo tipo de cultivos, hortalizas y frutales.',
         subdescription3: '',
         imgURL: '../static/product-logo/Variantes-productosColor-07.png',
+        label: '',
+        specs: '',
+        security: '',
     },
 }
 
