@@ -3,22 +3,13 @@
         <Navbar></Navbar>
         <section class="hero is-primary is-medium has-background">
             <img
-                v-if="selectedNetwork === 'CL'"
                 alt="Grass"
                 class="hero-background is-transparent"
-                src="@/assets/Network/Chile.jpg"
-            />
-            <img
-                v-else
-                alt="Grass"
-                class="hero-background is-transparent"
-                src="@/assets/Network/Exterior.jpg"
+                src="@/assets/Network/network.jpg"
             />
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title is-1" id="main-title">
-                        {{ $t('Network.title') }}
-                    </h1>
+                    <h1 class="title is-1" id="main-title">{{ $t('Network.title') }}</h1>
                 </div>
             </div>
         </section>
@@ -26,14 +17,16 @@
             <div class="container">
                 <div class="columns">
                     <div class="column">
-                        <h1 class="subtitle is-4 has-text-grey-darker" @click="zoneClicked('CL')">
-                            {{ $t('Network.option1') }}
-                        </h1>
+                        <h1
+                            class="subtitle is-4 has-text-grey-darker"
+                            @click="zoneClicked('CL')"
+                        >{{ $t('Network.option1') }}</h1>
                     </div>
                     <div class="column">
-                        <h1 class="subtitle is-4 has-text-grey-darker" @click="zoneClicked('WR')">
-                            {{ $t('Network.option2') }}
-                        </h1>
+                        <h1
+                            class="subtitle is-4 has-text-grey-darker"
+                            @click="zoneClicked('WR')"
+                        >{{ $t('Network.option2') }}</h1>
                     </div>
                 </div>
             </div>
@@ -41,166 +34,185 @@
         <section class="hero is-light is-fullheight">
             <div class="hero-body">
                 <div class="container map-container">
-                  <div class="is-6 agents-list" v-if="selectedNetwork === 'CL'">
-                    <div
-                      v-for="agent in agentsToShow"
-                      :key="agent.name">
-                      <h1>{{ agent.name }}</h1>
-                      <h1>{{ agent.position }}</h1>
-                      <h1 class="link" @click="openUrl(agent.email)">{{ agent.email }}</h1>
-                      <h1>{{ agent.phone }}</h1>
-                      <br>
+                    <div class="is-6 agents-list" v-if="selectedNetwork === 'CL'">
+                        <div v-for="agent in agentsToShow" :key="agent.name">
+                            <h1>{{ agent.name }}</h1>
+                            <h1>{{ agent.position }}</h1>
+                            <h1 class="link" @click="openUrl(agent.email)">{{ agent.email }}</h1>
+                            <h1>{{ agent.phone }}</h1>
+                            <br />
+                        </div>
                     </div>
-                  </div>
-                  <div class="is-6 agents-list" v-else>
-                    <div
-                      v-for="agent in globalAgentsToShow"
-                      :key="agent.name">
-                      <div v-if="agent.country === 'AR'">
-                        <p>{{ agent.name }}</p>
-                        <h3>{{ agent.position }}</h3>
-                        <p>{{ agent.email }}</p>
-                        <h3>{{ agent.phone }}</h3>
-                      </div>
-                      <div v-else>
-                        <h1>{{ agent.name }}</h1>
-                        <h1>{{ agent.position }}</h1>
-                        <h1>{{ agent.email }}</h1>
-                        <h1>{{ agent.phone }}</h1>
-                        <br>
-                      </div>
+                    <div class="is-6 agents-list" v-else>
+                        <div v-for="agent in globalAgentsToShow" :key="agent.name">
+                            <div v-if="agent.country === 'AR'">
+                                <p>{{ agent.name }}</p>
+                                <h3>{{ agent.position }}</h3>
+                                <p>{{ agent.email }}</p>
+                                <h3>{{ agent.phone }}</h3>
+                            </div>
+                            <div v-else>
+                                <h1>{{ agent.name }}</h1>
+                                <h1>{{ agent.position }}</h1>
+                                <h1>{{ agent.email }}</h1>
+                                <h1>{{ agent.phone }}</h1>
+                                <br />
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="is-6">
-                    <div class="distributionMap"></div>
-                  </div>
+                    <div class="is-6">
+                        <div class="distributionMap"></div>
+                    </div>
                 </div>
             </div>
         </section>
-        <br /><br />
+        <br />
+        <br />
     </div>
 </template>
 
 <script>
 // Amcharts imports
-import * as am4core from '@amcharts/amcharts4/core';
-import * as am4maps from '@amcharts/amcharts4/maps';
-import am4geodata_chileHigh from '@/constants/ChileanMap';
-import am4geodata_worldHigh from '@amcharts/amcharts4-geodata/worldHigh';
+import * as am4core from '@amcharts/amcharts4/core'
+import * as am4maps from '@amcharts/amcharts4/maps'
+import am4geodata_chileHigh from '@/constants/ChileanMap'
+import am4geodata_worldHigh from '@amcharts/amcharts4-geodata/worldHigh'
 
 // vue-function-api imports
-import { onMounted, value, computed } from 'vue-function-api';
+import { onMounted, value, computed } from 'vue-function-api'
 
 // Import RegionAgents
-import { regionAgentsList, agentsList } from '../constants/agents';
+import { regionAgentsList, agentsList } from '../constants/agents'
 
 // @ is an alias to /src
-import Navbar from '@/components/Navbar.vue';
+import Navbar from '@/components/Navbar.vue'
 
 export default {
-  name: 'home',
-  components: {
-    Navbar,
-  },
-  setup() {
-    const selectedNetwork = value('CL');
-    const regionManagers = regionAgentsList;
-    const globalManagers = agentsList;
-    const hoveredRegion = value('');
-    const hoveredCountry = value('');
-    // Chilean Map Method
-    const CreateChileanDistributionMap = () => {
-      // Create Instance
-      const chileanMap = am4core.create('distributionMap', am4maps.MapChart);
-      // Charge World Map
-      chileanMap.geodata = am4geodata_chileHigh;
-      // Set Projection
-      chileanMap.projection = new am4maps.projections.Miller();
-      // Create Serie
-      const chileanSeries = chileanMap.series.push(new am4maps.MapPolygonSeries());
-      // Disabling Zoom
-      chileanMap.chartContainer.wheelable = false;
-      chileanSeries.useGeodata = true;
-      // Configure series
-      const polygonTemplate = chileanSeries.mapPolygons.template;
-      polygonTemplate.tooltipText = '{name}';
-      // Create hover state and set orange fill color
-      const hover = polygonTemplate.states.create('hover');
-      hover.properties.fill = am4core.color('#E7763D');
-      // Creating Event Listener for hover action in map
-      chileanSeries.mapPolygons.template.events.on('over', (ev) => {
-        hoveredRegion.value = ev.target.dataItem.dataContext.id;
-      }, this);
-    };
-    // SouthAmerican Map Method
-    const createSouthAmericanDistributionMap = () => {
-      // Create Instance
-      const southAmericanMap = am4core.create('distributionMap', am4maps.MapChart);
-      // Charge World Map
-      southAmericanMap.geodata = am4geodata_worldHigh;
-      // Set Projection
-      southAmericanMap.projection = new am4maps.projections.Orthographic();
-      southAmericanMap.panBehavior = 'rotateLongLat';
-      southAmericanMap.deltaLatitude = -20;
-      southAmericanMap.padding(20, 20, 20, 20);
-      southAmericanMap.fill = am4core.color('#000000');
-      southAmericanMap.mouseWheelBehavior = 'none';
-      // Create Serie
-      const worldSeries = southAmericanMap.series.push(new am4maps.MapPolygonSeries());
-      worldSeries.useGeodata = true;
-      globalManagers.forEach((manager) => {
-        worldSeries.getPolygonById(manager.country).fill = am4core.color('#b6b6b6');
-      });
-      // Configure series
-      const polygonTemplate = worldSeries.mapPolygons.template;
-      polygonTemplate.tooltipText = '{name}';
-      // Create hover state and set orange fill color
-      const hover = polygonTemplate.states.create('hover');
-      hover.properties.fill = am4core.color('#E7763D');
-      // Creating Event Listener for hover action in map
-      worldSeries.mapPolygons.template.events.on(
-        'over',
-        (ev) => {
-          hoveredCountry.value = ev.target.dataItem.dataContext.id;
-        }, this,
-      );
-      worldSeries.mapPolygons.template.events.on(
-        'out',
-        () => {
-          hoveredCountry.value = '';
-        }, this,
-      );
-    };
-    // Zone Clicked Method
-    const zoneClicked = (zone) => {
-      selectedNetwork.value = zone;
-      if (zone === 'CL') {
-        CreateChileanDistributionMap();
-      } else {
-        createSouthAmericanDistributionMap();
-      }
-    };
-    const openUrl = (url) => {
-      window.open(url, '_blank');
-    };
-    const agentsToShow = computed(() => (
-      regionManagers.filter(regionManager => regionManager.region === hoveredRegion.value)
-    ));
-    const globalAgentsToShow = computed(() => (
-      globalManagers.filter(globalManager => globalManager.country === hoveredCountry.value)
-    ));
-    onMounted(() => {
-      CreateChileanDistributionMap();
-    });
-    return {
-      agentsToShow,
-      zoneClicked,
-      selectedNetwork,
-      globalAgentsToShow,
-      openUrl,
-    };
-  },
-};
+    name: 'home',
+    components: {
+        Navbar,
+    },
+    setup() {
+        const selectedNetwork = value('CL')
+        const regionManagers = regionAgentsList
+        const globalManagers = agentsList
+        const hoveredRegion = value('')
+        const hoveredCountry = value('')
+        // Chilean Map Method
+        const CreateChileanDistributionMap = () => {
+            // Create Instance
+            const chileanMap = am4core.create(
+                'distributionMap',
+                am4maps.MapChart
+            )
+            // Charge World Map
+            chileanMap.geodata = am4geodata_chileHigh
+            // Set Projection
+            chileanMap.projection = new am4maps.projections.Miller()
+            // Create Serie
+            const chileanSeries = chileanMap.series.push(
+                new am4maps.MapPolygonSeries()
+            )
+            // Disabling Zoom
+            chileanMap.chartContainer.wheelable = false
+            chileanSeries.useGeodata = true
+            // Configure series
+            const polygonTemplate = chileanSeries.mapPolygons.template
+            polygonTemplate.tooltipText = '{name}'
+            // Create hover state and set orange fill color
+            const hover = polygonTemplate.states.create('hover')
+            hover.properties.fill = am4core.color('#E7763D')
+            // Creating Event Listener for hover action in map
+            chileanSeries.mapPolygons.template.events.on(
+                'over',
+                ev => {
+                    hoveredRegion.value = ev.target.dataItem.dataContext.id
+                },
+                this
+            )
+        }
+        // SouthAmerican Map Method
+        const createSouthAmericanDistributionMap = () => {
+            // Create Instance
+            const southAmericanMap = am4core.create(
+                'distributionMap',
+                am4maps.MapChart
+            )
+            // Charge World Map
+            southAmericanMap.geodata = am4geodata_worldHigh
+            // Set Projection
+            southAmericanMap.projection = new am4maps.projections.Orthographic()
+            southAmericanMap.panBehavior = 'rotateLongLat'
+            southAmericanMap.deltaLatitude = -20
+            southAmericanMap.padding(20, 20, 20, 20)
+            southAmericanMap.fill = am4core.color('#000000')
+            southAmericanMap.mouseWheelBehavior = 'none'
+            // Create Serie
+            const worldSeries = southAmericanMap.series.push(
+                new am4maps.MapPolygonSeries()
+            )
+            worldSeries.useGeodata = true
+            globalManagers.forEach(manager => {
+                worldSeries.getPolygonById(
+                    manager.country
+                ).fill = am4core.color('#b6b6b6')
+            })
+            // Configure series
+            const polygonTemplate = worldSeries.mapPolygons.template
+            polygonTemplate.tooltipText = '{name}'
+            // Create hover state and set orange fill color
+            const hover = polygonTemplate.states.create('hover')
+            hover.properties.fill = am4core.color('#E7763D')
+            // Creating Event Listener for hover action in map
+            worldSeries.mapPolygons.template.events.on(
+                'over',
+                ev => {
+                    hoveredCountry.value = ev.target.dataItem.dataContext.id
+                },
+                this
+            )
+            worldSeries.mapPolygons.template.events.on(
+                'out',
+                () => {
+                    hoveredCountry.value = ''
+                },
+                this
+            )
+        }
+        // Zone Clicked Method
+        const zoneClicked = zone => {
+            selectedNetwork.value = zone
+            if (zone === 'CL') {
+                CreateChileanDistributionMap()
+            } else {
+                createSouthAmericanDistributionMap()
+            }
+        }
+        const openUrl = url => {
+            window.open(url, '_blank')
+        }
+        const agentsToShow = computed(() =>
+            regionManagers.filter(
+                regionManager => regionManager.region === hoveredRegion.value
+            )
+        )
+        const globalAgentsToShow = computed(() =>
+            globalManagers.filter(
+                globalManager => globalManager.country === hoveredCountry.value
+            )
+        )
+        onMounted(() => {
+            CreateChileanDistributionMap()
+        })
+        return {
+            agentsToShow,
+            zoneClicked,
+            selectedNetwork,
+            globalAgentsToShow,
+            openUrl,
+        }
+    },
+}
 </script>
 
 <style scoped>
@@ -216,9 +228,9 @@ export default {
     height: 100%;
 }
 .subtitle {
-  text-decoration: underline;
-  text-decoration-color: orange;
-  cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: orange;
+    cursor: pointer;
 }
 
 .main-content {
@@ -236,29 +248,28 @@ export default {
 #main-title {
     display: flex;
 }
-.map-container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+.map-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 .agents-list {
-  width: 50vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .distributionMap {
-  width: 60vw;
-  height: 100vh;
+    width: 60vw;
+    height: 100vh;
 }
 
 .link:hover {
-  color: orange;
-  cursor: pointer;
+    color: orange;
+    cursor: pointer;
 }
-
 </style>
