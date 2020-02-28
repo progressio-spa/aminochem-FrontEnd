@@ -406,10 +406,6 @@ export default {
     width: 60vw;
     height: 100vh;
 }
-.slick-slide,
-.slick-slide * {
-    outline: none !important;
-}
 
 @media screen and (max-width: 480px) {
     .images img {
