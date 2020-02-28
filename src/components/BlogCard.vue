@@ -11,7 +11,14 @@
         <div class="card-content">
             <div class="media">
                 <div class="media-content">
-                    <p class="title is-4 is-centered">John Smith</p>
+                    <div class="title is-4">
+                        <router-link
+                            :to="{
+                            name: 'technicalSection-show',
+                            params: { name: 'test' },
+                            }"
+                        >Título noticia</router-link>
+                    </div>
                 </div>
             </div>
 
@@ -27,6 +34,11 @@
         </div>
     </div>
 </template>
+
+<script>
+import BlogCardView from '@/components/BlogCardView.vue'
+export default {}
+</script>
 
 <style scoped>
 .media-content > .title {
