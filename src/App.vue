@@ -12,16 +12,16 @@
 </template>
 
 <script>
-import Header from '@/components/Header.vue';
-import Footer from '@/components/Footer.vue';
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
-  name: 'home',
-  components: {
-    Header,
-    Footer,
-  },
-};
+    name: 'home',
+    components: {
+        Header,
+        Footer,
+    },
+}
 </script>
 
 <style>
@@ -33,5 +33,9 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #585858;
+}
+
+.slider {
+    outline: none !important;
 }
 </style>
