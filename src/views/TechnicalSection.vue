@@ -16,7 +16,7 @@
         <section class="tabs-container">
             <div class="tabs is-centered is-medium">
                 <ul>
-                    <li class="tab is-active" @click="openTab(event,'test1')">
+                    <li class="tab is-active" id="tab1" @click="openTab('tab1','contentTab1')">
                         <a>
                             <span class="icon is-small">
                                 <i class="fas fa-microscope" aria-hidden="true"></i>
@@ -24,7 +24,7 @@
                             <span>{{ $t('TechnicalSection.tab-1') }}</span>
                         </a>
                     </li>
-                    <li class="tab" @click="openTab(event,'test2')">
+                    <li class="tab" id="tab2" @click="openTab('tab2','contentTab2')">
                         <a>
                             <span class="icon is-small">
                                 <i class="far fa-bookmark" aria-hidden="true"></i>
@@ -32,7 +32,7 @@
                             <span>{{ $t('TechnicalSection.tab-2') }}</span>
                         </a>
                     </li>
-                    <li class="tab" @click="openTab(event,'test3')">
+                    <li class="tab" id="tab3" @click="openTab('tab3','contentTab3')">
                         <a>
                             <span class="icon is-small">
                                 <i class="far fa-calendar" aria-hidden="true"></i>
@@ -40,7 +40,7 @@
                             <span>{{ $t('TechnicalSection.tab-3') }}</span>
                         </a>
                     </li>
-                    <li class="tab" @click="openTab(event,'test4')">
+                    <li class="tab" id="tab4" @click="openTab('tab4','contentTab4')">
                         <a>
                             <span class="icon is-small">
                                 <i class="far fa-newspaper" aria-hidden="true"></i>
@@ -48,7 +48,7 @@
                             <span>{{ $t('TechnicalSection.tab-4') }}</span>
                         </a>
                     </li>
-                    <li class="tab" @click="openTab(event,'test5')">
+                    <li class="tab" id="tab5" @click="openTab('tab5','contentTab5')">
                         <a>
                             <span class="icon is-small">
                                 <i class="fas fa-pen" aria-hidden="true"></i>
@@ -59,21 +59,33 @@
                 </ul>
             </div>
         </section>
-        <section class="content-tab hero is-light is-fullheight" id="test1">
+        <section class="content-tab hero is-light is-fullheight" id="contentTab1">
             <div class="hero-head">
                 <div class="title">{{ $t('TechnicalSection.tab-1') }}</div>
             </div>
             <div class="hero-body">
                 <div class="container">
                     <div class="columns is-multiline is-desktop">
-                        <div class="column is-one-third" v-for="index in 9" :key="index">
-                            <BlogCard />
+                        <div
+                            class="column is-one-third"
+                            v-for="(news,index) in tempIplusD"
+                            :key="index"
+                        >
+                            <BlogCard
+                                :title="news.title"
+                                :newsImage="news.imgURL"
+                                :subtitle="news.subtitle"
+                            />
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="content-tab hero is-light is-fullheight" id="test2" style="display:none">
+        <section
+            class="content-tab hero is-light is-fullheight"
+            id="contentTab2"
+            style="display:none"
+        >
             <div class="hero-head">
                 <div class="title">{{ $t('TechnicalSection.tab-2') }}</div>
             </div>
@@ -87,7 +99,11 @@
                 </div>
             </div>
         </section>
-        <section class="content-tab hero is-light is-fullheight" id="test3" style="display:none">
+        <section
+            class="content-tab hero is-light is-fullheight"
+            id="contentTab3"
+            style="display:none"
+        >
             <div class="hero-head">
                 <div class="title">{{ $t('TechnicalSection.tab-3') }}</div>
             </div>
@@ -101,7 +117,11 @@
                 </div>
             </div>
         </section>
-        <section class="content-tab hero is-light is-fullheight" id="test4" style="display:none">
+        <section
+            class="content-tab hero is-light is-fullheight"
+            id="contentTab4"
+            style="display:none"
+        >
             <div class="hero-head">
                 <div class="title">{{ $t('TechnicalSection.tab-4') }}</div>
             </div>
@@ -115,7 +135,11 @@
                 </div>
             </div>
         </section>
-        <section class="content-tab hero is-light is-fullheight" id="test5" style="display:none">
+        <section
+            class="content-tab hero is-light is-fullheight"
+            id="contentTab5"
+            style="display:none"
+        >
             <div class="hero-head">
                 <div class="title">{{ $t('TechnicalSection.tab-5') }}</div>
             </div>
@@ -132,12 +156,19 @@ import Navbar from '@/components/Navbar.vue'
 import BlogCard from '@/components/BlogCard.vue'
 import Dashboard from '@/components/Dashboard.vue'
 
+import { iplusd } from '@/constants/TemporalTechnical'
+
 export default {
     name: 'home',
     components: {
         Navbar,
         BlogCard,
         Dashboard,
+    },
+    data() {
+        return {
+            tempIplusD: iplusd,
+        }
     },
     setup(props, { root }) {
         onCreated(() => {
@@ -147,12 +178,14 @@ export default {
         })
     },
     methods: {
-        openTab(evt, tabName) {
+        openTab(tabName, contantTabName) {
             var i, x, tablinks
             x = document.getElementsByClassName('content-tab')
+
             for (i = 0; i < x.length; i++) {
                 x[i].style.display = 'none'
             }
+
             tablinks = document.getElementsByClassName('tab')
             for (i = 0; i < x.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(
@@ -160,8 +193,11 @@ export default {
                     ''
                 )
             }
-            document.getElementById(tabName).style.display = 'block'
-            evt.currentTarget.className += ' is-active'
+            var mainContent = document.getElementById(contantTabName)
+            mainContent.style.display = 'block'
+
+            var mainTab = document.getElementById(tabName)
+            mainTab.classList.add('is-active')
         },
     },
 }
