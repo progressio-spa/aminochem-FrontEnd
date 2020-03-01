@@ -91,6 +91,10 @@ export default new Router({
             path: '/technicalSection/:name',
             name: 'technicalSection-show',
             component: BlogCardView,
+            props: true,
         },
     ],
+    scrollBehavior(to, from, savedPosition) {
+        return { x: 0, y: 0 }
+    },
 })
