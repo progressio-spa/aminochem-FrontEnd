@@ -2,32 +2,25 @@
     <div class="card">
         <div class="card-image">
             <figure class="image is-4by3">
-                <img
-                    src="https://bulma.io/images/placeholders/1280x960.png"
-                    alt="Placeholder image"
-                />
+                <img :src="newsImage" />
             </figure>
         </div>
         <div class="card-content">
             <div class="media">
                 <div class="media-content">
-                    <div class="title is-4">
+                    <div class="title is-5">
                         <router-link
                             :to="{
                             name: 'technicalSection-show',
-                            params: { name: 'test' },
+                            params: { name: title, title:title,newsImage:newsImage,subtitle:subtitle},
                             }"
-                        >Título noticia</router-link>
+                        >{{title}}</router-link>
                     </div>
                 </div>
             </div>
 
             <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus nec iaculis mauris.
-                <a>@bulmaio</a>.
-                <a href="#">#css</a>
-                <a href="#">#responsive</a>
+                {{subtitle}}
                 <br />
                 <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
             </div>
@@ -37,11 +30,19 @@
 
 <script>
 import BlogCardView from '@/components/BlogCardView.vue'
-export default {}
+export default {
+    data() {
+        return {}
+    },
+    props: ['title', 'newsImage', 'subtitle'],
+}
 </script>
 
 <style scoped>
 .media-content > .title {
     text-align: center;
+}
+.card {
+    min-height: 100%;
 }
 </style>

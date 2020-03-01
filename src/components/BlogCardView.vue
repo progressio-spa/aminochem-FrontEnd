@@ -16,17 +16,13 @@
         <section class="hero is-white is-fullheight">
             <div class="hero-body">
                 <div class="container">
-                    <div
-                        class="title is-3"
-                    >Consideraciones para mejorar la eficiencia hídrica del suelo</div>
+                    <div class="title is-3">{{title}}</div>
 
                     <div class="image">
-                        <img alt="Grass" src="@/assets/Products/hoja.jpg" />
+                        <img :src="newsImage" />
                     </div>
                     <br />
-                    <div
-                        class="subtitle is-3"
-                    >Consideraciones para mejorar la eficiencia hídrica del suelo</div>
+                    <div class="subtitle is-3">{{subtitle}}</div>
                     <div class="content">
                         <p>El suelo es uno de los recursos fundamentales para la agricultura dada la multiplicidad de funciones que cumple, entre las cuales se destacan el ser sostén de las plantas, contener e intercambiar con el cultivo los nutrientes que éste necesita y ser el reservorio de agua desde el cual las plantas obtienen sus requerimientos hídricos. En efecto, el suelo cumple el rol de contenedor del agua y por lo tanto la condición general del mismo va a repercutir tanto en la capacidad de retener y distribuir homogéneamente el elemento, como en la habilidad que logren las mismas plantas de absorber desde el suelo el agua que necesiten; esto implica que un suelo que retenga humedad sin problemas, pero que a la vez limite la expresión de las raíces en cuanto a crecimiento, exploración y funcionalidad no podrá ser considerado como un buen suelo para hacer agricultura.</p>
 
@@ -47,6 +43,7 @@ export default {
     components: {
         Navbar,
     },
+    props: ['title', 'newsImage', 'subtitle'],
 }
 </script>
 
