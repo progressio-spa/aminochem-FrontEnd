@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 <template>
     <div class="home">
-        <section class="hero is-success is-fullheight has-carousel" id="main">
+        <section class="hero is-fullheight has-carousel" id="main">
             <div id="carousel-demo" class="hero-carousel">
                 <div class="item-1">
                     <img
@@ -128,25 +128,25 @@
 
 <script>
 // @ is an alias to /src
-import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min';
-import Navbar from '@/components/Navbar.vue';
+import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min'
+import Navbar from '@/components/Navbar.vue'
 
 export default {
-  name: 'home',
-  components: {
-    Navbar,
-  },
-  mounted() {
-    bulmaCarousel.attach('#carousel-demo', {
-      slidesToScroll: 1,
-      slidesToShow: 1,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: 10000,
-      pagination: false,
-    });
-  },
-};
+    name: 'home',
+    components: {
+        Navbar,
+    },
+    mounted() {
+        bulmaCarousel.attach('#carousel-demo', {
+            slidesToScroll: 1,
+            slidesToShow: 1,
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 10000,
+            pagination: false,
+        })
+    },
+}
 </script>
 
 <style scoped>

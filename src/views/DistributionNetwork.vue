@@ -1,7 +1,7 @@
 <template>
     <div class="distributionNetwork">
         <Navbar></Navbar>
-        <section class="hero is-primary is-medium has-background">
+        <section class="hero is-medium has-background">
             <img
                 alt="Grass"
                 class="hero-background is-transparent"
@@ -247,6 +247,7 @@ export default {
 
 #main-title {
     display: flex;
+    color: white;
 }
 .map-container {
     display: flex;

@@ -1,7 +1,7 @@
 <template>
     <div class="contact">
         <Navbar></Navbar>
-        <section class="hero is-primary is-medium has-background">
+        <section class="hero is-medium has-background">
             <img
                 alt="Grass"
                 class="hero-background is-transparent"
@@ -69,5 +69,6 @@ iframe {
 }
 #main-title {
     display: flex;
+    color: white;
 }
 </style>

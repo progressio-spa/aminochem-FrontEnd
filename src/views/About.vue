@@ -1,7 +1,7 @@
 <template>
     <div class="about">
         <Navbar></Navbar>
-        <section class="hero is-primary is-medium has-background">
+        <section class="hero is-medium has-background">
             <img alt="Grass" class="hero-background is-transparent" src="@/assets/Home/people.jpg" />
             <div class="hero-body">
                 <div class="container">
@@ -359,6 +359,7 @@ export default {
 
 #main-title {
     display: flex;
+    color: white;
 }
 
 .hero.is-light .title {
