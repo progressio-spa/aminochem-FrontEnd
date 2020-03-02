@@ -147,25 +147,15 @@ export default {
             southAmericanMap.fill = am4core.color('#000000')
             southAmericanMap.mouseWheelBehavior = 'none'
             southAmericanMap.deltaLongitude = -270;
-            southAmericanMap.homeZoomLevel = 2;
+            southAmericanMap.homeZoomLevel = 2.5;
             // Create Serie
             const worldSeries = southAmericanMap.series.push(
                 new am4maps.MapPolygonSeries()
             )
             worldSeries.useGeodata = true;
-            worldSeries.mapPolygons.template.adapter.add('fill', (fill, target) => {
-                console.log(southAmericanMap.colors);
-                return southAmericanMap.colors.getIndex(Math.round(Math.random() * 2));
-            })
-            globalManagers.forEach(manager => {
-              try {
-                worldSeries.getPolygonById(
-                    manager.country
-                ).fill = am4core.color('#b6b6b6')
-              } catch(e) {
-                console.log(e);
-              }
-            })
+            worldSeries.mapPolygons.template.adapter.add('fill', () => {
+                return am4core.color('#D3D3D3');
+            });
             // Configure series
             const polygonTemplate = worldSeries.mapPolygons.template
             polygonTemplate.tooltipText = '{name}'
@@ -200,16 +190,10 @@ export default {
         const openUrl = url => {
             window.open(url, '_blank')
         }
-        const agentsToShow = computed(() =>
-            regionManagers.filter(
-                regionManager => regionManager.region === hoveredRegion.value
-            )
-        )
-        const globalAgentsToShow = computed(() =>
-            globalManagers.filter(
-                globalManager => globalManager.country === hoveredCountry.value
-            )
-        )
+        const agentsToShow = computed(() => regionManagers
+            .filter(regionManager => regionManager.region === hoveredRegion.value));
+        const globalAgentsToShow = computed(() => globalManagers
+            .filter(globalManager => globalManager.country === hoveredCountry.value));
         onMounted(() => {
             CreateChileanDistributionMap()
         })
