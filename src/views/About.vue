@@ -60,10 +60,20 @@
                 <div class="columns map-container">
                     <div class="is-6 agents-list">
                         <div v-for="agent in countriesToShow" :key="agent.name">
-                            <h1>{{ agent.name }}</h1>
-                            <h1>{{ agent.position }}</h1>
-                            <h1>{{ agent.email }}</h1>
-                            <h1>{{ agent.phone }}</h1>
+                            <div class="columns">
+                                <div class="column">
+                                    <figure class="image is-128x128">
+                                        <img class="is-rounded" :src="agent.img" />
+                                    </figure>
+                                </div>
+                                <div class="column">
+                                    <br />
+                                    <h1>{{ agent.name }}</h1>
+                                    <h1>{{ agent.position }}</h1>
+                                    <h1>{{ agent.email }}</h1>
+                                    <h1>{{ agent.phone }}</h1>
+                                </div>
+                            </div>
                             <br />
                         </div>
                     </div>
