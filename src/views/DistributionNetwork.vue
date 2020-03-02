@@ -140,21 +140,31 @@ export default {
             // Charge World Map
             southAmericanMap.geodata = am4geodata_worldHigh
             // Set Projection
-            southAmericanMap.projection = new am4maps.projections.Orthographic()
+            southAmericanMap.projection = new am4maps.projections.NaturalEarth1()
             southAmericanMap.panBehavior = 'rotateLongLat'
             southAmericanMap.deltaLatitude = -20
             southAmericanMap.padding(20, 20, 20, 20)
             southAmericanMap.fill = am4core.color('#000000')
             southAmericanMap.mouseWheelBehavior = 'none'
+            southAmericanMap.deltaLongitude = -270;
+            southAmericanMap.homeZoomLevel = 2;
             // Create Serie
             const worldSeries = southAmericanMap.series.push(
                 new am4maps.MapPolygonSeries()
             )
-            worldSeries.useGeodata = true
+            worldSeries.useGeodata = true;
+            worldSeries.mapPolygons.template.adapter.add('fill', (fill, target) => {
+                console.log(southAmericanMap.colors);
+                return southAmericanMap.colors.getIndex(Math.round(Math.random() * 2));
+            })
             globalManagers.forEach(manager => {
+              try {
                 worldSeries.getPolygonById(
                     manager.country
                 ).fill = am4core.color('#b6b6b6')
+              } catch(e) {
+                console.log(e);
+              }
             })
             // Configure series
             const polygonTemplate = worldSeries.mapPolygons.template
