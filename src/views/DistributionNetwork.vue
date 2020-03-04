@@ -142,11 +142,11 @@ export default {
             // Set Projection
             southAmericanMap.projection = new am4maps.projections.NaturalEarth1()
             southAmericanMap.panBehavior = 'rotateLongLat'
-            southAmericanMap.deltaLatitude = -20
+            southAmericanMap.deltaLongitude = 50;
+            southAmericanMap.deltaLatitude = 15;
             southAmericanMap.padding(20, 20, 20, 20)
             southAmericanMap.fill = am4core.color('#000000')
             southAmericanMap.mouseWheelBehavior = 'none'
-            southAmericanMap.deltaLongitude = -270;
             southAmericanMap.homeZoomLevel = 2.5;
             // Create Serie
             const worldSeries = southAmericanMap.series.push(
