@@ -39,7 +39,7 @@
                     >
                         <ul>
                             <li>
-                                <a href="#">
+                                <a :href="LabelPdf" target="_blank">
                                     <span class="icon">
                                         <i class="fas fa-tag"></i>
                                     </span>
@@ -47,7 +47,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a :href="dataSheetPdf" target="_blank">
                                     <span class="icon">
                                         <i class="fas fa-file-alt"></i>
                                     </span>
@@ -55,7 +55,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a :href="safetySheetPdf" target="_blank">
                                     <span class="icon">
                                         <i class="fas fa-exclamation-triangle"></i>
                                     </span>
@@ -80,13 +80,16 @@
 
 <script>
 // @ is an alias to /src
-import { onMounted, value, computed } from 'vue-function-api'
 import Navbar from '@/components/Navbar.vue'
 
 // vue-function-api imports
 
 // Import Fertilizer products
 import { rootBiostimulant } from '../../constants/products'
+
+import LabelPdf from '../../assets/Products/aminoroot1.pdf';
+import dataSheetPdf from '../../assets/Products/aminoroot2.pdf';
+import safetySheetPdf from '../../assets/Products/aminoroot3.pdf';
 
 export default {
     name: 'home',
@@ -99,6 +102,9 @@ export default {
         return {
             products,
             url,
+            LabelPdf,
+            dataSheetPdf,
+            safetySheetPdf,
         }
     },
 }

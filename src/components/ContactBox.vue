@@ -14,8 +14,8 @@
                             </div>
                             <div class="column is-10">
                                 <p>
-                                    Edificio BHBC Av. Bello Horizonte 869
-                                    <br />oficina 304 - Rancagua
+                                    Av. Blanca 1117
+                                    <br />Maipú, Santiago, Chile
                                 </p>
                             </div>
                         </div>
