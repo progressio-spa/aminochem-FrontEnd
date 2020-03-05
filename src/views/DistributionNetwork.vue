@@ -37,7 +37,7 @@
                     <div class="is-6 agents-list" v-if="selectedNetwork === 'CL'">
                         <div v-for="agent in agentsToShow" :key="agent.name">
                             <h1>{{ agent.name }}</h1>
-                            <h1 class="link" @click="openUrl(agent.email)">{{ agent.position }}</h1>
+                            <h1 class="link" @click="openUrl(agent.email)">{{ agent.email }}</h1>
                             <h1>{{ agent.phone }}</h1>
                             <br />
                         </div>
