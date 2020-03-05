@@ -37,7 +37,7 @@
                     >
                         <ul>
                             <li>
-                                <a @click="showLabel">
+                                <a :href="labelPdf" target="_blank">
                                     <span class="icon">
                                         <i class="fas fa-tag"></i>
                                     </span>
@@ -45,7 +45,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a :href="dataSheetPdf" target="_blank">
                                     <span class="icon">
                                         <i class="fas fa-file-alt"></i>
                                     </span>
@@ -53,7 +53,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a :href="safetySheetPdf" target="_blank">
                                     <span class="icon">
                                         <i class="fas fa-exclamation-triangle"></i>
                                     </span>
@@ -78,7 +78,6 @@
 
 <script>
 // Import Fertilizer products
-import { mapState, mapMutations } from 'vuex'
 import Navbar from '@/components/Navbar.vue'
 
 import { fertilizers } from '@/constants/products'
@@ -88,11 +87,18 @@ export default {
     components: {
         Navbar,
     },
-    setup() {
-        const products = fertilizers
+    setup(props, { root }) {
+        const products = fertilizers;
+        const productName = root.$route.params.name;
+        const labelPdf = require(`../assets/Products/${productName}1.pdf`);
+        const dataSheetPdf = require(`../assets/Products/${productName}2.pdf`);
+        const safetySheetPdf = require(`../assets/Products/${productName}3.pdf`);
         return {
             products,
-        }
+            labelPdf,
+            dataSheetPdf,
+            safetySheetPdf,
+        };
     },
     data() {
         return {
@@ -106,11 +112,6 @@ export default {
         getProduct() {
             let name = this.$route.params.name
             this.product = fertilizers[name]
-            console.log(this.product)
-        },
-        showLabel() {
-            var pdf = this.product.label
-            window.open('data:application/pdf;base64' + encodeURI(pdf))
         },
         showSpecs() {
             var pdf = this.product.specs

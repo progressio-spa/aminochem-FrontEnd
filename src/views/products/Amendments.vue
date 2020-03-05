@@ -42,7 +42,7 @@
                     >
                         <ul>
                             <li>
-                                <a href="#">
+                                <a :href="labelPdf" target="_blank">
                                     <span class="icon">
                                         <i class="fas fa-tag"></i>
                                     </span>
@@ -50,7 +50,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a :href="dataSheetPdf" target="_blank">
                                     <span class="icon">
                                         <i class="fas fa-file-alt"></i>
                                     </span>
@@ -58,7 +58,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a :href="safetySheetPdf" target="_blank">
                                     <span class="icon">
                                         <i class="fas fa-exclamation-triangle"></i>
                                     </span>
@@ -91,6 +91,10 @@ import Navbar from '@/components/Navbar.vue'
 // Import Fertilizer products
 import { amendments } from '../../constants/products'
 
+import labelPdf from '../../assets/Products/bioamino1.pdf';
+import dataSheetPdf from '../../assets/Products/bioamino2.pdf';
+import safetySheetPdf from '../../assets/Products/bioamino3.pdf';
+
 export default {
     name: 'home',
     components: {
@@ -102,6 +106,9 @@ export default {
         return {
             products,
             url,
+            labelPdf,
+            dataSheetPdf,
+            safetySheetPdf,
         }
     },
 }
