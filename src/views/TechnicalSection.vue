@@ -75,6 +75,7 @@
                                 :title="news.title"
                                 :newsImage="news.imgURL"
                                 :subtitle="news.subtitle"
+                                :pdfName="news.pdfName"
                             />
                         </div>
                     </div>
