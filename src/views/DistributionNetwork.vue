@@ -37,7 +37,7 @@
                     <div class="is-6 agents-list" v-if="selectedNetwork === 'CL'">
                         <div v-for="agent in agentsToShow" :key="agent.name">
                             <h1>{{ agent.name }}</h1>
-                            <h1 class="link" @click="openUrl(agent.email)">{{ agent.email }}</h1>
+                            <h1 class="link" @click="openUrl(agent.position)">{{ agent.email }}</h1>
                             <h1>{{ agent.phone }}</h1>
                             <br />
                         </div>
@@ -142,20 +142,20 @@ export default {
             // Set Projection
             southAmericanMap.projection = new am4maps.projections.NaturalEarth1()
             southAmericanMap.panBehavior = 'rotateLongLat'
-            southAmericanMap.deltaLongitude = 50;
-            southAmericanMap.deltaLatitude = 15;
+            southAmericanMap.deltaLongitude = 50
+            southAmericanMap.deltaLatitude = 15
             southAmericanMap.padding(20, 20, 20, 20)
             southAmericanMap.fill = am4core.color('#000000')
             southAmericanMap.mouseWheelBehavior = 'none'
-            southAmericanMap.homeZoomLevel = 2.5;
+            southAmericanMap.homeZoomLevel = 2.5
             // Create Serie
             const worldSeries = southAmericanMap.series.push(
                 new am4maps.MapPolygonSeries()
             )
-            worldSeries.useGeodata = true;
+            worldSeries.useGeodata = true
             worldSeries.mapPolygons.template.adapter.add('fill', () => {
-                return am4core.color('#D3D3D3');
-            });
+                return am4core.color('#D3D3D3')
+            })
             // Configure series
             const polygonTemplate = worldSeries.mapPolygons.template
             polygonTemplate.tooltipText = '{name}'
@@ -190,10 +190,16 @@ export default {
         const openUrl = url => {
             window.open(url, '_blank')
         }
-        const agentsToShow = computed(() => regionManagers
-            .filter(regionManager => regionManager.region === hoveredRegion.value));
-        const globalAgentsToShow = computed(() => globalManagers
-            .filter(globalManager => globalManager.country === hoveredCountry.value));
+        const agentsToShow = computed(() =>
+            regionManagers.filter(
+                regionManager => regionManager.region === hoveredRegion.value
+            )
+        )
+        const globalAgentsToShow = computed(() =>
+            globalManagers.filter(
+                globalManager => globalManager.country === hoveredCountry.value
+            )
+        )
         onMounted(() => {
             CreateChileanDistributionMap()
         })
