@@ -5,5 +5,5 @@ scp -r ./dist root@157.245.134.21:/var/www/html/aminochem-front
 # Go to droplet
 ssh -t root@157.245.134.21 sudo service nginx restart
 # Motivational message :P
-cat "¡You're the JEDI MASTER of the DepLoY!"
+echo "¡You're the JEDI MASTER of the DepLoY!"
 
