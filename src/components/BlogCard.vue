@@ -12,7 +12,7 @@
                         <router-link
                             :to="{
                             name: 'technicalSection-show',
-                            params: { name: title, title:title,newsImage:newsImage,subtitle:subtitle},
+                            params: { name: title, title:title,newsImage:newsImage,subtitle:subtitle,pdfName:pdfName},
                             }"
                         >{{title}}</router-link>
                     </div>
@@ -34,7 +34,7 @@ export default {
     data() {
         return {}
     },
-    props: ['title', 'newsImage', 'subtitle'],
+    props: ['title', 'newsImage', 'subtitle', 'pdfName'],
 }
 </script>
 
