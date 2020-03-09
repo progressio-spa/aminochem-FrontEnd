@@ -114,4 +114,10 @@ p {
     text-align: left;
     color: #585858;
 }
+
+@media screen and (max-width: 480px) {
+    #main-title {
+        font-size: 2rem;
+    }
+}
 </style>
