@@ -232,4 +232,9 @@ export default {
     border-bottom-color: #e96711;
     color: #e96711;
 }
+@media screen and (max-width: 480px) {
+    #main-title {
+        font-size: 2rem;
+    }
+}
 </style>
