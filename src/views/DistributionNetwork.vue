@@ -15,7 +15,7 @@
         </section>
         <section class="main-content">
             <div class="container">
-                <div class="columns">
+                <div class="columns is-mobile">
                     <div class="column">
                         <h1
                             class="subtitle is-4 has-text-grey-darker"
@@ -271,5 +271,10 @@ export default {
 .link:hover {
     color: orange;
     cursor: pointer;
+}
+@media screen and (max-width: 480px) {
+    #main-title {
+        font-size: 2rem;
+    }
 }
 </style>
