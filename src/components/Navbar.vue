@@ -194,4 +194,10 @@ a.navbar-item.is-active,
 .navbar-item.has-dropdown.is-active .navbar-link {
     background-color: rgba(255, 255, 255, 0.3);
 }
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        position: sticky;
+    }
+}
 </style>

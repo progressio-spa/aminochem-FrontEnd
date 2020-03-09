@@ -73,4 +73,10 @@ export default {
 .flag.flag-us {
     background-position: 0 -154px;
 }
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        display: none;
+    }
+}
 </style>
