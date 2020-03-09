@@ -420,8 +420,17 @@ export default {
 
 @media screen and (max-width: 480px) {
     .images img {
-        max-width: 50%;
-        max-height: 50%;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    #main-title {
+        font-size: 2rem;
+    }
+    .main-content {
+        padding: 1rem;
+    }
+    .card-content {
+        min-height: 16rem;
     }
 }
 </style>
