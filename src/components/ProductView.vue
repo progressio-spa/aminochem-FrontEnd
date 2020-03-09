@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div
-                        class="tabs is-toggle is-medium is-fullwidth is-centered is-toggle-rounded"
+                        class="tabs tabs-main is-toggle is-medium is-fullwidth is-centered is-toggle-rounded"
                     >
                         <ul>
                             <li>
@@ -60,15 +60,59 @@
                                     <span>{{ $t('Products.buttons.safetysheet') }}</span>
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#">
                                     <span class="icon">
                                         <i class="fas fa-info-circle"></i>
                                     </span>
                                     <span>{{ $t('Products.buttons.brochure') }}</span>
                                 </a>
-                            </li>
+                            </li>-->
                         </ul>
+                    </div>
+                    <div class="tabs-mobile" style="display:none;">
+                        <div
+                            class="tabs is-toggle is-medium is-fullwidth is-centered is-toggle-rounded"
+                        >
+                            <ul>
+                                <li>
+                                    <a :href="labelPdf" target="_blank">
+                                        <span class="icon">
+                                            <i class="fas fa-tag"></i>
+                                        </span>
+                                        <span>{{ $t('Products.buttons.label') }}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div
+                            class="tabs is-toggle is-medium is-fullwidth is-centered is-toggle-rounded"
+                        >
+                            <ul>
+                                <li>
+                                    <a :href="dataSheetPdf" target="_blank">
+                                        <span class="icon">
+                                            <i class="fas fa-file-alt"></i>
+                                        </span>
+                                        <span>{{ $t('Products.buttons.datasheet') }}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div
+                            class="tabs is-toggle is-medium is-fullwidth is-centered is-toggle-rounded"
+                        >
+                            <ul>
+                                <li>
+                                    <a :href="safetySheetPdf" target="_blank">
+                                        <span class="icon">
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                        </span>
+                                        <span>{{ $t('Products.buttons.safetysheet') }}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -88,17 +132,17 @@ export default {
         Navbar,
     },
     setup(props, { root }) {
-        const products = fertilizers;
-        const productName = root.$route.params.name;
-        const labelPdf = require(`../assets/Products/${productName}1.pdf`);
-        const dataSheetPdf = require(`../assets/Products/${productName}2.pdf`);
-        const safetySheetPdf = require(`../assets/Products/${productName}3.pdf`);
+        const products = fertilizers
+        const productName = root.$route.params.name
+        const labelPdf = require(`../assets/Products/${productName}1.pdf`)
+        const dataSheetPdf = require(`../assets/Products/${productName}2.pdf`)
+        const safetySheetPdf = require(`../assets/Products/${productName}3.pdf`)
         return {
             products,
             labelPdf,
             dataSheetPdf,
             safetySheetPdf,
-        };
+        }
     },
     data() {
         return {
@@ -157,12 +201,6 @@ p {
     size: 2.5rem;
 }
 
-.button {
-    background-color: #ff715b;
-    color: white;
-    padding: 0 3vw 0 3vw;
-}
-
 .tabs span {
     color: #2b2b2b;
 }
@@ -175,15 +213,50 @@ p {
     bottom: 15vh;
 }
 
-@media (max-width: 767px) {
-    .button {
-        width: 90vw;
-    }
+@media screen and (max-width: 480px) {
     #main-title {
         font-size: 2rem;
     }
-    .tabs {
-        color: rgb(252, 74, 26);
+    .image {
+        width: 100%;
+        bottom: 0vh;
     }
+    .column {
+        height: 100%;
+    }
+    .columns {
+        width: 100%;
+    }
+    .container {
+        width: 100%;
+    }
+    .tabs-main {
+        display: none;
+    }
+    .tabs-mobile {
+        display: block !important;
+    }
+}
+/* Mobile Horizontal y tablet vertical */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    #main-title {
+        font-size: 2rem;
+    }
+    .image {
+        width: 100%;
+        bottom: 0vh;
+    }
+    .column {
+        height: 100%;
+    }
+    .columns {
+        width: 100%;
+    }
+    .container {
+        width: 100%;
+    }
+}
+/* Tablet Horizontal y escritorio normal */
+@media screen and (min-width: 769px) and (max-width: 1279px) {
 }
 </style>
