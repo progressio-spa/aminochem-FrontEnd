@@ -50,7 +50,7 @@
             <div class="hero-footer">
                 <div class="last-content">
                     <div class="paragraph">
-                        <p>Edificio BHBC Av. Bello Horizonte 869 / Of 304 - Rancagua</p>
+                        <p>Av. Blanca 1117 - Maipú, Santiago, Chile</p>
                     </div>
                     <div class="watermark">
                         <p>©copyright 2019</p>
