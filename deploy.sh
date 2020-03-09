@@ -1,3 +1,5 @@
+# Build project
+yarn build
 # Go to droplet
 ssh -t root@157.245.134.21 rm -Rf /var/www/html/aminochem-front/dist/
 # Transfer new dist folder content

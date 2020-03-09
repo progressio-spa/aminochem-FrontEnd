@@ -170,13 +170,6 @@ export default {
                 },
                 this
             )
-            worldSeries.mapPolygons.template.events.on(
-                'out',
-                () => {
-                    hoveredCountry.value = ''
-                },
-                this
-            )
         }
         // Zone Clicked Method
         const zoneClicked = zone => {
