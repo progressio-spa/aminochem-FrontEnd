@@ -129,6 +129,7 @@ export default {
     align-items: center;
     justify-content: center;
     height: 90vh;
+    padding: 0 80px;
 }
 
 .agents-list {
