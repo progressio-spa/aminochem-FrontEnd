@@ -10,6 +10,7 @@ import Forgot from './views/Forgot.vue'
 import Products from './views/products/Products.vue'
 import Fertilizers from './views/products/Fertilizers.vue'
 import ProductView from './components/ProductView.vue'
+import ProductViewOil from './components/ProductViewOil.vue'
 import BlogCardView from './components/BlogCardView.vue'
 import Amendments from './views/products/Amendments.vue'
 import Insecticide from './views/products/Insecticide.vue'
@@ -70,6 +71,11 @@ export default new Router({
                 {
                     path: 'rootBiostimulant',
                     component: RootBiostimulant,
+                },
+                {
+                    path: 'rootBiostimulant/:name',
+                    name: 'rootBiostimulant-show',
+                    component: ProductViewOil,
                 },
                 {
                     path: 'fertilizers/',
