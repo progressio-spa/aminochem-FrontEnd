@@ -53,7 +53,6 @@
 // @ is an alias to /src
 import Navbar from '@/components/Navbar.vue'
 import ProductView from '@/components/ProductView.vue'
-import Products from '@/components/Products.vue'
 
 import { fertilizers } from '@/constants/products'
 
@@ -62,7 +61,6 @@ export default {
     components: {
         Navbar,
         ProductView,
-        Products,
     },
     setup() {
         const products = fertilizers
