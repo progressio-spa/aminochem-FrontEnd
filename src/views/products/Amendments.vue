@@ -19,7 +19,7 @@
                     <div class="columns">
                         <div class="column is-half">
                             <div class="content">
-                                <div class="title">{{ products[0].name }}</div>
+                                <div class="title">{{ $t('Products.amendments.name') }}</div>
                                 <p align="left">{{ $t('Products.amendments.description1') }}</p>
                                 <p align="left">{{ $t('Products.amendments.description2') }}</p>
                                 <p align="left">{{ $t('Products.amendments.description3') }}</p>
