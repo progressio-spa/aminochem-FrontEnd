@@ -70,6 +70,23 @@ export const fertilizers = {
         specs: '',
         security: '',
     },
+    aminoroot: {
+        name: 'Aminoroot',
+        description:
+            'Bioestimulante de raíces a base de aminoácidos libres, estractos vegetales, ácidos fúlvicos y materia orgánica activa, destinado a promover y fortalecer el crecimiento radical en todo tipo de frutales, hortalizas y cultivos.',
+        subdescription1:
+            'Estimula el crecimiento de raíces induciendo un sistema radical abundante y vigoroso.',
+        subdescription2:
+            'Mejora la vitalidad de las plantas provocando una mejor captación y absorción de nutrientes y agua.',
+        subdescription3: '',
+        imgURL: '../static/product-logo/Variantes-productosColor-04.png',
+        label: '',
+        specs: '',
+        security: '',
+    },
+}
+
+export const naturalOil = {
     'Bioil-S': {
         name: 'Bioil-S (Enhance)',
         description:
@@ -84,20 +101,18 @@ export const fertilizers = {
         specs: '',
         security: '',
     },
-}
-
-export const amendments = [
-    {
-        name: 'Bioamino-L',
-    },
-]
-export const rootBiostimulant = [
-    {
-        name: 'Aminoroot',
-    },
-]
-export const insecticide = [
-    {
+    SalmonOil: {
         name: 'SalmonOil',
+        description:
+            'Es un poderoso fertilizante y bioestimulante líquido, obtenido a partir de proteínas de origen marino (salmón), hidrolizadas enzimaticamente en condiciones controladas con alta tecnologia. Este avanzado proceso, permite obtener un producto estable, rico en aminoácidos libres de péptidos de bajo peso molecular, favoreciendo la absorción vía foliar y radicular, lo que permite a las plantas construir sus propias proteínas y tejidos de forma rápida, y con gran ahorro de energía, especialnente en ambientes con estrés de tipo nutricional, térmico, hídrico, luminoso ó salino.',
+        subdescription1:
+            'Las plantas que disponen de proteínas y acidos grasos Omega en forma constante durante su ciclo, no solo mejoran su resistencia y adaptación a todo tipo de ambientes, sino también aumentan la capacidad de síntesis de hormonas naturales de crecimientom con el consecuente aumento en potencial productivo y calidad de todos sus tejidos (raíces, hojas, tallos, flores y frutos).',
+        subdescription2:
+            'Producto de su origen, SalmonOil también posee un interesante contenido de micronutrientes lo que contribuye a una nutrición exitosa en todo tipo de cultivos, hortalizas y frutales.',
+        subdescription3: '',
+        imgURL: '../static/product-logo/Variantes-productosColor-11.png',
+        label: '',
+        specs: '',
+        security: '',
     },
-]
+}
