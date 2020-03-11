@@ -321,7 +321,7 @@ export const chileanManagers = [
         email: 'jmunita@aminochem.cl',
         phone: '',
         region: 'CL-ML',
-        img: require('@/assets/Agents/JoseLuisAssereto.jpg'),
+        img: require('@/assets/Agents/javieraMunita.jpg'),
     },
     {
         name: 'Manuel Contreras C.',
