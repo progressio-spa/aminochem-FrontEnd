@@ -88,13 +88,6 @@ export default {
                 },
                 this
             )
-            chileanSeries.mapPolygons.template.events.on(
-                'out',
-                () => {
-                    hoveredRegion.value = 'CL-AP'
-                },
-                this
-            )
         }
         const agentsToShow = computed(() =>
             regionManagers.filter(
