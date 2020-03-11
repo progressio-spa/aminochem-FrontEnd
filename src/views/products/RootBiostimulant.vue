@@ -1,5 +1,5 @@
 <template>
-    <div class="rootBiostimulant">
+    <div class="rootBioestimulant">
         <Navbar></Navbar>
         <section class="hero is-primary is-medium has-background">
             <img
@@ -16,104 +16,31 @@
         <section class="hero is-white is-fullheight">
             <div class="hero-body">
                 <div class="container">
-                    <div class="columns">
-                        <div class="column is-half">
-                            <div class="content">
-                                <div class="title">{{ products[0].name }}</div>
-                                <p align="left">{{ $t('Products.rootBiostimulant.description1') }}</p>
-                                <p align="left">{{ $t('Products.rootBiostimulant.description2') }}</p>
-                                <p align="left">{{ $t('Products.rootBiostimulant.description3') }}</p>
-                                <p align="left">{{ $t('Products.rootBiostimulant.description4') }}</p>
-                                <p align="left">{{ $t('Products.rootBiostimulant.description5') }}</p>
+                    <div class="columns is-multiline is-desktop">
+                        <div
+                            class="column is-one-third"
+                            v-for="(product, index) in products"
+                            :key="index"
+                        >
+                            <div class="card">
+                                <div class="card-image">
+                                    <figure class="image is-4by3">
+                                        <img :src="product.imgURL" />
+                                    </figure>
+                                </div>
+                                <div class="card-header">
+                                    <div class="card-header-title is-centered">
+                                        <div class="title is-4">
+                                            <router-link
+                                                :to="{
+                                                    name: 'rootBiostimulant-show',
+                                                    params: { name: index },
+                                                }"
+                                            >{{ product.name }}</router-link>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="column is-half">
-                            <figure class="image is-5by4">
-                                <img :src="url" />
-                            </figure>
-                        </div>
-                    </div>
-                    <br />
-                    <div
-                        class="tabs tabs-main is-toggle is-medium is-fullwidth is-centered is-toggle-rounded"
-                    >
-                        <ul>
-                            <li>
-                                <a :href="LabelPdf" target="_blank">
-                                    <span class="icon">
-                                        <i class="fas fa-tag"></i>
-                                    </span>
-                                    <span>{{ $t('Products.buttons.label') }}</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a :href="dataSheetPdf" target="_blank">
-                                    <span class="icon">
-                                        <i class="fas fa-file-alt"></i>
-                                    </span>
-                                    <span>{{ $t('Products.buttons.datasheet') }}</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a :href="safetySheetPdf" target="_blank">
-                                    <span class="icon">
-                                        <i class="fas fa-exclamation-triangle"></i>
-                                    </span>
-                                    <span>{{ $t('Products.buttons.safetysheet') }}</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="icon">
-                                        <i class="fas fa-info-circle"></i>
-                                    </span>
-                                    <span>{{ $t('Products.buttons.brochure') }}</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tabs-mobile" style="display:none;">
-                        <div
-                            class="tabs is-toggle is-medium is-fullwidth is-centered is-toggle-rounded"
-                        >
-                            <ul>
-                                <li>
-                                    <a :href="labelPdf" target="_blank">
-                                        <span class="icon">
-                                            <i class="fas fa-tag"></i>
-                                        </span>
-                                        <span>{{ $t('Products.buttons.label') }}</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div
-                            class="tabs is-toggle is-medium is-fullwidth is-centered is-toggle-rounded"
-                        >
-                            <ul>
-                                <li>
-                                    <a :href="dataSheetPdf" target="_blank">
-                                        <span class="icon">
-                                            <i class="fas fa-file-alt"></i>
-                                        </span>
-                                        <span>{{ $t('Products.buttons.datasheet') }}</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div
-                            class="tabs is-toggle is-medium is-fullwidth is-centered is-toggle-rounded"
-                        >
-                            <ul>
-                                <li>
-                                    <a :href="safetySheetPdf" target="_blank">
-                                        <span class="icon">
-                                            <i class="fas fa-exclamation-triangle"></i>
-                                        </span>
-                                        <span>{{ $t('Products.buttons.safetysheet') }}</span>
-                                    </a>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -125,30 +52,28 @@
 <script>
 // @ is an alias to /src
 import Navbar from '@/components/Navbar.vue'
+import ProductView from '@/components/ProductView.vue'
 
 // vue-function-api imports
 
 // Import Fertilizer products
-import { rootBiostimulant } from '../../constants/products'
-
-import LabelPdf from '../../assets/Products/aminoroot1.pdf'
-import dataSheetPdf from '../../assets/Products/aminoroot2.pdf'
-import safetySheetPdf from '../../assets/Products/aminoroot3.pdf'
+import { naturalOil } from '@/constants/products'
 
 export default {
     name: 'home',
     components: {
         Navbar,
+        ProductView,
     },
     setup() {
-        const products = rootBiostimulant
-        const url = '/static/product-logo/Variantes-productosColor-04.png'
+        const products = naturalOil
         return {
             products,
-            url,
-            LabelPdf,
-            dataSheetPdf,
-            safetySheetPdf,
+        }
+    },
+    data() {
+        return {
+            products: naturalOil,
         }
     },
 }
@@ -172,78 +97,26 @@ export default {
     font-size: 3rem;
 }
 
+.card {
+    max-width: 70%;
+    margin: auto;
+}
+
 .card-header {
     background-color: gray;
 }
 
-.hero.is-white .title,
-p {
-    color: #575757;
-}
-
-.content > .title {
-    display: flex;
-    size: 2.5rem;
-}
-
-.tabs span {
-    color: #2b2b2b;
-}
-
-.tabs i {
-    color: rgb(252, 74, 26);
-}
-
-.image {
-    bottom: 15vh;
-}
-
-.button {
-    background-color: #ff715b;
+.hero.is-white .title {
     color: white;
-    padding: 0 3vw 0 3vw;
 }
-@media screen and (max-width: 480px) {
+
+a {
+    color: white;
+}
+
+@media (max-width: 767px) {
     #main-title {
         font-size: 2rem;
-    }
-    .image {
-        width: 100%;
-        bottom: 0vh;
-    }
-    .column {
-        height: 100%;
-    }
-    .columns {
-        width: 100%;
-    }
-    .container {
-        width: 100%;
-    }
-    .tabs-main {
-        display: none;
-    }
-    .tabs-mobile {
-        display: block !important;
-    }
-}
-/* Mobile Horizontal y tablet vertical */
-@media screen and (min-width: 481px) and (max-width: 768px) {
-    #main-title {
-        font-size: 2rem;
-    }
-    .image {
-        width: 100%;
-        bottom: 0vh;
-    }
-    .column {
-        height: 100%;
-    }
-    .columns {
-        width: 100%;
-    }
-    .container {
-        width: 100%;
     }
 }
 </style>
