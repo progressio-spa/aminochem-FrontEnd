@@ -14,7 +14,7 @@
             </div>
         </section>
         <section class="hero is-white is-fullheight">
-            <div class="hero-body">
+            <div class="hero-body" style="display: inline-block;">
                 <div class="container">
                     <div class="columns is-multiline is-desktop">
                         <div
