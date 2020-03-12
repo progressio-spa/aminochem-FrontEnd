@@ -37,7 +37,7 @@
                                 </span>
                             </div>
                             <div class="column is-10">
-                                <p>+56 72 2955352</p>
+                                <p>+ 56 2 2676 3300</p>
                             </div>
                         </div>
                     </div>
