@@ -117,7 +117,10 @@
         </section>
 
         <section class="hero is-medium is-light">
-            <div class="hero-body">
+            <div class="hero-body video-container">
+                <div class="title-video">
+                    <h1 class="title">Conócenos</h1>
+                </div>
                 <video width="1200" autoplay controls>
                     <source src="@/assets/Home/Video1.mp4" type="video/mp4" />
                 </video>
@@ -215,6 +218,15 @@ a {
     color: #585858;
     cursor: pointer;
     text-decoration: none;
+}
+
+.video-container {
+    padding-bottom: 4rem !important;
+    padding-top: 4rem !important;
+}
+
+.title-video {
+    margin-bottom: 6vh;
 }
 
 @media (max-width: 767px) {
