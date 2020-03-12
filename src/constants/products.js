@@ -41,20 +41,6 @@ export const fertilizers = {
         specs: '',
         security: '',
     },
-    'aminoterra-plus-zinc': {
-        name: 'Aminoterra Plus Zinc (Argentina)',
-        description:
-            'Es un poderoso fertilizante y bioestimulante líquido, obtenido a partir de proteínas de origen marino (salmón), hidrolizadas enzimaticamente en condiciones controladas con alta tecnologia. Este avanzado proceso, permite obtener un producto estable, rico en aminoácidos libres de péptidos de bajo peso molecular, favoreciendo la absorción vía foliar y radicular, lo que permite a las plantas construir sus propias proteínas y tejidos de forma rápida, y con gran ahorro de energía, especialnente en ambientes con estrés de tipo nutricional, térmico, hídrico, luminoso ó salino.',
-        subdescription1:
-            'Proporciona una nutrición directa con aminoácidos (Aporte de nitrógeno metabolizado con un gran ahorro energético para las plantas).',
-        subdescription2:
-            'Fortalece y recupera las plantas sometidas a situaciones de estrés (disminuyendo pérdidas de potencial productivo).',
-        subdescription3: 'Induce formación de plantas más sanas, resistentes y vigorosas.',
-        imgURL: '../static/product-logo/Variantes-productosColor-03.png',
-        label: '',
-        specs: '',
-        security: '',
-    },
 
     Aminosoil: {
         name: 'Aminosoil Premium Polvo',
