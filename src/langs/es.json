@@ -41,7 +41,7 @@
     "TechnicalSection": {
         "title": "Información Técnica",
         "more": "Ver más",
-        "tab-1": "I+D",
+        "tab-1": "Investigación y Desarrollo",
         "tab-2": "Publicaciones",
         "tab-3": "Actividades",
         "tab-4": "Noticias",
@@ -62,7 +62,7 @@
     "Network": {
         "title": "Red de Distribución",
         "option1": "Chile",
-        "option2": "Exterior"
+        "option2": "Mundo"
     },
 
     "Products": {
