@@ -14,7 +14,7 @@
             </div>
         </section>
         <section class="hero is-white is-fullheight">
-            <div class="hero-body">
+            <div class="hero-body" style="display: inline-block;">
                 <div class="container">
                     <div class="columns is-multiline is-desktop">
                         <div
@@ -25,20 +25,15 @@
                             <div class="card">
                                 <div class="card-image">
                                     <figure class="image is-4by3">
-                                        <img :src="product.imgURL" />
-                                    </figure>
-                                </div>
-                                <div class="card-header">
-                                    <div class="card-header-title is-centered">
-                                        <div class="title is-4">
-                                            <router-link
-                                                :to="{
+                                        <router-link
+                                            :to="{
                                                     name: 'fertilizers-show',
                                                     params: { name: index },
                                                 }"
-                                            >{{ product.name }}</router-link>
-                                        </div>
-                                    </div>
+                                        >
+                                            <img :src="product.imgURL" />
+                                        </router-link>
+                                    </figure>
                                 </div>
                             </div>
                         </div>
