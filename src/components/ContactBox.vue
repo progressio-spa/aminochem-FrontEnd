@@ -14,8 +14,8 @@
                             </div>
                             <div class="column is-10">
                                 <p>
-                                    Av. Blanca 1117
-                                    <br />Maipú, Santiago, Chile
+                                    Bernardino 1990
+                                    <br />Puerto Montt, Chile
                                 </p>
                             </div>
                         </div>
