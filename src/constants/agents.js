@@ -297,7 +297,7 @@ export const chileanManagers = [
         email: 'juan.francisco@aminochem.cl',
         phone: '+56 9 74302711',
         region: 'CL-VS',
-        img: require('@/assets/Agents/FranciscoAscui.jpg'),
+        img: require('@/assets/Agents/JuanFrancisco.jpg'),
     },
     {
         name: 'Juan Francisco Cáceres',
@@ -305,7 +305,7 @@ export const chileanManagers = [
         email: 'juan.francisco@aminochem.cl',
         phone: '+56 9 74302711',
         region: 'CL-RM',
-        img: require('@/assets/Agents/FranciscoAscui.jpg'),
+        img: require('@/assets/Agents/JuanFrancisco.jpg'),
     },
     {
         name: 'Juan Pablo Vergara',
