@@ -18,15 +18,29 @@
                 <div class="columns is-mobile">
                     <div class="column">
                         <h1
-                            class="subtitle is-4 has-text-grey-darker"
-                            @click="zoneClicked('CL')"
-                        >{{ $t('Network.option1') }}</h1>
+                            class="subtitle active is-4"
+                            id="tab1"
+                            @click="zoneClicked('CL'),openTab('tab1')"
+                        >
+                            <span class="icon is-small">
+                                <i class="fas fa-map-pin" aria-hidden="true"></i>
+                            </span>
+                            &nbsp;
+                            {{ $t('Network.option1') }}
+                        </h1>
                     </div>
                     <div class="column">
                         <h1
-                            class="subtitle is-4 has-text-grey-darker"
-                            @click="zoneClicked('WR')"
-                        >{{ $t('Network.option2') }}</h1>
+                            class="subtitle is-4"
+                            id="tab2"
+                            @click="zoneClicked('WR'),openTab('tab2')"
+                        >
+                            <span class="icon is-small">
+                                <i class="fas fa-globe-americas" aria-hidden="true"></i>
+                            </span>
+                            &nbsp;
+                            {{ $t('Network.option2') }}
+                        </h1>
                     </div>
                 </div>
             </div>
@@ -204,6 +218,20 @@ export default {
             openUrl,
         }
     },
+    methods: {
+        openTab(tabName) {
+            var i, tablinks
+            tablinks = document.getElementsByClassName('subtitle')
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(
+                    'active',
+                    ''
+                )
+            }
+            var mainTab = document.getElementById(tabName)
+            mainTab.classList.add('active')
+        },
+    },
 }
 </script>
 
@@ -220,8 +248,6 @@ export default {
     height: 100%;
 }
 .subtitle {
-    text-decoration: underline;
-    text-decoration-color: orange;
     cursor: pointer;
 }
 
@@ -265,6 +291,12 @@ export default {
     color: orange;
     cursor: pointer;
 }
+
+.active,
+.subtitle:hover {
+    color: #e96711 !important;
+}
+
 @media screen and (max-width: 480px) {
     #main-title {
         font-size: 2rem;
