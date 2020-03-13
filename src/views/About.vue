@@ -23,22 +23,22 @@
                 <br />
                 <div class="columns images is-desktop">
                     <div class="column">
-                        <figure class="image is-square">
+                        <figure class="image aux is-square">
                             <img src="@/assets/AboutUs/a1.jpg" />
                         </figure>
                     </div>
                     <div class="column">
-                        <figure class="image is-square">
+                        <figure class="image aux is-square">
                             <img src="@/assets/AboutUs/a2.jpg" />
                         </figure>
                     </div>
                     <div class="column">
-                        <figure class="image is-square">
+                        <figure class="image aux is-square">
                             <img src="@/assets/AboutUs/a3.jpg" />
                         </figure>
                     </div>
                     <div class="column">
-                        <figure class="image is-square">
+                        <figure class="image aux is-square">
                             <img src="@/assets/AboutUs/a4.jpg" />
                         </figure>
                     </div>
@@ -86,7 +86,7 @@
         </section>
         <br />
         <br />
-        <section class="hero is-light is-large has-background">
+        <section class="hero aux is-light is-large has-background">
             <img
                 alt="Grass"
                 class="hero-background is-transparent"
@@ -100,7 +100,7 @@
             <div class="hero-body">
                 <div id="carousel-demo" class="carousel">
                     <div class="item-1">
-                        <div class="card">
+                        <div class="card box">
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                     <img
@@ -118,7 +118,7 @@
                         </div>
                     </div>
                     <div class="item-2">
-                        <div class="card">
+                        <div class="card box">
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                     <img
@@ -136,7 +136,7 @@
                         </div>
                     </div>
                     <div class="item-3">
-                        <div class="card">
+                        <div class="card box">
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                     <img
@@ -154,7 +154,7 @@
                         </div>
                     </div>
                     <div class="item-4">
-                        <div class="card">
+                        <div class="card box">
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                     <img
@@ -392,6 +392,9 @@ export default {
     width: 90%;
     height: auto;
     display: inline-block;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+        0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+        0 16px 32px rgba(0, 0, 0, 0.07);
 }
 
 .map-container {
@@ -416,6 +419,12 @@ export default {
 .teamSouthAmericanMap {
     width: 60vw;
     height: 100vh;
+}
+
+.aux {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+        0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+        0 16px 32px rgba(0, 0, 0, 0.07);
 }
 
 @media screen and (max-width: 480px) {

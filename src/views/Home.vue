@@ -38,7 +38,7 @@
                 <h1 class="title">{{ $t('Home.products') }}</h1>
                 <div class="columns">
                     <div class="column">
-                        <div class="card">
+                        <div class="card aux">
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                     <img src="@/assets/Home/hoja.jpg" alt="leave" />
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <div class="column">
-                        <div class="card">
+                        <div class="card aux">
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                     <img src="@/assets/Home/raices.jpg" alt="earth" />
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                     <div class="column">
-                        <div class="card">
+                        <div class="card aux">
                             <div class="card-image">
                                 <figure class="image is-4by3">
                                     <img src="@/assets/Home/gotas.jpg" alt="seeder" />
@@ -229,6 +229,11 @@ a {
     margin-bottom: 6vh;
 }
 
+.aux {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+        0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+        0 16px 32px rgba(0, 0, 0, 0.07);
+}
 @media (max-width: 767px) {
     #mainText {
         left: 10%;
