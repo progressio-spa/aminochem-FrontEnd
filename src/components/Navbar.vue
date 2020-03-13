@@ -200,4 +200,13 @@ a.navbar-item.is-active,
         position: sticky;
     }
 }
+/* Mobile Horizontal y tablet vertical */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .navbar {
+        position: sticky;
+    }
+}
+/* Tablet Horizontal y escritorio normal */
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+}
 </style>
