@@ -48,20 +48,26 @@
                             <span>{{ $t('TechnicalSection.tab-4') }}</span>
                         </a>
                     </li>
-                    <li class="tab" id="tab5" @click="openTab('tab5','contentTab5')">
+                    <!-- <li class="tab" id="tab5" @click="openTab('tab5','contentTab5')">
                         <a>
                             <span class="icon is-small">
                                 <i class="fas fa-pen" aria-hidden="true"></i>
                             </span>
                             <span>{{ $t('TechnicalSection.tab-5') }}</span>
                         </a>
-                    </li>
+                    </li>-->
                 </ul>
             </div>
         </section>
         <section class="content-tab hero is-light is-fullheight" id="contentTab1">
             <div class="hero-head">
-                <div class="title">{{ $t('TechnicalSection.tab-1') }}</div>
+                <div class="title">
+                    <span class="icon is-small">
+                        <i class="fas fa-microscope" aria-hidden="true"></i>
+                    </span>
+                    &nbsp;
+                    {{ $t('TechnicalSection.tab-1') }}
+                </div>
             </div>
             <div class="hero-body">
                 <div class="container">
@@ -88,7 +94,13 @@
             style="display:none"
         >
             <div class="hero-head">
-                <div class="title">{{ $t('TechnicalSection.tab-2') }}</div>
+                <div class="title">
+                    <span class="icon is-small">
+                        <i class="far fa-bookmark" aria-hidden="true"></i>
+                    </span>
+                    &nbsp;
+                    {{ $t('TechnicalSection.tab-2') }}
+                </div>
             </div>
             <div class="hero-body">
                 <div class="container">
@@ -106,7 +118,13 @@
             style="display:none"
         >
             <div class="hero-head">
-                <div class="title">{{ $t('TechnicalSection.tab-3') }}</div>
+                <div class="title">
+                    <span class="icon is-small">
+                        <i class="far fa-calendar" aria-hidden="true"></i>
+                    </span>
+                    &nbsp;
+                    {{ $t('TechnicalSection.tab-3') }}
+                </div>
             </div>
             <div class="hero-body">
                 <div class="container">
@@ -124,7 +142,13 @@
             style="display:none"
         >
             <div class="hero-head">
-                <div class="title">{{ $t('TechnicalSection.tab-4') }}</div>
+                <div class="title">
+                    <span class="icon is-small">
+                        <i class="far fa-newspaper" aria-hidden="true"></i>
+                    </span>
+                    &nbsp;
+                    {{ $t('TechnicalSection.tab-4') }}
+                </div>
             </div>
             <div class="hero-body">
                 <div class="container">
@@ -136,7 +160,7 @@
                 </div>
             </div>
         </section>
-        <section
+        <!-- <section
             class="content-tab hero is-light is-fullheight"
             id="contentTab5"
             style="display:none"
@@ -145,7 +169,7 @@
                 <div class="title">{{ $t('TechnicalSection.tab-5') }}</div>
             </div>
             <Dashboard />
-        </section>
+        </section>-->
     </div>
 </template>
 
