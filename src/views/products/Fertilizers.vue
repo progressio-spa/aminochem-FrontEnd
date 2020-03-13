@@ -95,8 +95,20 @@ export default {
 }
 
 .card {
-    max-width: 70%;
+    max-width: 90%;
     margin: auto;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+        0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+        0 16px 32px rgba(0, 0, 0, 0.07);
+}
+
+.card:hover {
+    animation: pop 0.5s linear 1;
+}
+@keyframes pop {
+    50% {
+        transform: scale(1.03);
+    }
 }
 
 .card-header {
@@ -115,5 +127,20 @@ a {
     #main-title {
         font-size: 2rem;
     }
+}
+
+@media screen and (max-width: 480px) {
+    .card {
+        max-width: 70%;
+    }
+}
+/* Mobile Horizontal y tablet vertical */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .card {
+        max-width: 80%;
+    }
+}
+/* Tablet Horizontal y escritorio normal */
+@media screen and (min-width: 769px) and (max-width: 1279px) {
 }
 </style>
