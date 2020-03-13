@@ -16,6 +16,10 @@
                                 <p>
                                     Bernardino 1990
                                     <br />Puerto Montt, Chile
+                                    <br />
+
+                                    <br />Av. Blanca 1117
+                                    <br />Maipú, Santiago
                                 </p>
                             </div>
                         </div>
