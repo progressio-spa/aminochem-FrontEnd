@@ -79,4 +79,9 @@ export default {
         display: none;
     }
 }
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+}
 </style>
