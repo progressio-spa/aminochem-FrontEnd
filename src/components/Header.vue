@@ -10,9 +10,9 @@
                         <a class="language-icon" @click="changeLanguage(en)">
                             <div class="flag flag-us"></div>
                         </a>
-                        <a class="button is-success is-outlined">
+                        <!-- <a class="button is-success is-outlined">
                             <router-link to="/login">{{ $t('Login.loginNav') }}</router-link>
-                        </a>
+                        </a>-->
                     </div>
                 </div>
             </div>
