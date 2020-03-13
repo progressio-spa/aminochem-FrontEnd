@@ -15,7 +15,7 @@
                             <div class="column is-10">
                                 <p>
                                     Bernardino 1990
-                                    <br />Puerto Montt, Chile
+                                    <br />Puerto Montt
                                     <br />
 
                                     <br />Av. Blanca 1117
