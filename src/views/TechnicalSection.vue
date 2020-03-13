@@ -69,7 +69,7 @@
                     {{ $t('TechnicalSection.tab-1') }}
                 </div>
             </div>
-            <div class="hero-body">
+            <div class="hero-body" style="display: inline-block;">
                 <div class="container">
                     <div class="columns is-multiline is-desktop">
                         <div
@@ -102,7 +102,7 @@
                     {{ $t('TechnicalSection.tab-2') }}
                 </div>
             </div>
-            <div class="hero-body">
+            <div class="hero-body" style="display: inline-block;">
                 <div class="container">
                     <div class="columns is-multiline is-desktop">
                         <div class="column is-one-third" v-for="index in 5" :key="index">
@@ -256,6 +256,7 @@ export default {
     border-bottom-color: #e96711;
     color: #e96711;
 }
+
 @media screen and (max-width: 480px) {
     #main-title {
         font-size: 2rem;
