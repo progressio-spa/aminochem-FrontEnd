@@ -6,7 +6,11 @@
                     <div class="column">
                         <div class="footer-item">
                             <router-link to="/">
-                                <img src="@/assets/logo-aminochem.png" alt="Aminochem" />
+                                <img
+                                    @click="upPage()"
+                                    src="@/assets/logo-aminochem.png"
+                                    alt="Aminochem"
+                                />
                             </router-link>
                         </div>
                     </div>
@@ -44,6 +48,19 @@
                         </div>
                     </div>
                 </div>
+                <div class="columns is-mobile">
+                    <div class="column rrss is-2 is-4 is-offset-5">
+                        <a href="http://facebook.com/">
+                            <img src="@/assets/Social/facebook.png" alt="Facebook" />
+                        </a>
+                        <a href="http://instagram.com/">
+                            <img src="@/assets/Social/instagram.png" alt="Instagram" />
+                        </a>
+                        <a href="http://linkedin.com/">
+                            <img src="@/assets/Social/linkedin.png" alt="LinkedIn" />
+                        </a>
+                    </div>
+                </div>
             </div>
         </footer>
         <section class="hero has-background-grey-light">
@@ -60,6 +77,17 @@
         </section>
     </div>
 </template>
+
+<script>
+export default {
+    methods: {
+        upPage() {
+            document.body.scrollTop = 0 // For Safari
+            document.documentElement.scrollTop = 0
+        },
+    },
+}
+</script>
 
 <style scoped>
 .footer {
@@ -82,6 +110,12 @@ a:hover {
 .last-content {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+}
+
+.rrss {
+    display: flex;
+    max-width: 10vw;
     justify-content: space-around;
 }
 </style>
