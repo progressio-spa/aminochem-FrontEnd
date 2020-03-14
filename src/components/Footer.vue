@@ -115,7 +115,7 @@ a:hover {
 
 .rrss {
     display: flex;
-    max-width: 10vw;
+    max-width: 15vw;
     justify-content: space-around;
 }
 </style>
