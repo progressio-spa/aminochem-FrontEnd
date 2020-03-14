@@ -91,6 +91,15 @@
                         </span>
                     </div>
                 </div>
+                <div class="language-container">
+                    <a class="language-icon" @click="changeLanguage(es)">
+                        <div class="flag flag-es"></div>
+                    </a>
+                    &nbsp;
+                    <a class="language-icon" @click="changeLanguage(en)">
+                        <div class="flag flag-us"></div>
+                    </a>
+                </div>
             </div>
         </header>
     </div>
@@ -128,7 +137,7 @@ export default {
 <style scoped>
 .navbar {
     position: fixed;
-    top: 52px;
+    /* top: 52px; */
     background-color: rgba(255, 255, 255, 0.7) !important;
     width: 100vw;
 }
@@ -193,6 +202,31 @@ a.navbar-item.is-active,
 .navbar-item.has-dropdown:hover .navbar-link,
 .navbar-item.has-dropdown.is-active .navbar-link {
     background-color: rgba(255, 255, 255, 0.3);
+}
+
+/*!
+ * Generated with CSS Flag Sprite generator (https://www.flag-sprites.com/) -
+ */
+.flag {
+    display: inline-block;
+    position: relative;
+    width: 16px;
+    height: 11px;
+    background: url('https://flag-sprites.com/img/flags.png') no-repeat;
+}
+
+.flag.flag-es {
+    background-position: -224px -33px;
+}
+
+.flag.flag-us {
+    background-position: 0 -154px;
+}
+
+.language-container {
+    position: absolute;
+    top: 38%;
+    right: -7%;
 }
 
 @media screen and (max-width: 480px) {
