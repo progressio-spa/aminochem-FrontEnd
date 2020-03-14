@@ -5,6 +5,23 @@
             <div class="white-card">
                 <div class="container map-container">
                     <div class="is-6 agents-list">
+                        <div>
+                            <div class="columns">
+                                <div class="column">
+                                    <figure class="image is-128x128">
+                                        <img class="is-rounded" :src="require('@/assets/Agents/PabloVergara.jpg')" />
+                                    </figure>
+                                </div>
+                                <div class="column">
+                                    <br />
+                                    <h1>Juan Pablo Vergara</h1>
+                                    <h1>Subgerente Venta Nacional</h1>
+                                    <h1>jvergara@aminochem.cl</h1>
+                                    <h1>+56 9 68310700</h1>
+                                </div>
+                            </div>
+                            <br />
+                        </div>
                         <div v-for="agent in agentsToShow" :key="agent.name">
                             <div class="columns">
                                 <div class="column">
