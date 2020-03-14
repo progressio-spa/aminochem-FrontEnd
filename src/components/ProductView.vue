@@ -24,7 +24,12 @@
                                 <p align="left">{{ product.subdescription1 }}</p>
                                 <p align="left">{{ product.subdescription2 }}</p>
                                 <p align="left">{{ product.subdescription3 }}</p>
+                                <p align="left">{{ product.subdescription4 }}</p>
+                                <p align="left">{{ product.subdescription5 }}</p>
                             </div>
+                            <figure class="image" style="width:30vw;heigth:auto;bottom:0vh">
+                                <img :src="product.certificated" />
+                            </figure>
                         </div>
                         <div class="column is-half">
                             <figure class="image is-5by4">
@@ -204,15 +209,13 @@ p {
 .tabs span {
     color: #2b2b2b;
 }
-
-.tabs i {
-    color: rgb(252, 74, 26);
-}
-
 .image {
     bottom: 15vh;
 }
 
+.tabs i {
+    color: rgb(252, 74, 26);
+}
 @media screen and (max-width: 480px) {
     #main-title {
         font-size: 2rem;
