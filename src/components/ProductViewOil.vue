@@ -28,7 +28,7 @@
                                 <p align="left">{{ product.subdescription5 }}</p>
                             </div>
                             <div class="certificated">
-                                <figure class="image is-128x128">
+                                <figure class="image is-128x128" style="bottom: 0vh;">
                                     <img :src="product.certificated" />
                                 </figure>
                             </div>
@@ -214,6 +214,10 @@ p {
 
 .tabs i {
     color: rgb(252, 74, 26);
+}
+
+.image {
+    bottom: 15vh;
 }
 
 @media screen and (max-width: 480px) {
