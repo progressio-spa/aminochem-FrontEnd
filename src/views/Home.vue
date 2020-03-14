@@ -190,6 +190,7 @@ export default {
 .hero-body > .container > .title {
     font-size: 4.5rem;
 }
+
 .title {
     color: #585858;
     /*align-items: center;*/
@@ -202,16 +203,6 @@ export default {
     position: absolute;
     left: 10%;
     max-width: 30%;
-}
-
-.divider {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid white;
-    margin: 0 3%;
-    padding: 0;
-    z-index: 2;
 }
 
 a {
@@ -234,7 +225,14 @@ a {
         0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
         0 16px 32px rgba(0, 0, 0, 0.07);
 }
-@media (max-width: 767px) {
+
+@media screen and (min-width: 1214px) and (max-width: 1408px) {
+    .card-content {
+        min-height: 27vh;
+    }
+}
+/* Mobile Horizontal y tablet vertical */
+@media screen and (min-width: 481px) and (max-width: 768px) {
     #mainText {
         left: 10%;
         max-width: 80%;
@@ -243,7 +241,8 @@ a {
         font-size: 3.5rem;
     }
 }
-@media (max-width: 1020px) {
+/* Tablet Horizontal y escritorio normal */
+@media screen and (min-width: 769px) and (max-width: 1279px) {
     #mainText {
         left: 10%;
         max-width: 80%;
