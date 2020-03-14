@@ -25,9 +25,6 @@
                                 <p align="left">{{ $t('Products.amendments.description3') }}</p>
                                 <p align="left">{{ $t('Products.amendments.description4') }}</p>
                                 <p align="left">{{ $t('Products.amendments.description5') }}</p>
-                                <p align="left">{{ $t('Products.amendments.description6') }}</p>
-                                <p align="left">{{ $t('Products.amendments.description7') }}</p>
-                                <p align="left">{{ $t('Products.amendments.description8') }}</p>
                             </div>
                         </div>
                         <div class="column is-half">
