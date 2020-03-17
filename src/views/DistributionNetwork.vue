@@ -283,7 +283,7 @@ export default {
 }
 
 .distributionMap {
-    width: 60vw;
+    width: 50vw;
     height: 100vh;
 }
 
