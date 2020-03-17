@@ -59,6 +59,42 @@
                 <br />
                 <div class="columns map-container">
                     <div class="is-6 agents-list">
+                        <div>
+                            <div class="columns">
+                                <div class="column">
+                                    <figure class="image is-128x128">
+                                        <img class="is-rounded"
+                                            :src="require('@/assets/Agents/CarlosBaier.jpg')"/>
+                                    </figure>
+                                </div>
+                                <div class="column">
+                                    <br />
+                                    <h1>Carlos Baier A.</h1>
+                                    <h1>Subgerente Técnico</h1>
+                                    <h1>cbaier@aminochem.cl</h1>
+                                    <h1>+56 9 96379251</h1>
+                                </div>
+                            </div>
+                            <br />
+                        </div>
+                        <div>
+                            <div class="columns">
+                                <div class="column">
+                                    <figure class="image is-128x128">
+                                        <img class="is-rounded"
+                                            :src="require('@/assets/Agents/FranciscoAscui.jpg')"/>
+                                    </figure>
+                                </div>
+                                <div class="column">
+                                    <br />
+                                    <h1>Francisco Ascui</h1>
+                                    <h1>Gerente General</h1>
+                                    <h1>francisco.ascui@aminochem.cl</h1>
+                                    <h1>+56 9 87292496</h1>
+                                </div>
+                            </div>
+                            <br />
+                        </div>
                         <div v-for="agent in countriesToShow" :key="agent.name">
                             <div class="columns">
                                 <div class="column">
