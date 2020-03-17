@@ -14,11 +14,22 @@
                             </div>
                             <div class="column is-10">
                                 <p>
-                                    Bernardino 1990
+                                    Bernardino 1990,
                                     <br />Puerto Montt
                                     <br />
+                                </p>
+                            </div>
+                        </div>
 
-                                    <br />Av. Blanca 1117
+                        <div class="columns">
+                            <div class="column">
+                                <span class="icon is-medium has-text-white">
+                                    <i class="fas fa-map-marker-alt fa-2x"></i>
+                                </span>
+                            </div>
+                            <div class="column is-10">
+                                <p>
+                                    Av. Blanca 1117,
                                     <br />Maipú, Santiago
                                 </p>
                             </div>
