@@ -329,13 +329,6 @@ export default {
                 },
                 this
             )
-            worldSeries.mapPolygons.template.events.on(
-                'out',
-                () => {
-                    hoveredCountry.value = ''
-                },
-                this
-            )
         }
         onMounted(() => {
             bulmaCarousel.attach('#carousel-demo', {
