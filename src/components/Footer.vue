@@ -67,7 +67,7 @@
             <div class="hero-footer">
                 <div class="last-content">
                     <div class="paragraph">
-                        <p>Bernardino 1990, Puerto Montt, Chile</p>
+                        <p>Av. Blanca 1117, Maipú, Santiago - Bernardino 1990, Puerto Montt, Chile</p>
                     </div>
                     <div class="watermark">
                         <p>©copyright 2019</p>
