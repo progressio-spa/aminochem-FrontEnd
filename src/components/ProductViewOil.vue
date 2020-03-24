@@ -37,6 +37,10 @@
                             <figure class="image is-5by4">
                                 <img :src="product.imgURL" />
                             </figure>
+                            <div
+                                class="subtitle countries is-3"
+                                v-if="'Bioil-S' == productName"
+                            >Argentina - Perú</div>
                         </div>
                     </div>
                     <div
@@ -149,6 +153,7 @@ export default {
             labelPdf,
             dataSheetPdf,
             safetySheetPdf,
+            productName,
         }
     },
     data() {
@@ -218,6 +223,12 @@ p {
 
 .image {
     bottom: 15vh;
+}
+
+.countries {
+    color: rgb(252, 74, 26) !important;
+    position: relative;
+    bottom: 25vh;
 }
 
 @media screen and (max-width: 480px) {
