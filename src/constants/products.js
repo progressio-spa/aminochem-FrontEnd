@@ -47,7 +47,7 @@ export const fertilizers = {
         subdescription4: 'Producto apto para fertirriego.',
         subdescription5: 'Apto para Agricultura Orgánica.',
         imgURL: '../static/product-logo/Variantes-productosColor-05.png',
-        certificated: '',
+        certificated: '../static/certificate/ecocertCDFA.png',
     },
     aminoroot: {
         name: 'Aminoroot',
