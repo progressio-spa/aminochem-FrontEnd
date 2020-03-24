@@ -27,7 +27,7 @@
                                 <p align="left">{{ product.subdescription4 }}</p>
                                 <p align="left">{{ product.subdescription5 }}</p>
                             </div>
-                            <figure class="image" style="width:30vw;heigth:auto;bottom:0vh">
+                            <figure class="image" style="width:20vw;heigth:auto;bottom:0vh">
                                 <img :src="product.certificated" />
                             </figure>
                         </div>
