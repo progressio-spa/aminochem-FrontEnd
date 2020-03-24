@@ -185,6 +185,14 @@ export const agentsList = [
 
 export const regionManagers = [
     {
+        name: 'Rolando Silva',
+        position: 'Country Manager Perú Bolivia',
+        email: '',
+        phone: '',
+        country: 'PE',
+        img: require('@/assets/Agents/RolandoSilva.jpg'),
+    },
+    {
         name: 'Lenin Guerrero Ch.',
         position: 'Zonal Técnico Comercial Norte',
         email: 'Ingeniero Agrónomo',
@@ -199,14 +207,6 @@ export const regionManagers = [
         phone: '',
         country: 'PE',
         img: require('@/assets/Agents/JoseLuisAssereto.jpg'),
-    },
-    {
-        name: 'Rolando Silva',
-        position: 'Country Manager Perú Bolivia',
-        email: '',
-        phone: '',
-        country: 'PE',
-        img: require('@/assets/Agents/RolandoSilva.jpg'),
     },
     {
         name: 'Rolando Silva',

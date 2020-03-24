@@ -64,24 +64,6 @@
                                 <div class="column">
                                     <figure class="image is-128x128">
                                         <img class="is-rounded"
-                                            :src="require('@/assets/Agents/CarlosBaier.jpg')"/>
-                                    </figure>
-                                </div>
-                                <div class="column">
-                                    <br />
-                                    <h1>Carlos Baier A.</h1>
-                                    <h1>Subgerente Técnico</h1>
-                                    <h1>cbaier@aminochem.cl</h1>
-                                    <h1>+56 9 96379251</h1>
-                                </div>
-                            </div>
-                            <br />
-                        </div>
-                        <div>
-                            <div class="columns">
-                                <div class="column">
-                                    <figure class="image is-128x128">
-                                        <img class="is-rounded"
                                             :src="require('@/assets/Agents/FranciscoAscui.jpg')"/>
                                     </figure>
                                 </div>
@@ -91,6 +73,24 @@
                                     <h1>Gerente General</h1>
                                     <h1>francisco.ascui@aminochem.cl</h1>
                                     <h1>+56 9 87292496</h1>
+                                </div>
+                            </div>
+                            <br />
+                        </div>
+                        <div>
+                            <div class="columns">
+                                <div class="column">
+                                    <figure class="image is-128x128">
+                                        <img class="is-rounded"
+                                            :src="require('@/assets/Agents/CarlosBaier.jpg')"/>
+                                    </figure>
+                                </div>
+                                <div class="column">
+                                    <br />
+                                    <h1>Carlos Baier A.</h1>
+                                    <h1>Subgerente Técnico</h1>
+                                    <h1>cbaier@aminochem.cl</h1>
+                                    <h1>+56 9 96379251</h1>
                                 </div>
                             </div>
                             <br />
