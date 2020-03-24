@@ -105,8 +105,17 @@
             <div class="hero-body" style="display: inline-block;">
                 <div class="container">
                     <div class="columns is-multiline is-desktop">
-                        <div class="column is-one-third" v-for="index in 5" :key="index">
-                            <BlogCard />
+                        <div
+                            class="column is-one-third"
+                            v-for="(news,index) in Publication"
+                            :key="index"
+                        >
+                            <BlogCard
+                                :title="news.title"
+                                :newsImage="news.imgURL"
+                                :subtitle="news.subtitle"
+                                :pdfName="news.pdfName"
+                            />
                         </div>
                     </div>
                 </div>
@@ -182,6 +191,7 @@ import BlogCard from '@/components/BlogCard.vue'
 import Dashboard from '@/components/Dashboard.vue'
 
 import { iplusd } from '@/constants/TemporalTechnical'
+import { publication } from '@/constants/publications'
 
 export default {
     name: 'home',
@@ -193,6 +203,7 @@ export default {
     data() {
         return {
             tempIplusD: iplusd,
+            Publication: publication,
         }
     },
     setup(props, { root }) {
