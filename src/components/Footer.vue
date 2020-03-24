@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="columns is-mobile">
-                    <div class="column rrss is-2 is-4 is-offset-5">
+                    <div class="column rrss is-2 is-offset-5">
                         <a href="http://facebook.com/">
                             <img src="@/assets/Social/facebook.png" alt="Facebook" />
                         </a>
@@ -115,7 +115,11 @@ a:hover {
 
 .rrss {
     display: flex;
-    max-width: 15vw;
+    max-width: 24vw;
     justify-content: space-around;
+}
+
+.rrss a img {
+    max-height: 5vh;
 }
 </style>
