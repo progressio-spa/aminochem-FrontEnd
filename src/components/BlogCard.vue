@@ -19,11 +19,11 @@
                 </div>
             </div>
 
-            <div class="content">
+            <!-- <div class="content">
                 {{subtitle}}
                 <br />
-                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-            </div>
+                <time datetime="2016-1-1"></time>
+            </div>-->
         </div>
     </div>
 </template>
@@ -44,5 +44,9 @@ export default {
 }
 .card {
     min-height: 100%;
+}
+
+.hero-body {
+    width: 100%;
 }
 </style>

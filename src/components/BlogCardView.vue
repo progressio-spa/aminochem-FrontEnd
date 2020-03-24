@@ -51,10 +51,28 @@
                                 ></iframe>
                             </div>
                         </div>
-                        <div v-else>
+                        <div v-else-if="pdfName==='demo3'">
                             <div>
                                 <iframe
                                     :src="demo3"
+                                    style="width:100%;height:100vh;"
+                                    scrolling="auto"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div v-else-if="pdfName==='demo4'">
+                            <div>
+                                <iframe
+                                    :src="demo4"
+                                    style="width:100%;height:100vh;"
+                                    scrolling="auto"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <div v-else>
+                            <div>
+                                <iframe
+                                    :src="demo5"
                                     style="width:100%;height:100vh;"
                                     scrolling="auto"
                                 ></iframe>
@@ -78,10 +96,14 @@ export default {
         const demo1 = require(`../assets/Temporal/iplusd/demo1.pdf`)
         const demo2 = require(`../assets/Temporal/iplusd/demo2.pdf`)
         const demo3 = require(`../assets/Temporal/iplusd/demo3.pdf`)
+        const demo4 = require(`../assets/Temporal/iplusd/demo4.pdf`)
+        const demo5 = require(`../assets/Temporal/iplusd/demo5.pdf`)
         return {
             demo1,
             demo2,
             demo3,
+            demo4,
+            demo5,
         }
     },
     props: ['title', 'newsImage', 'subtitle', 'pdfName'],
