@@ -48,14 +48,14 @@
                             <span>{{ $t('TechnicalSection.tab-4') }}</span>
                         </a>
                     </li>
-                    <!-- <li class="tab" id="tab5" @click="openTab('tab5','contentTab5')">
+                    <li class="tab" id="tab5" @click="openTab('tab5','contentTab5')">
                         <a>
                             <span class="icon is-small">
                                 <i class="fas fa-pen" aria-hidden="true"></i>
                             </span>
                             <span>{{ $t('TechnicalSection.tab-5') }}</span>
                         </a>
-                    </li>-->
+                    </li>
                 </ul>
             </div>
         </section>
@@ -169,7 +169,7 @@
                 </div>
             </div>
         </section>
-        <!-- <section
+        <section
             class="content-tab hero is-light is-fullheight"
             id="contentTab5"
             style="display:none"
@@ -178,7 +178,7 @@
                 <div class="title">{{ $t('TechnicalSection.tab-5') }}</div>
             </div>
             <Dashboard />
-        </section>-->
+        </section>
     </div>
 </template>
 
