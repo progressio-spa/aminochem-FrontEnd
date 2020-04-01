@@ -72,7 +72,6 @@
                                     <h1>Francisco Ascui</h1>
                                     <h1>Gerente General</h1>
                                     <h1>francisco.ascui@aminochem.cl</h1>
-                                    <h1>+56 9 87292496</h1>
                                 </div>
                             </div>
                             <br />
@@ -448,6 +447,7 @@ export default {
 .teamSouthAmericanMap {
     width: 60vw;
     height: 100vh;
+    max-height: 101vh;
 }
 
 .aux {

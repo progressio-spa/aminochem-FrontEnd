@@ -52,7 +52,7 @@
                                 </span>
                             </div>
                             <div class="column is-10">
-                                <p>+ 56 2 2676 3300</p>
+                                <p>+ 56 652267000</p>
                             </div>
                         </div>
                     </div>
