@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="columns is-mobile">
-                    <div class="column rrss is-2 is-offset-5">
+                    <div class="column rrss is-4 is-offset-4">
                         <a href="http://facebook.com/">
                             <img src="@/assets/Social/facebook.png" alt="Facebook" />
                         </a>
