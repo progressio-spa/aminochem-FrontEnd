@@ -233,11 +233,17 @@ a.navbar-item.is-active,
     .navbar {
         position: sticky;
     }
+    .language-container {
+        display: none;
+    }
 }
 /* Mobile Horizontal y tablet vertical */
 @media screen and (min-width: 481px) and (max-width: 768px) {
     .navbar {
         position: sticky;
+    }
+    .language-container {
+        display: none;
     }
 }
 /* Tablet Horizontal y escritorio normal */
