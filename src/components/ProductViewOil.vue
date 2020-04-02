@@ -254,6 +254,11 @@ p {
     .tabs-mobile {
         display: block !important;
     }
+    .countries {
+        color: rgb(252, 74, 26) !important;
+        position: relative;
+        bottom: 6vh;
+    }
 }
 /* Mobile Horizontal y tablet vertical */
 @media screen and (min-width: 481px) and (max-width: 768px) {
@@ -272,6 +277,11 @@ p {
     }
     .container {
         width: 100%;
+    }
+    .countries {
+        color: rgb(252, 74, 26) !important;
+        position: relative;
+        bottom: 8vh;
     }
 }
 /* Tablet Horizontal y escritorio normal */
