@@ -13,7 +13,7 @@
                 </div>
             </div>
         </section>
-        <section class="hero is-medium">
+        <section class="hero is-medium" v-if="!isMobile">
             <div class="hero-body">
                 <div class="container" id="maps">
                     <iframe
@@ -42,6 +42,12 @@ export default {
     components: {
         Navbar,
         ContactBox,
+    },
+    setup() {
+        const isMobile = window.innerWidth < 425;
+        return {
+            isMobile
+        };
     },
 }
 </script>
