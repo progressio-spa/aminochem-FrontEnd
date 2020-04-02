@@ -242,6 +242,14 @@ export const regionManagers = [
         img: require('@/assets/Agents/JorgeSchell.jpg'),
     },
     {
+        name: 'Juan Pablo Vergara',
+        position: 'Subgerente Venta Nacional',
+        email: 'jvergara@aminochem.cl',
+        phone: '+56 9 68310700',
+        country: 'CL',
+        img: require('@/assets/Agents/PabloVergara.jpg'),
+    },
+    {
         name: 'Click para más información',
         position: '',
         email: '',

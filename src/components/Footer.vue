@@ -42,8 +42,8 @@
                     </div>
                     <div class="column">
                         <div class="footer-item">
-                            <a href="http://fiordoaustral.com/">
-                                <img src="@/assets/logoFiordo.png" alt="Fiordo" />
+                            <a>
+                                <img @click="goToFiordoAustral" src="@/assets/logoFiordo.png" alt="Fiordo" />
                             </a>
                         </div>
                     </div>
@@ -85,6 +85,9 @@ export default {
             document.body.scrollTop = 0 // For Safari
             document.documentElement.scrollTop = 0
         },
+        goToFiordoAustral() {
+            window.open("http://fiordoaustral.com/");
+        }
     },
 }
 </script>
