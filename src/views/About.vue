@@ -60,7 +60,7 @@
                 <div class="columns map-container">
                     <div class="is-6 agents-list">
                         <div>
-                            <div class="columns">
+                            <div class="columns agent-container">
                                 <div class="column">
                                     <figure class="image is-128x128">
                                         <img class="is-rounded"
@@ -77,7 +77,7 @@
                             <br />
                         </div>
                         <div>
-                            <div class="columns">
+                            <div class="columns agent-container">
                                 <div class="column">
                                     <figure class="image is-128x128">
                                         <img class="is-rounded"
@@ -95,7 +95,7 @@
                             <br />
                         </div>
                         <div v-for="agent in countriesToShow" :key="agent.name">
-                            <div class="columns">
+                            <div class="columns agent-container">
                                 <div class="column">
                                     <figure class="image is-128x128">
                                         <img class="is-rounded" :src="agent.img" />
@@ -307,11 +307,15 @@ export default {
             polygonTemplate.events.on(
                 'over',
                 ev => {
+                    const isMobile = window.innerWidth < 425;
                     if (
                         !excludedCountries.includes(
                             ev.target.dataItem.dataContext.id
                         )
                     ) {
+                        if (isMobile) {
+                            return;
+                        }
                         hoveredCountry.value = ev.target.dataItem.dataContext.id
                     } else {
                         ev.target.isHover = false
@@ -322,8 +326,19 @@ export default {
             polygonTemplate.events.on(
                 'hit',
                 ev => {
-                    if (ev.target.dataItem.dataContext.id === 'CL') {
-                        showChileanModal.value = true
+                    const isMobile = window.innerWidth < 425;
+                    if (!isMobile) {
+                        if (ev.target.dataItem.dataContext.id === 'CL') {
+                            showChileanModal.value = true
+                        }
+                    } else {
+                        if (
+                            !excludedCountries.includes(
+                                ev.target.dataItem.dataContext.id
+                            )
+                        ) {
+                            hoveredCountry.value = ev.target.dataItem.dataContext.id
+                        }
                     }
                 },
                 this
@@ -469,6 +484,22 @@ export default {
     }
     .card-content {
         min-height: 16rem;
+    }
+    .map-container {
+        flex-direction: column;
+        height: auto;
+    }
+    .agents-list {
+        width: 75vw;
+        height: auto;
+    }
+    .agent-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .teamSouthAmericanMap {
+        width: 75vw;
     }
 }
 </style>
