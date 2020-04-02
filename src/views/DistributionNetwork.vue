@@ -169,12 +169,12 @@ export default {
             // Set Projection
             southAmericanMap.projection = new am4maps.projections.NaturalEarth1()
             southAmericanMap.panBehavior = 'rotateLongLat'
-            southAmericanMap.deltaLongitude = 50
+            southAmericanMap.deltaLongitude = 70
             southAmericanMap.deltaLatitude = 15
             southAmericanMap.padding(20, 20, 20, 20)
             southAmericanMap.fill = am4core.color('#000000')
             southAmericanMap.mouseWheelBehavior = 'none'
-            southAmericanMap.homeZoomLevel = 2.5
+            southAmericanMap.homeZoomLevel = 4;
             // Create Serie
             const worldSeries = southAmericanMap.series.push(
                 new am4maps.MapPolygonSeries()
@@ -193,7 +193,20 @@ export default {
             worldSeries.mapPolygons.template.events.on(
                 'over',
                 ev => {
-                    hoveredCountry.value = ev.target.dataItem.dataContext.id
+                    const isMobile = window.innerWidth < 425;
+                    if (!isMobile) {
+                        hoveredCountry.value = ev.target.dataItem.dataContext.id
+                    }
+                },
+                this
+            )
+            worldSeries.mapPolygons.template.events.on(
+                'hit',
+                ev => {
+                    const isMobile = window.innerWidth < 425;
+                    if (isMobile) {
+                        hoveredCountry.value = ev.target.dataItem.dataContext.id
+                    }
                 },
                 this
             )
