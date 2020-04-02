@@ -139,7 +139,20 @@ export default {
             chileanSeries.mapPolygons.template.events.on(
                 'over',
                 ev => {
-                    hoveredRegion.value = ev.target.dataItem.dataContext.id
+                    const isMobile = window.innerWidth < 425;
+                    if (!isMobile) {
+                        hoveredRegion.value = ev.target.dataItem.dataContext.id
+                    }
+                },
+                this
+            )
+            chileanSeries.mapPolygons.template.events.on(
+                'hit',
+                ev => {
+                    const isMobile = window.innerWidth < 425;
+                    if (isMobile) {
+                        hoveredRegion.value = ev.target.dataItem.dataContext.id
+                    }
                 },
                 this
             )
@@ -297,9 +310,21 @@ export default {
     color: #e96711 !important;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 425px) {
     #main-title {
         font-size: 2rem;
+    }
+    .map-container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    .agents-list {
+        height: auto;
+        width: 75vw;
+    }
+    .distributionMap {
+        width: 75vw;
     }
 }
 </style>
