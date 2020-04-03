@@ -50,13 +50,13 @@
                 </div>
                 <div class="columns is-mobile">
                     <div class="column rrss is-4 is-offset-4">
-                        <a href="http://facebook.com/">
+                        <a href="https://www.facebook.com/Aminochem-111858680468029/?modal=admin_todo_tour">
                             <img src="@/assets/Social/facebook.png" alt="Facebook" />
                         </a>
-                        <a href="http://instagram.com/">
+                        <a href="https://www.instagram.com/aminochemchile/">
                             <img src="@/assets/Social/instagram.png" alt="Instagram" />
                         </a>
-                        <a href="http://linkedin.com/">
+                        <a href="https://www.linkedin.com/company/65291249/admin/">
                             <img src="@/assets/Social/linkedin.png" alt="LinkedIn" />
                         </a>
                     </div>

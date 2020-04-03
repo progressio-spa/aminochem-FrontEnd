@@ -275,6 +275,10 @@ export default {
     .title {
         font-size: 1.5rem;
     }
+    .tabs-container {
+        display: flex;
+        flex-direction: column;
+    }
 }
 /* Mobile Horizontal y tablet vertical */
 @media screen and (min-width: 481px) and (max-width: 768px) {

@@ -92,11 +92,11 @@
                     </div>
                 </div>
                 <div class="language-container">
-                    <a class="language-icon" @click="changeLanguage(es)">
+                    <a class="language-icon" @click="changeLanguage('es')">
                         <div class="flag flag-es"></div>
                     </a>
                     &nbsp;
-                    <a class="language-icon" @click="changeLanguage(en)">
+                    <a class="language-icon" @click="changeLanguage('en')">
                         <div class="flag flag-us"></div>
                     </a>
                 </div>
@@ -129,6 +129,9 @@ export default {
         },
         updateScroll() {
             this.scrollPosition = window.scrollY
+        },
+        changeLanguage(lang) {
+            this.$i18n.locale = lang;
         },
     },
 }
