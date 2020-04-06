@@ -107,24 +107,21 @@
                             <div class="field">
                                 <label class="label">{{ $t('TechnicalSection.modal-title') }}</label>
                                 <div class="control">
-                                    <input class="input" type="text" placeholder="Text input" />
+                                    <input v-model="newPost.title" class="input" type="text" placeholder="Text input" />
                                 </div>
                             </div>
                             <div class="field">
                                 <label class="label">{{ $t('TechnicalSection.modal-content') }}</label>
                                 <div class="control">
-                                    <textarea class="textarea" placeholder="Textarea"></textarea>
+                                    <textarea v-model="newPost.content" class="textarea" placeholder="Textarea"></textarea>
                                 </div>
                             </div>
                             <div class="field">
                                 <label class="label">{{ $t('TechnicalSection.modal-category') }}</label>
                                 <div class="control">
                                     <div class="select is-success">
-                                        <select>
-                                            <option>I+D</option>
-                                            <option>Publicaciones</option>
-                                            <option>Actividades</option>
-                                            <option>Noticias</option>
+                                        <select v-model="newPost.category">
+                                            <option v-for="category in categories" :key="category.id">{{ category.name }}</option>
                                         </select>
                                     </div>
                                 </div>
@@ -132,6 +129,7 @@
                             <div class="field is-grouped">
                                 <div class="control">
                                     <button
+                                        @click="sendPost"
                                         class="button is-success"
                                     >{{ $t('TechnicalSection.button-send') }}</button>
                                 </div>
@@ -151,9 +149,33 @@
 </template>
 
 <script>
+
+import {
+    post,
+    getCategories,
+    getPosts
+} from '@/api/requests/posts';
+
 export default {
     name: 'home',
-    components: {},
+    data(){
+        return {
+            newPost: {
+                title: '',
+                content: '',
+                category: '',
+            },
+            categories: [],
+            token: this.$store.getters.getAccessToken,
+        };
+    },
+    async created() {
+        const categoriesRequest = await getCategories();
+        const bodyFormData = new FormData();
+        bodyFormData.set('token', this.token);
+        const postsRequest = await getPosts(bodyFormData);
+        this.categories = categoriesRequest.data;
+    },
     mounted() {
         document.querySelectorAll('.modal-button').forEach(function(el) {
             el.addEventListener('click', function() {
@@ -170,6 +192,18 @@ export default {
                     })
             })
         })
+    },
+    methods: {
+        async sendPost() {
+            const data = {};
+            data.title = this.newPost.title;
+            data.body = this.newPost.content;
+            data.isPrivate = 0;
+            data.category = this.categories
+                .find(category => category.name = this.newPost.category).id;
+            data.token = this.token;
+            await post(data);
+        }
     },
 }
 </script>
