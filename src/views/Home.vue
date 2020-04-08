@@ -14,7 +14,7 @@
                     <img
                         alt="Grass"
                         class="hero-background-home is-transparent"
-                        :src="getCorouselImg(3)"
+                        :src="getCorouselImg(2)"
                     />
                 </div>
                 <div class="carousel-item">
