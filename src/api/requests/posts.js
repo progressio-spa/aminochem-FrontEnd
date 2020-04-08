@@ -2,7 +2,7 @@ import request from '../index';
 
 export function post(data) {
   return request({
-  	url: 'https://aminochem-backend.herokuapp.com/post',
+  	url: 'https://aminochem-backend.herokuapp.com/create/post',
   	methods: 'post',
   	headers: {
   	  'Content-Type': 'application/json; charset=UTF-8',

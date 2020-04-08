@@ -3,25 +3,25 @@
     <div class="home">
         <section class="hero is-fullheight has-carousel" id="main">
             <div id="carousel-demo" class="hero-carousel">
-                <div class="item-1">
+                <div class="carousel-item">
                     <img
                         alt="Grass"
                         class="hero-background-home is-transparent"
-                        src="@/assets/Home/prueba-01.png"
+                        :src="getCorouselImg(1)"
                     />
                 </div>
-                <div class="item-2">
+                <div class="carousel-item">
                     <img
                         alt="Grass"
                         class="hero-background-home is-transparent"
-                        src="@/assets/Home/prueba-02.png"
+                        :src="getCorouselImg(3)"
                     />
                 </div>
-                <div class="item-3">
+                <div class="carousel-item">
                     <img
                         alt="Grass"
                         class="hero-background-home is-transparent"
-                        src="@/assets/Home/prueba-03.png"
+                        :src="getCorouselImg(3)"
                     />
                 </div>
             </div>
@@ -149,6 +149,30 @@ export default {
             pagination: false,
         })
     },
+    methods: {
+        getCorouselImg(index) {
+            const isMobile = window.innerWidth < 775;
+            if (index === 1) {
+                if (isMobile) {
+                    return require('@/assets/Home/corouselResp1.png');
+                } else {
+                    return require('@/assets/Home/prueba-01.png');
+                }
+            } else if (index === 2) {
+                if (isMobile) {
+                    return require('@/assets/Home/corouselResp2.png');
+                } else {
+                    return require('@/assets/Home/prueba-02.png');
+                }
+            } else if (index === 3) {
+                if (isMobile) {
+                    return require('@/assets/Home/corouselResp3.png');
+                } else {
+                    return require('@/assets/Home/prueba-03.png');
+                }
+            }
+        }
+    },
 }
 </script>
 
@@ -246,6 +270,15 @@ a {
     #mainText {
         left: 10%;
         max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .carousel-item {
+        height: 100vh;        
+    }
+    .hero-background-home {
+        height: 100vh;
     }
 }
 </style>
