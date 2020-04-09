@@ -3,12 +3,33 @@ import request from '../index';
 export function post(data) {
   return request({
   	url: 'https://aminochem-backend.herokuapp.com/create/post',
-  	methods: 'post',
-  	headers: {
-  	  'Content-Type': 'application/json; charset=UTF-8',
-  	  'Access-Control-Allow-Origin': '*',
-  	},
+  	method: 'post',
+    headers: {
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
   	data,
+  });
+}
+
+export function deletePost(data) {
+  return request({
+    url: 'https://aminochem-backend.herokuapp.com/post/delete',
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
+    data,
+  });
+}
+
+export function updatePost(data) {
+  return request({
+    url: 'https://aminochem-backend.herokuapp.com/post/update',
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
+    data,
   })
 }
 

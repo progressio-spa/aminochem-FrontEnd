@@ -4,8 +4,7 @@
             <div class="button-container">
                 <button
                     class="button is-success modal-button"
-                    data-target="#myModal"
-                    aria-haspopup="true"
+                    @click="openModal('create')"
                 >{{ $t('TechnicalSection.new-entry') }}</button>
             </div>
             <div class="card">
@@ -31,66 +30,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th>1</th>
-                                <td>Prueba 1</td>
-                                <td>Gabriel Gaete</td>
-                                <td>13/02/2020</td>
+                            <tr v-for="post in posts" :key="post.id">
+                                <th>{{ post.id }}</th>
+                                <td>{{ post.title }}</td>
+                                <td>{{ `${post.creator.name} ${post.creator.lastname}` }}</td>
+                                <td>{{ post.dateCreated.split('T')[0] }}</td>
                                 <td>
                                     <div class="buttons">
                                         <button
                                             class="button is-info"
+                                            @click="modifyPost(post)"
                                         >{{ $t('TechnicalSection.button-modified') }}</button>
                                         <button
                                             class="button is-danger"
-                                        >{{ $t('TechnicalSection.button-deleted') }}</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>2</th>
-                                <td>Prueba 2</td>
-                                <td>Gabriel Gaete</td>
-                                <td>12/02/2020</td>
-                                <td>
-                                    <div class="buttons">
-                                        <button
-                                            class="button is-info"
-                                        >{{ $t('TechnicalSection.button-modified') }}</button>
-                                        <button
-                                            class="button is-danger"
-                                        >{{ $t('TechnicalSection.button-deleted') }}</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>3</th>
-                                <td>Prueba 3</td>
-                                <td>Gabriel Gaete</td>
-                                <td>10/02/2020</td>
-                                <td>
-                                    <div class="buttons">
-                                        <button
-                                            class="button is-info"
-                                        >{{ $t('TechnicalSection.button-modified') }}</button>
-                                        <button
-                                            class="button is-danger"
-                                        >{{ $t('TechnicalSection.button-deleted') }}</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>4</th>
-                                <td>Prueba 3</td>
-                                <td>Gabriel Gaete</td>
-                                <td>09/02/2020</td>
-                                <td>
-                                    <div class="buttons">
-                                        <button
-                                            class="button is-info"
-                                        >{{ $t('TechnicalSection.button-modified') }}</button>
-                                        <button
-                                            class="button is-danger"
+                                            @click="sendDeletePost(post.id)"
                                         >{{ $t('TechnicalSection.button-deleted') }}</button>
                                     </div>
                                 </td>
@@ -99,7 +52,7 @@
                     </table>
                 </div>
             </div>
-            <div class="modal" id="myModal">
+            <div :class="{'modal': true, 'is-active': isModalShow }">
                 <div class="modal-background"></div>
                 <div class="modal-content">
                     <div class="box">
@@ -129,7 +82,7 @@
                             <div class="field is-grouped">
                                 <div class="control">
                                     <button
-                                        @click="sendPost"
+                                        @click="sendRequest"
                                         class="button is-success"
                                     >{{ $t('TechnicalSection.button-send') }}</button>
                                 </div>
@@ -142,7 +95,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="modal-close is-large" aria-label="close"></button>
+                <button class="modal-close is-large" @click="closeModal" aria-label="close"></button>
             </div>
         </div>
     </div>
@@ -153,7 +106,9 @@
 import {
     post,
     getCategories,
-    getPosts
+    getPosts,
+    deletePost,
+    updatePost
 } from '@/api/requests/posts';
 
 export default {
@@ -166,7 +121,10 @@ export default {
                 category: '',
             },
             categories: [],
+            posts: [],
             token: this.$store.getters.getAccessToken,
+            isModalShow: false,
+            modalPurpose: 'create',
         };
     },
     async created() {
@@ -175,6 +133,7 @@ export default {
         bodyFormData.set('token', this.token);
         const postsRequest = await getPosts(bodyFormData);
         this.categories = categoriesRequest.data;
+        this.posts = postsRequest.data;
     },
     mounted() {
         document.querySelectorAll('.modal-button').forEach(function(el) {
@@ -194,16 +153,56 @@ export default {
         })
     },
     methods: {
-        async sendPost() {
+        openModal(purpose) {
+            this.modalPurpose = purpose;
+            this.isModalShow = true;
+        },
+        closeModal() {
+            this.isModalShow = false;
+        },
+        async sendRequest() {
             const data = {};
-            data.title = this.newPost.title;
-            data.body = this.newPost.content;
-            data.isPrivate = 0;
-            data.category = this.categories
-                .find(category => category.name = this.newPost.category).id;
-            data.token = this.token;
-            await post(data);
-        }
+            if (this.modalPurpose === 'create') {
+                data.title = this.newPost.title;
+                data.body = this.newPost.content;
+                data.isPrivate = 0;
+                data.category = this.categories
+                    .find(category => category.name = this.newPost.category).id;
+                data.token = this.token;
+                await post(data);
+            } else {
+                data.title = this.newPost.title;
+                data.body = this.newPost.content;
+                data.isPrivate = this.newPost.isPrivate;
+                data.id = this.newPost.id;
+                data.token = this.token;
+                await updatePost(data);
+            }
+        },
+        async sendDeletePost(id) {
+            try {
+                const data = {
+                    id,
+                    token: this.token,
+                };
+                await deletePost(data);
+                const bodyFormData = new FormData();
+                bodyFormData.set('token', this.token);
+                const postsRequest = await getPosts(bodyFormData);
+                this.posts = postsRequest.data;   
+            } catch (e) {
+                console.log('ERROR => ', e);
+            }
+        },
+        async modifyPost(post) {
+            this.newPost = {
+                id: post.id,
+                title: post.title,
+                content: post.body,
+                isPrivate: post.isPrivate
+            };
+            this.openModal('update');
+        },
     },
 }
 </script>
