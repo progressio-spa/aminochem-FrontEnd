@@ -195,11 +195,13 @@ export default {
             }
         },
         async modifyPost(post) {
+            console.log(post);
             this.newPost = {
                 id: post.id,
                 title: post.title,
                 content: post.body,
-                isPrivate: post.isPrivate
+                isPrivate: post.isPrivate,
+                category: post.category.name,
             };
             this.openModal('update');
         },
