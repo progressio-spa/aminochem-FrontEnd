@@ -32,3 +32,14 @@ export function forgotPassword(data) {
     data,
   });
 }
+
+export function isAdmin(data) {
+  return request({
+    url: 'https://aminochem-backend.herokuapp.com/isAdmin',
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
+    data,
+  });
+}

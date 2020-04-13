@@ -48,7 +48,11 @@
                             <span>{{ $t('TechnicalSection.tab-4') }}</span>
                         </a>
                     </li>
-                    <li class="tab" id="tab5" @click="openTab('tab5','contentTab5')">
+                    <li
+                        v-if="userIsAdmin"
+                        class="tab"
+                        id="tab5"
+                        @click="openTab('tab5','contentTab5')">
                         <a>
                             <span class="icon is-small">
                                 <i class="fas fa-pen" aria-hidden="true"></i>
@@ -183,7 +187,9 @@
 </template>
 
 <script>
-import { onCreated } from 'vue-function-api'
+import { onCreated, value } from 'vue-function-api'
+
+import { isAdmin } from '@/api/requests/authorization';
 
 // @ is an alias to /src
 import Navbar from '@/components/Navbar.vue'
@@ -200,18 +206,24 @@ export default {
         BlogCard,
         Dashboard,
     },
-    data() {
+    setup(props, { root }) {
+        const userIsAdmin = value(false);
+        onCreated(async () => {
+            try {
+                const data = {
+                    token: root.$store.getters.getAccessToken,
+                };
+                const isAdminRequest = await isAdmin(data);
+                userIsAdmin.value = isAdminRequest.data === 1;
+            } catch(e) {
+                console.log(e);
+            }
+        })
         return {
             tempIplusD: iplusd,
             Publication: publication,
-        }
-    },
-    setup(props, { root }) {
-        onCreated(() => {
-            // if (root.$store.getters.getAccessToken.length === 0) {
-            //   root.$router.push('/login');
-            // }
-        })
+            userIsAdmin,
+        };
     },
     methods: {
         openTab(tabName, contantTabName) {
