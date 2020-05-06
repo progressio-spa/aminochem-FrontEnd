@@ -78,7 +78,7 @@
                     <div class="columns is-multiline is-desktop">
                         <div
                             class="column is-one-third"
-                            v-for="(news,index) in tempIplusD"
+                            v-for="(news,index) in iplusd"
                             :key="index"
                         >
                             <BlogCard
@@ -111,7 +111,7 @@
                     <div class="columns is-multiline is-desktop">
                         <div
                             class="column is-one-third"
-                            v-for="(news,index) in Publication"
+                            v-for="(news,index) in publications"
                             :key="index"
                         >
                             <BlogCard
@@ -142,8 +142,16 @@
             <div class="hero-body">
                 <div class="container">
                     <div class="columns is-multiline is-desktop">
-                        <div class="column is-one-third" v-for="index in 3" :key="index">
-                            <BlogCard />
+                        <div
+                            class="column is-one-third"
+                            v-for="(news, index) in activities"
+                            :key="index">
+                            <BlogCard
+                                :title="news.title"
+                                :newsImage="news.imgURL"
+                                :subtitle="news.subtitle"
+                                :pdfName="news.pdfName"
+                            />
                         </div>
                     </div>
                 </div>
@@ -166,8 +174,16 @@
             <div class="hero-body">
                 <div class="container">
                     <div class="columns is-multiline is-desktop">
-                        <div class="column is-one-third" v-for="index in 2" :key="index">
-                            <BlogCard />
+                        <div
+                            class="column is-one-third"
+                            v-for="(notice, index) in news"
+                            :key="index">
+                            <BlogCard
+                                :title="notice.title"
+                                :newsImage="notice.imgURL"
+                                :subtitle="notice.subtitle"
+                                :pdfName="notice.pdfName"
+                            />
                         </div>
                     </div>
                 </div>
@@ -190,14 +206,12 @@
 import { onCreated, value } from 'vue-function-api'
 
 import { isAdmin } from '@/api/requests/authorization';
+import { getPostsByCategory } from '@/api/requests/posts';
 
 // @ is an alias to /src
 import Navbar from '@/components/Navbar.vue'
 import BlogCard from '@/components/BlogCard.vue'
 import Dashboard from '@/components/Dashboard.vue'
-
-import { iplusd } from '@/constants/TemporalTechnical'
-import { publication } from '@/constants/publications'
 
 export default {
     name: 'home',
@@ -208,20 +222,30 @@ export default {
     },
     setup(props, { root }) {
         const userIsAdmin = value(false);
+        const iplusd = value([]);
+        const publications = value([]);
+        const activities = value([]);
+        const news = value([]);
         onCreated(async () => {
             try {
                 const data = {
                     token: root.$store.getters.getAccessToken,
                 };
                 const isAdminRequest = await isAdmin(data);
+                iplusd.value = await getPostsByCategory(1).data;
+                publications.value = await getPostsByCategory(2).data;
+                activities.value = await getPostsByCategory(3).data;
+                news.value = await getPostsByCategory(4).data;
                 userIsAdmin.value = isAdminRequest.data === 1;
             } catch(e) {
                 console.log(e);
             }
         })
         return {
-            tempIplusD: iplusd,
-            Publication: publication,
+            iplusd,
+            publications,
+            activities,
+            news,
             userIsAdmin,
         };
     },
@@ -233,14 +257,14 @@ export default {
             for (i = 0; i < x.length; i++) {
                 x[i].style.display = 'none'
             }
-
             tablinks = document.getElementsByClassName('tab')
-            for (i = 0; i < x.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(
-                    ' is-active',
+            const tablinksArray = [...tablinks]
+            tablinksArray.forEach(htmlElement => {
+                htmlElement.className.replace(
+                    'is-active',
                     ''
-                )
-            }
+                );
+            });
             var mainContent = document.getElementById(contantTabName)
             mainContent.style.display = 'block'
 

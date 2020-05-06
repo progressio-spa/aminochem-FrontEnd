@@ -44,6 +44,13 @@ export function getPosts(data){
   })
 }
 
+export function getPostsByCategory(categoryID) {
+  return request({
+    url: `https://aminochem-backend.herokuapp.com/category/${categoryID}/posts`,
+    method: 'get',
+  })
+}
+
 export function getCategories(){
   return request({
   	url: 'https://aminochem-backend.herokuapp.com/categories',
