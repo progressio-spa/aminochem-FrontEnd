@@ -4,9 +4,9 @@
         "aboutUs": "About Us",
         "products": "Products",
         "dropdown1": "Vegetal Nutricion",
-        "dropdown11": "Fertilizantes foliares",
-        "dropdown12": "Foliar Fertilizers",
-        "dropdown13": "Root Biostimulants",
+        "dropdown11": "Foliar Fertilizers",
+        "dropdown12": "Organic amendments",
+        "dropdown13": "Natural oil for agricultural use",
         "dropdown2": "Adjuvant Insecticide",
         "network": "Distribution network",
         "technical": "Technical Zone",
@@ -43,17 +43,17 @@
         "more": "Ver más"
     },
     "Network": {
-        "title": "Red de Distribución",
+        "title": "Distribution Network",
         "option1": "Chile",
-        "option2": "Exterior"
+        "option2": "World"
     },
 
     "Products": {
         "fertilizers": {
-            "title": "Fertilizantes foliares"
+            "title": "Foliar Fertilizers"
         },
         "amendments": {
-            "title": "Enmiendas orgánicas",
+            "title": "Organic Amendments",
             "mame": "Bioamino-L",
             "description1": "Es una enmienda  Organica Liquida pars activar  suelos, con alto contenido de materia organica de origen no húmico, acidos fúlvicos, polipéptidos de muy alta calidad biológica, macronutrientes (Nitrógeno, Fósforo, Potasio, Calcio, Magnesio) y micronuirienies (Zinc, Manganeso, Hierro).",
             "description2": "Proporciona una mejora sustancial de las propiedades fisico-químicas del suelo.",
@@ -65,7 +65,7 @@
             "description8": "Reemplaza aplicaciones de güanos compostados o frescos."
         },
         "rootBiostimulant": {
-            "title": "Bioestimulantes de raíces",
+            "title": "Natural oil for agricultural use",
             "name": "Aminoroot",
             "description1": "Bioestimulante de raíces a base de aminoácidos libres, estractos vegetales, ácidos fúlvicos y materia orgánica activa, destinado a promover y fortalecer el crecimiento radical en todo tipo de frutales, hortalizas y cultivos.",
             "description2": "Estimula el crecimiento de raíces induciendo un sistema radical abundante y vigoroso.",
@@ -80,25 +80,25 @@
             "description2": "También puede ser utilizado como adherente o coadyuvante para mejorar la eficiencia de otros productos fitosanitarios como fungicidas, insecticidas y herbicidas."
         },
         "buttons": {
-            "label": "Etiqueta",
-            "datasheet": "Ficha técnica",
-            "safetysheet": "Hoja de seguridad",
+            "label": "Label",
+            "datasheet": "Data sheet",
+            "safetysheet": "Safety sheet",
             "brochure": "Brochure"
         }
     },
     "Contact": {
-        "title": "Contacto",
-        "office": "Oficina",
-        "name": "Nombre",
-        "phone": "Teléfono",
-        "matter": "Asunto",
-        "message": "Mensaje",
-        "send": "Enviar",
-        "fullname": "Nombre Completo",
-        "typeMessage": "Escribe tu mensaje aquí",
-        "typeEmail": "Ingrese Correo Electrónico",
-        "contactUs": "Contáctanos",
-        "writeUs": "Escribenos un mensaje"
+        "title": "Contact",
+        "office": "Office",
+        "name": "Name",
+        "phone": "Phone",
+        "matter": "Matter",
+        "message": "Message",
+        "send": "send",
+        "fullname": "Full Name",
+        "typeMessage": "Type your text here",
+        "typeEmail": "Enter your Email",
+        "contactUs": "Contact Us",
+        "writeUs": "Write Us"
     },
     "Login": {
         "loginNav": "Ingresa",
@@ -122,4 +122,3 @@
         "button": "Solicitar instrucciones"
     }
 }
-

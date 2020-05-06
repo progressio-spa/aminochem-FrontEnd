@@ -9,7 +9,7 @@
             />
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title" id="main-title">{{ $t('Products.fertilizers.title') }}</h1>
+                    <h1 class="title" id="main-title">{{ $t('Products.rootBiostimulant.title') }}</h1>
                 </div>
             </div>
         </section>
