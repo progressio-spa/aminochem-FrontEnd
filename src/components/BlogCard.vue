@@ -1,10 +1,5 @@
 <template>
     <div class="card">
-        <div class="card-image">
-            <figure class="image is-4by3">
-                <img :src="newsImage" />
-            </figure>
-        </div>
         <div class="card-content">
             <div class="media">
                 <div class="media-content">
@@ -12,9 +7,13 @@
                         <router-link
                             :to="{
                             name: 'technicalSection-show',
-                            params: { name: title, title:title,newsImage:newsImage,subtitle:subtitle,pdfName:pdfName},
+                            params: {
+                                name: title,
+                                title: title, body: body },
                             }"
-                        >{{title}}</router-link>
+                            style="color: rgb(233, 103, 17);">
+                            {{title}}
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -34,7 +33,7 @@ export default {
     data() {
         return {}
     },
-    props: ['title', 'newsImage', 'subtitle', 'pdfName'],
+    props: ['title', 'body'],
 }
 </script>
 

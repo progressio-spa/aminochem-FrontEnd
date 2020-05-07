@@ -13,72 +13,12 @@
                 </div>
             </div>
         </section>
-        <section class="hero is-white is-fullheight">
+        <section class="hero is-white">
             <div class="hero-body">
                 <div class="container">
                     <div class="title is-3">{{title}}</div>
-
-                    <div class="image">
-                        <img :src="newsImage" />
-                    </div>
                     <br />
-                    <div class="subtitle is-3">{{subtitle}}</div>
-                    <div class="content">
-                        <div v-if="pdfName==='demo1'">
-                            <!-- <object
-                                :data="demo1"
-                                type="application/pdf"
-                                width="100%"
-                                height="500px"
-                            >
-                                alt :
-                                <a :href="demo1">title</a>
-                            </object>-->
-                            <div>
-                                <iframe
-                                    :src="demo1"
-                                    style="width:100%;height:100vh;"
-                                    scrolling="auto"
-                                ></iframe>
-                            </div>
-                        </div>
-                        <div v-else-if="pdfName==='demo2'">
-                            <div>
-                                <iframe
-                                    :src="demo2"
-                                    style="width:100%;height:100vh;"
-                                    scrolling="auto"
-                                ></iframe>
-                            </div>
-                        </div>
-                        <div v-else-if="pdfName==='demo3'">
-                            <div>
-                                <iframe
-                                    :src="demo3"
-                                    style="width:100%;height:100vh;"
-                                    scrolling="auto"
-                                ></iframe>
-                            </div>
-                        </div>
-                        <div v-else-if="pdfName==='demo4'">
-                            <div>
-                                <iframe
-                                    :src="demo4"
-                                    style="width:100%;height:100vh;"
-                                    scrolling="auto"
-                                ></iframe>
-                            </div>
-                        </div>
-                        <div v-else>
-                            <div>
-                                <iframe
-                                    :src="demo5"
-                                    style="width:100%;height:100vh;"
-                                    scrolling="auto"
-                                ></iframe>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="subtitle is-3" v-html="body"></div>
                 </div>
             </div>
         </section>
@@ -92,21 +32,7 @@ export default {
     components: {
         Navbar,
     },
-    setup(props, { root }) {
-        const demo1 = require(`../assets/Temporal/iplusd/demo1.pdf`)
-        const demo2 = require(`../assets/Temporal/iplusd/demo2.pdf`)
-        const demo3 = require(`../assets/Temporal/iplusd/demo3.pdf`)
-        const demo4 = require(`../assets/Temporal/iplusd/demo4.pdf`)
-        const demo5 = require(`../assets/Temporal/iplusd/demo5.pdf`)
-        return {
-            demo1,
-            demo2,
-            demo3,
-            demo4,
-            demo5,
-        }
-    },
-    props: ['title', 'newsImage', 'subtitle', 'pdfName'],
+    props: ['title', 'body'],
 }
 </script>
 
@@ -132,6 +58,12 @@ export default {
 .subtitle {
     color: #3d3d3d;
 }
+
+.subtitle {
+    font-size: 14pt !important;
+    text-align: left;
+}
+
 p {
     text-align: left;
     color: #585858;

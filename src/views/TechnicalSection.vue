@@ -73,7 +73,7 @@
                     {{ $t('TechnicalSection.tab-1') }}
                 </div>
             </div>
-            <div class="hero-body" style="display: inline-block;">
+            <div class="hero-body is-widescreen" style="display: inline-block;">
                 <div class="container">
                     <div class="columns is-multiline is-desktop">
                         <div
@@ -83,9 +83,7 @@
                         >
                             <BlogCard
                                 :title="news.title"
-                                :newsImage="news.imgURL"
-                                :subtitle="news.subtitle"
-                                :pdfName="news.pdfName"
+                                :body="news.body"
                             />
                         </div>
                     </div>
@@ -116,9 +114,7 @@
                         >
                             <BlogCard
                                 :title="news.title"
-                                :newsImage="news.imgURL"
-                                :subtitle="news.subtitle"
-                                :pdfName="news.pdfName"
+                                :body="news.body"
                             />
                         </div>
                     </div>
@@ -148,9 +144,7 @@
                             :key="index">
                             <BlogCard
                                 :title="news.title"
-                                :newsImage="news.imgURL"
-                                :subtitle="news.subtitle"
-                                :pdfName="news.pdfName"
+                                :body="news.body"
                             />
                         </div>
                     </div>
@@ -180,9 +174,7 @@
                             :key="index">
                             <BlogCard
                                 :title="notice.title"
-                                :newsImage="notice.imgURL"
-                                :subtitle="notice.subtitle"
-                                :pdfName="notice.pdfName"
+                                :body="notice.body"
                             />
                         </div>
                     </div>
@@ -232,10 +224,15 @@ export default {
                     token: root.$store.getters.getAccessToken,
                 };
                 const isAdminRequest = await isAdmin(data);
-                iplusd.value = await getPostsByCategory(1).data;
-                publications.value = await getPostsByCategory(2).data;
-                activities.value = await getPostsByCategory(3).data;
-                news.value = await getPostsByCategory(4).data;
+                const promises = [];
+                for (let i = 1; i <= 4; i++) {
+                    promises.push(getPostsByCategory(i));
+                }
+                const responses = await Promise.all(promises);
+                iplusd.value = responses[0].data;
+                publications.value = responses[1].data;
+                activities.value = responses[2].data;
+                news.value = responses[3].value;
                 userIsAdmin.value = isAdminRequest.data === 1;
             } catch(e) {
                 console.log(e);

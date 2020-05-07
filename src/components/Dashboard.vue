@@ -170,6 +170,7 @@ export default {
                     .find(category => category.name = this.newPost.category).id;
                 data.token = this.token;
                 await post(data);
+                this.closeModal();
             } else {
                 data.title = this.newPost.title;
                 data.body = this.newPost.content;
@@ -177,6 +178,7 @@ export default {
                 data.id = this.newPost.id;
                 data.token = this.token;
                 await updatePost(data);
+                this.closeModal();
             }
         },
         async sendDeletePost(id) {
