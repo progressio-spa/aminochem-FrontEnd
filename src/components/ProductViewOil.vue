@@ -56,7 +56,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a :href="dataSheetPdf" target="_blank">
+                                <a :href="dataSheetSource" target="_blank">
                                     <span class="icon">
                                         <i class="fas fa-file-alt"></i>
                                     </span>
@@ -101,7 +101,7 @@
                         >
                             <ul>
                                 <li>
-                                    <a :href="dataSheetPdf" target="_blank">
+                                    <a :href="dataSheetSource" target="_blank">
                                         <span class="icon">
                                             <i class="fas fa-file-alt"></i>
                                         </span>
@@ -148,6 +148,7 @@ export default {
         const labelPdf = require(`../assets/Products/${productName}1.pdf`)
         const dataSheetPdf = require(`../assets/Products/${productName}2.pdf`)
         const safetySheetPdf = require(`../assets/Products/${productName}3.pdf`)
+
         return {
             products,
             labelPdf,
@@ -176,6 +177,13 @@ export default {
         showSecurity() {
             var pdf = this.product.security
             window.open('data:application/pdf,' + encodeURI(pdf))
+        },
+    },
+    computed: {
+        dataSheetSource() {
+            return this.$root.$i18n.locale === 'es'
+                ? require(`@/assets/Products/${this.productName}2.pdf`)
+                : require(`@/assets/Products/${this.productName}2EN.pdf`)
         },
     },
 }

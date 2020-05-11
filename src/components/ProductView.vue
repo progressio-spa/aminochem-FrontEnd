@@ -50,7 +50,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a :href="dataSheetPdf" target="_blank">
+                                <a :href="dataSheetSource" target="_blank">
                                     <span class="icon">
                                         <i class="fas fa-file-alt"></i>
                                     </span>
@@ -58,7 +58,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a :href="safetySheetPdf" target="_blank">
+                                <a :href="safetySheetSource" target="_blank">
                                     <span class="icon">
                                         <i class="fas fa-exclamation-triangle"></i>
                                     </span>
@@ -95,12 +95,22 @@
                         >
                             <ul>
                                 <li>
-                                    <a :href="dataSheetPdf" target="_blank">
-                                        <span class="icon">
-                                            <i class="fas fa-file-alt"></i>
-                                        </span>
-                                        <span>{{ $t('Products.buttons.datasheet') }}</span>
-                                    </a>
+                                    <div v-if="this.$root.$i18n.locale === 'es'">
+                                        <a :href="dataSheetPdf" target="_blank">
+                                            <span class="icon">
+                                                <i class="fas fa-file-alt"></i>
+                                            </span>
+                                            <span>{{ $t('Products.buttons.datasheet') }}</span>
+                                        </a>
+                                    </div>
+                                    <div v-else>
+                                        <a :href="dataSheetPdfEN" target="_blank">
+                                            <span class="icon">
+                                                <i class="fas fa-file-alt"></i>
+                                            </span>
+                                            <span>{{ $t('Products.buttons.datasheet') }}</span>
+                                        </a>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -109,12 +119,22 @@
                         >
                             <ul>
                                 <li>
-                                    <a :href="safetySheetPdf" target="_blank">
-                                        <span class="icon">
-                                            <i class="fas fa-exclamation-triangle"></i>
-                                        </span>
-                                        <span>{{ $t('Products.buttons.safetysheet') }}</span>
-                                    </a>
+                                    <div v-if="this.$root.$i18n.locale === 'es'">
+                                        <a :href="safetySheetPdf" target="_blank">
+                                            <span class="icon">
+                                                <i class="fas fa-exclamation-triangle"></i>
+                                            </span>
+                                            <span>{{ $t('Products.buttons.safetysheet') }}</span>
+                                        </a>
+                                    </div>
+                                    <div v-else>
+                                        <a :href="safetySheetPdfEN" target="_blank">
+                                            <span class="icon">
+                                                <i class="fas fa-exclamation-triangle"></i>
+                                            </span>
+                                            <span>{{ $t('Products.buttons.safetysheet') }}</span>
+                                        </a>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -142,11 +162,13 @@ export default {
         const labelPdf = require(`../assets/Products/${productName}1.pdf`)
         const dataSheetPdf = require(`../assets/Products/${productName}2.pdf`)
         const safetySheetPdf = require(`../assets/Products/${productName}3.pdf`)
+
         return {
             products,
             labelPdf,
             dataSheetPdf,
             safetySheetPdf,
+            productName,
         }
     },
     data() {
@@ -169,6 +191,18 @@ export default {
         showSecurity() {
             var pdf = this.product.security
             window.open('data:application/pdf,' + encodeURI(pdf))
+        },
+    },
+    computed: {
+        dataSheetSource() {
+            return this.$root.$i18n.locale === 'es'
+                ? require(`@/assets/Products/${this.productName}2.pdf`)
+                : require(`@/assets/Products/${this.productName}2EN.pdf`)
+        },
+        safetySheetSource() {
+            return this.$root.$i18n.locale === 'es'
+                ? require(`@/assets/Products/${this.productName}3.pdf`)
+                : require(`@/assets/Products/${this.productName}3EN.pdf`)
         },
     },
 }

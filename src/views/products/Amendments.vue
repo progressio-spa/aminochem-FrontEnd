@@ -47,7 +47,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a :href="dataSheetPdf" target="_blank">
+                                <a :href="dataSheetSource" target="_blank">
                                     <span class="icon">
                                         <i class="fas fa-file-alt"></i>
                                     </span>
@@ -55,7 +55,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a :href="safetySheetPdf" target="_blank">
+                                <a :href="safetySheetSource" target="_blank">
                                     <span class="icon">
                                         <i class="fas fa-exclamation-triangle"></i>
                                     </span>
@@ -92,7 +92,7 @@
                         >
                             <ul>
                                 <li>
-                                    <a :href="dataSheetPdf" target="_blank">
+                                    <a :href="dataSheetSource" target="_blank">
                                         <span class="icon">
                                             <i class="fas fa-file-alt"></i>
                                         </span>
@@ -106,7 +106,7 @@
                         >
                             <ul>
                                 <li>
-                                    <a :href="safetySheetPdf" target="_blank">
+                                    <a :href="safetySheetSource" target="_blank">
                                         <span class="icon">
                                             <i class="fas fa-exclamation-triangle"></i>
                                         </span>
@@ -151,6 +151,18 @@ export default {
             dataSheetPdf,
             safetySheetPdf,
         }
+    },
+    computed: {
+        dataSheetSource() {
+            return this.$root.$i18n.locale === 'es'
+                ? require(`../../assets/Products/bioamino2.pdf`)
+                : require(`../../assets/Products/bioamino2EN.pdf`)
+        },
+        safetySheetSource() {
+            return this.$root.$i18n.locale === 'es'
+                ? require(`../../assets/Products/bioamino3.pdf`)
+                : require(`../../assets/Products/bioamino3EN.pdf`)
+        },
     },
 }
 </script>
