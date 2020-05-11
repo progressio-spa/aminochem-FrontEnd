@@ -174,7 +174,7 @@ export default {
     computed: {
         videoSource() {
             return this.$root.$i18n.locale === 'es'
-                ? require(`@/assets/Home/videoES.mp4`)
+                ? require(`@/assets/Home/VideoES.mp4`)
                 : require(`@/assets/Home/videoEN.mp4`)
         },
     },
