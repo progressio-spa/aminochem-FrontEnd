@@ -121,16 +121,7 @@
                 <div class="title-video">
                     <h1 class="title">Conócenos</h1>
                 </div>
-                <div v-if="this.$root.$i18n.locale === 'es'">
-                    <video width="1200" autoplay controls>
-                        <source :src="videoES" type="video/mp4" />
-                    </video>
-                </div>
-                <div v-else>
-                    <video width="1200" autoplay controls>
-                        <source :src="videoEN" type="video/mp4" />
-                    </video>
-                </div>
+                <video width="1200" autoplay controls :src="videoSource" />
             </div>
         </section>
     </div>
@@ -145,14 +136,6 @@ export default {
     name: 'home',
     components: {
         Navbar,
-    },
-    setup(props, { root }) {
-        const videoES = require(`../assets/Home/VideoES.mp4`)
-        const videoEN = require(`../assets/Home/videoEN.mp4`)
-        return {
-            videoES,
-            videoEN,
-        }
     },
     mounted() {
         bulmaCarousel.attach('#carousel-demo', {
@@ -186,6 +169,13 @@ export default {
                     return require('@/assets/Home/prueba-03.png')
                 }
             }
+        },
+    },
+    computed: {
+        videoSource() {
+            return this.$root.$i18n.locale === 'es'
+                ? require(`@/assets/Home/videoES.mp4`)
+                : require(`@/assets/Home/videoEN.mp4`)
         },
     },
 }
