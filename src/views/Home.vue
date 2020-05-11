@@ -121,9 +121,16 @@
                 <div class="title-video">
                     <h1 class="title">Conócenos</h1>
                 </div>
-                <video width="1200" autoplay controls>
-                    <source src="@/assets/Home/Video1.mp4" type="video/mp4" />
-                </video>
+                <div v-if=" this.$root.$i18n.locale === 'es' ">
+                    <video width="1200" autoplay controls>
+                        <source :src="videoEN" type="video/mp4" />
+                    </video>
+                </div>
+                <div v-else>
+                    <video width="1200" autoplay controls>
+                        <source :src="videoEN" type="video/mp4" />
+                    </video>
+                </div>
             </div>
         </section>
     </div>
@@ -139,6 +146,14 @@ export default {
     components: {
         Navbar,
     },
+    setup(props, { root }) {
+        const videoES = require(`../assets/Home/VideoES.mp4`)
+        const videoEN = require(`../assets/Home/videoEN.mp4`)
+        return {
+            videoES,
+            videoEN,
+        }
+    },
     mounted() {
         bulmaCarousel.attach('#carousel-demo', {
             slidesToScroll: 1,
@@ -151,27 +166,27 @@ export default {
     },
     methods: {
         getCorouselImg(index) {
-            const isMobile = window.innerWidth < 775;
+            const isMobile = window.innerWidth < 775
             if (index === 1) {
                 if (isMobile) {
-                    return require('@/assets/Home/corouselResp1.png');
+                    return require('@/assets/Home/corouselResp1.png')
                 } else {
-                    return require('@/assets/Home/prueba-01.png');
+                    return require('@/assets/Home/prueba-01.png')
                 }
             } else if (index === 2) {
                 if (isMobile) {
-                    return require('@/assets/Home/corouselResp2.png');
+                    return require('@/assets/Home/corouselResp2.png')
                 } else {
-                    return require('@/assets/Home/prueba-02.png');
+                    return require('@/assets/Home/prueba-02.png')
                 }
             } else if (index === 3) {
                 if (isMobile) {
-                    return require('@/assets/Home/corouselResp3.png');
+                    return require('@/assets/Home/corouselResp3.png')
                 } else {
-                    return require('@/assets/Home/prueba-03.png');
+                    return require('@/assets/Home/prueba-03.png')
                 }
             }
-        }
+        },
     },
 }
 </script>
@@ -275,7 +290,7 @@ a {
 
 @media screen and (max-width: 425px) {
     .carousel-item {
-        height: 100vh;        
+        height: 100vh;
     }
     .hero-background-home {
         height: 100vh;
