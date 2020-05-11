@@ -121,9 +121,9 @@
                 <div class="title-video">
                     <h1 class="title">Conócenos</h1>
                 </div>
-                <div v-if=" this.$root.$i18n.locale === 'es' ">
+                <div v-if="this.$root.$i18n.locale === 'es'">
                     <video width="1200" autoplay controls>
-                        <source :src="videoEN" type="video/mp4" />
+                        <source :src="videoES" type="video/mp4" />
                     </video>
                 </div>
                 <div v-else>
