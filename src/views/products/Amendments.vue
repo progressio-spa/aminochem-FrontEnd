@@ -161,7 +161,7 @@ export default {
         safetySheetSource() {
             return this.$root.$i18n.locale === 'es'
                 ? require(`../../assets/Products/bioamino3.pdf`)
-                : require(`../../assets/Products/bioamino3EN.pdf`)
+                : require(`../../assets/Products/Bioamino3EN.pdf`)
         },
     },
 }
