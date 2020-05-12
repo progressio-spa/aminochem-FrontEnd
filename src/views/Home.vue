@@ -119,7 +119,7 @@
         <section class="hero is-medium is-light">
             <div class="hero-body video-container">
                 <div class="title-video">
-                    <h1 class="title">Conócenos</h1>
+                    <h1 class="title">{{ $t('Home.meet') }}</h1>
                 </div>
                 <video width="1200" autoplay controls :src="videoSource" />
             </div>
