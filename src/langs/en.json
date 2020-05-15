@@ -40,8 +40,25 @@
         "card4-content": "The development of new alternatives begins using the same raw material. Thus, it is possible to create and consolidate a business area dedicated to providing innovative and efficient solutions to the agricultural sector."
     },
     "TechnicalSection": {
-        "title": "Sección Técnica",
-        "more": "Ver más"
+        "title": "technical zone",
+        "more": "See more",
+        "tab-1": "Investigation and development",
+        "tab-2": "Publications",
+        "tab-3": "Activities",
+        "tab-4": "News",
+        "tab-5": "Edit",
+        "new-entry": "Add new entry",
+        "table-id": "Id",
+        "table-title": "Title",
+        "table-author": "Author",
+        "table-date": "Date",
+        "button-modified": "Modified",
+        "button-deleted": "Delete",
+        "modal-title": "Título",
+        "modal-content": "Contenido",
+        "modal-category": "Categoría",
+        "button-send": "Enviar",
+        "button-cancel": "Cancelar"
     },
     "Network": {
         "title": "Distribution Network",
