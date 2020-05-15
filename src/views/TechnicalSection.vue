@@ -257,10 +257,7 @@ export default {
             tablinks = document.getElementsByClassName('tab')
             const tablinksArray = [...tablinks]
             tablinksArray.forEach(htmlElement => {
-                htmlElement.className.replace(
-                    'is-active',
-                    ''
-                );
+                htmlElement.classList.remove('is-active');
             });
             var mainContent = document.getElementById(contantTabName)
             mainContent.style.display = 'block'
