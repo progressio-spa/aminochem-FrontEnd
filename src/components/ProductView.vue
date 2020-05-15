@@ -95,16 +95,8 @@
                         >
                             <ul>
                                 <li>
-                                    <div v-if="this.$root.$i18n.locale === 'es'">
+                                    <div>
                                         <a :href="dataSheetPdf" target="_blank">
-                                            <span class="icon">
-                                                <i class="fas fa-file-alt"></i>
-                                            </span>
-                                            <span>{{ $t('Products.buttons.datasheet') }}</span>
-                                        </a>
-                                    </div>
-                                    <div v-else>
-                                        <a :href="dataSheetPdfEN" target="_blank">
                                             <span class="icon">
                                                 <i class="fas fa-file-alt"></i>
                                             </span>
@@ -119,16 +111,8 @@
                         >
                             <ul>
                                 <li>
-                                    <div v-if="this.$root.$i18n.locale === 'es'">
+                                    <div>
                                         <a :href="safetySheetPdf" target="_blank">
-                                            <span class="icon">
-                                                <i class="fas fa-exclamation-triangle"></i>
-                                            </span>
-                                            <span>{{ $t('Products.buttons.safetysheet') }}</span>
-                                        </a>
-                                    </div>
-                                    <div v-else>
-                                        <a :href="safetySheetPdfEN" target="_blank">
                                             <span class="icon">
                                                 <i class="fas fa-exclamation-triangle"></i>
                                             </span>
@@ -159,9 +143,10 @@ export default {
     setup(props, { root }) {
         const products = fertilizers
         const productName = root.$route.params.name
+        const lang = root.$i18n.locale ? '': 'EN';
         const labelPdf = require(`../assets/Products/${productName}1.pdf`)
-        const dataSheetPdf = require(`../assets/Products/${productName}2.pdf`)
-        const safetySheetPdf = require(`../assets/Products/${productName}3.pdf`)
+        const dataSheetPdf = require(`../assets/Products/${productName}${lang}2.pdf`)
+        const safetySheetPdf = require(`../assets/Products/${productName}${lang}3.pdf`)
 
         return {
             products,
