@@ -31,7 +31,7 @@
                                                     params: { name: index },
                                                 }"
                                         >
-                                            <img :src="product.imgURL" />
+                                            <img :src="product.es.imgURL" />
                                         </router-link>
                                     </figure>
                                 </div>

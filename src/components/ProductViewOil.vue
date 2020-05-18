@@ -135,6 +135,8 @@
 // Import Fertilizer products
 import Navbar from '@/components/Navbar.vue'
 
+import { watch, onBeforeMount, value, computed } from 'vue-function-api'
+
 import { naturalOil } from '@/constants/products'
 
 export default {
@@ -148,6 +150,35 @@ export default {
         const labelPdf = require(`../assets/Products/${productName}1.pdf`)
         const dataSheetPdf = require(`../assets/Products/${productName}2.pdf`)
         const safetySheetPdf = require(`../assets/Products/${productName}3.pdf`)
+        const product = value({})
+
+        // onBeforeMount(() => {
+        //     this.getProduct()
+        // });
+
+        // function getProduct() {
+        //     let name = productName
+        //     root.$i18n.locale === 'es'
+        //         ? product.value = naturalOil[name].es
+        //         : product.value = naturalOil[name].en
+        // }
+
+        function showSpecs() {
+            var pdf = this.product.specs
+            window.open('data:application/pdf,' + encodeURI(pdf))
+        }
+        function showSecurity() {
+            var pdf = this.product.security
+            window.open('data:application/pdf,' + encodeURI(pdf))
+        }
+
+        watch(
+            () => root.$i18n.locale,
+            newVal => {
+                newVal === 'es' ? product.value = naturalOil[productName].es : product.value = naturalOil[productName].en
+            },
+            { deep: true }
+        );
 
         return {
             products,
@@ -155,30 +186,10 @@ export default {
             dataSheetPdf,
             safetySheetPdf,
             productName,
+            product
         }
     },
-    data() {
-        return {
-            product: {},
-        }
-    },
-    beforeMount() {
-        this.getProduct()
-    },
-    methods: {
-        getProduct() {
-            let name = this.$route.params.name
-            this.product = naturalOil[name]
-        },
-        showSpecs() {
-            var pdf = this.product.specs
-            window.open('data:application/pdf,' + encodeURI(pdf))
-        },
-        showSecurity() {
-            var pdf = this.product.security
-            window.open('data:application/pdf,' + encodeURI(pdf))
-        },
-    },
+
     computed: {
         dataSheetSource() {
             return this.$root.$i18n.locale === 'es'

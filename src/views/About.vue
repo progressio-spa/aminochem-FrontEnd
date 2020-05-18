@@ -70,7 +70,7 @@
                                 <div class="column">
                                     <br />
                                     <h1>Francisco Ascui</h1>
-                                    <h1>Gerente General</h1>
+                                    <h1>{{ $t('AboutUs.cargo1') }}</h1>
                                     <h1>francisco.ascui@aminochem.cl</h1>
                                 </div>
                             </div>
@@ -87,7 +87,7 @@
                                 <div class="column">
                                     <br />
                                     <h1>Carlos Baier A.</h1>
-                                    <h1>Subgerente Técnico</h1>
+                                    <h1>{{ $t('AboutUs.cargo2') }}</h1>
                                     <h1>cbaier@aminochem.cl</h1>
                                     <h1>+56 9 96379251</h1>
                                 </div>
