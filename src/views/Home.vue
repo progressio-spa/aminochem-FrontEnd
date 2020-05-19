@@ -121,7 +121,7 @@
                 <div class="title-video">
                     <h1 class="title">{{ $t('Home.meet') }}</h1>
                 </div>
-                <video width="1200" autoplay controls :src="videoSource" />
+                <video width="1200" controls :src="videoSource" />
             </div>
         </section>
     </div>
