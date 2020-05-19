@@ -1,9 +1,9 @@
 <template>
     <div class="hero-head">
         <header class="navbar is-green" :class="{scrolled: scrollPosition > 52}">
-            <div class="container">
+            <div class="container" style="max-width: 90%">
                 <div class="navbar-brand">
-                    <a class="navbar-item">
+                    <a class="navbar-item" style="position: relative; left: 0;">
                         <router-link to="/">
                             <img src="@/assets/logo-aminochem.png" alt="Aminochem" />
                         </router-link>
@@ -138,6 +138,11 @@ export default {
 </script>
 
 <style scoped>
+
+.navbar-end {
+    margin-left: inherit;
+}
+
 .navbar {
     position: fixed;
     /* top: 52px; */
@@ -227,9 +232,8 @@ a.navbar-item.is-active,
 }
 
 .language-container {
-    position: absolute;
+    position: relative;
     top: 38%;
-    right: -7%;
 }
 
 @media screen and (max-width: 480px) {
