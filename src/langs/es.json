@@ -10,7 +10,10 @@
         "dropdown2": "Insecticida Coadyuvante",
         "network": "Red de Distribución",
         "technical": "Información Técnica",
-        "contact": "Contacto"
+        "contact": "Contacto",
+        "language": "idioma",
+        "spanish":"Español",
+        "english":"Ingles"
     },
     "Home": {
         "MainText": "La fuerza de la naturaleza",

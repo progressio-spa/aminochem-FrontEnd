@@ -10,7 +10,10 @@
         "dropdown2": "Adjuvant Insecticide",
         "network": "Distribution network",
         "technical": "Technical Zone",
-        "contact": "Contact"
+        "contact": "Contact",
+        "language": "Language",
+        "spanish":"Spanish",
+        "english":"English"
     },
     "Home": {
         "MainText": "We help you on your business production",
