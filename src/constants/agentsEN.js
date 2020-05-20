@@ -261,7 +261,7 @@ export const regionManagers = [
 export const chileanManagers = [
     {
         name: 'Rolando Silva H',
-        position: 'Zonal Agent',
+        position: 'Sales represemtative',
         email: 'rsilva@aminochem.cl',
         phone: '+56 9 94427692',
         region: 'CL-AP',
@@ -269,7 +269,7 @@ export const chileanManagers = [
     },
     {
         name: 'Rolando Silva H',
-        position: 'Zonal Agent',
+        position: 'Sales represemtative',
         email: 'rsilva@aminochem.cl',
         phone: '+56 9 94427692',
         region: 'CL-TA',
@@ -277,7 +277,7 @@ export const chileanManagers = [
     },
     {
         name: 'Rolando Silva H',
-        position: 'Zonal Agent',
+        position: 'Sales represemtative',
         email: 'rsilva@aminochem.cl',
         phone: '+56 9 94427692',
         region: 'CL-AN',
@@ -285,7 +285,7 @@ export const chileanManagers = [
     },
     {
         name: 'Rolando Silva H',
-        position: 'Zonal Agent',
+        position: 'Sales represemtative',
         email: 'rsilva@aminochem.cl',
         phone: '+56 9 94427692',
         region: 'CL-AT',
@@ -293,7 +293,7 @@ export const chileanManagers = [
     },
     {
         name: 'Rolando Silva H',
-        position: 'Zonal Agent',
+        position: 'Sales represemtative',
         email: 'rsilva@aminochem.cl',
         phone: '+56 9 94427692',
         region: 'CL-CO',
@@ -301,7 +301,7 @@ export const chileanManagers = [
     },
     {
         name: 'Juan Francisco Cáceres',
-        position: 'Zonal Agent',
+        position: 'Sales represemtative',
         email: 'juan.francisco@aminochem.cl',
         phone: '+56 9 74302711',
         region: 'CL-VS',
@@ -309,7 +309,7 @@ export const chileanManagers = [
     },
     {
         name: 'Juan Francisco Cáceres',
-        position: 'Zonal Agent',
+        position: 'Sales represemtative',
         email: 'juan.francisco@aminochem.cl',
         phone: '+56 9 74302711',
         region: 'CL-RM',
@@ -317,7 +317,7 @@ export const chileanManagers = [
     },
     {
         name: 'Javiera Munita',
-        position: 'Zonal Agent',
+        position: 'Sales represemtative',
         email: 'jmunita@aminochem.cl',
         phone: '',
         region: 'CL-ML',
@@ -325,7 +325,7 @@ export const chileanManagers = [
     },
     {
         name: 'Manuel Contreras C.',
-        position: 'Zonal Agent',
+        position: 'Sales represemtative',
         email: 'mcontreras@aminochem.cl',
         phone: '+56 9 42633293',
         region: 'CL-BI',
@@ -341,7 +341,7 @@ export const chileanManagers = [
     },
     {
         name: 'Manuel Contreras C.',
-        position: 'Zonal Agent',
+        position: 'Sales represemtative',
         email: 'mcontreras@aminochem.cl',
         phone: '+56 9 42633293',
         region: 'CL-AR',
@@ -349,7 +349,7 @@ export const chileanManagers = [
     },
     {
         name: 'Manuel Contreras C.',
-        position: 'Zonal Agent',
+        position: 'Sales represemtative',
         email: 'mcontreras@aminochem.cl',
         phone: '+56 9 42633293',
         region: 'CL-LR',
@@ -357,7 +357,7 @@ export const chileanManagers = [
     },
     {
         name: 'Manuel Contreras C.',
-        position: 'Zonal Agent',
+        position: 'Sales represemtative',
         email: 'mcontreras@aminochem.cl',
         phone: '+56 9 42633293',
         region: 'CL-LL',
