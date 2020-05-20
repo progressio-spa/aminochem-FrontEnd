@@ -103,10 +103,6 @@
                     </a>
                     </div>
                 </div>
-                
-                <div class="language-container">
-                    
-                </div>
             </div>
         </header>
     </div>
@@ -145,10 +141,6 @@ export default {
 </script>
 
 <style scoped>
-
-.navbar-end {
-    margin-left: inherit;
-}
 
 .navbar {
     position: fixed;
