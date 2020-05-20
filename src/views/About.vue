@@ -372,7 +372,6 @@ export default {
             createSouthAmericanMap()
         })
         const countriesToShow = computed(() =>
-            root.$i18n.locale === 'es' ? agent = countryManagers : agent = countryManagersEN,
             countryManagers.filter(
                 countryManager =>
                     countryManager.country === hoveredCountry.value
