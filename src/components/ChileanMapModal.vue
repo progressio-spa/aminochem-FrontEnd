@@ -15,7 +15,7 @@
                                 <div class="column">
                                     <br />
                                     <h1>Juan Pablo Vergara</h1>
-                                    <h1>Subgerente Venta Nacional</h1>
+                                    <h1>{{ $t('AboutUs.cargo4') }}</h1>
                                     <h1>jvergara@aminochem.cl</h1>
                                     <h1>+56 9 68310700</h1>
                                 </div>
@@ -57,7 +57,7 @@ import * as am4core from '@amcharts/amcharts4/core'
 import * as am4maps from '@amcharts/amcharts4/maps'
 import am4geodata_chileHigh from '@/constants/ChileanMap'
 
-import { chileanManagers } from '../constants/agents'
+import { chileanManagers, chileanManagersEN } from '../constants/agents'
 
 export default {
     props: {
@@ -70,9 +70,10 @@ export default {
             default: () => {},
         },
     },
-    setup() {
+    setup(props, { root }) {
         const hoveredRegion = value('')
         const regionManagers = chileanManagers
+        const regionManagersEN = chileanManagersEN
         const CreateChileanDistributionMap = () => {
             // Create Instance
             const chileanMap = am4core.create(
@@ -106,10 +107,19 @@ export default {
                 this
             )
         }
-        const agentsToShow = computed(() =>
-            regionManagers.filter(
+        const agentsToShow = computed(() =>{
+            if(root.$i18n.locale === 'es'){
+                return regionManagers.filter(
                 regionManager => regionManager.region === hoveredRegion.value
             )
+
+            } else {
+                return regionManagersEN.filter(
+                regionManager => regionManager.region === hoveredRegion.value
+            )
+            }
+        }
+            
         )
         onMounted(() => {
             CreateChileanDistributionMap()
