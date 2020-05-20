@@ -29,12 +29,12 @@
                     </div>
                     <div class="column">
                         <figure class="image aux is-square">
-                            <img src="@/assets/AboutUs/a2.jpg" />
+                            <img src="@/assets/AboutUs/a2.jpg" class="rotate90" />
                         </figure>
                     </div>
                     <div class="column">
-                        <figure class="image aux is-square">
-                            <img src="@/assets/AboutUs/a3.jpg" />
+                        <figure class="image aux is-square" >
+                            <img src="@/assets/AboutUs/a3.jpg"  />
                         </figure>
                     </div>
                     <div class="column">
@@ -224,10 +224,10 @@ import * as am4maps from '@amcharts/amcharts4/maps'
 import am4geodata_worldHigh from '@amcharts/amcharts4-geodata/worldHigh'
 
 // vue-function-api
-import { onMounted, value, computed } from 'vue-function-api'
+import { watch, onBeforeMount, onMounted, value, computed } from 'vue-function-api'
 
 // Agents import
-import { regionManagers } from '../constants/agents'
+import { regionManagers, regionManagersEN } from '../constants/agents'
 
 // @ is an alias to /src
 import Navbar from '@/components/Navbar.vue'
@@ -239,8 +239,11 @@ export default {
         Navbar,
         ChileanMapModal,
     },
-    setup() {
-        const countryManagers = regionManagers
+    setup(props, { root }) {
+        const countryManagers = regionManagers;
+        const countryManagersEN = regionManagersEN;
+        const agent = value({})
+        
         // duplicate countries variable to delete countries that had country managers
         const excludedCountries = [
             'AR',
@@ -369,6 +372,7 @@ export default {
             createSouthAmericanMap()
         })
         const countriesToShow = computed(() =>
+            root.$i18n.locale === 'es' ? agent = countryManagers : agent = countryManagersEN,
             countryManagers.filter(
                 countryManager =>
                     countryManager.country === hoveredCountry.value
@@ -469,6 +473,14 @@ export default {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
         0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
         0 16px 32px rgba(0, 0, 0, 0.07);
+}
+
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
 }
 
 @media screen and (max-width: 480px) {
