@@ -29,7 +29,7 @@
                         <a
                             :class="[
                                 currentPage.localeCompare('/') == 0 ? activeClass : '',
-                                'navbar-item',
+                                'navbar-item bold-title',
                             ]"
                         >
                             <router-link to="/">{{ $t('Navbar.home') }}</router-link>
@@ -37,13 +37,13 @@
                         <a
                             :class="[
                                 currentPage.localeCompare('/') == 0 ? activeClass : '',
-                                'navbar-item',
+                                'navbar-item bold-title',
                             ]"
                         >
                             <router-link to="/about">{{ $t('Navbar.aboutUs') }}</router-link>
                         </a>
                         <a class="navbar-item has-dropdown is-hoverable" id="drop">
-                            <a class="navbar-link is-arrowless">{{ $t('Navbar.products') }}</a>
+                            <a class="navbar-link is-arrowless bold-title">{{ $t('Navbar.products') }}</a>
 
                             <div class="navbar-dropdown is-boxed" style="top: 11vh">
                                 <a class="navbar-item" id="drop-item">
@@ -61,17 +61,12 @@
                                         to="/products/rootBiostimulant"
                                     >{{ $t('Navbar.dropdown13') }}</router-link>
                                 </a>
-                                <!-- <a class="navbar-item" id="drop-item">
-                                    <router-link to="/products/insecticide">
-                                        {{ $t('Navbar.dropdown2') }}
-                                    </router-link>
-                                </a>-->
                             </div>
                         </a>
                         <a
                             :class="[
                                 currentPage.localeCompare('/') == 0 ? activeClass : '',
-                                'navbar-item',
+                                'navbar-item bold-title',
                             ]"
                         >
                             <router-link to="/distributionNetwork">{{ $t('Navbar.network') }}</router-link>
@@ -79,26 +74,38 @@
                         <a
                             :class="[
                                 currentPage.localeCompare('/') == 0 ? activeClass : '',
-                                'navbar-item',
+                                'navbar-item bold-title',
                             ]"
                         >
                             <router-link to="/technicalSection">{{ $t('Navbar.technical') }}</router-link>
                         </a>
                         <span class="navbar-item">
-                            <a class="button is-success is-inverted">
+                            <a class="button is-success bold-title is-inverted">
                                 <router-link to="/contact">{{ $t('Navbar.contact') }}</router-link>
                             </a>
                         </span>
+                        <a class="navbar-item has-dropdown is-hoverable" id="drop">
+                    <a class="navbar-link bold-title">{{ $t('Navbar.language') }}</a>
+
+                    <div class="navbar-dropdown is-boxed" style="top: 11vh">
+                            <a class="navbar-item" id="drop-item">
+                                <a class="language-icon" @click="changeLanguage('es')">
+                                    {{ $t('Navbar.spanish') }}
+                                </a>
+                            </a>    
+
+                            <a class="navbar-item" id="drop-item">
+                                <a class="language-icon" @click="changeLanguage('en')">
+                                    {{ $t('Navbar.english') }}
+                                </a>
+                            </a>
+                        </div>
+                    </a>
                     </div>
                 </div>
+                
                 <div class="language-container">
-                    <a class="language-icon" @click="changeLanguage('es')">
-                        <div class="flag flag-es"></div>
-                    </a>
-                    &nbsp;
-                    <a class="language-icon" @click="changeLanguage('en')">
-                        <div class="flag flag-us"></div>
-                    </a>
+                    
                 </div>
             </div>
         </header>
@@ -207,37 +214,18 @@ a.navbar-item.is-active,
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-/*!
- * Generated with CSS Flag Sprite generator (https://www.flag-sprites.com/) -
- */
-.flag {
-    display: inline-block;
-    position: relative;
-    width: 16px;
-    height: 11px;
-    background: url('https://flag-sprites.com/img/flags.png') no-repeat;
-}
-
-.flag.flag-es {
-    background-position: -224px -33px;
-}
-
-.flag.flag-us {
-    background-position: 0 -154px;
-}
-
-.language-container {
-    position: absolute;
-    top: 38%;
-    right: -7%;
+.navbar-link:not(.is-arrowless)::after {
+    border-color: #e96711;
+    margin-top: -0.375em;
+    right: 1.125em;
 }
 
 @media screen and (max-width: 480px) {
     .navbar {
         position: sticky;
     }
-    .language-container {
-        display: none;
+    .bold-title{
+        font-weight: bold;
     }
 }
 /* Mobile Horizontal y tablet vertical */
@@ -245,8 +233,8 @@ a.navbar-item.is-active,
     .navbar {
         position: sticky;
     }
-    .language-container {
-        display: none;
+    .bold-title{
+        font-weight: bold;
     }
 }
 /* Tablet Horizontal y escritorio normal */
