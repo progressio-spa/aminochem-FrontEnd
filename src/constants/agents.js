@@ -269,7 +269,7 @@ export const regionManagersEN = [
     },
     {
         name: 'Lenin Guerrero Ch.',
-        position: 'Technical Zone Comercial Norte',
+        position: 'Sales representative Comercial Norte',
         email: 'agricultural engineer',
         phone: '',
         country: 'PE',
@@ -277,7 +277,7 @@ export const regionManagersEN = [
     },
     {
         name: 'José Luis Assereto A',
-        position: 'Technical Zone Comercial Ica',
+        position: 'Sales representative Comercial Ica',
         email: 'agricultural engineer',
         phone: '',
         country: 'PE',
