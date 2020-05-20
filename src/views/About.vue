@@ -242,7 +242,6 @@ export default {
     setup(props, { root }) {
         const countryManagers = regionManagers;
         const countryManagersEN = regionManagersEN;
-        const agent = value({})
         
         // duplicate countries variable to delete countries that had country managers
         const excludedCountries = [
@@ -371,11 +370,20 @@ export default {
             })
             createSouthAmericanMap()
         })
-        const countriesToShow = computed(() =>
-            countryManagers.filter(
-                countryManager =>
-                    countryManager.country === hoveredCountry.value
-            )
+        const countriesToShow = computed(() => {
+            if(root.$i18n.locale === 'es'){
+                return countryManagers.filter(
+                        countryManager =>
+                        countryManager.country === hoveredCountry.value
+                )
+
+            }  else {
+                return countryManagersEN.filter(
+                        countryManager =>
+                        countryManager.country === hoveredCountry.value
+                )
+            }
+        }
         )
         return {
             countriesToShow,
