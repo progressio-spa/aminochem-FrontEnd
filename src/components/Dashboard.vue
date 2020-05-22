@@ -129,11 +129,8 @@ export default {
     },
     async created() {
         const categoriesRequest = await getCategories();
-        const bodyFormData = new FormData();
-        bodyFormData.set('token', this.token);
-        const postsRequest = await getPosts(bodyFormData);
         this.categories = categoriesRequest.data;
-        this.posts = postsRequest.data;
+        this.posts = await this.getPosts();
     },
     mounted() {
         document.querySelectorAll('.modal-button').forEach(function(el) {
@@ -160,6 +157,16 @@ export default {
         closeModal() {
             this.isModalShow = false;
         },
+        async getPosts() {
+            try {
+                const bodyFormData = new FormData();
+                bodyFormData.set('token', this.token);
+                const postsRequest = await getPosts(bodyFormData);
+                return postsRequest.data;
+            } catch (e) {
+                console.log(e);
+            }
+        },
         async sendRequest() {
             const data = {};
             if (this.modalPurpose === 'create') {
@@ -167,17 +174,21 @@ export default {
                 data.body = this.newPost.content;
                 data.isPrivate = 0;
                 data.category = this.categories
-                    .find(category => category.name = this.newPost.category).id;
+                    .find(category => category.name === this.newPost.category).id;
                 data.token = this.token;
                 await post(data);
+                this.posts = await this.getPosts();
+                this.$emit('updatePosts');
                 this.closeModal();
             } else {
                 data.title = this.newPost.title;
                 data.body = this.newPost.content;
                 data.isPrivate = this.newPost.isPrivate;
-                data.id = this.newPost.id;
+                data.id = this.newPost.id;  
                 data.token = this.token;
                 await updatePost(data);
+                this.posts = await this.getPosts();
+                this.$emit('updatePosts');
                 this.closeModal();
             }
         },
@@ -188,10 +199,8 @@ export default {
                     token: this.token,
                 };
                 await deletePost(data);
-                const bodyFormData = new FormData();
-                bodyFormData.set('token', this.token);
-                const postsRequest = await getPosts(bodyFormData);
-                this.posts = postsRequest.data;   
+                this.posts = await this.getPosts();
+                this.$emit('updatePosts');
             } catch (e) {
                 console.log('ERROR => ', e);
             }
