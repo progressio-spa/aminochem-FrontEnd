@@ -146,6 +146,9 @@
                             </div>
                             <div class="card-content">
                                 <div class="content">
+                                    <span>
+                                        I
+                                    </span><br>
                                     {{ $t('AboutUs.card1-content') }}
                                     <br />
                                 </div>
@@ -164,6 +167,9 @@
                             </div>
                             <div class="card-content">
                                 <div class="content">
+                                    <span>
+                                        II
+                                    </span><br>
                                     {{ $t('AboutUs.card2-content') }}
                                     <br />
                                 </div>
@@ -182,6 +188,9 @@
                             </div>
                             <div class="card-content">
                                 <div class="content">
+                                    <span>
+                                        III
+                                    </span><br>
                                     {{ $t('AboutUs.card3-content') }}
                                     <br />
                                 </div>
@@ -200,6 +209,9 @@
                             </div>
                             <div class="card-content">
                                 <div class="content">
+                                    <span>
+                                        IV
+                                    </span><br>
                                     {{ $t('AboutUs.card4-content') }}
                                     <br />
                                 </div>
