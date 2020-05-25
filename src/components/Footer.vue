@@ -22,7 +22,7 @@
                     </div>
                     <div class="column">
                         <a class="item">
-                            <router-link to="/products">{{ $t('Navbar.products') }}</router-link>
+                            <router-link to="/products/fertilizers">{{ $t('Navbar.products') }}</router-link>
                         </a>
                     </div>
                     <div class="column">
