@@ -183,7 +183,23 @@ export const agentsList = [
     },
 ]
 
-export const regionManagers = [
+export const regionManagers = [   
+    {
+        name: 'Lenin Guerrero Ch.',
+        position: 'Zonal Técnico Comercial Norte',
+        email: 'lguerrero@aminochem.cl',
+        phone: '+51 938 513 659',
+        country: 'PE',
+        img: require('@/assets/Agents/LeninGuerrero.jpg'),
+    },
+    {
+        name: 'José Luis Assereto A',
+        position: 'Zonal Técnico Comercial Ica',
+        email: 'jassereto@aminochem.cl',
+        phone: '+51 934 236 695',
+        country: 'PE',
+        img: require('@/assets/Agents/JoseLuisAssereto.jpg'),
+    },
     {
         name: 'Rolando Silva',
         position: 'Country Manager Perú Bolivia',
@@ -191,22 +207,6 @@ export const regionManagers = [
         phone: '',
         country: 'PE',
         img: require('@/assets/Agents/RolandoSilva.jpg'),
-    },
-    {
-        name: 'Lenin Guerrero Ch.',
-        position: 'Zonal Técnico Comercial Norte',
-        email: 'Ingeniero Agrónomo',
-        phone: '',
-        country: 'PE',
-        img: require('@/assets/Agents/LeninGuerrero.jpg'),
-    },
-    {
-        name: 'José Luis Assereto A',
-        position: 'Zonal Técnico Comercial Ica',
-        email: 'Ingeniero Agrónomo',
-        phone: '',
-        country: 'PE',
-        img: require('@/assets/Agents/JoseLuisAssereto.jpg'),
     },
     {
         name: 'Rolando Silva',
@@ -219,8 +219,8 @@ export const regionManagers = [
     {
         name: 'Emiliano Castilla',
         position: 'Asistente Técnico Comercial',
-        email: 'ingeniero Agrónomo',
-        phone: '',
+        email: 'ecastilla@aminochem.cl',
+        phone: '+54 9 261 257 3809',
         country: 'AR',
         img: require('@/assets/Agents/EmilianoCastilla.jpg'),
     },
@@ -260,28 +260,28 @@ export const regionManagers = [
 
 export const regionManagersEN = [
     {
-        name: 'Rolando Silva',
-        position: 'Country Manager Perú Bolivia',
-        email: '',
-        phone: '',
-        country: 'PE',
-        img: require('@/assets/Agents/RolandoSilva.jpg'),
-    },
-    {
         name: 'Lenin Guerrero Ch.',
         position: 'Sales representative Comercial Norte',
-        email: 'agricultural engineer',
-        phone: '',
+        email: 'lguerrero@aminochem.cl',
+        phone: '+51 938 513 659',
         country: 'PE',
         img: require('@/assets/Agents/LeninGuerrero.jpg'),
     },
     {
         name: 'José Luis Assereto A',
         position: 'Sales representative Comercial Ica',
-        email: 'agricultural engineer',
-        phone: '',
+        email: 'jassereto@aminochem.cl',
+        phone: '+51 934 236 695',
         country: 'PE',
         img: require('@/assets/Agents/JoseLuisAssereto.jpg'),
+    },
+    {
+        name: 'Rolando Silva',
+        position: 'Country Manager Perú Bolivia',
+        email: '',
+        phone: '',
+        country: 'PE',
+        img: require('@/assets/Agents/RolandoSilva.jpg'),
     },
     {
         name: 'Rolando Silva',
@@ -294,8 +294,8 @@ export const regionManagersEN = [
     {
         name: 'Emiliano Castilla',
         position: 'Commercial Technical Assistant',
-        email: 'agricultural engineer',
-        phone: '',
+        email: 'ecastilla@aminochem.cl',
+        phone: '+54 9 261 257 3809',
         country: 'AR',
         img: require('@/assets/Agents/EmilianoCastilla.jpg'),
     },
@@ -394,7 +394,7 @@ export const chileanManagers = [
         name: 'Javiera Munita',
         position: 'Agente Zonal',
         email: 'jmunita@aminochem.cl',
-        phone: '',
+        phone: '+56 9 34248378',
         region: 'CL-ML',
         img: require('@/assets/Agents/javieraMunita.jpg'),
     },
@@ -501,7 +501,7 @@ export const chileanManagersEN = [
         name: 'Javiera Munita',
         position: 'Sales representative',
         email: 'jmunita@aminochem.cl',
-        phone: '',
+        phone: '+56 9 34248378',
         region: 'CL-ML',
         img: require('@/assets/Agents/javieraMunita.jpg'),
     },
@@ -554,6 +554,7 @@ export const regionAgentsList = [
         email: 'www.agropiemonte.cl',
         phone: '',
         region: 'CL-AP',
+        img: ''
     },
     {
         name: 'Norchimet Ltda.',
@@ -561,6 +562,7 @@ export const regionAgentsList = [
         email: '',
         phone: '',
         region: 'CL-AP',
+        img: ''
     },
     {
         name: 'Agrocomercial Norte Blanco',
@@ -568,6 +570,7 @@ export const regionAgentsList = [
         email: '',
         phone: '',
         region: 'CL-AP',
+        img: ''
     },
     {
         name: 'Comercial Mi Bodega',
@@ -575,6 +578,7 @@ export const regionAgentsList = [
         email: '',
         phone: '',
         region: 'CL-AP',
+        img: ''
     },
     {
         name: 'Agrícola del Norte',
@@ -582,6 +586,7 @@ export const regionAgentsList = [
         email: '',
         phone: '',
         region: 'CL-AP',
+        img: ''
     },
     {
         name: 'Bodega Adela',
@@ -589,6 +594,7 @@ export const regionAgentsList = [
         email: '',
         phone: '',
         region: 'CL-AP',
+        img: ''
     },
     {
         name: 'Insumos Framacop',
@@ -596,6 +602,7 @@ export const regionAgentsList = [
         email: '',
         phone: '',
         region: 'CL-AP',
+        img: ''
     },
     {
         name: 'Insumos María Angélica',
@@ -603,6 +610,7 @@ export const regionAgentsList = [
         email: '',
         phone: '',
         region: 'CL-AP',
+        img: ''
     },
     {
         name: 'Copeval SA',
@@ -610,6 +618,7 @@ export const regionAgentsList = [
         email: 'www.copeval.cl',
         phone: '',
         region: 'CL-AT',
+        img: require('@/assets/Network/logos/copeval.png'),
     },
     {
         name: 'Copeval SA',
@@ -617,6 +626,7 @@ export const regionAgentsList = [
         email: 'www.copeval.cl',
         phone: '',
         region: 'CL-CO',
+        img: require('@/assets/Network/logos/copeval.png'),
     },
     {
         name: 'Cals Ltda',
@@ -624,6 +634,7 @@ export const regionAgentsList = [
         email: 'www.cals.cl',
         phone: '',
         region: 'CL-CO',
+        img: require('@/assets/Network/logos/cals.png'),
     },
     {
         name: 'Copeval SA',
@@ -631,6 +642,7 @@ export const regionAgentsList = [
         email: 'www.copeval.cl',
         phone: '',
         region: 'CL-VS',
+        img: require('@/assets/Network/logos/copeval.png'),
     },
     {
         name: 'Cals Ltda',
@@ -638,6 +650,7 @@ export const regionAgentsList = [
         email: 'www.cals.cl',
         phone: '',
         region: 'CL-VS',
+        img: require('@/assets/Network/logos/cals.png'),
     },
     {
         name: 'Coagra SA',
@@ -645,6 +658,7 @@ export const regionAgentsList = [
         email: 'www.coagra.cl',
         phone: '',
         region: 'CL-VS',
+        img: require('@/assets/Network/logos/coagra.png'),
     },
     {
         name: 'Cals Ltda',
@@ -652,6 +666,7 @@ export const regionAgentsList = [
         email: 'www.cals.cl',
         phone: '',
         region: 'CL-RM',
+        img: require('@/assets/Network/logos/cals.png'),
     },
     {
         name: 'Copeval SA',
@@ -659,6 +674,7 @@ export const regionAgentsList = [
         email: 'www.copeval.cl',
         phone: '',
         region: 'CL-RM',
+        img: require('@/assets/Network/logos/copeval.png'),
     },
     {
         name: 'Agrícola Padre Hurtado',
@@ -666,6 +682,7 @@ export const regionAgentsList = [
         email: 'www.agricolapadrehurtado.cl',
         phone: '',
         region: 'CL-RM',
+        img: require('@/assets/Network/logos/aph.png'),
     },
     {
         name: 'Coagra SA',
@@ -673,6 +690,7 @@ export const regionAgentsList = [
         email: 'www.coagra.cl',
         phone: '',
         region: 'CL-RM',
+        img: require('@/assets/Network/logos/coagra.png'),
     },
     {
         name: 'Coagra SA',
@@ -680,6 +698,7 @@ export const regionAgentsList = [
         email: 'www.coagra.cl',
         phone: '',
         region: 'CL-LI',
+        img: require('@/assets/Network/logos/coagra.png'),
     },
     {
         name: 'Cals Ltda',
@@ -687,6 +706,7 @@ export const regionAgentsList = [
         email: 'www.cals.cl',
         phone: '',
         region: 'CL-LI',
+        img: require('@/assets/Network/logos/cals.png'),
     },
     {
         name: 'Copeval SA',
@@ -694,6 +714,7 @@ export const regionAgentsList = [
         email: 'www.copeval.cl',
         phone: '',
         region: 'CL-LI',
+        img: require('@/assets/Network/logos/copeval.png'),
     },
     {
         name: 'Coagra SA',
@@ -701,6 +722,7 @@ export const regionAgentsList = [
         email: 'www.coagra.cl',
         phone: '',
         region: 'CL-ML',
+        img: require('@/assets/Network/logos/coagra.png'),
     },
     {
         name: 'Cals Ltda',
@@ -708,6 +730,7 @@ export const regionAgentsList = [
         email: 'www.cals.cl',
         phone: '',
         region: 'CL-ML',
+        img: require('@/assets/Network/logos/cals.png'),
     },
     {
         name: 'Copeval SA',
@@ -715,6 +738,7 @@ export const regionAgentsList = [
         email: 'www.copeval.cl',
         phone: '',
         region: 'CL-ML',
+        img: require('@/assets/Network/logos/copeval.png'),
     },
     {
         name: 'Coagra SA',
@@ -722,6 +746,7 @@ export const regionAgentsList = [
         email: 'www.coagra.cl',
         phone: '',
         region: 'CL-BI',
+        img: require('@/assets/Network/logos/coagra.png'),
     },
     {
         name: 'Cals Ltda',
@@ -729,6 +754,7 @@ export const regionAgentsList = [
         email: 'www.cals.cl',
         phone: '',
         region: 'CL-BI',
+        img: require('@/assets/Network/logos/cals.png'),
     },
     {
         name: 'Copeval SA',
@@ -736,6 +762,7 @@ export const regionAgentsList = [
         email: 'www.copeval.cl',
         phone: '',
         region: 'CL-BI',
+        img: require('@/assets/Network/logos/copeval.png'),
     },
     {
         name: 'Cooprinsem',
@@ -743,6 +770,7 @@ export const regionAgentsList = [
         email: 'www.cooprinsem.cl',
         phone: '',
         region: 'CL-BI',
+        img: require('@/assets/Network/logos/cooprinsem.png'),
     },
     {
         name: 'Coagra SA',
@@ -750,6 +778,7 @@ export const regionAgentsList = [
         email: 'www.coagra.cl',
         phone: '',
         region: 'CL-AR',
+        img: require('@/assets/Network/logos/coagra.png'),
     },
     {
         name: 'Agrícola Lobert Ltda',
@@ -757,6 +786,7 @@ export const regionAgentsList = [
         email: 'www.lobert.cl',
         phone: '',
         region: 'CL-AR',
+        img: require('@/assets/Network/logos/lobert.png'),
     },
     {
         name: 'Copeval SA',
@@ -764,6 +794,7 @@ export const regionAgentsList = [
         email: 'www.copeval.cl',
         phone: '',
         region: 'CL-AR',
+        img: require('@/assets/Network/logos/copeval.png'),
     },
     {
         name: 'Cooprinsem',
@@ -771,6 +802,7 @@ export const regionAgentsList = [
         email: 'www.cooprinsem.cl',
         phone: '',
         region: 'CL-AR',
+        img: require('@/assets/Network/logos/cooprinsem.png'),
     },
     {
         name: 'Copeval SA',
@@ -778,6 +810,7 @@ export const regionAgentsList = [
         email: 'www.copeval.cl',
         phone: '',
         region: 'CL-LR',
+        img: require('@/assets/Network/logos/copeval.png'),
     },
     {
         name: 'Cooprinsem',
@@ -785,6 +818,7 @@ export const regionAgentsList = [
         email: 'www.cooprinsem.cl',
         phone: '',
         region: 'CL-LR',
+        img: require('@/assets/Network/logos/cooprinsem.png'),
     },
     {
         name: 'Coagra SA',
@@ -792,6 +826,7 @@ export const regionAgentsList = [
         email: 'www.coagra.cl',
         phone: '',
         region: 'CL-LL',
+        img: require('@/assets/Network/logos/coagra.png'),
     },
     {
         name: 'Copeval SA',
@@ -799,6 +834,7 @@ export const regionAgentsList = [
         email: 'www.copeval.cl',
         phone: '',
         region: 'CL-LL',
+        img: require('@/assets/Network/logos/copeval.png'),
     },
     {
         name: 'Cooprinsem',
@@ -806,5 +842,6 @@ export const regionAgentsList = [
         email: 'www.cooprinsem.cl',
         phone: '',
         region: 'CL-LL',
+        img: require('@/assets/Network/logos/cooprinsem.png'),
     },
 ]
