@@ -50,9 +50,14 @@
                 <div class="container map-container">
                     <div class="is-6 agents-list" v-if="selectedNetwork === 'CL'">
                         <div v-for="agent in agentsToShow" :key="agent.name">
+
                             <h1>{{ agent.name }}</h1>
-                            <h1 class="link" @click="openUrl(agent.position)">{{ agent.email }}</h1>
-                            <h1>{{ agent.phone }}</h1>
+                            
+                            <h1 class="link" @click="openUrl(agent.position)">
+                                <figure class="image is-3by1">
+                                    <img :src="agent.img" />
+                                </figure>
+                            </h1>
                             <br />
                         </div>
                     </div>
