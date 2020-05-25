@@ -4,7 +4,7 @@
         "aboutUs": "About Us",
         "products": "Products",
         "dropdown1": "Vegetal Nutricion",
-        "dropdown11": "Foliar Fertilizers",
+        "dropdown11": "Bioestimulant fertilizers",
         "dropdown12": "Organic amendments",
         "dropdown13": "Natural oil for agricultural use",
         "dropdown2": "Adjuvant Insecticide",
@@ -75,7 +75,7 @@
 
     "Products": {
         "fertilizers": {
-            "title": "Foliar Fertilizers"
+            "title": "Bioestimulant fertilizers"
         },
         "amendments": {
             "title": "Organic Amendments",

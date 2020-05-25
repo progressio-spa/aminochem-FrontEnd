@@ -4,7 +4,7 @@
         "aboutUs": "Quiénes somos",
         "products": "Productos",
         "dropdown1": "Nutrición Vegetal",
-        "dropdown11": "Fertilizantes foliares",
+        "dropdown11": "Fertilizantes bioestimulantes",
         "dropdown12": "Enmiendas orgánicas",
         "dropdown13": "Aceite natural de uso agrícola",
         "dropdown2": "Insecticida Coadyuvante",
@@ -75,7 +75,7 @@
 
     "Products": {
         "fertilizers": {
-            "title": "Fertilizantes foliares"
+            "title": "Fertilizantes bioestimulantes"
         },
         "amendments": {
             "title": "Enmiendas orgánicas",
