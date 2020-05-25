@@ -73,7 +73,7 @@
                     {{ $t('TechnicalSection.tab-1') }}
                 </div>
             </div>
-            <div class="hero-body is-widescreen" style="display: inline-block;">
+            <div class="hero-body">
                 <div class="container">
                     <div class="columns is-multiline is-desktop">
                         <div
@@ -104,7 +104,7 @@
                     {{ $t('TechnicalSection.tab-2') }}
                 </div>
             </div>
-            <div class="hero-body" style="display: inline-block;">
+            <div class="hero-body">
                 <div class="container">
                     <div class="columns is-multiline is-desktop">
                         <div
@@ -189,7 +189,7 @@
             <div class="hero-head">
                 <div class="title">{{ $t('TechnicalSection.tab-5') }}</div>
             </div>
-            <Dashboard />
+            <Dashboard @updatePosts="getAndSetCategoriesPosts"/>
         </section>
     </div>
 </template>
@@ -218,32 +218,37 @@ export default {
         const publications = value([]);
         const activities = value([]);
         const news = value([]);
+        const getAndSetCategoriesPosts = async () => {
+            console.log("entro");
+            const promises = [];
+            for (let i = 1; i <= 4; i++) {
+                promises.push(getPostsByCategory(i));
+            }
+            const responses = await Promise.all(promises);
+            iplusd.value = responses[0].data;
+            publications.value = responses[1].data;
+            activities.value = responses[2].data;
+            news.value = responses[3].data;
+        };
         onCreated(async () => {
             try {
                 const data = {
                     token: root.$store.getters.getAccessToken,
                 };
+                await getAndSetCategoriesPosts();
                 const isAdminRequest = await isAdmin(data);
-                const promises = [];
-                for (let i = 1; i <= 4; i++) {
-                    promises.push(getPostsByCategory(i));
-                }
-                const responses = await Promise.all(promises);
-                iplusd.value = responses[0].data;
-                publications.value = responses[1].data;
-                activities.value = responses[2].data;
-                news.value = responses[3].value;
                 userIsAdmin.value = isAdminRequest.data === 1;
             } catch(e) {
                 console.log(e);
             }
-        })
+        });
         return {
             iplusd,
             publications,
             activities,
             news,
             userIsAdmin,
+            getAndSetCategoriesPosts,
         };
     },
     methods: {
