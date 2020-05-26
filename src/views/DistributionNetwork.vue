@@ -50,14 +50,16 @@
                 <div class="container map-container">
                     <div class="is-6 agents-list" v-if="selectedNetwork === 'CL'">
                         <div v-for="agent in agentsToShow" :key="agent.name">
-
-                            <h1>{{ agent.name }}</h1>
-                            
-                            <h1 class="link" @click="openUrl(agent.position)">
-                                <figure class="image is-3by1">
-                                    <img :src="agent.img" />
-                                </figure>
-                            </h1>
+                            <div v-if="agentsToShow.length > 6">
+                                <h1>{{ agent.name }}</h1>
+                            </div>
+                            <div v-else>
+                                <h1 class="link" @click="openUrl(agent.position)">
+                                    <figure class="image is-2by1">
+                                        <img :src="agent.img" />
+                                    </figure>
+                                </h1>
+                            </div>
                             <br />
                         </div>
                     </div>
