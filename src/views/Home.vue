@@ -1,47 +1,22 @@
 /* eslint-disable indent */
 <template>
     <div class="home">
-        <section class="hero is-fullheight has-carousel" id="main">
-            <div id="carousel-demo" class="hero-carousel">
-                <div class="carousel-item">
-                    <img
-                        alt="Grass"
-                        class="hero-background-home is-transparent"
-                        :src="getCorouselImg(1)"
-                    />
-                </div>
-                <div class="carousel-item">
-                    <img
-                        alt="Grass"
-                        class="hero-background-home is-transparent"
-                        :src="getCorouselImg(2)"
-                    />
-                </div>
-                <div class="carousel-item">
-                    <img
-                        alt="Grass"
-                        class="hero-background-home is-transparent"
-                        :src="getCorouselImg(3)"
-                    />
-                </div>
-            </div>
+        <section class="hero is-fullheight has-bg-img" id="main">
             <Navbar></Navbar>
-            <div class="hero-body">
-                <div class="container has-text-left" id="mainText">
-                    <!-- <h1 class="title">{{ $t('Home.MainText') }}</h1> -->
-                </div>
-            </div>
         </section>
 
         <section class="section">
             <div class="container">
-                <h1 class="title">{{ $t('Home.products') }}</h1>
+                <h1 class="title">{{ $t("Home.products") }}</h1>
                 <div class="columns">
                     <div class="column">
                         <div class="card aux">
                             <div class="card-image">
                                 <figure class="image is-4by3">
-                                    <img src="@/assets/Home/hoja.jpg" alt="leave" />
+                                    <img
+                                        src="@/assets/Home/hoja.jpg"
+                                        alt="leave"
+                                    />
                                 </figure>
                             </div>
                             <div class="card-content">
@@ -50,13 +25,16 @@
                                         <p class="title is-4">
                                             <router-link
                                                 to="/products/fertilizers"
-                                            >{{ $t('Home.card1') }}</router-link>
+                                                >{{
+                                                    $t("Home.card1")
+                                                }}</router-link
+                                            >
                                         </p>
                                     </div>
                                 </div>
 
                                 <div class="content">
-                                    {{ $t('Home.description1') }}
+                                    {{ $t("Home.description1") }}
                                     <br />
                                 </div>
                             </div>
@@ -66,7 +44,10 @@
                         <div class="card aux">
                             <div class="card-image">
                                 <figure class="image is-4by3">
-                                    <img src="@/assets/Home/raices.jpg" alt="earth" />
+                                    <img
+                                        src="@/assets/Home/raices.jpg"
+                                        alt="earth"
+                                    />
                                 </figure>
                             </div>
                             <div class="card-content">
@@ -75,13 +56,16 @@
                                         <p class="title is-4">
                                             <router-link
                                                 to="/products/amendments"
-                                            >{{ $t('Home.card2') }}</router-link>
+                                                >{{
+                                                    $t("Home.card2")
+                                                }}</router-link
+                                            >
                                         </p>
                                     </div>
                                 </div>
 
                                 <div class="content">
-                                    {{ $t('Home.description2') }}
+                                    {{ $t("Home.description2") }}
                                     <br />
                                 </div>
                             </div>
@@ -91,7 +75,10 @@
                         <div class="card aux">
                             <div class="card-image">
                                 <figure class="image is-4by3">
-                                    <img src="@/assets/Home/gotas.jpg" alt="seeder" />
+                                    <img
+                                        src="@/assets/Home/gotas.jpg"
+                                        alt="seeder"
+                                    />
                                 </figure>
                             </div>
                             <div class="card-content">
@@ -100,13 +87,16 @@
                                         <p class="title is-4">
                                             <router-link
                                                 to="/products/rootBiostimulant"
-                                            >{{ $t('Home.card3') }}</router-link>
+                                                >{{
+                                                    $t("Home.card3")
+                                                }}</router-link
+                                            >
                                         </p>
                                     </div>
                                 </div>
 
                                 <div class="content">
-                                    {{ $t('Home.description3') }}
+                                    {{ $t("Home.description3") }}
                                     <br />
                                 </div>
                             </div>
@@ -119,7 +109,7 @@
         <section class="hero is-medium is-light">
             <div class="hero-body video-container">
                 <div class="title-video">
-                    <h1 class="title">{{ $t('Home.meet') }}</h1>
+                    <h1 class="title">{{ $t("Home.meet") }}</h1>
                 </div>
                 <video width="1200" controls :src="videoSource" />
             </div>
@@ -129,59 +119,64 @@
 
 <script>
 // @ is an alias to /src
-import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min'
-import Navbar from '@/components/Navbar.vue'
+import bulmaCarousel from "bulma-carousel/dist/js/bulma-carousel.min";
+import Navbar from "@/components/Navbar.vue";
 
 export default {
-    name: 'home',
+    name: "home",
     components: {
-        Navbar,
+        Navbar
     },
     mounted() {
-        bulmaCarousel.attach('#carousel-demo', {
+        bulmaCarousel.attach("#carousel-demo", {
             slidesToScroll: 1,
             slidesToShow: 1,
             infinite: true,
             autoplay: true,
             autoplaySpeed: 10000,
-            pagination: false,
-        })
+            pagination: false
+        });
     },
     methods: {
-        getCorouselImg(index) {
-            const isMobile = window.innerWidth < 775
-            if (index === 1) {
-                if (isMobile) {
-                    return require('@/assets/Home/corouselResp1.png')
-                } else {
-                    return require('@/assets/Home/prueba-01.png')
-                }
-            } else if (index === 2) {
-                if (isMobile) {
-                    return require('@/assets/Home/corouselResp2.png')
-                } else {
-                    return require('@/assets/Home/prueba-02.png')
-                }
-            } else if (index === 3) {
-                if (isMobile) {
-                    return require('@/assets/Home/corouselResp3.png')
-                } else {
-                    return require('@/assets/Home/prueba-03.png')
-                }
-            }
-        },
+        // getCorouselImg(index) {
+        //     const isMobile = window.innerWidth < 775;
+        //     if (index === 1) {
+        //         if (isMobile) {
+        //             return require("@/assets/Home/corouselResp1.png");
+        //         } else {
+        //             return require("@/assets/Home/prueba-01.png");
+        //         }
+        //     } else if (index === 2) {
+        //         if (isMobile) {
+        //             return require("@/assets/Home/corouselResp2.png");
+        //         } else {
+        //             return require("@/assets/Home/prueba-02.png");
+        //         }
+        //     } else if (index === 3) {
+        //         if (isMobile) {
+        //             return require("@/assets/Home/corouselResp3.png");
+        //         } else {
+        //             return require("@/assets/Home/prueba-03.png");
+        //         }
+        //     }
+        // }
     },
     computed: {
         videoSource() {
-            return this.$root.$i18n.locale === 'es'
+            return this.$root.$i18n.locale === "es"
                 ? require(`@/assets/Home/VideoES.mp4`)
-                : require(`@/assets/Home/videoEN.mp4`)
-        },
-    },
-}
+                : require(`@/assets/Home/videoEN.mp4`);
+        }
+    }
+};
 </script>
 
 <style scoped>
+.has-bg-img {
+    background: url("../assets/Home/prueba-02.png") center center;
+    background-size: cover;
+}
+
 .media-content {
     display: flex;
     flex-direction: column;
@@ -262,6 +257,10 @@ a {
 }
 /* Mobile Horizontal y tablet vertical */
 @media screen and (min-width: 481px) and (max-width: 768px) {
+    .has-bg-img {
+        background: url("../assets/Home/corouselResp1.png") center center;
+        background-size: cover;
+    }
     #mainText {
         left: 10%;
         max-width: 80%;
@@ -279,6 +278,10 @@ a {
 }
 
 @media screen and (max-width: 425px) {
+    .has-bg-img {
+        background: url("../assets/Home/corouselResp1.png") center center;
+        background-size: cover;
+    }
     .carousel-item {
         height: 100vh;
     }
