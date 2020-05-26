@@ -9,82 +9,127 @@
             />
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title is-1" id="main-title">{{ $t('TechnicalSection.title') }}</h1>
+                    <h1 class="title is-1" id="main-title">
+                        {{ $t("TechnicalSection.title") }}
+                    </h1>
                 </div>
             </div>
         </section>
         <section class="tabs-container">
             <div class="tabs is-centered is-medium">
                 <ul>
-                    <li class="tab is-active" id="tab1" @click="openTab('tab1','contentTab1')">
+                    <li
+                        class="tab is-active"
+                        id="tab1"
+                        @click="openTab('tab1', 'contentTab1')"
+                    >
                         <a>
                             <span class="icon is-small">
-                                <i class="fas fa-microscope" aria-hidden="true"></i>
+                                <i
+                                    class="fas fa-microscope"
+                                    aria-hidden="true"
+                                ></i>
                             </span>
-                            <span>{{ $t('TechnicalSection.tab-1') }}</span>
+                            <span>{{ $t("TechnicalSection.tab-1") }}</span>
                         </a>
                     </li>
-                    <li class="tab" id="tab2" @click="openTab('tab2','contentTab2')">
+                    <li
+                        class="tab"
+                        id="tab2"
+                        @click="openTab('tab2', 'contentTab2')"
+                    >
                         <a>
                             <span class="icon is-small">
-                                <i class="far fa-bookmark" aria-hidden="true"></i>
+                                <i
+                                    class="far fa-bookmark"
+                                    aria-hidden="true"
+                                ></i>
                             </span>
-                            <span>{{ $t('TechnicalSection.tab-2') }}</span>
+                            <span>{{ $t("TechnicalSection.tab-2") }}</span>
                         </a>
                     </li>
-                    <li class="tab" id="tab3" @click="openTab('tab3','contentTab3')">
+                    <li
+                        class="tab"
+                        id="tab3"
+                        @click="openTab('tab3', 'contentTab3')"
+                    >
                         <a>
                             <span class="icon is-small">
-                                <i class="far fa-calendar" aria-hidden="true"></i>
+                                <i
+                                    class="far fa-calendar"
+                                    aria-hidden="true"
+                                ></i>
                             </span>
-                            <span>{{ $t('TechnicalSection.tab-3') }}</span>
+                            <span>{{ $t("TechnicalSection.tab-3") }}</span>
                         </a>
                     </li>
-                    <li class="tab" id="tab4" @click="openTab('tab4','contentTab4')">
+                    <li
+                        class="tab"
+                        id="tab4"
+                        @click="openTab('tab4', 'contentTab4')"
+                    >
                         <a>
                             <span class="icon is-small">
-                                <i class="far fa-newspaper" aria-hidden="true"></i>
+                                <i
+                                    class="far fa-newspaper"
+                                    aria-hidden="true"
+                                ></i>
                             </span>
-                            <span>{{ $t('TechnicalSection.tab-4') }}</span>
+                            <span>{{ $t("TechnicalSection.tab-4") }}</span>
                         </a>
                     </li>
                     <li
                         v-if="userIsAdmin"
                         class="tab"
                         id="tab5"
-                        @click="openTab('tab5','contentTab5')">
+                        @click="openTab('tab5', 'contentTab5')"
+                    >
                         <a>
                             <span class="icon is-small">
                                 <i class="fas fa-pen" aria-hidden="true"></i>
                             </span>
-                            <span>{{ $t('TechnicalSection.tab-5') }}</span>
+                            <span>{{ $t("TechnicalSection.tab-5") }}</span>
                         </a>
                     </li>
                 </ul>
             </div>
         </section>
-        <section class="content-tab hero is-light is-fullheight" id="contentTab1">
+        <section
+            class="content-tab hero is-light is-fullheight"
+            id="contentTab1"
+        >
             <div class="hero-head">
                 <div class="title">
                     <span class="icon is-small">
                         <i class="fas fa-microscope" aria-hidden="true"></i>
                     </span>
                     &nbsp;
-                    {{ $t('TechnicalSection.tab-1') }}
+                    {{ $t("TechnicalSection.tab-1") }}
                 </div>
             </div>
             <div class="hero-body">
                 <div class="container">
                     <div class="columns is-multiline is-desktop">
+                        <!-- información estatica -->
                         <div
                             class="column is-one-third"
-                            v-for="(news,index) in iplusd"
+                            v-for="(news, index) in iplusdStatic"
                             :key="index"
                         >
                             <BlogCard
                                 :title="news.title"
-                                :body="news.body"
+                                :newsImage="news.imgURL"
+                                :subtitle="news.subtitle"
+                                :pdfName="news.pdfName"
                             />
+                        </div>
+                        <!--  -->
+                        <div
+                            class="column is-one-third"
+                            v-for="(news, index) in iplusd"
+                            :key="index"
+                        >
+                            <BlogCard :title="news.title" :body="news.body" />
                         </div>
                     </div>
                 </div>
@@ -101,7 +146,7 @@
                         <i class="far fa-bookmark" aria-hidden="true"></i>
                     </span>
                     &nbsp;
-                    {{ $t('TechnicalSection.tab-2') }}
+                    {{ $t("TechnicalSection.tab-2") }}
                 </div>
             </div>
             <div class="hero-body">
@@ -109,13 +154,10 @@
                     <div class="columns is-multiline is-desktop">
                         <div
                             class="column is-one-third"
-                            v-for="(news,index) in publications"
+                            v-for="(news, index) in publications"
                             :key="index"
                         >
-                            <BlogCard
-                                :title="news.title"
-                                :body="news.body"
-                            />
+                            <BlogCard :title="news.title" :body="news.body" />
                         </div>
                     </div>
                 </div>
@@ -132,7 +174,7 @@
                         <i class="far fa-calendar" aria-hidden="true"></i>
                     </span>
                     &nbsp;
-                    {{ $t('TechnicalSection.tab-3') }}
+                    {{ $t("TechnicalSection.tab-3") }}
                 </div>
             </div>
             <div class="hero-body">
@@ -141,11 +183,9 @@
                         <div
                             class="column is-one-third"
                             v-for="(news, index) in activities"
-                            :key="index">
-                            <BlogCard
-                                :title="news.title"
-                                :body="news.body"
-                            />
+                            :key="index"
+                        >
+                            <BlogCard :title="news.title" :body="news.body" />
                         </div>
                     </div>
                 </div>
@@ -162,7 +202,7 @@
                         <i class="far fa-newspaper" aria-hidden="true"></i>
                     </span>
                     &nbsp;
-                    {{ $t('TechnicalSection.tab-4') }}
+                    {{ $t("TechnicalSection.tab-4") }}
                 </div>
             </div>
             <div class="hero-body">
@@ -171,7 +211,8 @@
                         <div
                             class="column is-one-third"
                             v-for="(notice, index) in news"
-                            :key="index">
+                            :key="index"
+                        >
                             <BlogCard
                                 :title="notice.title"
                                 :body="notice.body"
@@ -187,34 +228,37 @@
             style="display:none"
         >
             <div class="hero-head">
-                <div class="title">{{ $t('TechnicalSection.tab-5') }}</div>
+                <div class="title">{{ $t("TechnicalSection.tab-5") }}</div>
             </div>
-            <Dashboard @updatePosts="getAndSetCategoriesPosts"/>
+            <Dashboard @updatePosts="getAndSetCategoriesPosts" />
         </section>
     </div>
 </template>
 
 <script>
-import { onCreated, value } from 'vue-function-api'
+import { onCreated, value } from "vue-function-api";
 
-import { isAdmin } from '@/api/requests/authorization';
-import { getPostsByCategory } from '@/api/requests/posts';
+import { isAdmin } from "@/api/requests/authorization";
+import { getPostsByCategory } from "@/api/requests/posts";
+
+import { ipd } from "@/constants/TemporalTechnical";
 
 // @ is an alias to /src
-import Navbar from '@/components/Navbar.vue'
-import BlogCard from '@/components/BlogCard.vue'
-import Dashboard from '@/components/Dashboard.vue'
+import Navbar from "@/components/Navbar.vue";
+import BlogCard from "@/components/BlogCard.vue";
+import Dashboard from "@/components/Dashboard.vue";
 
 export default {
-    name: 'home',
+    name: "home",
     components: {
         Navbar,
         BlogCard,
-        Dashboard,
+        Dashboard
     },
     setup(props, { root }) {
         const userIsAdmin = value(false);
         const iplusd = value([]);
+        const iplusdStatic = value([]); // estatico
         const publications = value([]);
         const activities = value([]);
         const news = value([]);
@@ -229,49 +273,51 @@ export default {
             publications.value = responses[1].data;
             activities.value = responses[2].data;
             news.value = responses[3].data;
+            iplusdStatic.value = ipd;
         };
         onCreated(async () => {
             try {
                 const data = {
-                    token: root.$store.getters.getAccessToken,
+                    token: root.$store.getters.getAccessToken
                 };
                 await getAndSetCategoriesPosts();
                 const isAdminRequest = await isAdmin(data);
                 userIsAdmin.value = isAdminRequest.data === 1;
-            } catch(e) {
+            } catch (e) {
                 console.log(e);
             }
         });
         return {
             iplusd,
+            iplusdStatic,
             publications,
             activities,
             news,
             userIsAdmin,
-            getAndSetCategoriesPosts,
+            getAndSetCategoriesPosts
         };
     },
     methods: {
         openTab(tabName, contantTabName) {
-            var i, x, tablinks
-            x = document.getElementsByClassName('content-tab')
+            var i, x, tablinks;
+            x = document.getElementsByClassName("content-tab");
 
             for (i = 0; i < x.length; i++) {
-                x[i].style.display = 'none'
+                x[i].style.display = "none";
             }
-            tablinks = document.getElementsByClassName('tab')
-            const tablinksArray = [...tablinks]
+            tablinks = document.getElementsByClassName("tab");
+            const tablinksArray = [...tablinks];
             tablinksArray.forEach(htmlElement => {
-                htmlElement.classList.remove('is-active');
+                htmlElement.classList.remove("is-active");
             });
-            var mainContent = document.getElementById(contantTabName)
-            mainContent.style.display = 'block'
+            var mainContent = document.getElementById(contantTabName);
+            mainContent.style.display = "block";
 
-            var mainTab = document.getElementById(tabName)
-            mainTab.classList.add('is-active')
-        },
-    },
-}
+            var mainTab = document.getElementById(tabName);
+            mainTab.classList.add("is-active");
+        }
+    }
+};
 </script>
 
 <style scoped>

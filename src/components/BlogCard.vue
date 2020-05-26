@@ -1,18 +1,29 @@
 <template>
     <div class="card">
+        <div class="card-image">
+            <figure class="image is-4by3">
+                <img :src="newsImage" />
+            </figure>
+        </div>
         <div class="card-content">
             <div class="media">
                 <div class="media-content">
                     <div class="title is-5">
                         <router-link
                             :to="{
-                            name: 'technicalSection-show',
-                            params: {
-                                name: title,
-                                title: title, body: body },
+                                name: 'technicalSection-show',
+                                params: {
+                                    name: title,
+                                    title: title,
+                                    body: body,
+                                    newsImage: newsImage,
+                                    subtitle: subtitle,
+                                    pdfName: pdfName
+                                }
                             }"
-                            style="color: rgb(233, 103, 17);">
-                            {{title}}
+                            style="color: rgb(233, 103, 17);"
+                        >
+                            {{ title }}
                         </router-link>
                     </div>
                 </div>
@@ -28,13 +39,13 @@
 </template>
 
 <script>
-import BlogCardView from '@/components/BlogCardView.vue'
+import BlogCardView from "@/components/BlogCardView.vue";
 export default {
     data() {
-        return {}
+        return {};
     },
-    props: ['title', 'body'],
-}
+    props: ["title", "body", "newsImage", "subtitle", "pdfName"]
+};
 </script>
 
 <style scoped>

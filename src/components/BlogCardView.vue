@@ -9,16 +9,48 @@
             />
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title is-1" id="main-title">{{ $t('TechnicalSection.title') }}</h1>
+                    <h1 class="title is-1" id="main-title">
+                        {{ $t("TechnicalSection.title") }}
+                    </h1>
                 </div>
             </div>
         </section>
         <section class="hero is-white">
             <div class="hero-body">
                 <div class="container">
-                    <div class="title is-3">{{title}}</div>
+                    <div class="title is-3">{{ title }}</div>
+                    <div class="image">
+                        <img :src="newsImage" />
+                    </div>
                     <br />
                     <div class="subtitle is-3" v-html="body"></div>
+                    <div v-if="pdfName === 'demo1'">
+                        <div>
+                            <iframe
+                                :src="demo1"
+                                style="width:100%;height:100vh;"
+                                scrolling="auto"
+                            ></iframe>
+                        </div>
+                    </div>
+                    <div v-else-if="pdfName === 'demo2'">
+                        <div>
+                            <iframe
+                                :src="demo2"
+                                style="width:100%;height:100vh;"
+                                scrolling="auto"
+                            ></iframe>
+                        </div>
+                    </div>
+                    <div v-else>
+                        <div>
+                            <iframe
+                                :src="demo3"
+                                style="width:100%;height:100vh;"
+                                scrolling="auto"
+                            ></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -26,14 +58,24 @@
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue'
+import Navbar from "@/components/Navbar.vue";
 
 export default {
     components: {
-        Navbar,
+        Navbar
     },
-    props: ['title', 'body'],
-}
+    setup(props, { root }) {
+        const demo1 = require(`../assets/Temporal/iplusd/demo1.pdf`);
+        const demo2 = require(`../assets/Temporal/iplusd/demo2.pdf`);
+        const demo3 = require(`../assets/Temporal/iplusd/demo3.pdf`);
+        return {
+            demo1,
+            demo2,
+            demo3
+        };
+    },
+    props: ["title", "body", "newsImage", "subtitle", "pdfName"]
+};
 </script>
 
 <style scoped>
