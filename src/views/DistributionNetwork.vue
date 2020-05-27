@@ -9,7 +9,9 @@
             />
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title is-1" id="main-title">{{ $t('Network.title') }}</h1>
+                    <h1 class="title is-1" id="main-title">
+                        {{ $t("Network.title") }}
+                    </h1>
                 </div>
             </div>
         </section>
@@ -20,26 +22,32 @@
                         <h1
                             class="subtitle active is-4"
                             id="tab1"
-                            @click="zoneClicked('CL'),openTab('tab1')"
+                            @click="zoneClicked('CL'), openTab('tab1')"
                         >
                             <span class="icon is-small">
-                                <i class="fas fa-map-pin" aria-hidden="true"></i>
+                                <i
+                                    class="fas fa-map-pin"
+                                    aria-hidden="true"
+                                ></i>
                             </span>
                             &nbsp;
-                            {{ $t('Network.option1') }}
+                            {{ $t("Network.option1") }}
                         </h1>
                     </div>
                     <div class="column">
                         <h1
                             class="subtitle is-4"
                             id="tab2"
-                            @click="zoneClicked('WR'),openTab('tab2')"
+                            @click="zoneClicked('WR'), openTab('tab2')"
                         >
                             <span class="icon is-small">
-                                <i class="fas fa-globe-americas" aria-hidden="true"></i>
+                                <i
+                                    class="fas fa-globe-americas"
+                                    aria-hidden="true"
+                                ></i>
                             </span>
                             &nbsp;
-                            {{ $t('Network.option2') }}
+                            {{ $t("Network.option2") }}
                         </h1>
                     </div>
                 </div>
@@ -48,23 +56,32 @@
         <section class="hero is-light is-fullheight">
             <div class="hero-body">
                 <div class="container map-container">
-                    <div class="is-6 agents-list" v-if="selectedNetwork === 'CL'">
+                    <div
+                        class="is-6 agents-list"
+                        v-if="selectedNetwork === 'CL'"
+                    >
                         <div v-for="agent in agentsToShow" :key="agent.name">
                             <div v-if="agentsToShow.length > 6">
                                 <h1>{{ agent.name }}</h1>
                             </div>
-                            <div v-else>
-                                <h1 class="link" @click="openUrl(agent.position)">
-                                    <figure class="image is-2by1">
+                            <div class="imageSize" v-else>
+                                <span
+                                    class="link"
+                                    @click="openUrl(agent.position)"
+                                >
+                                    <figure class="image">
                                         <img :src="agent.img" />
                                     </figure>
-                                </h1>
+                                </span>
                             </div>
                             <br />
                         </div>
                     </div>
                     <div class="is-6 agents-list" v-else>
-                        <div v-for="agent in globalAgentsToShow" :key="agent.name">
+                        <div
+                            v-for="agent in globalAgentsToShow"
+                            :key="agent.name"
+                        >
                             <div v-if="agent.country === 'AR'">
                                 <p>{{ agent.name }}</p>
                                 <h3>{{ agent.position }}</h3>
@@ -93,179 +110,181 @@
 
 <script>
 // Amcharts imports
-import * as am4core from '@amcharts/amcharts4/core'
-import * as am4maps from '@amcharts/amcharts4/maps'
-import am4geodata_chileHigh from '@/constants/ChileanMap'
-import am4geodata_worldHigh from '@amcharts/amcharts4-geodata/worldHigh'
+import * as am4core from "@amcharts/amcharts4/core";
+import * as am4maps from "@amcharts/amcharts4/maps";
+import am4geodata_chileHigh from "@/constants/ChileanMap";
+import am4geodata_worldHigh from "@amcharts/amcharts4-geodata/worldHigh";
 
 // vue-function-api imports
-import { onMounted, value, computed } from 'vue-function-api'
+import { onMounted, value, computed } from "vue-function-api";
 
 // Import RegionAgents
-import { regionAgentsList, agentsList } from '../constants/agents'
+import { regionAgentsList, agentsList } from "../constants/agents";
 
 // @ is an alias to /src
-import Navbar from '@/components/Navbar.vue'
+import Navbar from "@/components/Navbar.vue";
 
 export default {
-    name: 'home',
+    name: "home",
     components: {
-        Navbar,
+        Navbar
     },
     setup() {
-        const selectedNetwork = value('CL')
-        const regionManagers = regionAgentsList
-        const globalManagers = agentsList
-        const hoveredRegion = value('')
-        const hoveredCountry = value('')
+        const selectedNetwork = value("CL");
+        const regionManagers = regionAgentsList;
+        const globalManagers = agentsList;
+        const hoveredRegion = value("");
+        const hoveredCountry = value("");
         // Chilean Map Method
         const CreateChileanDistributionMap = () => {
             // Create Instance
             const chileanMap = am4core.create(
-                'distributionMap',
+                "distributionMap",
                 am4maps.MapChart
-            )
+            );
             // Charge World Map
-            chileanMap.geodata = am4geodata_chileHigh
+            chileanMap.geodata = am4geodata_chileHigh;
             // Set Projection
-            chileanMap.projection = new am4maps.projections.Miller()
+            chileanMap.projection = new am4maps.projections.Miller();
             // Create Serie
             const chileanSeries = chileanMap.series.push(
                 new am4maps.MapPolygonSeries()
-            )
+            );
             // Disabling Zoom
-            chileanMap.chartContainer.wheelable = false
-            chileanSeries.useGeodata = true
+            chileanMap.chartContainer.wheelable = false;
+            chileanSeries.useGeodata = true;
             // Configure series
-            const polygonTemplate = chileanSeries.mapPolygons.template
-            polygonTemplate.tooltipText = '{name}'
+            const polygonTemplate = chileanSeries.mapPolygons.template;
+            polygonTemplate.tooltipText = "{name}";
             // Create hover state and set orange fill color
-            const hover = polygonTemplate.states.create('hover')
-            hover.properties.fill = am4core.color('#E7763D')
+            const hover = polygonTemplate.states.create("hover");
+            hover.properties.fill = am4core.color("#E7763D");
             // Creating Event Listener for hover action in map
             chileanSeries.mapPolygons.template.events.on(
-                'over',
+                "over",
                 ev => {
                     const isMobile = window.innerWidth < 425;
                     if (!isMobile) {
-                        hoveredRegion.value = ev.target.dataItem.dataContext.id
+                        hoveredRegion.value = ev.target.dataItem.dataContext.id;
                     }
                 },
                 this
-            )
+            );
             chileanSeries.mapPolygons.template.events.on(
-                'hit',
+                "hit",
                 ev => {
                     const isMobile = window.innerWidth < 425;
                     if (isMobile) {
-                        hoveredRegion.value = ev.target.dataItem.dataContext.id
+                        hoveredRegion.value = ev.target.dataItem.dataContext.id;
                     }
                 },
                 this
-            )
-        }
+            );
+        };
         // SouthAmerican Map Method
         const createSouthAmericanDistributionMap = () => {
             // Create Instance
             const southAmericanMap = am4core.create(
-                'distributionMap',
+                "distributionMap",
                 am4maps.MapChart
-            )
+            );
             // Charge World Map
-            southAmericanMap.geodata = am4geodata_worldHigh
+            southAmericanMap.geodata = am4geodata_worldHigh;
             // Set Projection
-            southAmericanMap.projection = new am4maps.projections.NaturalEarth1()
-            southAmericanMap.panBehavior = 'rotateLongLat'
-            southAmericanMap.deltaLongitude = 70
-            southAmericanMap.deltaLatitude = 15
-            southAmericanMap.padding(20, 20, 20, 20)
-            southAmericanMap.fill = am4core.color('#000000')
-            southAmericanMap.mouseWheelBehavior = 'none'
+            southAmericanMap.projection = new am4maps.projections.NaturalEarth1();
+            southAmericanMap.panBehavior = "rotateLongLat";
+            southAmericanMap.deltaLongitude = 70;
+            southAmericanMap.deltaLatitude = 15;
+            southAmericanMap.padding(20, 20, 20, 20);
+            southAmericanMap.fill = am4core.color("#000000");
+            southAmericanMap.mouseWheelBehavior = "none";
             southAmericanMap.homeZoomLevel = 4;
             // Create Serie
             const worldSeries = southAmericanMap.series.push(
                 new am4maps.MapPolygonSeries()
-            )
-            worldSeries.useGeodata = true
-            worldSeries.mapPolygons.template.adapter.add('fill', () => {
-                return am4core.color('#D3D3D3')
-            })
+            );
+            worldSeries.useGeodata = true;
+            worldSeries.mapPolygons.template.adapter.add("fill", () => {
+                return am4core.color("#D3D3D3");
+            });
             // Configure series
-            const polygonTemplate = worldSeries.mapPolygons.template
-            polygonTemplate.tooltipText = '{name}'
+            const polygonTemplate = worldSeries.mapPolygons.template;
+            polygonTemplate.tooltipText = "{name}";
             // Create hover state and set orange fill color
-            const hover = polygonTemplate.states.create('hover')
-            hover.properties.fill = am4core.color('#E7763D')
+            const hover = polygonTemplate.states.create("hover");
+            hover.properties.fill = am4core.color("#E7763D");
             // Creating Event Listener for hover action in map
             worldSeries.mapPolygons.template.events.on(
-                'over',
+                "over",
                 ev => {
                     const isMobile = window.innerWidth < 425;
                     if (!isMobile) {
-                        hoveredCountry.value = ev.target.dataItem.dataContext.id
+                        hoveredCountry.value =
+                            ev.target.dataItem.dataContext.id;
                     }
                 },
                 this
-            )
+            );
             worldSeries.mapPolygons.template.events.on(
-                'hit',
+                "hit",
                 ev => {
                     const isMobile = window.innerWidth < 425;
                     if (isMobile) {
-                        hoveredCountry.value = ev.target.dataItem.dataContext.id
+                        hoveredCountry.value =
+                            ev.target.dataItem.dataContext.id;
                     }
                 },
                 this
-            )
-        }
+            );
+        };
         // Zone Clicked Method
         const zoneClicked = zone => {
-            selectedNetwork.value = zone
-            if (zone === 'CL') {
-                CreateChileanDistributionMap()
+            selectedNetwork.value = zone;
+            if (zone === "CL") {
+                CreateChileanDistributionMap();
             } else {
-                createSouthAmericanDistributionMap()
+                createSouthAmericanDistributionMap();
             }
-        }
+        };
         const openUrl = url => {
-            window.open(url, '_blank')
-        }
+            window.open(url, "_blank");
+        };
         const agentsToShow = computed(() =>
             regionManagers.filter(
                 regionManager => regionManager.region === hoveredRegion.value
             )
-        )
+        );
         const globalAgentsToShow = computed(() =>
             globalManagers.filter(
                 globalManager => globalManager.country === hoveredCountry.value
             )
-        )
+        );
         onMounted(() => {
-            CreateChileanDistributionMap()
-        })
+            CreateChileanDistributionMap();
+        });
         return {
             agentsToShow,
             zoneClicked,
             selectedNetwork,
             globalAgentsToShow,
-            openUrl,
-        }
+            openUrl
+        };
     },
     methods: {
         openTab(tabName) {
-            var i, tablinks
-            tablinks = document.getElementsByClassName('subtitle')
+            var i, tablinks;
+            tablinks = document.getElementsByClassName("subtitle");
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(
-                    'active',
-                    ''
-                )
+                    "active",
+                    ""
+                );
             }
-            var mainTab = document.getElementById(tabName)
-            mainTab.classList.add('active')
-        },
-    },
-}
+            var mainTab = document.getElementById(tabName);
+            mainTab.classList.add("active");
+        }
+    }
+};
 </script>
 
 <style scoped>
@@ -312,7 +331,7 @@ export default {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
 }
 
 .distributionMap {
@@ -328,6 +347,16 @@ export default {
 .active,
 .subtitle:hover {
     color: #e96711 !important;
+}
+
+.image {
+    transform: scale(0.6, 0.6);
+    -ms-transform: scale(0.6, 0.6);
+    -webkit-transform: scale(0.6, 0.6);
+}
+
+.imageSize {
+    max-height: 120px;
 }
 
 @media screen and (max-width: 425px) {
