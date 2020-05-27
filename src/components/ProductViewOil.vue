@@ -9,7 +9,9 @@
             />
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title" id="main-title">{{ $t('Products.rootBiostimulant.title') }}</h1>
+                    <h1 class="title" id="main-title">
+                        {{ $t("Products.rootBiostimulant.title") }}
+                    </h1>
                 </div>
             </div>
         </section>
@@ -21,14 +23,27 @@
                             <div class="content">
                                 <div class="title">{{ product.name }}</div>
                                 <p align="left">{{ product.description }}</p>
-                                <p align="left">{{ product.subdescription1 }}</p>
-                                <p align="left">{{ product.subdescription2 }}</p>
-                                <p align="left">{{ product.subdescription3 }}</p>
-                                <p align="left">{{ product.subdescription4 }}</p>
-                                <p align="left">{{ product.subdescription5 }}</p>
+                                <p align="left">
+                                    {{ product.subdescription1 }}
+                                </p>
+                                <p align="left">
+                                    {{ product.subdescription2 }}
+                                </p>
+                                <p align="left">
+                                    {{ product.subdescription3 }}
+                                </p>
+                                <p align="left">
+                                    {{ product.subdescription4 }}
+                                </p>
+                                <p align="left">
+                                    {{ product.subdescription5 }}
+                                </p>
                             </div>
                             <div class="certificated">
-                                <figure class="image is-128x128" style="bottom: 0vh;">
+                                <figure
+                                    class="image is-128x128"
+                                    style="bottom: 0vh;"
+                                >
                                     <img :src="product.certificated" />
                                 </figure>
                             </div>
@@ -40,19 +55,23 @@
                             <div
                                 class="subtitle countries is-3"
                                 v-if="'Bioil-S' == productName"
-                            >Argentina - Perú</div>
+                            >
+                                Argentina - Perú
+                            </div>
                         </div>
                     </div>
                     <div
                         class="tabs tabs-main is-toggle is-medium is-fullwidth is-centered is-toggle-rounded"
                     >
                         <ul>
-                            <li>
+                            <li v-if="hideLabel">
                                 <a :href="labelPdf" target="_blank">
                                     <span class="icon">
                                         <i class="fas fa-tag"></i>
                                     </span>
-                                    <span>{{ $t('Products.buttons.label') }}</span>
+                                    <span>{{
+                                        $t("Products.buttons.label")
+                                    }}</span>
                                 </a>
                             </li>
                             <li>
@@ -60,15 +79,21 @@
                                     <span class="icon">
                                         <i class="fas fa-file-alt"></i>
                                     </span>
-                                    <span>{{ $t('Products.buttons.datasheet') }}</span>
+                                    <span>{{
+                                        $t("Products.buttons.datasheet")
+                                    }}</span>
                                 </a>
                             </li>
                             <li>
                                 <a :href="safetySheetPdf" target="_blank">
                                     <span class="icon">
-                                        <i class="fas fa-exclamation-triangle"></i>
+                                        <i
+                                            class="fas fa-exclamation-triangle"
+                                        ></i>
                                     </span>
-                                    <span>{{ $t('Products.buttons.safetysheet') }}</span>
+                                    <span>{{
+                                        $t("Products.buttons.safetysheet")
+                                    }}</span>
                                 </a>
                             </li>
                             <!-- <li>
@@ -83,6 +108,7 @@
                     </div>
                     <div class="tabs-mobile" style="display:none;">
                         <div
+                            v-if="hideLabel"
                             class="tabs is-toggle is-medium is-fullwidth is-centered is-toggle-rounded"
                         >
                             <ul>
@@ -91,7 +117,9 @@
                                         <span class="icon">
                                             <i class="fas fa-tag"></i>
                                         </span>
-                                        <span>{{ $t('Products.buttons.label') }}</span>
+                                        <span>{{
+                                            $t("Products.buttons.label")
+                                        }}</span>
                                     </a>
                                 </li>
                             </ul>
@@ -105,7 +133,9 @@
                                         <span class="icon">
                                             <i class="fas fa-file-alt"></i>
                                         </span>
-                                        <span>{{ $t('Products.buttons.datasheet') }}</span>
+                                        <span>{{
+                                            $t("Products.buttons.datasheet")
+                                        }}</span>
                                     </a>
                                 </li>
                             </ul>
@@ -117,9 +147,13 @@
                                 <li>
                                     <a :href="safetySheetPdf" target="_blank">
                                         <span class="icon">
-                                            <i class="fas fa-exclamation-triangle"></i>
+                                            <i
+                                                class="fas fa-exclamation-triangle"
+                                            ></i>
                                         </span>
-                                        <span>{{ $t('Products.buttons.safetysheet') }}</span>
+                                        <span>{{
+                                            $t("Products.buttons.safetysheet")
+                                        }}</span>
                                     </a>
                                 </li>
                             </ul>
@@ -133,24 +167,24 @@
 
 <script>
 // Import Fertilizer products
-import Navbar from '@/components/Navbar.vue'
+import Navbar from "@/components/Navbar.vue";
 
-import { watch, onBeforeMount, value, computed } from 'vue-function-api'
+import { watch, onBeforeMount, value, computed } from "vue-function-api";
 
-import { naturalOil } from '@/constants/products'
+import { naturalOil } from "@/constants/products";
 
 export default {
-    name: 'home',
+    name: "home",
     components: {
-        Navbar,
+        Navbar
     },
     setup(props, { root }) {
-        const products = naturalOil
-        const productName = root.$route.params.name
-        const labelPdf = require(`../assets/Products/${productName}1.pdf`)
-        const dataSheetPdf = require(`../assets/Products/${productName}2.pdf`)
-        const safetySheetPdf = require(`../assets/Products/${productName}3.pdf`)
-        const product = value({})
+        const products = naturalOil;
+        const productName = root.$route.params.name;
+        const labelPdf = require(`../assets/Products/${productName}1.pdf`);
+        const dataSheetPdf = require(`../assets/Products/${productName}2.pdf`);
+        const safetySheetPdf = require(`../assets/Products/${productName}3.pdf`);
+        const product = value({});
 
         // onBeforeMount(() => {
         //     this.getProduct()
@@ -164,18 +198,20 @@ export default {
         // }
 
         function showSpecs() {
-            var pdf = this.product.specs
-            window.open('data:application/pdf,' + encodeURI(pdf))
+            var pdf = this.product.specs;
+            window.open("data:application/pdf," + encodeURI(pdf));
         }
         function showSecurity() {
-            var pdf = this.product.security
-            window.open('data:application/pdf,' + encodeURI(pdf))
+            var pdf = this.product.security;
+            window.open("data:application/pdf," + encodeURI(pdf));
         }
 
         watch(
             () => root.$i18n.locale,
             newVal => {
-                newVal === 'es' ? product.value = naturalOil[productName].es : product.value = naturalOil[productName].en
+                newVal === "es"
+                    ? (product.value = naturalOil[productName].es)
+                    : (product.value = naturalOil[productName].en);
             },
             { deep: true }
         );
@@ -187,17 +223,20 @@ export default {
             safetySheetPdf,
             productName,
             product
-        }
+        };
     },
 
     computed: {
         dataSheetSource() {
-            return this.$root.$i18n.locale === 'es'
+            return this.$root.$i18n.locale === "es"
                 ? require(`@/assets/Products/${this.productName}2.pdf`)
-                : require(`@/assets/Products/${this.productName}2EN.pdf`)
+                : require(`@/assets/Products/${this.productName}2EN.pdf`);
         },
-    },
-}
+        hideLabel() {
+            return this.$root.$i18n.locale === "es" ? true : false;
+        }
+    }
+};
 </script>
 
 <style scoped>

@@ -9,7 +9,9 @@
             />
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title" id="main-title">{{ $t('Products.amendments.title') }}</h1>
+                    <h1 class="title" id="main-title">
+                        {{ $t("Products.amendments.title") }}
+                    </h1>
                 </div>
             </div>
         </section>
@@ -19,12 +21,24 @@
                     <div class="columns">
                         <div class="column is-half">
                             <div class="content">
-                                <div class="title">{{ $t('Products.amendments.name') }}</div>
-                                <p align="left">{{ $t('Products.amendments.description1') }}</p>
-                                <p align="left">{{ $t('Products.amendments.description2') }}</p>
-                                <p align="left">{{ $t('Products.amendments.description3') }}</p>
-                                <p align="left">{{ $t('Products.amendments.description4') }}</p>
-                                <p align="left">{{ $t('Products.amendments.description5') }}</p>
+                                <div class="title">
+                                    {{ $t("Products.amendments.name") }}
+                                </div>
+                                <p align="left">
+                                    {{ $t("Products.amendments.description1") }}
+                                </p>
+                                <p align="left">
+                                    {{ $t("Products.amendments.description2") }}
+                                </p>
+                                <p align="left">
+                                    {{ $t("Products.amendments.description3") }}
+                                </p>
+                                <p align="left">
+                                    {{ $t("Products.amendments.description4") }}
+                                </p>
+                                <p align="left">
+                                    {{ $t("Products.amendments.description5") }}
+                                </p>
                             </div>
                         </div>
                         <div class="column is-half">
@@ -38,12 +52,14 @@
                         class="tabs tabs-main is-toggle is-medium is-fullwidth is-centered is-toggle-rounded"
                     >
                         <ul>
-                            <li>
+                            <li v-if="hideLabel">
                                 <a :href="labelPdf" target="_blank">
                                     <span class="icon">
                                         <i class="fas fa-tag"></i>
                                     </span>
-                                    <span>{{ $t('Products.buttons.label') }}</span>
+                                    <span>{{
+                                        $t("Products.buttons.label")
+                                    }}</span>
                                 </a>
                             </li>
                             <li>
@@ -51,15 +67,21 @@
                                     <span class="icon">
                                         <i class="fas fa-file-alt"></i>
                                     </span>
-                                    <span>{{ $t('Products.buttons.datasheet') }}</span>
+                                    <span>{{
+                                        $t("Products.buttons.datasheet")
+                                    }}</span>
                                 </a>
                             </li>
                             <li>
                                 <a :href="safetySheetSource" target="_blank">
                                     <span class="icon">
-                                        <i class="fas fa-exclamation-triangle"></i>
+                                        <i
+                                            class="fas fa-exclamation-triangle"
+                                        ></i>
                                     </span>
-                                    <span>{{ $t('Products.buttons.safetysheet') }}</span>
+                                    <span>{{
+                                        $t("Products.buttons.safetysheet")
+                                    }}</span>
                                 </a>
                             </li>
                             <!-- <li>
@@ -74,6 +96,7 @@
                     </div>
                     <div class="tabs-mobile" style="display:none;">
                         <div
+                            v-if="hideLabel"
                             class="tabs is-toggle is-medium is-fullwidth is-centered is-toggle-rounded"
                         >
                             <ul>
@@ -82,7 +105,9 @@
                                         <span class="icon">
                                             <i class="fas fa-tag"></i>
                                         </span>
-                                        <span>{{ $t('Products.buttons.label') }}</span>
+                                        <span>{{
+                                            $t("Products.buttons.label")
+                                        }}</span>
                                     </a>
                                 </li>
                             </ul>
@@ -96,7 +121,9 @@
                                         <span class="icon">
                                             <i class="fas fa-file-alt"></i>
                                         </span>
-                                        <span>{{ $t('Products.buttons.datasheet') }}</span>
+                                        <span>{{
+                                            $t("Products.buttons.datasheet")
+                                        }}</span>
                                     </a>
                                 </li>
                             </ul>
@@ -106,11 +133,18 @@
                         >
                             <ul>
                                 <li>
-                                    <a :href="safetySheetSource" target="_blank">
+                                    <a
+                                        :href="safetySheetSource"
+                                        target="_blank"
+                                    >
                                         <span class="icon">
-                                            <i class="fas fa-exclamation-triangle"></i>
+                                            <i
+                                                class="fas fa-exclamation-triangle"
+                                            ></i>
                                         </span>
-                                        <span>{{ $t('Products.buttons.safetysheet') }}</span>
+                                        <span>{{
+                                            $t("Products.buttons.safetysheet")
+                                        }}</span>
                                     </a>
                                 </li>
                             </ul>
@@ -124,47 +158,50 @@
 
 <script>
 // @ is an alias to /src
-import { onMounted, value, computed } from 'vue-function-api'
-import Navbar from '@/components/Navbar.vue'
+import { onMounted, value, computed } from "vue-function-api";
+import Navbar from "@/components/Navbar.vue";
 
 // vue-function-api imports
 
 // Import Fertilizer products
-import { amendments } from '../../constants/products'
+import { amendments } from "../../constants/products";
 
-import labelPdf from '../../assets/Products/bioamino1.pdf'
-import dataSheetPdf from '../../assets/Products/bioamino2.pdf'
-import safetySheetPdf from '../../assets/Products/bioamino3.pdf'
+import labelPdf from "../../assets/Products/bioamino1.pdf";
+import dataSheetPdf from "../../assets/Products/bioamino2.pdf";
+import safetySheetPdf from "../../assets/Products/bioamino3.pdf";
 
 export default {
-    name: 'home',
+    name: "home",
     components: {
-        Navbar,
+        Navbar
     },
     setup() {
-        const products = amendments
-        const url = '/static/product-logo/Variantes-productosColor-06.png'
+        const products = amendments;
+        const url = "/static/product-logo/Variantes-productosColor-06.png";
         return {
             products,
             url,
             labelPdf,
             dataSheetPdf,
-            safetySheetPdf,
-        }
+            safetySheetPdf
+        };
     },
     computed: {
         dataSheetSource() {
-            return this.$root.$i18n.locale === 'es'
+            return this.$root.$i18n.locale === "es"
                 ? require(`../../assets/Products/bioamino2.pdf`)
-                : require(`../../assets/Products/bioamino2EN.pdf`)
+                : require(`../../assets/Products/bioamino2EN.pdf`);
         },
         safetySheetSource() {
-            return this.$root.$i18n.locale === 'es'
+            return this.$root.$i18n.locale === "es"
                 ? require(`../../assets/Products/bioamino3.pdf`)
-                : require(`../../assets/Products/Bioamino3EN.pdf`)
+                : require(`../../assets/Products/Bioamino3EN.pdf`);
         },
-    },
-}
+        hideLabel() {
+            return this.$root.$i18n.locale === "es" ? true : false;
+        }
+    }
+};
 </script>
 
 <style scoped>
