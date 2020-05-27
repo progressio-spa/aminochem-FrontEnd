@@ -388,7 +388,7 @@ export default {
                 slidesToShow: 3,
                 infinite: true,
                 pagination: false,
-                initialSlide: 3,
+                initialSlide: 0,
                 breakpoints: [
                     {
                         changePoint: 768,
