@@ -2,10 +2,16 @@
     <div class="about">
         <Navbar></Navbar>
         <section class="hero is-medium has-background">
-            <img alt="Grass" class="hero-background is-transparent" src="@/assets/Home/people.jpg" />
+            <img
+                alt="Grass"
+                class="hero-background is-transparent"
+                src="@/assets/Home/people.jpg"
+            />
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title is-1" id="main-title">{{ $t('AboutUs.title') }}</h1>
+                    <h1 class="title is-1" id="main-title">
+                        {{ $t("AboutUs.title") }}
+                    </h1>
                 </div>
             </div>
         </section>
@@ -13,12 +19,12 @@
         <br />
         <section class="main-content">
             <div class="container">
-                <h1 class="subtitle is-3">{{ $t('AboutUs.subtitle') }}</h1>
+                <h1 class="subtitle is-3">{{ $t("AboutUs.subtitle") }}</h1>
                 <br />
                 <div class="content">
-                    <p>{{ $t('AboutUs.paragraph1') }}</p>
+                    <p>{{ $t("AboutUs.paragraph1") }}</p>
                     <br />
-                    <p>{{ $t('AboutUs.paragraph2') }}</p>
+                    <p>{{ $t("AboutUs.paragraph2") }}</p>
                 </div>
                 <br />
                 <div class="columns images is-desktop">
@@ -29,12 +35,15 @@
                     </div>
                     <div class="column">
                         <figure class="image aux is-square">
-                            <img src="@/assets/AboutUs/a2.jpg" class="rotate90" />
+                            <img
+                                src="@/assets/AboutUs/a2.jpg"
+                                class="rotate90"
+                            />
                         </figure>
                     </div>
                     <div class="column">
-                        <figure class="image aux is-square" >
-                            <img src="@/assets/AboutUs/a3.jpg"  />
+                        <figure class="image aux is-square">
+                            <img src="@/assets/AboutUs/a3.jpg" />
                         </figure>
                     </div>
                     <div class="column">
@@ -55,39 +64,45 @@
         <br />
         <section class="team">
             <div class="container">
-                <h1 class="subtitle is-3">{{ $t('AboutUs.team') }}</h1>
+                <h1 class="subtitle is-3">{{ $t("AboutUs.team") }}</h1>
                 <br />
                 <div class="columns map-container">
                     <div class="is-6 agents-list">
-                        <div>
+                        <div v-if="hoveredFlag == false">
                             <div class="columns agent-container">
                                 <div class="column">
                                     <figure class="image is-128x128">
-                                        <img class="is-rounded"
-                                            :src="require('@/assets/Agents/FranciscoAscui.jpg')"/>
+                                        <img
+                                            class="is-rounded"
+                                            :src="
+                                                require('@/assets/Agents/FranciscoAscui.jpg')
+                                            "
+                                        />
                                     </figure>
                                 </div>
                                 <div class="column">
                                     <br />
                                     <h1>Francisco Ascui</h1>
-                                    <h1>{{ $t('AboutUs.cargo1') }}</h1>
+                                    <h1>{{ $t("AboutUs.cargo1") }}</h1>
                                     <h1>francisco.ascui@aminochem.cl</h1>
                                 </div>
                             </div>
                             <br />
-                        </div>
-                        <div>
                             <div class="columns agent-container">
                                 <div class="column">
                                     <figure class="image is-128x128">
-                                        <img class="is-rounded"
-                                            :src="require('@/assets/Agents/CarlosBaier.jpg')"/>
+                                        <img
+                                            class="is-rounded"
+                                            :src="
+                                                require('@/assets/Agents/CarlosBaier.jpg')
+                                            "
+                                        />
                                     </figure>
                                 </div>
                                 <div class="column">
                                     <br />
                                     <h1>Carlos Baier A.</h1>
-                                    <h1>{{ $t('AboutUs.cargo2') }}</h1>
+                                    <h1>{{ $t("AboutUs.cargo2") }}</h1>
                                     <h1>cbaier@aminochem.cl</h1>
                                     <h1>+56 9 96379251</h1>
                                 </div>
@@ -98,7 +113,10 @@
                             <div class="columns agent-container">
                                 <div class="column">
                                     <figure class="image is-128x128">
-                                        <img class="is-rounded" :src="agent.img" />
+                                        <img
+                                            class="is-rounded"
+                                            :src="agent.img"
+                                        />
                                     </figure>
                                 </div>
                                 <div class="column">
@@ -129,7 +147,7 @@
             />
             <div class="hero-head">
                 <div class="container">
-                    <h1 class="title">{{ $t('AboutUs.history') }}</h1>
+                    <h1 class="title">{{ $t("AboutUs.history") }}</h1>
                 </div>
             </div>
             <div class="hero-body">
@@ -146,10 +164,8 @@
                             </div>
                             <div class="card-content">
                                 <div class="content">
-                                    <span>
-                                        I
-                                    </span><br>
-                                    {{ $t('AboutUs.card1-content') }}
+                                    <span> I </span><br />
+                                    {{ $t("AboutUs.card1-content") }}
                                     <br />
                                 </div>
                             </div>
@@ -167,10 +183,8 @@
                             </div>
                             <div class="card-content">
                                 <div class="content">
-                                    <span>
-                                        II
-                                    </span><br>
-                                    {{ $t('AboutUs.card2-content') }}
+                                    <span> II </span><br />
+                                    {{ $t("AboutUs.card2-content") }}
                                     <br />
                                 </div>
                             </div>
@@ -188,10 +202,8 @@
                             </div>
                             <div class="card-content">
                                 <div class="content">
-                                    <span>
-                                        III
-                                    </span><br>
-                                    {{ $t('AboutUs.card3-content') }}
+                                    <span> III </span><br />
+                                    {{ $t("AboutUs.card3-content") }}
                                     <br />
                                 </div>
                             </div>
@@ -209,10 +221,8 @@
                             </div>
                             <div class="card-content">
                                 <div class="content">
-                                    <span>
-                                        IV
-                                    </span><br>
-                                    {{ $t('AboutUs.card4-content') }}
+                                    <span> IV </span><br />
+                                    {{ $t("AboutUs.card4-content") }}
                                     <br />
                                 </div>
                             </div>
@@ -223,103 +233,113 @@
         </section>
         <br />
         <br />
-        <ChileanMapModal :modalIsActive="showChileanModal" :closeModal="closeChileanModal" />
+        <ChileanMapModal
+            :modalIsActive="showChileanModal"
+            :closeModal="closeChileanModal"
+        />
     </div>
 </template>
 
 <script>
-import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min'
+import bulmaCarousel from "bulma-carousel/dist/js/bulma-carousel.min";
 
 // Amcharts imports
-import * as am4core from '@amcharts/amcharts4/core'
-import * as am4maps from '@amcharts/amcharts4/maps'
-import am4geodata_worldHigh from '@amcharts/amcharts4-geodata/worldHigh'
+import * as am4core from "@amcharts/amcharts4/core";
+import * as am4maps from "@amcharts/amcharts4/maps";
+import am4geodata_worldHigh from "@amcharts/amcharts4-geodata/worldHigh";
 
 // vue-function-api
-import { watch, onBeforeMount, onMounted, value, computed } from 'vue-function-api'
+import {
+    watch,
+    onBeforeMount,
+    onMounted,
+    value,
+    computed
+} from "vue-function-api";
 
 // Agents import
-import { regionManagers, regionManagersEN } from '../constants/agents'
+import { regionManagers, regionManagersEN } from "../constants/agents";
 
 // @ is an alias to /src
-import Navbar from '@/components/Navbar.vue'
-import ChileanMapModal from '@/components/ChileanMapModal.vue'
+import Navbar from "@/components/Navbar.vue";
+import ChileanMapModal from "@/components/ChileanMapModal.vue";
 
 export default {
-    name: 'home',
+    name: "home",
     components: {
         Navbar,
-        ChileanMapModal,
+        ChileanMapModal
     },
     setup(props, { root }) {
         const countryManagers = regionManagers;
         const countryManagersEN = regionManagersEN;
-        
+
         // duplicate countries variable to delete countries that had country managers
         const excludedCountries = [
-            'AR',
-            'BO',
-            'BR',
-            'CL',
-            'CO',
-            'EC',
-            'PY',
-            'PE',
-            'UY',
-            'VE',
-        ]
+            "AR",
+            "BO",
+            "BR",
+            "CL",
+            "CO",
+            "EC",
+            "PY",
+            "PE",
+            "UY",
+            "VE"
+        ];
         countryManagers.forEach(countryManager => {
             const countryIndex = excludedCountries.indexOf(
                 countryManager.country
-            )
+            );
             if (countryIndex !== -1) {
-                excludedCountries.splice(countryIndex, 1)
+                excludedCountries.splice(countryIndex, 1);
             }
-        })
-        const hoveredCountry = value('')
-        const showChileanModal = value(false)
+        });
+        const hoveredCountry = value("");
+        const hoveredFlag = value(false);
+        const showChileanModal = value(false);
         const closeChileanModal = () => {
-            showChileanModal.value = false
-        }
+            showChileanModal.value = false;
+        };
         const createSouthAmericanMap = () => {
             // Create Instance
             const southAmericanMap = am4core.create(
-                'teamSouthAmericanMap',
+                "teamSouthAmericanMap",
                 am4maps.MapChart
-            )
+            );
             // Charge World Map
-            southAmericanMap.geodata = am4geodata_worldHigh
+            southAmericanMap.geodata = am4geodata_worldHigh;
             // Set Projection
-            southAmericanMap.projection = new am4maps.projections.Miller()
+            southAmericanMap.projection = new am4maps.projections.Miller();
             // Create Serie
             const worldSeries = southAmericanMap.series.push(
                 new am4maps.MapPolygonSeries()
-            )
+            );
             // Add South American Countries to Map, excluding anyone else
             worldSeries.include = [
-                'AR',
-                'BO',
-                'BR',
-                'CL',
-                'CO',
-                'EC',
-                'PY',
-                'PE',
-                'UY',
-                'VE',
-            ]
+                "AR",
+                "BO",
+                "BR",
+                "CL",
+                "CO",
+                "EC",
+                "PY",
+                "PE",
+                "UY",
+                "VE"
+            ];
             // Disabling Zoom
-            southAmericanMap.chartContainer.wheelable = false
-            worldSeries.useGeodata = true
+            southAmericanMap.chartContainer.wheelable = false;
+            worldSeries.useGeodata = true;
             // Configure series
-            const polygonTemplate = worldSeries.mapPolygons.template
-            polygonTemplate.tooltipText = '{name}'
+            const polygonTemplate = worldSeries.mapPolygons.template;
+            polygonTemplate.tooltipText = "{name}";
             // Create hover state and set orange fill color
-            const hover = polygonTemplate.states.create('hover')
-            hover.properties.fill = am4core.color('#E7763D')
+            const hover = polygonTemplate.states.create("hover");
+            hover.properties.fill = am4core.color("#E7763D");
             // Creating Event Listener for hover action in map
             polygonTemplate.events.on(
-                'over',
+                "over",
                 ev => {
                     const isMobile = window.innerWidth < 425;
                     if (
@@ -330,20 +350,22 @@ export default {
                         if (isMobile) {
                             return;
                         }
-                        hoveredCountry.value = ev.target.dataItem.dataContext.id
+                        hoveredCountry.value =
+                            ev.target.dataItem.dataContext.id;
+                        hoveredFlag.value = true;
                     } else {
-                        ev.target.isHover = false
+                        ev.target.isHover = false;
                     }
                 },
                 this
-            )
+            );
             polygonTemplate.events.on(
-                'hit',
+                "hit",
                 ev => {
                     const isMobile = window.innerWidth < 425;
                     if (!isMobile) {
-                        if (ev.target.dataItem.dataContext.id === 'CL') {
-                            showChileanModal.value = true
+                        if (ev.target.dataItem.dataContext.id === "CL") {
+                            showChileanModal.value = true;
                         }
                     } else {
                         if (
@@ -351,15 +373,17 @@ export default {
                                 ev.target.dataItem.dataContext.id
                             )
                         ) {
-                            hoveredCountry.value = ev.target.dataItem.dataContext.id
+                            hoveredCountry.value =
+                                ev.target.dataItem.dataContext.id;
+                            hoveredFlag.value = true;
                         }
                     }
                 },
                 this
-            )
-        }
+            );
+        };
         onMounted(() => {
-            bulmaCarousel.attach('#carousel-demo', {
+            bulmaCarousel.attach("#carousel-demo", {
                 slidesToScroll: 1,
                 slidesToShow: 3,
                 infinite: true,
@@ -370,40 +394,39 @@ export default {
                         changePoint: 768,
                         slidesToShow: 1,
                         slidesToScroll: 1,
-                        initialSlide: 0,
+                        initialSlide: 0
                     },
                     {
                         changePoint: 1025,
                         slidesToShow: 1,
                         slidesToScroll: 1,
-                        initialSlide: 0,
-                    },
-                ],
-            })
-            createSouthAmericanMap()
-        })
+                        initialSlide: 0
+                    }
+                ]
+            });
+            createSouthAmericanMap();
+        });
         const countriesToShow = computed(() => {
-            if(root.$i18n.locale === 'es'){
+            if (root.$i18n.locale === "es") {
                 return countryManagers.filter(
-                        countryManager =>
+                    countryManager =>
                         countryManager.country === hoveredCountry.value
-                )
-
-            }  else {
+                );
+            } else {
                 return countryManagersEN.filter(
-                        countryManager =>
+                    countryManager =>
                         countryManager.country === hoveredCountry.value
-                )
+                );
             }
-        }
-        )
+        });
         return {
             countriesToShow,
             closeChileanModal,
             showChileanModal,
-        }
-    },
-}
+            hoveredFlag
+        };
+    }
+};
 </script>
 
 <style scoped>

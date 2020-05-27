@@ -5,17 +5,22 @@
             <div class="white-card">
                 <div class="container map-container">
                     <div class="is-6 agents-list">
-                        <div>
+                        <div v-if="hoveredFLag == false">
                             <div class="columns">
                                 <div class="column">
                                     <figure class="image is-128x128">
-                                        <img class="is-rounded" :src="require('@/assets/Agents/PabloVergara.jpg')" />
+                                        <img
+                                            class="is-rounded"
+                                            :src="
+                                                require('@/assets/Agents/PabloVergara.jpg')
+                                            "
+                                        />
                                     </figure>
                                 </div>
                                 <div class="column">
                                     <br />
                                     <h1>Juan Pablo Vergara</h1>
-                                    <h1>{{ $t('AboutUs.cargo4') }}</h1>
+                                    <h1>{{ $t("AboutUs.cargo4") }}</h1>
                                     <h1>jvergara@aminochem.cl</h1>
                                     <h1>+56 9 68310700</h1>
                                 </div>
@@ -26,7 +31,10 @@
                             <div class="columns">
                                 <div class="column">
                                     <figure class="image is-128x128">
-                                        <img class="is-rounded" :src="agent.img" />
+                                        <img
+                                            class="is-rounded"
+                                            :src="agent.img"
+                                        />
                                     </figure>
                                 </div>
                                 <div class="column">
@@ -46,89 +54,95 @@
                 </div>
             </div>
         </div>
-        <button class="modal-close is-large" aria-label="close" @click="closeModal"></button>
+        <button
+            class="modal-close is-large"
+            aria-label="close"
+            @click="closeModal"
+        ></button>
     </div>
 </template>
 
 <script>
-import { onMounted, value, computed } from 'vue-function-api'
+import { onMounted, value, computed } from "vue-function-api";
 
-import * as am4core from '@amcharts/amcharts4/core'
-import * as am4maps from '@amcharts/amcharts4/maps'
-import am4geodata_chileHigh from '@/constants/ChileanMap'
+import * as am4core from "@amcharts/amcharts4/core";
+import * as am4maps from "@amcharts/amcharts4/maps";
+import am4geodata_chileHigh from "@/constants/ChileanMap";
 
-import { chileanManagers, chileanManagersEN } from '../constants/agents'
+import { chileanManagers, chileanManagersEN } from "../constants/agents";
 
 export default {
     props: {
         modalIsActive: {
             type: Boolean,
-            default: false,
+            default: false
         },
         closeModal: {
             type: Function,
-            default: () => {},
-        },
+            default: () => {}
+        }
     },
     setup(props, { root }) {
-        const hoveredRegion = value('')
-        const regionManagers = chileanManagers
-        const regionManagersEN = chileanManagersEN
+        const hoveredRegion = value("");
+        const hoveredFLag = value(false);
+        const regionManagers = chileanManagers;
+        const regionManagersEN = chileanManagersEN;
         const CreateChileanDistributionMap = () => {
             // Create Instance
             const chileanMap = am4core.create(
-                'distributionMap',
+                "distributionMap",
                 am4maps.MapChart
-            )
+            );
             // Charge World Map
-            chileanMap.geodata = am4geodata_chileHigh
+            chileanMap.geodata = am4geodata_chileHigh;
             // Set Projection
-            chileanMap.projection = new am4maps.projections.Miller()
+            chileanMap.projection = new am4maps.projections.Miller();
             // Create Serie
             const chileanSeries = chileanMap.series.push(
                 new am4maps.MapPolygonSeries()
-            )
+            );
             // Disabling Zoom
-            chileanMap.chartContainer.wheelable = false
-            chileanSeries.useGeodata = true
+            chileanMap.chartContainer.wheelable = false;
+            chileanSeries.useGeodata = true;
             // Configure series
-            const polygonTemplate = chileanSeries.mapPolygons.template
-            polygonTemplate.tooltipText = '{name}'
+            const polygonTemplate = chileanSeries.mapPolygons.template;
+            polygonTemplate.tooltipText = "{name}";
             // Create hover state and set orange fill color
-            const hover = polygonTemplate.states.create('hover')
-            hover.properties.fill = am4core.color('#E7763D')
+            const hover = polygonTemplate.states.create("hover");
+            hover.properties.fill = am4core.color("#E7763D");
             // Creating Event Listener for hover action in map
             chileanSeries.mapPolygons.template.events.on(
-                'over',
+                "over",
                 ev => {
-                    console.log(ev.target.dataItem.dataContext.id)
-                    hoveredRegion.value = ev.target.dataItem.dataContext.id
+                    console.log(ev.target.dataItem.dataContext.id);
+                    hoveredRegion.value = ev.target.dataItem.dataContext.id;
+                    hoveredFLag.value = true;
                 },
                 this
-            )
-        }
-        const agentsToShow = computed(() =>{
-            if(root.$i18n.locale === 'es'){
+            );
+        };
+        const agentsToShow = computed(() => {
+            if (root.$i18n.locale === "es") {
                 return regionManagers.filter(
-                regionManager => regionManager.region === hoveredRegion.value
-            )
-
+                    regionManager =>
+                        regionManager.region === hoveredRegion.value
+                );
             } else {
                 return regionManagersEN.filter(
-                regionManager => regionManager.region === hoveredRegion.value
-            )
+                    regionManager =>
+                        regionManager.region === hoveredRegion.value
+                );
             }
-        }
-            
-        )
+        });
         onMounted(() => {
-            CreateChileanDistributionMap()
-        })
+            CreateChileanDistributionMap();
+        });
         return {
             agentsToShow,
-        }
-    },
-}
+            hoveredFLag
+        };
+    }
+};
 </script>
 
 <style scoped>
