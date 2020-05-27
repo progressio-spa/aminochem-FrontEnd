@@ -498,7 +498,7 @@ export default {
 }
 
 .agents-list {
-    width: 30vw;
+    min-width: 380px;
     height: 100vh;
     display: flex;
     flex-direction: column;
