@@ -1,8 +1,36 @@
 /* eslint-disable indent */
 <template>
     <div class="home">
-        <section class="hero is-fullheight has-bg-img" id="main">
+        <section class="hero is-fullheight has-carousel" id="main">
+            <div id="carousel-demo" class="hero-carousel">
+                <div class="carousel-item">
+                    <img
+                        alt="Grass"
+                        class="hero-background-home is-transparent"
+                        :src="getCorouselImg(1)"
+                    />
+                </div>
+                <div class="carousel-item">
+                    <img
+                        alt="Grass"
+                        class="hero-background-home is-transparent"
+                        :src="getCorouselImg(2)"
+                    />
+                </div>
+                <div class="carousel-item">
+                    <img
+                        alt="Grass"
+                        class="hero-background-home is-transparent"
+                        :src="getCorouselImg(3)"
+                    />
+                </div>
+            </div>
             <Navbar></Navbar>
+            <div class="hero-body">
+                <div class="container has-text-left" id="mainText">
+                    <!-- <h1 class="title">{{ $t('Home.MainText') }}</h1> -->
+                </div>
+            </div>
         </section>
 
         <section class="section">
@@ -138,28 +166,28 @@ export default {
         });
     },
     methods: {
-        // getCorouselImg(index) {
-        //     const isMobile = window.innerWidth < 775;
-        //     if (index === 1) {
-        //         if (isMobile) {
-        //             return require("@/assets/Home/corouselResp1.png");
-        //         } else {
-        //             return require("@/assets/Home/prueba-01.png");
-        //         }
-        //     } else if (index === 2) {
-        //         if (isMobile) {
-        //             return require("@/assets/Home/corouselResp2.png");
-        //         } else {
-        //             return require("@/assets/Home/prueba-02.png");
-        //         }
-        //     } else if (index === 3) {
-        //         if (isMobile) {
-        //             return require("@/assets/Home/corouselResp3.png");
-        //         } else {
-        //             return require("@/assets/Home/prueba-03.png");
-        //         }
-        //     }
-        // }
+        getCorouselImg(index) {
+            const isMobile = window.innerWidth < 775;
+            if (index === 1) {
+                if (isMobile) {
+                    return require("@/assets/Home/corouselResp1.png");
+                } else {
+                    return require("@/assets/Home/prueba-01.png");
+                }
+            } else if (index === 2) {
+                if (isMobile) {
+                    return require("@/assets/Home/corouselResp2.png");
+                } else {
+                    return require("@/assets/Home/prueba-02.png");
+                }
+            } else if (index === 3) {
+                if (isMobile) {
+                    return require("@/assets/Home/corouselResp3.png");
+                } else {
+                    return require("@/assets/Home/prueba-03.png");
+                }
+            }
+        }
     },
     computed: {
         videoSource() {
@@ -172,18 +200,12 @@ export default {
 </script>
 
 <style scoped>
-.has-bg-img {
-    background: url("../assets/Home/prueba-02.png") center center;
-    background-size: cover;
-}
-
 .media-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
-
 .hero.is-success {
     color: #23d160;
 }
@@ -198,23 +220,19 @@ export default {
     width: 100%;
     height: 100%;
 }
-
 .hero-background-home {
     position: relative;
     width: 100%;
 }
-
 #main .hero-body {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     margin-top: 5%;
 }
-
 .hero-body > .container > .title {
     font-size: 4.5rem;
 }
-
 .title {
     color: #585858;
     /*align-items: center;*/
@@ -222,34 +240,28 @@ export default {
     flex-direction: column;
     align-items: center;
 }
-
 #mainText {
     position: absolute;
     left: 10%;
     max-width: 30%;
 }
-
 a {
     color: #585858;
     cursor: pointer;
     text-decoration: none;
 }
-
 .video-container {
     padding-bottom: 4rem !important;
     padding-top: 4rem !important;
 }
-
 .title-video {
     margin-bottom: 6vh;
 }
-
 .aux {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
         0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
         0 16px 32px rgba(0, 0, 0, 0.07);
 }
-
 @media screen and (min-width: 1214px) and (max-width: 1408px) {
     .card-content {
         min-height: 27vh;
@@ -257,10 +269,6 @@ a {
 }
 /* Mobile Horizontal y tablet vertical */
 @media screen and (min-width: 481px) and (max-width: 768px) {
-    .has-bg-img {
-        background: url("../assets/Home/corouselResp1.png") center center;
-        background-size: cover;
-    }
     #mainText {
         left: 10%;
         max-width: 80%;
@@ -276,12 +284,7 @@ a {
         max-width: 80%;
     }
 }
-
 @media screen and (max-width: 425px) {
-    .has-bg-img {
-        background: url("../assets/Home/corouselResp1.png") center center;
-        background-size: cover;
-    }
     .carousel-item {
         height: 100vh;
     }
