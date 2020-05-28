@@ -392,7 +392,7 @@ export const chileanManagers = [
   },
   {
     name: "Juan Pablo Vergara",
-    position: "Agente Zonal",
+    position: "Subgerente venta nacional",
     email: "jvergara@aminochem.cl",
     phone: "+56 9 68310700",
     region: "CL-LI",
@@ -507,7 +507,7 @@ export const chileanManagersEN = [
   },
   {
     name: "Juan Pablo Vergara",
-    position: "Sales representative",
+    position: "National sales assistant manager",
     email: "jvergara@aminochem.cl",
     phone: "+56 9 68310700",
     region: "CL-LI",
