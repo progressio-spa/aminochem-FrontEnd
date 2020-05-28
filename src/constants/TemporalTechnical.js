@@ -20,3 +20,18 @@ export const ipd = {
     pdfName: "demo3"
   }
 };
+
+export const p = {
+  demo4: {
+    title: "Bioamino-L: Un efectivo activador biológico de suelos",
+    imgURL: require("@/assets/Temporal/demo4.jpg"),
+    subtitle: "Use of soil/root bio-stimulant",
+    pdfName: "demo4"
+  },
+  demo5: {
+    title: "Bioamino-L: Vida de la risosfera",
+    imgURL: require("@/assets/Temporal/demo5.jpg"),
+    subtitle: "Use of Bioamino-L",
+    pdfName: "demo5"
+  }
+};
