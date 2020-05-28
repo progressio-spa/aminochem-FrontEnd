@@ -152,6 +152,20 @@
             <div class="hero-body">
                 <div class="container">
                     <div class="columns is-multiline is-desktop">
+                        <!-- información estatica -->
+                        <div
+                            class="column is-one-third"
+                            v-for="(news, index) in publicationStatic"
+                            :key="index"
+                        >
+                            <BlogCard
+                                :title="news.title"
+                                :newsImage="news.imgURL"
+                                :subtitle="news.subtitle"
+                                :pdfName="news.pdfName"
+                            />
+                        </div>
+                        <!--  -->
                         <div
                             class="column is-one-third"
                             v-for="(news, index) in publications"
@@ -241,7 +255,7 @@ import { onCreated, value } from "vue-function-api";
 import { isAdmin } from "@/api/requests/authorization";
 import { getPostsByCategory } from "@/api/requests/posts";
 
-import { ipd } from "@/constants/TemporalTechnical";
+import { ipd, p } from "@/constants/TemporalTechnical";
 
 // @ is an alias to /src
 import Navbar from "@/components/Navbar.vue";
@@ -260,6 +274,7 @@ export default {
         const iplusd = value([]);
         const iplusdStatic = value([]); // estatico
         const publications = value([]);
+        const publicationStatic = value([]);
         const activities = value([]);
         const news = value([]);
         const getAndSetCategoriesPosts = async () => {
@@ -274,6 +289,7 @@ export default {
             activities.value = responses[2].data;
             news.value = responses[3].data;
             iplusdStatic.value = ipd;
+            publicationStatic.value = p;
         };
         onCreated(async () => {
             try {
@@ -291,6 +307,7 @@ export default {
             iplusd,
             iplusdStatic,
             publications,
+            publicationStatic,
             activities,
             news,
             userIsAdmin,
