@@ -456,7 +456,7 @@ export default {
 }
 
 .card-content {
-    min-height: 12rem;
+    min-height: 14rem;
 }
 
 .card > .card-content > .media > .media-content > .subtitle {
