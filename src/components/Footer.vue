@@ -17,47 +17,79 @@
 
                     <div class="column">
                         <a class="item">
-                            <router-link to="/about">{{ $t('Navbar.aboutUs') }}</router-link>
+                            <router-link to="/about">{{
+                                $t("Navbar.aboutUs")
+                            }}</router-link>
                         </a>
                     </div>
                     <div class="column">
                         <a class="item">
-                            <router-link to="/products/fertilizers">{{ $t('Navbar.products') }}</router-link>
+                            <router-link to="/products/fertilizers">{{
+                                $t("Navbar.products")
+                            }}</router-link>
                         </a>
                     </div>
                     <div class="column">
                         <a class="item">
-                            <router-link to="/distributionNetwork">{{ $t('Navbar.network') }}</router-link>
+                            <router-link to="/distributionNetwork">{{
+                                $t("Navbar.network")
+                            }}</router-link>
                         </a>
                     </div>
                     <div class="column">
                         <a class="item">
-                            <router-link to="/technicalSection">{{ $t('Navbar.technical') }}</router-link>
+                            <router-link to="/technicalSection">{{
+                                $t("Navbar.technical")
+                            }}</router-link>
                         </a>
                     </div>
                     <div class="column">
                         <div class="item">
-                            <router-link to="/contact">{{ $t('Navbar.contact') }}</router-link>
+                            <router-link to="/contact">{{
+                                $t("Navbar.contact")
+                            }}</router-link>
                         </div>
                     </div>
                     <div class="column">
                         <div class="footer-item">
                             <a>
-                                <img @click="goToFiordoAustral" src="@/assets/logoFiordo.png" alt="Fiordo" />
+                                <img
+                                    @click="goToFiordoAustral"
+                                    src="@/assets/logoFiordo.png"
+                                    alt="Fiordo"
+                                />
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="columns is-mobile">
                     <div class="column rrss is-4 is-offset-4">
-                        <a href="https://www.facebook.com/Aminochem-111858680468029/?modal=admin_todo_tour" target="_blank">
-                            <img src="@/assets/Social/facebook.png" alt="Facebook" />
+                        <a
+                            href="https://www.facebook.com/Aminochem-111858680468029/?modal=admin_todo_tour"
+                            target="_blank"
+                        >
+                            <img
+                                src="@/assets/Social/facebook.png"
+                                alt="Facebook"
+                            />
                         </a>
-                        <a href="https://www.instagram.com/aminochemchile/" target="_blank">
-                            <img src="@/assets/Social/instagram.png" alt="Instagram" />
+                        <a
+                            href="https://www.instagram.com/aminochemchile/"
+                            target="_blank"
+                        >
+                            <img
+                                src="@/assets/Social/instagram.png"
+                                alt="Instagram"
+                            />
                         </a>
-                        <a href="https://www.linkedin.com/company/65291249/admin/" target="_blank">
-                            <img src="@/assets/Social/linkedin.png" alt="LinkedIn" />
+                        <a
+                            href="https://www.linkedin.com/company/65291249/admin/"
+                            target="_blank"
+                        >
+                            <img
+                                src="@/assets/Social/linkedin.png"
+                                alt="LinkedIn"
+                            />
                         </a>
                     </div>
                 </div>
@@ -67,7 +99,10 @@
             <div class="hero-footer">
                 <div class="last-content">
                     <div class="paragraph">
-                        <p>Av. Blanca 1117, Maipú, Santiago - Bernardino 1990, Puerto Montt, Chile</p>
+                        <p>
+                            Av. Esquina Blanca 1117, Maipú, Santiago -
+                            Bernardino 1990, Puerto Montt, Chile
+                        </p>
                     </div>
                     <div class="watermark">
                         <p>©copyright 2019</p>
@@ -82,14 +117,14 @@
 export default {
     methods: {
         upPage() {
-            document.body.scrollTop = 0 // For Safari
-            document.documentElement.scrollTop = 0
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0;
         },
         goToFiordoAustral() {
             window.open("http://fiordoaustral.com/");
         }
-    },
-}
+    }
+};
 </script>
 
 <style scoped>

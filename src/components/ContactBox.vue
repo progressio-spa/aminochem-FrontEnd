@@ -4,7 +4,9 @@
             <div class="column is-half">
                 <div class="color">
                     <div class="main-info">
-                        <div class="title is-4">{{ $t('Contact.contactUs') }}</div>
+                        <div class="title is-4">
+                            {{ $t("Contact.contactUs") }}
+                        </div>
                         <br />
                         <div class="columns">
                             <div class="column">
@@ -29,7 +31,7 @@
                             </div>
                             <div class="column is-10">
                                 <p>
-                                    Av. Blanca 1117,
+                                    Av. Esquina Blanca 1117,
                                     <br />Maipú, Santiago
                                 </p>
                             </div>
@@ -61,7 +63,7 @@
             <div class="column is-half">
                 <div class="main-form">
                     <div class="form-container">
-                        <div class="subtitle">{{ $t('Contact.writeUs') }}</div>
+                        <div class="subtitle">{{ $t("Contact.writeUs") }}</div>
                         <div class="field">
                             <div class="control">
                                 <input
@@ -113,7 +115,9 @@
                                     class="button is-link is-rounded"
                                     :disabled="!allIsOk"
                                     @click="sendContact"
-                                >{{ $t('Contact.send') }}</button>
+                                >
+                                    {{ $t("Contact.send") }}
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -124,42 +128,42 @@
 </template>
 
 <script>
-import { value, computed } from 'vue-function-api'
+import { value, computed } from "vue-function-api";
 
-import contact from '@/api/requests/contact'
+import contact from "@/api/requests/contact";
 
 export default {
     setup() {
-        const fullName = value('')
-        const email = value('')
-        const subject = value('')
-        const message = value('')
+        const fullName = value("");
+        const email = value("");
+        const subject = value("");
+        const message = value("");
         const allIsOk = computed(
             () =>
                 fullName.value.length > 0 &&
                 email.value.length > 0 &&
                 subject.value.length > 0 &&
                 message.value.length > 0
-        )
+        );
         const sendContact = async () => {
             const data = {
                 fullName: fullName.value,
                 contactEmail: email.value,
                 contactNumber: subject.value,
-                message: message.value,
-            }
-            await contact(data)
-        }
+                message: message.value
+            };
+            await contact(data);
+        };
         return {
             fullName,
             email,
             subject,
             message,
             sendContact,
-            allIsOk,
-        }
-    },
-}
+            allIsOk
+        };
+    }
+};
 </script>
 
 <style scoped>
