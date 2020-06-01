@@ -63,7 +63,8 @@
                             <span>{{ $t("TechnicalSection.tab-3") }}</span>
                         </a>
                     </li>
-                    <li
+                    <!-- bloque noticias comentado -->
+                    <!-- <li
                         class="tab"
                         id="tab4"
                         @click="openTab('tab4', 'contentTab4')"
@@ -77,7 +78,7 @@
                             </span>
                             <span>{{ $t("TechnicalSection.tab-4") }}</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li
                         v-if="userIsAdmin"
                         class="tab"

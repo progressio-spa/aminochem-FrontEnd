@@ -203,16 +203,16 @@ export const regionManagers = [
   {
     name: "Rolando Silva",
     position: "Country Manager Perú Bolivia",
-    email: "",
-    phone: "",
+    email: "rsilva@aminochem.cl",
+    phone: "+56 9 94427692",
     country: "PE",
     img: require("@/assets/Agents/RolandoSilva.jpg")
   },
   {
     name: "Rolando Silva",
     position: "Country Manager Perú Bolivia",
-    email: "",
-    phone: "",
+    email: "rsilva@aminochem.cl",
+    phone: "+56 9 94427692",
     country: "BO",
     img: require("@/assets/Agents/RolandoSilva.jpg")
   },
@@ -278,16 +278,16 @@ export const regionManagersEN = [
   {
     name: "Rolando Silva",
     position: "Country Manager Perú Bolivia",
-    email: "",
-    phone: "",
+    email: "rsilva@aminochem.cl",
+    phone: "+56 9 94427692",
     country: "PE",
     img: require("@/assets/Agents/RolandoSilva.jpg")
   },
   {
     name: "Rolando Silva",
     position: "Country Manager Perú Bolivia",
-    email: "",
-    phone: "",
+    email: "rsilva@aminochem.cl",
+    phone: "+56 9 94427692",
     country: "BO",
     img: require("@/assets/Agents/RolandoSilva.jpg")
   },
@@ -531,7 +531,7 @@ export const chileanManagersEN = [
   },
   {
     name: "Carlos Baier A.",
-    position: "Technical Assistant Manager",
+    position: "Technical Manager",
     email: "cbaier@aminochem.cl",
     phone: "+56 9 96379251",
     region: "CL-AR",

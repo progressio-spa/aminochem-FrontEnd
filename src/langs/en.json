@@ -8,7 +8,7 @@
     "dropdown12": "Organic Amendments",
     "dropdown13": "Natural oil for agricultural use",
     "dropdown2": "Adjuvant Insecticide",
-    "network": "Distribution network",
+    "network": "Delear network",
     "technical": "Technical Zone",
     "contact": "Contact",
     "language": "Language",
@@ -47,9 +47,9 @@
     "cargo4": "National sales assistant manager"
   },
   "TechnicalSection": {
-    "title": "technical zone",
+    "title": "Technical Zone",
     "more": "See more",
-    "tab-1": "Investigation and development",
+    "tab-1": "Research and development",
     "tab-2": "Publications",
     "tab-3": "Activities",
     "tab-4": "News",
@@ -68,7 +68,7 @@
     "button-cancel": "Cancelar"
   },
   "Network": {
-    "title": "Distribution Network",
+    "title": "Delear Network",
     "option1": "Chile",
     "option2": "World"
   },
