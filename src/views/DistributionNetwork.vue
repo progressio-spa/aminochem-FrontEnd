@@ -77,7 +77,7 @@
                             <br />
                         </div>
                     </div>
-                    <div class="is-6 agents-list" v-else>
+                    <div class="is-6 agents-list-world" v-else>
                         <div
                             v-for="agent in globalAgentsToShow"
                             :key="agent.name"
@@ -334,6 +334,14 @@ export default {
     justify-content: start;
 }
 
+.agents-list-world {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .distributionMap {
     width: 50vw;
     height: 100vh;
@@ -369,6 +377,10 @@ export default {
         height: auto;
     }
     .agents-list {
+        height: auto;
+        width: 75vw;
+    }
+    .agents-list-world {
         height: auto;
         width: 75vw;
     }
