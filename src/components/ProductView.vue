@@ -56,7 +56,7 @@
                         class="tabs tabs-main is-toggle is-medium is-fullwidth is-centered is-toggle-rounded"
                     >
                         <ul>
-                            <li v-if="hideLabel">
+                            <!-- <li v-if="hideLabel">
                                 <a :href="labelPdf" target="_blank">
                                     <span class="icon">
                                         <i class="fas fa-tag"></i>
@@ -65,7 +65,7 @@
                                         $t("Products.buttons.label")
                                     }}</span>
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a :href="dataSheetSource" target="_blank">
                                     <span class="icon">
@@ -88,14 +88,16 @@
                                     }}</span>
                                 </a>
                             </li>
-                            <!-- <li>
-                                <a href="#">
+                            <li v-if="showBrochure">
+                                <a :href="brochureSource">
                                     <span class="icon">
                                         <i class="fas fa-info-circle"></i>
                                     </span>
-                                    <span>{{ $t('Products.buttons.brochure') }}</span>
+                                    <span>{{
+                                        $t("Products.buttons.brochure")
+                                    }}</span>
                                 </a>
-                            </li>-->
+                            </li>
                         </ul>
                     </div>
                     <div class="tabs-mobile" style="display:none;">
@@ -240,7 +242,15 @@ export default {
                 ? require(`@/assets/Products/${this.productName}3.pdf`)
                 : require(`@/assets/Products/${this.productName}3EN.pdf`);
         },
+        brochureSource() {
+            return this.$root.$i18n.locale === "es"
+                ? require(`@/assets/Products/${this.productName}4.pdf`)
+                : require(`@/assets/Products/${this.productName}4EN.pdf`);
+        },
         hideLabel() {
+            return this.$root.$i18n.locale === "es" ? true : false;
+        },
+        showBrochure() {
             return this.$root.$i18n.locale === "es" ? true : false;
         }
     }
