@@ -540,7 +540,7 @@ export default {
         min-height: 16rem;
     }
     .map-container {
-        flex-direction: column;
+        flex-direction: column-reverse;
         height: auto;
     }
     .agents-list {

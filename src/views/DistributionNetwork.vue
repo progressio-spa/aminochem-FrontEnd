@@ -365,7 +365,7 @@ export default {
     }
     .map-container {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         height: auto;
     }
     .agents-list {
