@@ -64,7 +64,7 @@
                         class="tabs tabs-main is-toggle is-medium is-fullwidth is-centered is-toggle-rounded"
                     >
                         <ul>
-                            <li v-if="hideLabel">
+                            <!-- <li v-if="hideLabel">
                                 <a :href="labelPdf" target="_blank">
                                     <span class="icon">
                                         <i class="fas fa-tag"></i>
@@ -73,7 +73,7 @@
                                         $t("Products.buttons.label")
                                     }}</span>
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a :href="dataSheetSource" target="_blank">
                                     <span class="icon">
@@ -96,14 +96,16 @@
                                     }}</span>
                                 </a>
                             </li>
-                            <!-- <li>
-                                <a href="#">
+                            <li>
+                                <a href="#" class="not">
                                     <span class="icon">
                                         <i class="fas fa-info-circle"></i>
                                     </span>
-                                    <span>{{ $t('Products.buttons.brochure') }}</span>
+                                    <span>{{
+                                        $t("Products.buttons.brochure")
+                                    }}</span>
                                 </a>
-                            </li>-->
+                            </li>
                         </ul>
                     </div>
                     <div class="tabs-mobile" style="display:none;">
@@ -287,6 +289,10 @@ p {
     color: rgb(252, 74, 26) !important;
     position: relative;
     bottom: 25vh;
+}
+
+.not {
+    cursor: not-allowed;
 }
 
 @media screen and (max-width: 480px) {

@@ -89,7 +89,7 @@
                                 </a>
                             </li>
                             <li v-if="showBrochure">
-                                <a :href="brochureSource">
+                                <a :href="BrochurePdf">
                                     <span class="icon">
                                         <i class="fas fa-info-circle"></i>
                                     </span>
@@ -189,6 +189,7 @@ export default {
         const labelPdf = require(`../assets/Products/${productName}1.pdf`);
         const dataSheetPdf = require(`../assets/Products/${productName}${lang}2.pdf`);
         const safetySheetPdf = require(`../assets/Products/${productName}${lang}3.pdf`);
+        const BrochurePdf = require(`../assets/Products/${productName}4.pdf`);
         const product = value({});
 
         // onBeforeMount(() => {
@@ -226,6 +227,7 @@ export default {
             labelPdf,
             dataSheetPdf,
             safetySheetPdf,
+            BrochurePdf,
             productName,
             product
         };
@@ -241,11 +243,6 @@ export default {
             return this.$root.$i18n.locale === "es"
                 ? require(`@/assets/Products/${this.productName}3.pdf`)
                 : require(`@/assets/Products/${this.productName}3EN.pdf`);
-        },
-        brochureSource() {
-            return this.$root.$i18n.locale === "es"
-                ? require(`@/assets/Products/${this.productName}4.pdf`)
-                : require(`@/assets/Products/${this.productName}4EN.pdf`);
         },
         hideLabel() {
             return this.$root.$i18n.locale === "es" ? true : false;
