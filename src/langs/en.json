@@ -8,7 +8,7 @@
     "dropdown12": "Organic Amendments",
     "dropdown13": "Natural oil for agricultural use",
     "dropdown2": "Adjuvant Insecticide",
-    "network": "Delear network",
+    "network": "Dealer Network",
     "technical": "Technical Zone",
     "contact": "Contact",
     "language": "Language",
@@ -68,11 +68,10 @@
     "button-cancel": "Cancelar"
   },
   "Network": {
-    "title": "Delear Network",
+    "title": "Dealer Network",
     "option1": "Chile",
     "option2": "World"
   },
-
   "Products": {
     "fertilizers": {
       "title": "Bioestimulant Fertilizers"

@@ -228,16 +228,16 @@ export const regionManagers = [
   {
     name: "Jorge Schell",
     position: "Country Manager Mercosur",
-    email: "",
-    phone: "",
+    email: "jschell@aminochem.cl",
+    phone: "+54 9 11 5160-9347",
     country: "AR",
     img: require("@/assets/Agents/JorgeSchell.jpg")
   },
   {
     name: "Jorge Schell",
     position: "Country Manager Mercosur",
-    email: "",
-    phone: "",
+    email: "jschell@aminochem.cl",
+    phone: "+54 9 11 5160-9347",
     country: "UY",
     img: require("@/assets/Agents/JorgeSchell.jpg")
   },
@@ -303,16 +303,16 @@ export const regionManagersEN = [
   {
     name: "Jorge Schell",
     position: "Country Manager Mercosur",
-    email: "",
-    phone: "",
+    email: "jschell@aminochem.cl",
+    phone: "+54 9 11 5160-9347",
     country: "AR",
     img: require("@/assets/Agents/JorgeSchell.jpg")
   },
   {
     name: "Jorge Schell",
     position: "Country Manager Mercosur",
-    email: "",
-    phone: "",
+    email: "jschell@aminochem.cl",
+    phone: "+54 9 11 5160-9347",
     country: "UY",
     img: require("@/assets/Agents/JorgeSchell.jpg")
   },
