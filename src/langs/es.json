@@ -64,6 +64,9 @@
     "modal-title": "Título",
     "modal-content": "Contenido",
     "modal-category": "Categoría",
+    "modal-image": "Imagen Preview",
+    "modal-image-label": "Selecciona una imagen",
+    "modal-pdf": "PDF Informativo",
     "button-send": "Enviar",
     "button-cancel": "Cancelar"
   },

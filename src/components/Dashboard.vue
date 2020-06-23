@@ -60,13 +60,13 @@
                             <div class="field">
                                 <label class="label">{{ $t('TechnicalSection.modal-title') }}</label>
                                 <div class="control">
-                                    <input v-model="newPost.title" class="input" type="text" placeholder="Text input" />
+                                    <input v-model="newPost.title" class="input" type="text" placeholder="Title" />
                                 </div>
                             </div>
                             <div class="field">
                                 <label class="label">{{ $t('TechnicalSection.modal-content') }}</label>
                                 <div class="control">
-                                    <textarea v-model="newPost.content" class="textarea" placeholder="Textarea"></textarea>
+                                    <textarea v-model="newPost.content" class="textarea" placeholder="Content"></textarea>
                                 </div>
                             </div>
                             <div class="field">
@@ -76,6 +76,36 @@
                                         <select v-model="newPost.category">
                                             <option v-for="category in categories" :key="category.id">{{ category.name }}</option>
                                         </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">{{ $t('TechnicalSection.modal-image') }}</label>
+                                <div class="control">
+                                    <div>
+                                      <label for="files" class="modal-file-btn">
+                                        {{ $t('TechnicalSection.modal-image-label') }}
+                                      </label>
+                                      <input
+                                        id="files"
+                                        type="file"
+                                        accept="image/jpeg,image/jpg,image/png"
+                                        style="visibility:hidden;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">{{ $t('TechnicalSection.modal-pdf') }}</label>
+                                <div class="control">
+                                    <div>
+                                      <label for="files" class="modal-file-btn">
+                                        {{ $t('TechnicalSection.modal-image-label') }}
+                                      </label>
+                                      <input
+                                        id="files"
+                                        type="file"
+                                        accept="application/pdf"
+                                        style="visibility:hidden;">
                                     </div>
                                 </div>
                             </div>
@@ -263,4 +293,27 @@ label {
 .field {
     margin-bottom: 2vh;
 }
+
+.modal-file-btn {
+  background-color: #20bc56;
+  width: 27.5%;
+  height: 6vh;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10pt;
+  font-weight: 900;
+  color: white;
+  padding: 2px 3px;
+  font-family: 'Roboto' sans-serif;
+}
+
+@media(max-width: 425px) {
+  .modal-file-btn {
+    width: 47.5%;
+  }
+}
+
 </style>

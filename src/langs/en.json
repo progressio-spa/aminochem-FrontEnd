@@ -63,7 +63,9 @@
     "button-deleted": "Delete",
     "modal-title": "Título",
     "modal-content": "Contenido",
-    "modal-category": "Categoría",
+    "modal-category": "Category",
+    "modal-image": "Preview Image",
+    "modal-pdf": "Informative PDF",
     "button-send": "Enviar",
     "button-cancel": "Cancelar"
   },
