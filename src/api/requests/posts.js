@@ -2,10 +2,10 @@ import request from '../index';
 
 export function post(data) {
   return request({
-  	url: 'https://aminochem-backend.herokuapp.com/create/post',
+  	url: 'https://aminochem-backend.herokuapp.com/post',
   	method: 'post',
     headers: {
-      'Content-Type': 'application/json; charset=UTF-8',
+      'Content-Type': 'multipart/form-data; boundary=<calculated when request is sent>',
     },
   	data,
   });
@@ -56,4 +56,18 @@ export function getCategories(){
   	url: 'https://aminochem-backend.herokuapp.com/categories',
   	method: 'get'
   })
+}
+
+export function getImage(id) {
+  return request({
+    url: `https://aminochem-backend.herokuapp.com/downloadImage/${id}`,
+    method: 'get'
+  });
+}
+
+export function getDocument(id) {
+  return request({
+    url: `https://aminochem-backend.herokuapp.com/downloadDocument/${id}`,
+    method: 'get'
+  });
 }

@@ -24,7 +24,7 @@
                     </div>
                     <br />
                     <div class="subtitle is-3" v-html="body"></div>
-                    <div v-if="pdfName === 'demo1'">
+                    <div v-if="pdfSrc === 'demo1'">
                         <div>
                             <iframe
                                 :src="demo1"
@@ -33,7 +33,7 @@
                             ></iframe>
                         </div>
                     </div>
-                    <div v-else-if="pdfName === 'demo2'">
+                    <div v-else-if="pdfSrc === 'demo2'">
                         <div>
                             <iframe
                                 :src="demo2"
@@ -42,7 +42,7 @@
                             ></iframe>
                         </div>
                     </div>
-                    <div v-else-if="pdfName === 'demo3'">
+                    <div v-else-if="pdfSrc === 'demo3'">
                         <div>
                             <iframe
                                 :src="demo3"
@@ -51,7 +51,7 @@
                             ></iframe>
                         </div>
                     </div>
-                    <div v-else-if="pdfName === 'demo4'">
+                    <div v-else-if="pdfSrc === 'demo4'">
                         <div>
                             <iframe
                                 :src="demo4"
@@ -61,13 +61,12 @@
                         </div>
                     </div>
                     <div v-else>
-                        <div>
-                            <iframe
-                                :src="demo5"
-                                style="width:100%;height:100vh;"
-                                scrolling="auto"
-                            ></iframe>
-                        </div>
+                        <object
+                            :data="pdfSource"
+                            style="width:100%;height:100vh;"
+                            scrolling="auto"
+                            type="application/pdf"
+                        ></object>
                     </div>
                 </div>
             </div>
@@ -76,6 +75,11 @@
 </template>
 
 <script>
+
+import { value } from 'vue-function-api';
+
+import { getDocument } from "@/api/requests/posts";
+
 import Navbar from "@/components/Navbar.vue";
 
 export default {
@@ -87,16 +91,34 @@ export default {
         const demo2 = require(`../assets/Temporal/iplusd/demo2.pdf`);
         const demo3 = require(`../assets/Temporal/iplusd/demo3.pdf`);
         const demo4 = require(`../assets/Temporal/iplusd/demo4.pdf`);
-        const demo5 = require(`../assets/Temporal/iplusd/demo5.pdf`);
+        const pdfSource = value(props.pdfSrc);
+        const getPdfSource = async () => {
+            try {
+                root.$store.dispatch('changeLoadingState', 'set');
+                const { pdfSrc } = props;
+                const pdfResponse = await getDocument(pdfSrc[pdfSrc.length - 1]);
+                const hexDocData = window.atob(pdfResponse.data);
+                const docBytes = new Uint8Array(hexDocData.length);
+                for (let i = 0; i < hexDocData.length; i++) {
+                    docBytes[i] = hexDocData.charCodeAt(i);
+                }
+                const docBlob = new Blob([docBytes], { type: 'application/pdf' });
+                pdfSource.value = window.URL.createObjectURL(docBlob);
+                root.$store.dispatch('changeLoadingState', 'unset');
+            } catch (e) {
+                console.log(e);
+            }
+        }
+        getPdfSource();
         return {
             demo1,
             demo2,
             demo3,
             demo4,
-            demo5
+            pdfSource
         };
     },
-    props: ["title", "body", "newsImage", "subtitle", "pdfName"]
+    props: ["title", "body", "newsImage", "subtitle", "pdfSrc"]
 };
 </script>
 

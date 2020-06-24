@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-image">
             <figure class="image is-4by3">
-                <img :src="newsImage" />
+                <img :src="imageSource"/>
             </figure>
         </div>
         <div class="card-content">
@@ -16,9 +16,9 @@
                                     name: title,
                                     title: title,
                                     body: body,
-                                    newsImage: newsImage,
+                                    newsImage: imageSource,
                                     subtitle: subtitle,
-                                    pdfName: pdfName
+                                    pdfSrc: pdfSource
                                 }
                             }"
                             style="color: rgb(233, 103, 17);"
@@ -39,12 +39,45 @@
 </template>
 
 <script>
+import { onCreated, value, watch } from 'vue-function-api';
+
+import { getPostsByCategory } from "@/api/requests/posts";
+
 import BlogCardView from "@/components/BlogCardView.vue";
 export default {
-    data() {
-        return {};
+    props: ["title", "body", "newsImage", "subtitle", "pdfSrc"],
+    setup(props, context) {
+        const { root } = context;
+        const pdfSource = value(props.pdfSrc);
+        const imageSource = value('');
+        watch(
+            () => props.pdfSrc,
+            newVal => {
+                if (newVal.id) {
+                    pdfSource.value = `https://aminochem-backend.herokuapp.com/downloadDocument/${newVal.id}`;
+                } else {
+                    pdfSource.value = newVal;
+                }
+            },
+            { deep: true }
+        );
+        watch(
+            () => props.newsImage,
+            newVal => {
+                if (newVal.id) {
+                    imageSource.value = `https://aminochem-backend.herokuapp.com/downloadImage/${newVal.id}`;
+                } else {
+                    imageSource.value = newVal;
+                }
+            },
+            { deep: true }
+        );
+        root.$store.dispatch('changeLoadingState', 'unset');
+        return {
+            pdfSource,
+            imageSource
+        };
     },
-    props: ["title", "body", "newsImage", "subtitle", "pdfName"]
 };
 </script>
 

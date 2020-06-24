@@ -83,13 +83,15 @@
                                 <label class="label">{{ $t('TechnicalSection.modal-image') }}</label>
                                 <div class="control">
                                     <div>
-                                      <label for="files" class="modal-file-btn">
+                                      <label for="image" class="modal-file-btn">
                                         {{ $t('TechnicalSection.modal-image-label') }}
                                       </label>
                                       <input
-                                        id="files"
+                                        @change="fileSelected('image')"
                                         type="file"
-                                        accept="image/jpeg,image/jpg,image/png"
+                                        id="image"
+                                        accept=".jpg, .jpeg"
+                                        data-max-size="1024"
                                         style="visibility:hidden;">
                                     </div>
                                 </div>
@@ -98,13 +100,15 @@
                                 <label class="label">{{ $t('TechnicalSection.modal-pdf') }}</label>
                                 <div class="control">
                                     <div>
-                                      <label for="files" class="modal-file-btn">
+                                      <label for="pdf" class="modal-file-btn">
                                         {{ $t('TechnicalSection.modal-image-label') }}
                                       </label>
                                       <input
-                                        id="files"
+                                        @change="fileSelected('pdf')"
                                         type="file"
-                                        accept="application/pdf"
+                                        id="pdf"
+                                        accept=".pdf"
+                                        data-max-size="1024"
                                         style="visibility:hidden;">
                                     </div>
                                 </div>
@@ -180,6 +184,13 @@ export default {
         })
     },
     methods: {
+        fileSelected(fileType) {  
+          const fileInput = document.getElementById(fileType);
+          if (fileInput.files[0].size > 1024 * 1024) {
+            alert('File limit exceed');
+            fileInput.files = [];
+          }
+        },
         openModal(purpose) {
             this.modalPurpose = purpose;
             this.isModalShow = true;
@@ -200,13 +211,22 @@ export default {
         async sendRequest() {
             const data = {};
             if (this.modalPurpose === 'create') {
-                data.title = this.newPost.title;
-                data.body = this.newPost.content;
-                data.isPrivate = 0;
-                data.category = this.categories
-                    .find(category => category.name === this.newPost.category).id;
-                data.token = this.token;
-                await post(data);
+                let bodyFormData = new FormData();
+                bodyFormData.append('title', this.newPost.title);
+                bodyFormData.append('body', this.newPost.content);
+                bodyFormData.append('isPrivate', 0);
+                bodyFormData.append('category', this.categories
+                    .find(category => category.name === this.newPost.category).id);
+                bodyFormData.append('token', this.token);
+                const imageInput = document.getElementById('image');
+                const pdfInput = document.getElementById('pdf');
+                bodyFormData.append('image', imageInput.files[0]);
+                bodyFormData.append('document', pdfInput.files[0]);
+                for (let [key, value] of bodyFormData.entries()) {
+                  console.log(key);
+                  console.log(value);
+                }
+                await post(bodyFormData);
                 this.posts = await this.getPosts();
                 this.$emit('updatePosts');
                 this.closeModal();

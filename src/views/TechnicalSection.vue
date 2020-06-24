@@ -64,7 +64,7 @@
                         </a>
                     </li>
                     <!-- bloque noticias comentado -->
-                    <!-- <li
+                    <li
                         class="tab"
                         id="tab4"
                         @click="openTab('tab4', 'contentTab4')"
@@ -78,7 +78,7 @@
                             </span>
                             <span>{{ $t("TechnicalSection.tab-4") }}</span>
                         </a>
-                    </li> -->
+                    </li>
                     <li
                         v-if="userIsAdmin"
                         class="tab"
@@ -121,7 +121,7 @@
                                 :title="news.title"
                                 :newsImage="news.imgURL"
                                 :subtitle="news.subtitle"
-                                :pdfName="news.pdfName"
+                                :pdfSrc="news.pdfName"
                             />
                         </div>
                         <!--  -->
@@ -130,7 +130,11 @@
                             v-for="(news, index) in iplusd"
                             :key="index"
                         >
-                            <BlogCard :title="news.title" :body="news.body" />
+                            <BlogCard
+                                :title="news.title"
+                                :body="news.body"
+                                :newsImage="getFileObject(news.id)"
+                                :pdfSrc="getFileObject(news.id)"/>
                         </div>
                     </div>
                 </div>
@@ -163,7 +167,7 @@
                                 :title="news.title"
                                 :newsImage="news.imgURL"
                                 :subtitle="news.subtitle"
-                                :pdfName="news.pdfName"
+                                :pdfSrc="news.pdfName"
                             />
                         </div>
                         <!--  -->
@@ -172,7 +176,11 @@
                             v-for="(news, index) in publications"
                             :key="index"
                         >
-                            <BlogCard :title="news.title" :body="news.body" />
+                            <BlogCard
+                                :title="news.title"
+                                :body="news.body"
+                                :newsImage="getFileObject(news.id)"
+                                :pdfSrc="getFileObject(news.id)"/>
                         </div>
                     </div>
                 </div>
@@ -200,7 +208,11 @@
                             v-for="(news, index) in activities"
                             :key="index"
                         >
-                            <BlogCard :title="news.title" :body="news.body" />
+                            <BlogCard
+                                :title="news.title"
+                                :body="news.body"
+                                :newsImage="getFileObject(news.id)"
+                                :pdfSrc="getFileObject(news.id)"/>
                         </div>
                     </div>
                 </div>
@@ -231,6 +243,8 @@
                             <BlogCard
                                 :title="notice.title"
                                 :body="notice.body"
+                                :newsImage="getFileObject(notice.id)"
+                                :pdfSrc="getFileObject(notice.id)"
                             />
                         </div>
                     </div>
@@ -245,13 +259,13 @@
             <div class="hero-head">
                 <div class="title">{{ $t("TechnicalSection.tab-5") }}</div>
             </div>
-            <Dashboard @updatePosts="getAndSetCategoriesPosts" />
+            <Dashboard @updatePosts="getAndSetPostsData" />
         </section>
     </div>
 </template>
 
 <script>
-import { onCreated, value } from "vue-function-api";
+import { value } from "vue-function-api";
 
 import { isAdmin } from "@/api/requests/authorization";
 import { getPostsByCategory } from "@/api/requests/posts";
@@ -278,32 +292,32 @@ export default {
         const publicationStatic = value([]);
         const activities = value([]);
         const news = value([]);
-        const getAndSetCategoriesPosts = async () => {
-            console.log("entro");
-            const promises = [];
+        const filesSrc = value([]);
+        const getAndSetPostsData = async () => {
+            root.$store.dispatch('changeLoadingState', 'set');
+            let promises = [];
             for (let i = 1; i <= 4; i++) {
                 promises.push(getPostsByCategory(i));
             }
-            const responses = await Promise.all(promises);
-            iplusd.value = responses[0].data;
-            publications.value = responses[1].data;
-            activities.value = responses[2].data;
-            news.value = responses[3].data;
+            let responses = await Promise.all(promises)
+            iplusd.value = responses[2].data;
+            publications.value = responses[3].data;
+            activities.value = responses[0].data;
+            news.value = responses[1].data;
             iplusdStatic.value = ipd;
             publicationStatic.value = p;
+            // Reset promises for getImage and getDocument
+            promises = [];
+            responses.map(response => {
+                response.data.forEach(post => {
+                    filesSrc.value.push({
+                        id: post.id 
+                    });
+                });
+            });
         };
-        onCreated(async () => {
-            try {
-                const data = {
-                    token: root.$store.getters.getAccessToken
-                };
-                await getAndSetCategoriesPosts();
-                const isAdminRequest = await isAdmin(data);
-                userIsAdmin.value = isAdminRequest.data === 1;
-            } catch (e) {
-                console.log(e);
-            }
-        });
+        const getFileObject = id => filesSrc.value.find(val => val.id === id);
+        getAndSetPostsData();
         return {
             iplusd,
             iplusdStatic,
@@ -312,7 +326,8 @@ export default {
             activities,
             news,
             userIsAdmin,
-            getAndSetCategoriesPosts
+            getAndSetPostsData,
+            getFileObject
         };
     },
     methods: {
