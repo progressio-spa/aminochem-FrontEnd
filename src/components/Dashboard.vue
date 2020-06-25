@@ -243,6 +243,8 @@ export default {
                 data.isPrivate = this.newPost.isPrivate;
                 data.id = this.newPost.id;  
                 data.token = this.token;
+                data.category = this.categories
+                    .find(category => category.name === this.newPost.category).id;
                 await updatePost(data);
                 this.posts = await this.getPosts();
                 this.$emit('updatePosts');
@@ -263,7 +265,6 @@ export default {
             }
         },
         async modifyPost(post) {
-            console.log(post);
             this.newPost = {
                 id: post.id,
                 title: post.title,
