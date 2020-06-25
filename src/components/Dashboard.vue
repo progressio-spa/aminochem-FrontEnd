@@ -79,12 +79,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="field">
+                            <div class="field" v-if="modalPurpose !== 'update'">
                                 <label class="label">{{ $t('TechnicalSection.modal-image') }}</label>
                                 <div class="control">
                                     <div>
                                       <label for="image" class="modal-file-btn">
-                                        {{ $t('TechnicalSection.modal-image-label') }}
+                                        {{ !selectedImageName ?
+                                            $t('TechnicalSection.modal-image-label') : selectedImageName }}
                                       </label>
                                       <input
                                         @change="fileSelected('image')"
@@ -96,12 +97,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="field">
+                            <div class="field" v-if="modalPurpose !== 'update'">
                                 <label class="label">{{ $t('TechnicalSection.modal-pdf') }}</label>
                                 <div class="control">
                                     <div>
                                       <label for="pdf" class="modal-file-btn">
-                                        {{ $t('TechnicalSection.modal-image-label') }}
+                                        {{ !selectedPDFName ?
+                                            $t('TechnicalSection.modal-image-label') : selectedPDFName }}
                                       </label>
                                       <input
                                         @change="fileSelected('pdf')"
@@ -159,6 +161,8 @@ export default {
             token: this.$store.getters.getAccessToken,
             isModalShow: false,
             modalPurpose: 'create',
+            selectedImageName: undefined,
+            selectedPDFName: undefined
         };
     },
     async created() {
@@ -189,6 +193,12 @@ export default {
           if (fileInput.files[0].size > 1024 * 1024) {
             alert('File limit exceed');
             fileInput.files = [];
+          } else {
+            if (fileInput.accept.includes('.pdf')) {
+                this.selectedPDFName = fileInput.value.replace(/^.*[\\\/]/, '');
+            } else {
+                this.selectedImageName = fileInput.value.replace(/^.*[\\\/]/, '');
+            }
           }
         },
         openModal(purpose) {
@@ -210,6 +220,8 @@ export default {
         },
         async sendRequest() {
             const data = {};
+            this.$store.dispatch('changeLoadingState', 'set');
+            this.closeModal();
             if (this.modalPurpose === 'create') {
                 let bodyFormData = new FormData();
                 bodyFormData.append('title', this.newPost.title);
@@ -222,14 +234,9 @@ export default {
                 const pdfInput = document.getElementById('pdf');
                 bodyFormData.append('image', imageInput.files[0]);
                 bodyFormData.append('document', pdfInput.files[0]);
-                for (let [key, value] of bodyFormData.entries()) {
-                  console.log(key);
-                  console.log(value);
-                }
                 await post(bodyFormData);
                 this.posts = await this.getPosts();
                 this.$emit('updatePosts');
-                this.closeModal();
             } else {
                 data.title = this.newPost.title;
                 data.body = this.newPost.content;
@@ -239,8 +246,8 @@ export default {
                 await updatePost(data);
                 this.posts = await this.getPosts();
                 this.$emit('updatePosts');
-                this.closeModal();
             }
+            this.$store.dispatch('changeLoadingState', 'unset');
         },
         async sendDeletePost(id) {
             try {

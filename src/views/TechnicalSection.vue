@@ -315,6 +315,7 @@ export default {
                     });
                 });
             });
+            userIsAdmin.value = root.$store.getters.getAccessToken !== '';
         };
         const getFileObject = id => filesSrc.value.find(val => val.id === id);
         getAndSetPostsData();
