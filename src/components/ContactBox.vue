@@ -44,7 +44,7 @@
                                 </span>
                             </div>
                             <div class="column is-10">
-                                <p>contacto@aminochem.cl</p>
+                                <p>contacto@aminochem.com</p>
                             </div>
                         </div>
                         <div class="columns">

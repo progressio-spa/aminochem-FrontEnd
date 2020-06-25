@@ -185,17 +185,17 @@ export const agentsList = [
 
 export const regionManagers = [
   {
-    name: "Lenin Guerrero Ch.",
+    name: "Lenin Guerrero",
     position: "Zonal Técnico Comercial Norte",
-    email: "lguerrero@aminochem.cl",
+    email: "lguerrero@aminochem.com",
     phone: "+51 938 513 659",
     country: "PE",
     img: require("@/assets/Agents/LeninGuerrero.jpg")
   },
   {
-    name: "José Luis Assereto A",
+    name: "José Luis Assereto",
     position: "Zonal Técnico Comercial Ica",
-    email: "jassereto@aminochem.cl",
+    email: "jassereto@aminochem.com",
     phone: "+51 934 236 695",
     country: "PE",
     img: require("@/assets/Agents/JoseLuisAssereto.jpg")
@@ -203,7 +203,7 @@ export const regionManagers = [
   {
     name: "Rolando Silva",
     position: "Country Manager Perú Bolivia",
-    email: "rsilva@aminochem.cl",
+    email: "rsilva@aminochem.com",
     phone: "+56 9 94427692",
     country: "PE",
     img: require("@/assets/Agents/RolandoSilva.jpg")
@@ -211,7 +211,7 @@ export const regionManagers = [
   {
     name: "Rolando Silva",
     position: "Country Manager Perú Bolivia",
-    email: "rsilva@aminochem.cl",
+    email: "rsilva@aminochem.com",
     phone: "+56 9 94427692",
     country: "BO",
     img: require("@/assets/Agents/RolandoSilva.jpg")
@@ -219,7 +219,7 @@ export const regionManagers = [
   {
     name: "Emiliano Castilla",
     position: "Asistente Técnico Comercial",
-    email: "ecastilla@aminochem.cl",
+    email: "ecastilla@aminochem.com",
     phone: "+54 9 261 257 3809",
     country: "AR",
     img: require("@/assets/Agents/EmilianoCastilla.jpg")
@@ -228,7 +228,7 @@ export const regionManagers = [
   {
     name: "Jorge Schell",
     position: "Country Manager Mercosur",
-    email: "jschell@aminochem.cl",
+    email: "jschell@aminochem.com",
     phone: "+54 9 11 5160-9347",
     country: "AR",
     img: require("@/assets/Agents/JorgeSchell.jpg")
@@ -236,7 +236,7 @@ export const regionManagers = [
   {
     name: "Jorge Schell",
     position: "Country Manager Mercosur",
-    email: "jschell@aminochem.cl",
+    email: "jschell@aminochem.com",
     phone: "+54 9 11 5160-9347",
     country: "UY",
     img: require("@/assets/Agents/JorgeSchell.jpg")
@@ -244,7 +244,7 @@ export const regionManagers = [
   {
     name: "Juan Pablo Vergara",
     position: "Subgerente Venta Nacional",
-    email: "jvergara@aminochem.cl",
+    email: "jvergara@aminochem.com",
     phone: "+56 9 68310700",
     country: "CL",
     img: require("@/assets/Agents/PabloVergara.jpg")
@@ -260,17 +260,17 @@ export const regionManagers = [
 
 export const regionManagersEN = [
   {
-    name: "Lenin Guerrero Ch.",
+    name: "Lenin Guerrero",
     position: "Sales representative Comercial Norte",
-    email: "lguerrero@aminochem.cl",
+    email: "lguerrero@aminochem.com",
     phone: "+51 938 513 659",
     country: "PE",
     img: require("@/assets/Agents/LeninGuerrero.jpg")
   },
   {
-    name: "José Luis Assereto A",
+    name: "José Luis Assereto",
     position: "Sales representative Comercial Ica",
-    email: "jassereto@aminochem.cl",
+    email: "jassereto@aminochem.com",
     phone: "+51 934 236 695",
     country: "PE",
     img: require("@/assets/Agents/JoseLuisAssereto.jpg")
@@ -278,7 +278,7 @@ export const regionManagersEN = [
   {
     name: "Rolando Silva",
     position: "Country Manager Perú Bolivia",
-    email: "rsilva@aminochem.cl",
+    email: "rsilva@aminochem.com",
     phone: "+56 9 94427692",
     country: "PE",
     img: require("@/assets/Agents/RolandoSilva.jpg")
@@ -286,7 +286,7 @@ export const regionManagersEN = [
   {
     name: "Rolando Silva",
     position: "Country Manager Perú Bolivia",
-    email: "rsilva@aminochem.cl",
+    email: "rsilva@aminochem.com",
     phone: "+56 9 94427692",
     country: "BO",
     img: require("@/assets/Agents/RolandoSilva.jpg")
@@ -294,7 +294,7 @@ export const regionManagersEN = [
   {
     name: "Emiliano Castilla",
     position: "Commercial Technical Assistant",
-    email: "ecastilla@aminochem.cl",
+    email: "ecastilla@aminochem.com",
     phone: "+54 9 261 257 3809",
     country: "AR",
     img: require("@/assets/Agents/EmilianoCastilla.jpg")
@@ -303,7 +303,7 @@ export const regionManagersEN = [
   {
     name: "Jorge Schell",
     position: "Country Manager Mercosur",
-    email: "jschell@aminochem.cl",
+    email: "jschell@aminochem.com",
     phone: "+54 9 11 5160-9347",
     country: "AR",
     img: require("@/assets/Agents/JorgeSchell.jpg")
@@ -311,7 +311,7 @@ export const regionManagersEN = [
   {
     name: "Jorge Schell",
     position: "Country Manager Mercosur",
-    email: "jschell@aminochem.cl",
+    email: "jschell@aminochem.com",
     phone: "+54 9 11 5160-9347",
     country: "UY",
     img: require("@/assets/Agents/JorgeSchell.jpg")
@@ -319,7 +319,7 @@ export const regionManagersEN = [
   {
     name: "Juan Pablo Vergara",
     position: "National Sales Manager",
-    email: "jvergara@aminochem.cl",
+    email: "jvergara@aminochem.com",
     phone: "+56 9 68310700",
     country: "CL",
     img: require("@/assets/Agents/PabloVergara.jpg")
@@ -335,41 +335,41 @@ export const regionManagersEN = [
 
 export const chileanManagers = [
   {
-    name: "Rolando Silva H",
+    name: "Rolando Silva",
     position: "Agente Zonal",
-    email: "rsilva@aminochem.cl",
+    email: "rsilva@aminochem.com",
     phone: "+56 9 94427692",
     region: "CL-AP",
     img: require("@/assets/Agents/RolandoSilva.jpg")
   },
   {
-    name: "Rolando Silva H",
+    name: "Rolando Silva",
     position: "Agente Zonal",
-    email: "rsilva@aminochem.cl",
+    email: "rsilva@aminochem.com",
     phone: "+56 9 94427692",
     region: "CL-TA",
     img: require("@/assets/Agents/RolandoSilva.jpg")
   },
   {
-    name: "Rolando Silva H",
+    name: "Rolando Silva",
     position: "Agente Zonal",
-    email: "rsilva@aminochem.cl",
+    email: "rsilva@aminochem.com",
     phone: "+56 9 94427692",
     region: "CL-AN",
     img: require("@/assets/Agents/RolandoSilva.jpg")
   },
   {
-    name: "Rolando Silva H",
+    name: "Rolando Silva",
     position: "Agente Zonal",
-    email: "rsilva@aminochem.cl",
+    email: "rsilva@aminochem.com",
     phone: "+56 9 94427692",
     region: "CL-AT",
     img: require("@/assets/Agents/RolandoSilva.jpg")
   },
   {
-    name: "Rolando Silva H",
+    name: "Rolando Silva",
     position: "Agente Zonal",
-    email: "rsilva@aminochem.cl",
+    email: "rsilva@aminochem.com",
     phone: "+56 9 94427692",
     region: "CL-CO",
     img: require("@/assets/Agents/RolandoSilva.jpg")
@@ -377,7 +377,7 @@ export const chileanManagers = [
   {
     name: "Juan Francisco Cáceres",
     position: "Agente Zonal",
-    email: "juan.francisco@aminochem.cl",
+    email: "juan.francisco@aminochem.com",
     phone: "+56 9 74302711",
     region: "CL-VS",
     img: require("@/assets/Agents/JuanFrancisco.jpg")
@@ -385,7 +385,7 @@ export const chileanManagers = [
   {
     name: "Juan Francisco Cáceres",
     position: "Agente Zonal",
-    email: "juan.francisco@aminochem.cl",
+    email: "juan.francisco@aminochem.com",
     phone: "+56 9 74302711",
     region: "CL-RM",
     img: require("@/assets/Agents/JuanFrancisco.jpg")
@@ -393,7 +393,7 @@ export const chileanManagers = [
   {
     name: "Juan Pablo Vergara",
     position: "Subgerente venta nacional",
-    email: "jvergara@aminochem.cl",
+    email: "jvergara@aminochem.com",
     phone: "+56 9 68310700",
     region: "CL-LI",
     img: require("@/assets/Agents/PabloVergara.jpg")
@@ -401,47 +401,47 @@ export const chileanManagers = [
   {
     name: "Javiera Munita",
     position: "Agente Zonal",
-    email: "jmunita@aminochem.cl",
+    email: "jmunita@aminochem.com",
     phone: "+56 9 34248378",
     region: "CL-ML",
     img: require("@/assets/Agents/javieraMunita.jpg")
   },
   {
-    name: "Manuel Contreras C.",
+    name: "Manuel Contreras",
     position: "Agente Zonal",
-    email: "mcontreras@aminochem.cl",
+    email: "mcontreras@aminochem.com",
     phone: "+56 9 42633293",
     region: "CL-BI",
     img: require("@/assets/Agents/ManuelContreras.jpg")
   },
   {
-    name: "Carlos Baier A.",
+    name: "Carlos Baier",
     position: "Subgerente Técnico",
-    email: "cbaier@aminochem.cl",
+    email: "cbaier@aminochem.com",
     phone: "+56 9 96379251",
     region: "CL-AR",
     img: require("@/assets/Agents/CarlosBaier.jpg")
   },
   {
-    name: "Manuel Contreras C.",
+    name: "Manuel Contreras",
     position: "Agente Zonal",
-    email: "mcontreras@aminochem.cl",
+    email: "mcontreras@aminochem.com",
     phone: "+56 9 42633293",
     region: "CL-AR",
     img: require("@/assets/Agents/ManuelContreras.jpg")
   },
   {
-    name: "Manuel Contreras C.",
+    name: "Manuel Contreras",
     position: "Agente Zonal",
-    email: "mcontreras@aminochem.cl",
+    email: "mcontreras@aminochem.com",
     phone: "+56 9 42633293",
     region: "CL-LR",
     img: require("@/assets/Agents/ManuelContreras.jpg")
   },
   {
-    name: "Manuel Contreras C.",
+    name: "Manuel Contreras",
     position: "Agente Zonal",
-    email: "mcontreras@aminochem.cl",
+    email: "mcontreras@aminochem.com",
     phone: "+56 9 42633293",
     region: "CL-LL",
     img: require("@/assets/Agents/ManuelContreras.jpg")
@@ -450,41 +450,41 @@ export const chileanManagers = [
 
 export const chileanManagersEN = [
   {
-    name: "Rolando Silva H",
+    name: "Rolando Silva",
     position: "Sales representative",
-    email: "rsilva@aminochem.cl",
+    email: "rsilva@aminochem.com",
     phone: "+56 9 94427692",
     region: "CL-AP",
     img: require("@/assets/Agents/RolandoSilva.jpg")
   },
   {
-    name: "Rolando Silva H",
+    name: "Rolando Silva",
     position: "Sales representative",
-    email: "rsilva@aminochem.cl",
+    email: "rsilva@aminochem.com",
     phone: "+56 9 94427692",
     region: "CL-TA",
     img: require("@/assets/Agents/RolandoSilva.jpg")
   },
   {
-    name: "Rolando Silva H",
+    name: "Rolando Silva",
     position: "Sales representative",
-    email: "rsilva@aminochem.cl",
+    email: "rsilva@aminochem.com",
     phone: "+56 9 94427692",
     region: "CL-AN",
     img: require("@/assets/Agents/RolandoSilva.jpg")
   },
   {
-    name: "Rolando Silva H",
+    name: "Rolando Silva",
     position: "Sales representative",
-    email: "rsilva@aminochem.cl",
+    email: "rsilva@aminochem.com",
     phone: "+56 9 94427692",
     region: "CL-AT",
     img: require("@/assets/Agents/RolandoSilva.jpg")
   },
   {
-    name: "Rolando Silva H",
+    name: "Rolando Silva",
     position: "Sales representative",
-    email: "rsilva@aminochem.cl",
+    email: "rsilva@aminochem.com",
     phone: "+56 9 94427692",
     region: "CL-CO",
     img: require("@/assets/Agents/RolandoSilva.jpg")
@@ -492,7 +492,7 @@ export const chileanManagersEN = [
   {
     name: "Juan Francisco Cáceres",
     position: "Sales representative",
-    email: "juan.francisco@aminochem.cl",
+    email: "juan.francisco@aminochem.com",
     phone: "+56 9 74302711",
     region: "CL-VS",
     img: require("@/assets/Agents/JuanFrancisco.jpg")
@@ -500,7 +500,7 @@ export const chileanManagersEN = [
   {
     name: "Juan Francisco Cáceres",
     position: "Sales representative",
-    email: "juan.francisco@aminochem.cl",
+    email: "juan.francisco@aminochem.com",
     phone: "+56 9 74302711",
     region: "CL-RM",
     img: require("@/assets/Agents/JuanFrancisco.jpg")
@@ -508,7 +508,7 @@ export const chileanManagersEN = [
   {
     name: "Juan Pablo Vergara",
     position: "National sales assistant manager",
-    email: "jvergara@aminochem.cl",
+    email: "jvergara@aminochem.com",
     phone: "+56 9 68310700",
     region: "CL-LI",
     img: require("@/assets/Agents/PabloVergara.jpg")
@@ -516,47 +516,47 @@ export const chileanManagersEN = [
   {
     name: "Javiera Munita",
     position: "Sales representative",
-    email: "jmunita@aminochem.cl",
+    email: "jmunita@aminochem.com",
     phone: "+56 9 34248378",
     region: "CL-ML",
     img: require("@/assets/Agents/javieraMunita.jpg")
   },
   {
-    name: "Manuel Contreras C.",
+    name: "Manuel Contreras",
     position: "Sales representative",
-    email: "mcontreras@aminochem.cl",
+    email: "mcontreras@aminochem.com",
     phone: "+56 9 42633293",
     region: "CL-BI",
     img: require("@/assets/Agents/ManuelContreras.jpg")
   },
   {
-    name: "Carlos Baier A.",
+    name: "Carlos Baier",
     position: "Technical Manager",
-    email: "cbaier@aminochem.cl",
+    email: "cbaier@aminochem.com",
     phone: "+56 9 96379251",
     region: "CL-AR",
     img: require("@/assets/Agents/CarlosBaier.jpg")
   },
   {
-    name: "Manuel Contreras C.",
+    name: "Manuel Contreras",
     position: "Sales representative",
-    email: "mcontreras@aminochem.cl",
+    email: "mcontreras@aminochem.com",
     phone: "+56 9 42633293",
     region: "CL-AR",
     img: require("@/assets/Agents/ManuelContreras.jpg")
   },
   {
-    name: "Manuel Contreras C.",
+    name: "Manuel Contreras",
     position: "Sales representative",
-    email: "mcontreras@aminochem.cl",
+    email: "mcontreras@aminochem.com",
     phone: "+56 9 42633293",
     region: "CL-LR",
     img: require("@/assets/Agents/ManuelContreras.jpg")
   },
   {
-    name: "Manuel Contreras C.",
+    name: "Manuel Contreras",
     position: "Sales representative",
-    email: "mcontreras@aminochem.cl",
+    email: "mcontreras@aminochem.com",
     phone: "+56 9 42633293",
     region: "CL-LL",
     img: require("@/assets/Agents/ManuelContreras.jpg")

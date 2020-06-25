@@ -21,7 +21,7 @@
                                     <br />
                                     <h1>Juan Pablo Vergara</h1>
                                     <h1>{{ $t("AboutUs.cargo4") }}</h1>
-                                    <h1>jvergara@aminochem.cl</h1>
+                                    <h1>jvergara@aminochem.com</h1>
                                     <h1>+56 9 68310700</h1>
                                 </div>
                             </div>
