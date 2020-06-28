@@ -190,6 +190,9 @@ export default {
     methods: {
         fileSelected(fileType) {  
           const fileInput = document.getElementById(fileType);
+          if (!fileInput.files) {
+            return;
+          }
           if (fileInput.files[0].size > 1024 * 1024) {
             alert('File limit exceed');
             fileInput.files = [];
@@ -253,6 +256,7 @@ export default {
         },
         async sendDeletePost(id) {
             try {
+                this.$store.dispatch('changeLoadingState', 'set');
                 const data = {
                     id,
                     token: this.token,
@@ -260,6 +264,7 @@ export default {
                 await deletePost(data);
                 this.posts = await this.getPosts();
                 this.$emit('updatePosts');
+                this.$store.dispatch('changeLoadingState', 'unset');
             } catch (e) {
                 console.log('ERROR => ', e);
             }
