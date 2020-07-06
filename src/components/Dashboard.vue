@@ -193,7 +193,7 @@ export default {
           if (!fileInput.files) {
             return;
           }
-          if (fileInput.files[0].size > 1024 * 1024) {
+          if (fileInput.files[0].size > 10 * 1024 * 1024) {
             alert('File limit exceed');
             fileInput.files = [];
           } else {
