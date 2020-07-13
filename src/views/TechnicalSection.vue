@@ -300,10 +300,10 @@ export default {
                 promises.push(getPostsByCategory(i));
             }
             let responses = await Promise.all(promises)
-            iplusd.value = responses[2].data;
+            iplusd.value = responses[1].data;
             publications.value = responses[3].data;
             activities.value = responses[0].data;
-            news.value = responses[1].data;
+            news.value = responses[2].data;
             iplusdStatic.value = ipd;
             publicationStatic.value = p;
             // Reset promises for getImage and getDocument

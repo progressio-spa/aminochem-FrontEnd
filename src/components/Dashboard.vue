@@ -119,6 +119,7 @@
                                 <div class="control">
                                     <button
                                         @click="sendRequest"
+                                        :disabled="!titleAndImageSetted"
                                         class="button is-success"
                                     >{{ $t('TechnicalSection.button-send') }}</button>
                                 </div>
@@ -131,7 +132,10 @@
                         </div>
                     </div>
                 </div>
-                <button class="modal-close is-large" @click="closeModal" aria-label="close"></button>
+                <button
+                    class="modal-close is-large"
+                    @click="closeModal"
+                    aria-label="close"/>
             </div>
         </div>
     </div>
@@ -149,6 +153,18 @@ import {
 
 export default {
     name: 'home',
+    computed: {
+        titleSetted() {
+            return this.newPost.title.length > 0;
+        },
+        categorySetted() {
+            return this.newPost.category.length > 0;
+        },
+        titleAndImageSetted() {
+            return this.titleSetted &&
+                this.selectedImageName && this.categorySetted;
+        },
+    },
     data(){
         return {
             newPost: {
@@ -169,23 +185,6 @@ export default {
         const categoriesRequest = await getCategories();
         this.categories = categoriesRequest.data;
         this.posts = await this.getPosts();
-    },
-    mounted() {
-        document.querySelectorAll('.modal-button').forEach(function(el) {
-            el.addEventListener('click', function() {
-                var target = document.querySelector(
-                    el.getAttribute('data-target')
-                )
-
-                target.classList.add('is-active')
-
-                target
-                    .querySelector('.modal-close')
-                    .addEventListener('click', function() {
-                        target.classList.remove('is-active')
-                    })
-            })
-        })
     },
     methods: {
         fileSelected(fileType) {  
