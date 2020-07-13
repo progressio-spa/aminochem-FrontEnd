@@ -235,7 +235,9 @@ export default {
                 const imageInput = document.getElementById('image');
                 const pdfInput = document.getElementById('pdf');
                 bodyFormData.append('image', imageInput.files[0]);
-                bodyFormData.append('document', pdfInput.files[0]);
+                if (pdfInput.files.length) {
+                    bodyFormData.append('document', pdfInput.files[0]);
+                }
                 await post(bodyFormData);
                 this.posts = await this.getPosts();
                 this.$emit('updatePosts');
