@@ -119,7 +119,7 @@
                                 <div class="control">
                                     <button
                                         @click="sendRequest"
-                                        :disabled="!titleAndImageSetted"
+                                        :disabled="!isSendButtonEnable"
                                         class="button is-success"
                                     >{{ $t('TechnicalSection.button-send') }}</button>
                                 </div>
@@ -160,9 +160,12 @@ export default {
         categorySetted() {
             return this.newPost.category.length > 0;
         },
-        titleAndImageSetted() {
-            return this.titleSetted &&
-                this.selectedImageName && this.categorySetted;
+        isSendButtonEnable() {
+            if (this.modalPurpose === 'create') {
+                return this.titleSetted &&
+                    this.selectedImageName && this.categorySetted;
+            }
+            return this.titleSetted && this.categorySetted;
         },
     },
     data(){
@@ -184,7 +187,9 @@ export default {
     async created() {
         const categoriesRequest = await getCategories();
         this.categories = categoriesRequest.data;
-        this.posts = await this.getPosts();
+        if (this.token.length > 0) {
+            this.posts = await this.getPosts(); 
+        } 
     },
     methods: {
         fileSelected(fileType) {  
@@ -241,6 +246,11 @@ export default {
                 await post(bodyFormData);
                 this.posts = await this.getPosts();
                 this.$emit('updatePosts');
+                this.newPost = {
+                    title: '',
+                    content: '',
+                    category: '',
+                };
             } else {
                 data.title = this.newPost.title;
                 data.body = this.newPost.content;
@@ -252,6 +262,11 @@ export default {
                 await updatePost(data);
                 this.posts = await this.getPosts();
                 this.$emit('updatePosts');
+                this.newPost = {
+                    title: '',
+                    content: '',
+                    category: '',
+                };
             }
             this.$store.dispatch('changeLoadingState', 'unset');
         },

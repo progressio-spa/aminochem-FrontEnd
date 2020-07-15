@@ -133,8 +133,8 @@
                             <BlogCard
                                 :title="news.title"
                                 :body="news.body"
-                                :newsImage="getFileObject(news.id)"
-                                :pdfSrc="getFileObject(news.id)"/>
+                                :newsImage="getImageId(news.id)"
+                                :pdfSrc="getDocId(news.id)"/>
                         </div>
                     </div>
                 </div>
@@ -179,8 +179,8 @@
                             <BlogCard
                                 :title="news.title"
                                 :body="news.body"
-                                :newsImage="getFileObject(news.id)"
-                                :pdfSrc="getFileObject(news.id)"/>
+                                :newsImage="getImageId(news.id)"
+                                :pdfSrc="getDocId(news.id)"/>
                         </div>
                     </div>
                 </div>
@@ -211,8 +211,8 @@
                             <BlogCard
                                 :title="news.title"
                                 :body="news.body"
-                                :newsImage="getFileObject(news.id)"
-                                :pdfSrc="getFileObject(news.id)"/>
+                                :newsImage="getImageId(news.id)"
+                                :pdfSrc="getDocId(news.id)"/>
                         </div>
                     </div>
                 </div>
@@ -243,8 +243,8 @@
                             <BlogCard
                                 :title="notice.title"
                                 :body="notice.body"
-                                :newsImage="getFileObject(notice.id)"
-                                :pdfSrc="getFileObject(notice.id)"
+                                :newsImage="getImageId(notice.id)"
+                                :pdfSrc="getDocId(notice.id)"
                             />
                         </div>
                     </div>
@@ -311,28 +311,24 @@ export default {
             responses.map(response => {
                 response.data.forEach(post => {
                     filesSrc.value.push({
-                        id: post.id 
+                        postId: post.id,
+                        documentId: post.documentId,
+                        imageId: post.imageId 
                     });
                 });
             });
             userIsAdmin.value = root.$store.getters.getAccessToken !== '';
+            root.$store.dispatch('changeLoadingState', 'unset');
         };
-        const getFileObject = id => filesSrc.value.find(val => val.id === id);
-        getAndSetPostsData();
-        return {
-            iplusd,
-            iplusdStatic,
-            publications,
-            publicationStatic,
-            activities,
-            news,
-            userIsAdmin,
-            getAndSetPostsData,
-            getFileObject
+        const getDocId = id => {
+            const selectedPost = filesSrc.value.find(val => val.postId === id);
+            return selectedPost.documentId;
         };
-    },
-    methods: {
-        openTab(tabName, contantTabName) {
+        const getImageId = id => {
+            const selectedPost = filesSrc.value.find(val => val.postId === id);
+            return selectedPost.imageId;
+        };
+        const openTab = (tabName, contantTabName) => {
             var i, x, tablinks;
             x = document.getElementsByClassName("content-tab");
 
@@ -349,8 +345,24 @@ export default {
 
             var mainTab = document.getElementById(tabName);
             mainTab.classList.add("is-active");
-        }
-    }
+        };
+
+        getAndSetPostsData();
+
+        return {
+            iplusd,
+            iplusdStatic,
+            publications,
+            publicationStatic,
+            activities,
+            news,
+            userIsAdmin,
+            getAndSetPostsData,
+            getDocId,
+            getImageId,
+            openTab
+        };
+    },
 };
 </script>
 

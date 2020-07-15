@@ -53,9 +53,9 @@ export default {
         watch(
             () => props.pdfSrc,
             newVal => {
-                if (newVal.id) {
-                    pdfSource.value = `https://aminochem-backend.herokuapp.com/downloadDocument/${newVal.id}`;
-                } else {
+                if (typeof newVal === 'number') {
+                    pdfSource.value = `https://aminochem-backend.herokuapp.com/downloadDocument/${newVal}`;
+                } else if (typeof newVal === 'string') {
                     pdfSource.value = newVal;
                 }
             },
@@ -64,10 +64,10 @@ export default {
         watch(
             () => props.newsImage,
             newVal => {
-                if (newVal.id) {
-                    imageSource.value = `https://aminochem-backend.herokuapp.com/downloadImage/${newVal.id}`;
-                } else {
+                if (typeof newVal === 'string') {
                     imageSource.value = newVal;
+                } else {
+                    imageSource.value = `https://aminochem-backend.herokuapp.com/downloadImage/${newVal}`;
                 }
             },
             { deep: true }

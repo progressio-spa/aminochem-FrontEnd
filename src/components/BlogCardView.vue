@@ -94,6 +94,9 @@ export default {
         const pdfSource = value(props.pdfSrc);
         const getPdfSource = async () => {
             try {
+                if (!props.pdfSrc) {
+                    return;
+                }
                 root.$store.dispatch('changeLoadingState', 'set');
                 const { pdfSrc } = props;
                 const pdfResponse = await getDocument(pdfSrc[pdfSrc.length - 1]);
