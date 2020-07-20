@@ -13,7 +13,10 @@
                 </div>
             </div>
         </section>
-        <section class="hero is-medium" v-if="!isMobile">
+
+        <br>
+        <br>
+        <!-- <section class="hero is-medium" v-if="!isMobile">
             <div class="hero-body">
                 <div class="container" id="maps">
                     <iframe
@@ -26,7 +29,7 @@
                     ></iframe>
                 </div>
             </div>
-        </section>
+        </section> -->
         <ContactBox></ContactBox>
         <br />
     </div>

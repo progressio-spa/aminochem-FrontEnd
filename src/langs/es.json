@@ -21,7 +21,7 @@
     "card1": "Fertilizantes Bioestimulantes",
     "description1": "La mejor combinación de Aminoácidos para el manejo del stress y la optimización de diversas funciones en la planta.",
     "card2": "Enmiendas Orgánicas",
-    "description2": "Materia Orgánica liquida que reactiva la vida del suelo, optimizando el uso de los recursos y maximizando el potencial productivo.",
+    "description2": "Materia orgánica líquida que reactiva la vida del suelo, optimizando el uso de los recursos y maximizando el potencial productivo.",
     "card3": "Aceite natural de uso agrícola",
     "description3": "Insecticida, Coadyuvante y bioestimulante orgánico de gran desempeño y amigable con el medio ambiente. ",
     "meet": "Conócenos"
@@ -30,7 +30,7 @@
     "title": "Quienes Somos",
     "subtitle": "La fuerza de la naturaleza",
     "paragraph1": "Somos una compañía agrícola Chilena,  dedicada a la fabricación y comercialización de aminoácidos, materia orgánica y aceite, para la nutrición y bioestimulación de las plantas, reactivación de la vida en los suelos y protección de cultivos. Es parte del holding Fiordo Austral, principal productor mundial de proteínas y aceites elaborados a partir del SALMÓN.",
-    "paragraph2": "Las características diferenciadoras  del Salmón como materia prima son únicas. Su origen marino le confieren una de las proteínas de más alta calidad biológica, por lo que a través de distintos procesos industriales, es posible obtener valiosas combinaciones de aminoácidos y péptidos, una rica materia orgánica liquida y aceites esenciales omega 3, 6 y 9 con notables resultados en campo.",
+    "paragraph2": "Las características diferenciadoras  del Salmón como materia prima son únicas. Su origen marino le confieren una de las proteínas de más alta calidad biológica, por lo que a través de distintos procesos industriales, es posible obtener valiosas combinaciones de aminoácidos y péptidos, una rica materia orgánica líquida y aceites esenciales omega 3, 6 y 9 con notables resultados en campo.",
     "team": "Nuestro Equipo",
     "history": "Historia",
     "card1-title": "Mauris fermentum at est in interdum",
@@ -39,12 +39,12 @@
     "card4-title": "Mauris fermentum at est in interdum",
     "card1-content": "En 1994 para dar solución a la problemática medioambiental generada por los residuos de la industria salmonera en Chile, nace de la idea de producir un bioestimulante a partir de la hidrólisis enzimática de la proteína del salmón.",
     "card2-content": "Gracias a la adjudicación de un  proyecto Innova Chile (Corfo) el producto es sometido a múltiples pruebas de eficacia bajo métodos científicos, en colaboración con el INIA, cuyos resultados ratificaron las observaciones preliminares.",
-    "card3-content": "Así nace AMINOTERRA®, fertilizante bioestimulante rico en aminoácidos libres y peptidos de cadena corta, considerado como un  producto Chileno único en el mundo por su procedencia y beneficios  en  distintas especies vegetales.",
+    "card3-content": "Así nace AMINOTERRA®, fertilizante bioestimulante rico en aminoácidos libres y péptidos de cadena corta, considerado como un  producto Chileno único en el mundo por su procedencia y beneficios  en  distintas especies vegetales.",
     "card4-content": "Comienza el desarrollo de nuevas alternativas utilizando la misma materia prima. Así se logra crear y consolidar un área de negocios dedicada a dar soluciones innovadoras y eficientes al sector agrícola.",
-    "cargo1": "Gerente general",
-    "cargo2": "Subgerente técnico",
+    "cargo1": "Gerente General",
+    "cargo2": "Subgerente Técnico",
     "cargo3": "Asistente técnico",
-    "cargo4": "Subgerente venta nacional"
+    "cargo4": "Subgerente Venta nacional"
   },
   "TechnicalSection": {
     "title": "Información Técnica",
@@ -83,7 +83,7 @@
     "amendments": {
       "title": "Enmiendas Orgánicas",
       "name": "Bioamino-L",
-      "description1": "Es una enmienda  Organica Liquida pars activar  suelos, con alto contenido de materia organica de origen no húmico, acidos fúlvicos, polipéptidos de muy alta calidad biológica, macronutrientes (Nitrógeno, Fósforo, Potasio, Calcio, Magnesio) y micronuirienies (Zinc, Manganeso, Hierro).",
+      "description1": "Es una enmienda orgánica líquida para activar  suelos, con alto contenido de materia orgánica de origen no húmico, acidos fúlvicos, polipéptidos de muy alta calidad biológica, macronutrientes (Nitrógeno, Fósforo, Potasio, Calcio, Magnesio) y micronutrientes (Zinc, Manganeso, Hierro).",
       "description2": "Renueva la vida en los suelos, activando la microbiología, mejorando su estructura y disponibilidad.",
       "description3": "Activa y fortalece las raíces.",
       "description4": "Optimiza la conexión planta/sustrato.",
@@ -92,7 +92,7 @@
     "rootBiostimulant": {
       "title": "Aceite natural de uso agrícola",
       "name": "Aminoroot",
-      "description1": "Bioestimulante de raíces a base de aminoácidos libres, estractos vegetales, ácidos fúlvicos y materia orgánica activa, destinado a promover y fortalecer el crecimiento radical en todo tipo de frutales, hortalizas y cultivos.",
+      "description1": "Bioestimulante de raíces a base de aminoácidos libres, extractos vegetales, ácidos fúlvicos y materia orgánica activa, destinado a promover y fortalecer el crecimiento radical en todo tipo de frutales, hortalizas y cultivos.",
       "description2": "Estimula el crecimiento de raíces induciendo un sistema radical abundante y vigoroso.",
       "description3": "Mejora la vitalidad de las plantas provocando una mejor captación y absorción de nutrientes y agua.",
       "description4": "Induce formaciónn de plantas más sanas, resistentes y vigorosas.",

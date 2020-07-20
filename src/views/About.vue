@@ -103,7 +103,7 @@
                                     <br />
                                     <h1>Carlos Baier</h1>
                                     <h1>{{ $t("AboutUs.cargo2") }}</h1>
-                                    <h1>cbaier@aminochem.com</h1>
+                                    <h1>carlos.baier@aminochem.com</h1>
                                     <h1>+56 9 96379251</h1>
                                 </div>
                             </div>

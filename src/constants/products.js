@@ -53,7 +53,7 @@ export const fertilizers = {
     es: {
       name: "Aminoterra Plus Zinc",
       description:
-        "Es un poderoso fertilizante y bioestimulante líquido, obtenido a partir de proteínas de origen marino (salmón), hidrolizadas enzimaticamente en condiciones controladas con alta tecnologia. Este avanzado proceso, permite obtener un producto estable, rico en aminoácidos libres de péptidos de bajo peso molecular, favoreciendo la absorción vía foliar y radicular, lo que permite a las plantas construir sus propias proteínas y tejidos de forma rápida, y con gran ahorro de energía, especialnente en ambientes con estrés de tipo nutricional, térmico, hídrico, luminoso ó salino.",
+        "Es un poderoso fertilizante y bioestimulante líquido, obtenido a partir de proteínas de origen marino (salmón), hidrolizadas enzimáticamente en condiciones controladas con alta tecnología. Este avanzado proceso, permite obtener un producto estable, rico en aminoácidos libres de péptidos de bajo peso molecular, favoreciendo la absorción vía foliar y radicular, lo que permite a las plantas construir sus propias proteínas y tejidos de forma rápida, y con gran ahorro de energía, especialmente en ambientes con estrés de tipo nutricional, térmico, hídrico, luminoso ó salino.",
       subdescription1: "Nutrición directa con Aminoácidos.",
       subdescription2: "Corrige y previene los efectos del Estrés.",
       subdescription3:
@@ -110,7 +110,7 @@ export const fertilizers = {
     es: {
       name: "Aminoroot",
       description:
-        "Bioestimulante de raíces a base de aminoácidos libres, estractos vegetales, ácidos fúlvicos y materia orgánica activa, destinado a promover y fortalecer el crecimiento radical en todo tipo de frutales, hortalizas y cultivos.",
+        "Bioestimulante de raíces a base de aminoácidos libres, extractos vegetales, ácidos fúlvicos y materia orgánica activa, destinado a promover y fortalecer el crecimiento radical en todo tipo de frutales, hortalizas y cultivos.",
       subdescription1:
         "Estimula el crecimiento de raíces induciendo un sistema radical abundante y vigoroso.",
       subdescription2:
@@ -138,9 +138,9 @@ export const naturalOil = {
     es: {
       name: "Bioil-S (Enhance)",
       description:
-        "Es un poderoso fertilizante y bioestimulante líquido, obtenido a partir de proteínas de origen marino (salmón), hidrolizadas enzimaticamente en condiciones controladas con alta tecnologia. Este avanzado proceso, permite obtener un producto estable, rico en aminoácidos libres de péptidos de bajo peso molecular, favoreciendo la absorción vía foliar y radicular, lo que permite a las plantas construir sus propias proteínas y tejidos de forma rápida, y con gran ahorro de energía, especialnente en ambientes con estrés de tipo nutricional, térmico, hídrico, luminoso ó salino.",
+        "Es un poderoso fertilizante y bioestimulante líquido, obtenido a partir de proteínas de origen marino (salmón), hidrolizadas enzimáticamente en condiciones controladas con alta tecnología. Este avanzado proceso, permite obtener un producto estable, rico en aminoácidos libres de péptidos de bajo peso molecular, favoreciendo la absorción vía foliar y radicular, lo que permite a las plantas construir sus propias proteínas y tejidos de forma rápida, y con gran ahorro de energía, especialmente en ambientes con estrés de tipo nutricional, térmico, hídrico, luminoso ó salino.",
       subdescription1:
-        "Las plantas que disponen de proteínas y acidos grasos Omega en forma constante durante su ciclo, no solo mejoran su resistencia y adaptación a todo tipo de ambientes, sino también aumentan la capacidad de síntesis de hormonas naturales de crecimientom con el consecuente aumento en potencial productivo y calidad de todos sus tejidos (raíces, hojas, tallos, flores y frutos).",
+        "Las plantas que disponen de proteínas y acidos grasos Omega en forma constante durante su ciclo, no solo mejoran su resistencia y adaptación a todo tipo de ambientes, sino también aumentan la capacidad de síntesis de hormonas naturales de crecimiento con el consecuente aumento en potencial productivo y calidad de todos sus tejidos (raíces, hojas, tallos, flores y frutos).",
       subdescription2:
         "Producto de su origen, Bioil-S (Enhance) también posee un interesante contenido de micronutrientes lo que contribuye a una nutrición exitosa en todo tipo de cultivos, hortalizas y frutales.",
       subdescription3: "",
