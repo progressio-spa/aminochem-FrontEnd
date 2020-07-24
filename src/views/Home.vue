@@ -139,7 +139,9 @@
                 <div class="title-video">
                     <h1 class="title">{{ $t("Home.meet") }}</h1>
                 </div>
-                <video width="1200" controls :src="videoSource" />
+                <!-- <video width="1200" controls :src="videoSource" /> -->
+                <iframe width="1200" :src="youtubeSource">
+                </iframe>
             </div>
         </section>
     </div>
@@ -194,12 +196,23 @@ export default {
             return this.$root.$i18n.locale === "es"
                 ? require(`@/assets/Home/VideoES.mp4`)
                 : require(`@/assets/Home/videoEN.mp4`);
+        },
+        youtubeSource() {
+            return this.$root.$i18n.locale === "es"
+                ? "https://www.youtube.com/embed/0IXk5pQY-14"
+                : "https://www.youtube.com/watch?v=o0KMOov0wnU&output=embed";
         }
     }
 };
 </script>
 
 <style scoped>
+
+img, embed, iframe, object, video {
+    height: 720px;
+    max-width: 100%;
+}
+
 .media-content {
     display: flex;
     flex-direction: column;
@@ -257,6 +270,8 @@ a {
 .title-video {
     margin-bottom: 6vh;
 }
+
+
 .aux {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
         0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
@@ -266,6 +281,10 @@ a {
     .card-content {
         min-height: 27vh;
     }
+    img, embed, iframe, object, video {
+    height: 600px;
+    width: 1000px;
+}
 }
 /* Mobile Horizontal y tablet vertical */
 @media screen and (min-width: 481px) and (max-width: 768px) {
@@ -276,6 +295,9 @@ a {
     .hero-body > .container > .title {
         font-size: 3.5rem;
     }
+    img, embed, iframe, object, video {
+    height: 400px;
+}
 }
 /* Tablet Horizontal y escritorio normal */
 @media screen and (min-width: 769px) and (max-width: 1279px) {
@@ -283,6 +305,9 @@ a {
         left: 10%;
         max-width: 80%;
     }
+    img, embed, iframe, object, video {
+    height: 720px;
+}
 }
 @media screen and (max-width: 425px) {
     .carousel-item {
@@ -290,6 +315,9 @@ a {
     }
     .hero-background-home {
         height: 100vh;
+    }
+    img, embed, iframe, object, video {
+        height: 200px;
     }
 }
 </style>
