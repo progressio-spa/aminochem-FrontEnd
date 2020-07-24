@@ -208,7 +208,7 @@ export default {
 
 <style scoped>
 
-img, embed, iframe, object, video {
+embed, iframe, object, video {
     height: 720px;
     max-width: 100%;
 }
@@ -281,7 +281,7 @@ a {
     .card-content {
         min-height: 27vh;
     }
-    img, embed, iframe, object, video {
+    embed, iframe, object, video {
     height: 600px;
     width: 1000px;
 }
@@ -295,7 +295,7 @@ a {
     .hero-body > .container > .title {
         font-size: 3.5rem;
     }
-    img, embed, iframe, object, video {
+    embed, iframe, object, video {
     height: 400px;
 }
 }
@@ -305,7 +305,7 @@ a {
         left: 10%;
         max-width: 80%;
     }
-    img, embed, iframe, object, video {
+    embed, iframe, object, video {
     height: 720px;
 }
 }
@@ -316,7 +316,7 @@ a {
     .hero-background-home {
         height: 100vh;
     }
-    img, embed, iframe, object, video {
+    embed, iframe, object, video {
         height: 200px;
     }
 }
