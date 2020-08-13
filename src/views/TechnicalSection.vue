@@ -300,9 +300,9 @@ export default {
                 promises.push(getPostsByCategory(i));
             }
             let responses = await Promise.all(promises)
-            iplusd.value = responses[1].data;
-            publications.value = responses[3].data;
-            activities.value = responses[0].data;
+            iplusd.value = responses[0].data;
+            publications.value = responses[1].data;
+            activities.value = responses[3].data;
             news.value = responses[2].data;
             iplusdStatic.value = ipd;
             publicationStatic.value = p;

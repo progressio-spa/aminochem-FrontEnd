@@ -2,7 +2,7 @@ import request from '../index';
 
 export function getAccessToken(data) {
   return request({
-    url: 'https://aminochem-backend.herokuapp.com/login',
+    url: 'https://aminochem-backend-prod.herokuapp.com/login',
     method: 'post',
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
@@ -13,7 +13,7 @@ export function getAccessToken(data) {
 
 export function registerUser(data) {
   return request({
-    url: 'https://aminochem-backend.herokuapp.com/register',
+    url: 'https://aminochem-backend-prod.herokuapp.com/register',
     method: 'post',
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
@@ -24,7 +24,7 @@ export function registerUser(data) {
 
 export function forgotPassword(data) {
   return request({
-    url: 'https://aminochem-backend.herokuapp.com/forgotPassword',
+    url: 'https://aminochem-backend-prod.herokuapp.com/forgotPassword',
     method: 'post',
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
@@ -35,7 +35,7 @@ export function forgotPassword(data) {
 
 export function isAdmin(data) {
   return request({
-    url: 'https://aminochem-backend.herokuapp.com/isAdmin',
+    url: 'https://aminochem-backend-prod.herokuapp.com/isAdmin',
     method: 'post',
     headers: {
       'Content-Type': 'application/json; charset=UTF-8',
