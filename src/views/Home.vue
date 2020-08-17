@@ -200,7 +200,7 @@ export default {
         youtubeSource() {
             return this.$root.$i18n.locale === "es"
                 ? "https://www.youtube.com/embed/0IXk5pQY-14"
-                : "https://www.youtube.com/watch?v=o0KMOov0wnU&output=embed";
+                : "https://www.youtube.com/embed/o0KMOov0wnU";
         }
     }
 };
