@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div :class="{'modal': true, 'is-active': isModalShow }">
-                <div class="modal-background"></div>
+                <div class="modal-background" @click="closeModal"></div>
                 <div class="modal-content">
                     <div class="box">
                         <div class="form">
