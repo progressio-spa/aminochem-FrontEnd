@@ -125,6 +125,7 @@
                                 </div>
                                 <div class="control">
                                     <button
+                                        @click="closeModal"
                                         class="button is-light"
                                     >{{ $t('TechnicalSection.button-cancel') }}</button>
                                 </div>
