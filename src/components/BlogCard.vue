@@ -54,7 +54,7 @@ export default {
             () => props.pdfSrc,
             newVal => {
                 if (typeof newVal === 'number') {
-                    pdfSource.value = `https://aminochem-backend.herokuapp.com/downloadDocument/${newVal}`;
+                    pdfSource.value = `https://aminochem-backend-prod.herokuapp.com/downloadDocument/${newVal}`;
                 } else if (typeof newVal === 'string') {
                     pdfSource.value = newVal;
                 }
@@ -67,7 +67,7 @@ export default {
                 if (typeof newVal === 'string') {
                     imageSource.value = newVal;
                 } else {
-                    imageSource.value = `https://aminochem-backend.herokuapp.com/downloadImage/${newVal}`;
+                    imageSource.value = `https://aminochem-backend-prod.herokuapp.com/downloadImage/${newVal}`;
                 }
             },
             { deep: true }
