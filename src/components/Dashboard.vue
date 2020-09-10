@@ -9,7 +9,7 @@
             </div>
             <div class="card">
                 <div class="card-content">
-                    <table class="table">
+                    <table class="table is-fullwidth">
                         <thead>
                             <tr>
                                 <th>
@@ -21,7 +21,7 @@
                                 <th>
                                     <abbr title="author">{{ $t('TechnicalSection.table-author') }}</abbr>
                                 </th>
-                                <th>
+                                <th class="is-sm-3">
                                     <abbr title="Date">{{ $t('TechnicalSection.table-date') }}</abbr>
                                 </th>
                                 <th></th>
@@ -38,11 +38,11 @@
                                 <td>
                                     <div class="buttons">
                                         <button
-                                            class="button is-info"
+                                            class="button is-info action-button"
                                             @click="modifyPost(post)"
                                         >{{ $t('TechnicalSection.button-modified') }}</button>
                                         <button
-                                            class="button is-danger"
+                                            class="button is-danger action-button"
                                             @click="sendDeletePost(post.id)"
                                         >{{ $t('TechnicalSection.button-deleted') }}</button>
                                     </div>
@@ -145,159 +145,157 @@
 <script>
 
 import {
-    post,
-    getCategories,
-    getPosts,
-    deletePost,
-    updatePost
+  post,
+  getCategories,
+  getPosts,
+  deletePost,
+  updatePost,
 } from '@/api/requests/posts';
 
 export default {
-    name: 'home',
-    computed: {
-        titleSetted() {
-            return this.newPost.title.length > 0;
-        },
-        categorySetted() {
-            return this.newPost.category.length > 0;
-        },
-        isSendButtonEnable() {
-            if (this.modalPurpose === 'create') {
-                return this.titleSetted &&
-                    this.selectedImageName && this.categorySetted;
-            }
-            return this.titleSetted && this.categorySetted;
-        },
+  name: 'home',
+  computed: {
+    titleSetted() {
+      return this.newPost.title.length > 0;
     },
-    data(){
-        return {
-            newPost: {
-                title: '',
-                content: '',
-                category: '',
-            },
-            categories: [],
-            posts: [],
-            token: this.$store.getters.getAccessToken,
-            isModalShow: false,
-            modalPurpose: 'create',
-            selectedImageName: undefined,
-            selectedPDFName: undefined
+    categorySetted() {
+      return this.newPost.category.length > 0;
+    },
+    isSendButtonEnable() {
+      if (this.modalPurpose === 'create') {
+        return this.titleSetted
+                    && this.selectedImageName && this.categorySetted;
+      }
+      return this.titleSetted && this.categorySetted;
+    },
+  },
+  data() {
+    return {
+      newPost: {
+        title: '',
+        content: '',
+        category: '',
+      },
+      categories: [],
+      posts: [],
+      token: this.$store.getters.getAccessToken,
+      isModalShow: false,
+      modalPurpose: 'create',
+      selectedImageName: undefined,
+      selectedPDFName: undefined,
+    };
+  },
+  async created() {
+    const categoriesRequest = await getCategories();
+    this.categories = categoriesRequest.data;
+    if (this.token.length > 0) {
+      this.posts = await this.getPosts();
+    }
+  },
+  methods: {
+    fileSelected(fileType) {
+      const fileInput = document.getElementById(fileType);
+      if (!fileInput.files) {
+        return;
+      }
+      if (fileInput.files[0].size > 10 * 1024 * 1024) {
+        alert('File limit exceed');
+        fileInput.files = [];
+      } else if (fileInput.accept.includes('.pdf')) {
+        this.selectedPDFName = fileInput.value.replace(/^.*[\\\/]/, '');
+      } else {
+        this.selectedImageName = fileInput.value.replace(/^.*[\\\/]/, '');
+      }
+    },
+    openModal(purpose) {
+      this.modalPurpose = purpose;
+      this.isModalShow = true;
+    },
+    closeModal() {
+      this.isModalShow = false;
+    },
+    async getPosts() {
+      try {
+        const bodyFormData = new FormData();
+        bodyFormData.set('token', this.token);
+        const postsRequest = await getPosts(bodyFormData);
+        return postsRequest.data;
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    async sendRequest() {
+      const data = {};
+      this.$store.dispatch('changeLoadingState', 'set');
+      this.closeModal();
+      if (this.modalPurpose === 'create') {
+        const bodyFormData = new FormData();
+        bodyFormData.append('title', this.newPost.title);
+        bodyFormData.append('body', this.newPost.content);
+        bodyFormData.append('isPrivate', 0);
+        bodyFormData.append('category', this.categories
+          .find(category => category.name === this.newPost.category).id);
+        bodyFormData.append('token', this.token);
+        const imageInput = document.getElementById('image');
+        const pdfInput = document.getElementById('pdf');
+        bodyFormData.append('image', imageInput.files[0]);
+        if (pdfInput.files.length) {
+          bodyFormData.append('document', pdfInput.files[0]);
+        }
+        await post(bodyFormData);
+        this.posts = await this.getPosts();
+        this.$emit('updatePosts');
+        this.newPost = {
+          title: '',
+          content: '',
+          category: '',
         };
+      } else {
+        data.title = this.newPost.title;
+        data.body = this.newPost.content;
+        data.isPrivate = this.newPost.isPrivate;
+        data.id = this.newPost.id;
+        data.token = this.token;
+        data.category = this.categories
+          .find(category => category.name === this.newPost.category).id;
+        await updatePost(data);
+        this.posts = await this.getPosts();
+        this.$emit('updatePosts');
+        this.newPost = {
+          title: '',
+          content: '',
+          category: '',
+        };
+      }
+      this.$store.dispatch('changeLoadingState', 'unset');
     },
-    async created() {
-        const categoriesRequest = await getCategories();
-        this.categories = categoriesRequest.data;
-        if (this.token.length > 0) {
-            this.posts = await this.getPosts(); 
-        } 
+    async sendDeletePost(id) {
+      try {
+        this.$store.dispatch('changeLoadingState', 'set');
+        const data = {
+          id,
+          token: this.token,
+        };
+        await deletePost(data);
+        this.posts = await this.getPosts();
+        this.$emit('updatePosts');
+        this.$store.dispatch('changeLoadingState', 'unset');
+      } catch (e) {
+        console.log('ERROR => ', e);
+      }
     },
-    methods: {
-        fileSelected(fileType) {  
-          const fileInput = document.getElementById(fileType);
-          if (!fileInput.files) {
-            return;
-          }
-          if (fileInput.files[0].size > 10 * 1024 * 1024) {
-            alert('File limit exceed');
-            fileInput.files = [];
-          } else {
-            if (fileInput.accept.includes('.pdf')) {
-                this.selectedPDFName = fileInput.value.replace(/^.*[\\\/]/, '');
-            } else {
-                this.selectedImageName = fileInput.value.replace(/^.*[\\\/]/, '');
-            }
-          }
-        },
-        openModal(purpose) {
-            this.modalPurpose = purpose;
-            this.isModalShow = true;
-        },
-        closeModal() {
-            this.isModalShow = false;
-        },
-        async getPosts() {
-            try {
-                const bodyFormData = new FormData();
-                bodyFormData.set('token', this.token);
-                const postsRequest = await getPosts(bodyFormData);
-                return postsRequest.data;
-            } catch (e) {
-                console.log(e);
-            }
-        },
-        async sendRequest() {
-            const data = {};
-            this.$store.dispatch('changeLoadingState', 'set');
-            this.closeModal();
-            if (this.modalPurpose === 'create') {
-                let bodyFormData = new FormData();
-                bodyFormData.append('title', this.newPost.title);
-                bodyFormData.append('body', this.newPost.content);
-                bodyFormData.append('isPrivate', 0);
-                bodyFormData.append('category', this.categories
-                    .find(category => category.name === this.newPost.category).id);
-                bodyFormData.append('token', this.token);
-                const imageInput = document.getElementById('image');
-                const pdfInput = document.getElementById('pdf');
-                bodyFormData.append('image', imageInput.files[0]);
-                if (pdfInput.files.length) {
-                    bodyFormData.append('document', pdfInput.files[0]);
-                }
-                await post(bodyFormData);
-                this.posts = await this.getPosts();
-                this.$emit('updatePosts');
-                this.newPost = {
-                    title: '',
-                    content: '',
-                    category: '',
-                };
-            } else {
-                data.title = this.newPost.title;
-                data.body = this.newPost.content;
-                data.isPrivate = this.newPost.isPrivate;
-                data.id = this.newPost.id;  
-                data.token = this.token;
-                data.category = this.categories
-                    .find(category => category.name === this.newPost.category).id;
-                await updatePost(data);
-                this.posts = await this.getPosts();
-                this.$emit('updatePosts');
-                this.newPost = {
-                    title: '',
-                    content: '',
-                    category: '',
-                };
-            }
-            this.$store.dispatch('changeLoadingState', 'unset');
-        },
-        async sendDeletePost(id) {
-            try {
-                this.$store.dispatch('changeLoadingState', 'set');
-                const data = {
-                    id,
-                    token: this.token,
-                };
-                await deletePost(data);
-                this.posts = await this.getPosts();
-                this.$emit('updatePosts');
-                this.$store.dispatch('changeLoadingState', 'unset');
-            } catch (e) {
-                console.log('ERROR => ', e);
-            }
-        },
-        async modifyPost(post) {
-            this.newPost = {
-                id: post.id,
-                title: post.title,
-                content: post.body,
-                isPrivate: post.isPrivate,
-                category: post.category.name,
-            };
-            this.openModal('update');
-        },
+    async modifyPost(post) {
+      this.newPost = {
+        id: post.id,
+        title: post.title,
+        content: post.body,
+        isPrivate: post.isPrivate,
+        category: post.category.name,
+      };
+      this.openModal('update');
     },
-}
+  },
+};
 </script>
 
 <style scoped>
@@ -332,7 +330,16 @@ export default {
 }
 .buttons {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons .button:not(:last-child):not(.is-fullwidth) {
+    margin-right: 0rem;
+}
+.button {
+  min-width: 94px;
 }
 
 label {
@@ -360,10 +367,28 @@ label {
   font-family: 'Roboto' sans-serif;
 }
 
+.table__wrapper {
+  overflow-x: auto;
+}
+
 @media(max-width: 425px) {
   .modal-file-btn {
     width: 47.5%;
   }
+
+  .table{
+    font-size: 14px;
+  }
+
+ .action-button{
+    font-size: 10px !important;
+    min-width: 65px !important;
+  }
+
+  .button-container {
+    margin: 6% 0;
+    justify-content: center;
+}
 }
 
 </style>
