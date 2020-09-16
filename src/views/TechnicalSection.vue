@@ -111,20 +111,6 @@
             <div class="hero-body">
                 <div class="container">
                     <div class="columns is-multiline is-desktop">
-                        <!-- información estatica -->
-                        <div
-                            class="column is-one-third"
-                            v-for="(news, index) in iplusdStatic"
-                            :key="index"
-                        >
-                            <BlogCard
-                                :title="news.title"
-                                :newsImage="news.imgURL"
-                                :subtitle="news.subtitle"
-                                :pdfSrc="news.pdfName"
-                            />
-                        </div>
-                        <!--  -->
                         <div
                             class="column is-one-third"
                             v-for="(news, index) in iplusd"
@@ -157,20 +143,6 @@
             <div class="hero-body">
                 <div class="container">
                     <div class="columns is-multiline is-desktop">
-                        <!-- información estatica -->
-                        <div
-                            class="column is-one-third"
-                            v-for="(news, index) in publicationStatic"
-                            :key="index"
-                        >
-                            <BlogCard
-                                :title="news.title"
-                                :newsImage="news.imgURL"
-                                :subtitle="news.subtitle"
-                                :pdfSrc="news.pdfName"
-                            />
-                        </div>
-                        <!--  -->
                         <div
                             class="column is-one-third"
                             v-for="(news, index) in publications"
