@@ -55,8 +55,6 @@ export default {
             newVal => {
                 if (typeof newVal === 'number') {
                     pdfSource.value = `https://aminochem-backend-prod.herokuapp.com/downloadDocument/${newVal}`;
-                } else if (typeof newVal === 'string') {
-                    pdfSource.value = newVal;
                 }
             },
             { deep: true }

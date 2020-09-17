@@ -99,7 +99,7 @@ export default {
                 }
                 root.$store.dispatch('changeLoadingState', 'set');
                 const { pdfSrc } = props;
-                const pdfResponse = await getDocument(pdfSrc[pdfSrc.length - 1]);
+                const pdfResponse = await getDocument(pdfSrc);
                 const hexDocData = window.atob(pdfResponse.data);
                 const docBytes = new Uint8Array(hexDocData.length);
                 for (let i = 0; i < hexDocData.length; i++) {

@@ -65,9 +65,9 @@ export function getImage(id) {
   });
 }
 
-export function getDocument(id) {
+export function getDocument(url) {
   return request({
-    url: `https://aminochem-backend-prod.herokuapp.com/downloadDocument/${id}`,
+    url,
     method: 'get'
   });
 }

@@ -115,7 +115,7 @@
                             class="column is-one-third"
                             v-for="(news, index) in iplusd"
                             :key="index"
-                        >
+                        >   
                             <BlogCard
                                 :title="news.title"
                                 :body="news.body"
@@ -179,7 +179,7 @@
                             class="column is-one-third"
                             v-for="(news, index) in activities"
                             :key="index"
-                        >
+                        >   
                             <BlogCard
                                 :title="news.title"
                                 :body="news.body"
